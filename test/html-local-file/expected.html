@@ -1,0 +1,808 @@
+<body id="fiware-getting-started"><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+<h1 class="title topictitle1" id="ariaid-title1">FIWARE Getting Started</h1>
+<div class="body">
+</div>
+<article class="topic nested1" aria-labelledby="ariaid-title2" id="architecture">
+<h2 class="title topictitle2" id="ariaid-title2">Architecture</h2>
+<div class="body">
+<p class="p">
+	Our demo application will only make use of one FIWARE component - the <a class="xref" href="https://catalogue.fiware.org/enablers/publishsubscribe-context-broker-orion-context-broker" target="_blank">Orion Context Broker</a> . Usage of the Orion Context Broker is sufficient for an application to qualify as <em class="i">"Powered by FIWARE"</em>.
+</p>
+<p class="p">
+	Currently, the Orion Context Broker relies on open source <a class="xref" href="https://www.mongodb.com/" target="_blank">MongoDB</a> technology to keep persistence of the context data it holds. Therefore, the architecture will consist of two elements:
+</p>
+<ul class="ul">
+	<li class="li">The Orion Context Broker server which will receive requests using NGSI</li>
+	<li class="li">The underlying MongoDB database associated to the Orion Context Broker server</li>
+</ul>
+<p class="p">
+	Since all interactions between the two elements are initiated by HTTP requests, the entities can be containerized and run from exposed ports.
+</p>
+<figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 1. </span></figcaption>
+	
+	<img class="image" src="https://fiware.github.io/tutorials.Getting-Started/img//architecture.png" alt=""><br>
+</figure>
+</div>
+</article>
+
+<article class="topic nested1" aria-labelledby="ariaid-title3" id="prerequisites">
+<h2 class="title topictitle2" id="ariaid-title3">Prerequisites</h2>
+<div class="body">
+</div>
+<article class="topic nested2" aria-labelledby="ariaid-title4" id="docker">
+<h3 class="title topictitle3" id="ariaid-title4">Docker</h3>
+<div class="body">
+<p class="p">
+	To keep things simple both components will be run using <a class="xref" href="https://www.docker.com" target="_blank">Docker</a>. <strong class="b">Docker</strong> is a container technology which allows to different components isolated into their respective environments.
+</p>
+<ul class="ul">
+	<li class="li">To install Docker on Windows follow the instructions <a class="xref" href="https://docs.docker.com/docker-for-windows/" target="_blank">here</a></li>
+	<li class="li">To install Docker on Mac follow the instructions <a class="xref" href="https://docs.docker.com/docker-for-mac/" target="_blank">here</a></li>
+	<li class="li">To install Docker on Linux follow the instructions <a class="xref" href="https://docs.docker.com/install/" target="_blank">here</a></li>
+</ul>
+</div>
+</article>
+
+</article>
+
+<article class="topic nested1" aria-labelledby="ariaid-title5" id="starting-the-containers">
+<h2 class="title topictitle2" id="ariaid-title5">Starting the Containers</h2>
+<div class="body">
+</div>
+<article class="topic nested2" aria-labelledby="ariaid-title6" id="initialization">
+<h3 class="title topictitle3" id="ariaid-title6">Initialization</h3>
+<div class="body">
+<p class="p">
+	First pull the necessary Docker images from Docker Hub and create a network for our containers to connect to:
+</p>
+<pre class="codeblock console"><code>docker pull mongo:3.6
+docker pull fiware/orion
+docker network create fiware_default</code></pre>
+</div>
+</article>
+
+<article class="topic nested2" aria-labelledby="ariaid-title7" id="start-up">
+<h3 class="title topictitle3" id="ariaid-title7">Start Up</h3>
+<div class="body">
+<p class="p">
+	A Docker container running a MongoDB database can be started and connected to the network with the following command:
+</p>
+<pre class="codeblock console"><code>docker run -d --name=context-db --network=fiware_default \
+  --expose=27017 mongo:3.6 --bind_ip_all --smallfiles</code></pre>
+<p class="p">
+	The Orion Context Broker can be started and connected to the network with the following command:
+</p>
+<pre class="codeblock console"><code>docker run -d --name orion  --network=fiware_default \
+  -p 1026:1026  fiware/orion -dbhost context-db</code></pre>
+<p class="p">
+	You can check if the Orion Context Broker is running by making an HTTP request to the exposed port:
+</p>
+<pre class="codeblock console"><code>curl -X GET http://localhost:1026/version</code></pre>
+<p class="p">
+	Alternatively run all your curl commands from within the container network:
+</p>
+<pre class="codeblock console"><code>docker run --network fiware_default --rm appropriate/curl -s \
+  -X GET http://orion:1026/version</code></pre>
+<p class="p">
+	<strong class="b">What if I get an error response?</strong>
+</p>
+<p class="p">
+	If you get an error response, the Orion Content Broker cannot be found where expected
+for this tutorial - you will need to substitute the URL and port in each Postman request
+with the corrected ip address. All the Postman requests in this tutorial assume
+that orion is available on <code class="codeph">localhost:1026</code>.
+</p>
+<p class="p">
+	Try the following remedies:
+</p>
+<ul class="ul">
+	<li class="li">To check that the dockers container are running try the following:</li>
+</ul>
+<pre class="codeblock console"><code>docker ps</code></pre>
+<p class="p">
+	You should see two containers running. If orion is not running, you can restart the
+containers as necessary. This command will also display open port information.
+</p>
+<ul class="ul">
+	<li class="li">If you have installed <a class="xref" href="https://docs.docker.com/machine/" target="_blank"><code class="codeph">docker-machine</code></a> and <a class="xref" href="https://www.virtualbox.org/" target="_blank">Virtual Box</a>, you will need to retrieve the virtual host ip as shown:</li>
+</ul>
+<pre class="codeblock console"><code>curl -X GET http://$(docker-machine ip default):1026/version</code></pre>
+<p class="p">
+	If you need to update the location of orion:
+</p>
+<ol class="ol">
+	<li class="li">Click on the elipsis <code class="codeph">...</code> at the head of the imported postman collection</li>
+	<li class="li">Select <code class="codeph">edit</code> from the dropdown</li>
+	<li class="li">Click on the <code class="codeph">variables</code> tab and alter the value from <code class="codeph">localhost:1026</code> as necessary.</li>
+</ol>
+</div>
+</article>
+
+</article>
+
+<article class="topic nested1" aria-labelledby="ariaid-title8" id="obtaining-version-information">
+<h2 class="title topictitle2" id="ariaid-title8">Obtaining Version Information</h2>
+<div class="body">
+<p class="p">
+	Once the Orion Context Broker is running, You can check the status by making an HTTP request to the exposed port.
+If the response is blank, this is usually because the MongoDB database holding the context information is not running or not connected.
+</p>
+<p class="p">
+	<strong class="b">Troubleshooting:</strong> What if the response is blank ?
+</p>
+<ul class="ul">
+	<li class="li">To check that a docker container is running try</li>
+</ul>
+<pre class="codeblock bash"><code>docker ps</code></pre>
+<p class="p">
+	You should see two containers running. If orion is not running, you can restart the containers as necessary.
+</p>
+<section class="section" id="obtaining-version-information__endpoint"><h3 class="title sectiontitle">Endpoint:</h3>
+
+
+<ul class="ul">
+	<li class="li">Method: <strong class="b">GET</strong></li>
+	<li class="li">URL: <code class="codeph">http://{{orion}}/version</code></li>
+</ul>
+</section>
+
+<section class="section" id="obtaining-version-information__example"><h3 class="title sectiontitle">Example:</h3>
+
+
+<pre class="codeblock bash"><code>curl -X  -G GET  \
+  'http://{{orion}}/version'</code></pre>
+</section>
+
+</div>
+</article>
+
+<article class="topic nested1" aria-labelledby="ariaid-title9" id="creating-your-first-data-entity">
+<h2 class="title topictitle2" id="ariaid-title9">Creating your first Data Entity</h2>
+<div class="body">
+</div>
+<article class="topic nested2" aria-labelledby="ariaid-title10" id="creating-context-data">
+<h3 class="title topictitle3" id="ariaid-title10">Creating Context Data</h3>
+<div class="body">
+<p class="p">
+	At its heart, FIWARE is a system for managing context information, so lets add some context data into the system by creating a new entity (a store in <strong class="b">Berlin</strong>). Any entity must have a <code class="codeph">id</code> and <code class="codeph">type</code> attributes, additional attributes are optional and will depend on the system being described. Each additional attribute should also have a defined <code class="codeph">type</code> and a <code class="codeph">value</code> attribute.
+</p>
+<section class="section" id="creating-context-data__endpoint-1"><h4 class="title sectiontitle">Endpoint:</h4>
+
+
+<ul class="ul">
+	<li class="li">Method: <strong class="b">POST</strong></li>
+	<li class="li">Type: <strong class="b">RAW</strong></li>
+	<li class="li">URL: <code class="codeph">http://{{orion}}/v2/entities</code></li>
+</ul>
+</section>
+
+<section class="section" id="creating-context-data__headers"><h4 class="title sectiontitle">Headers:</h4>
+
+
+<table class="table"><caption></caption><colgroup><col><col><col></colgroup><thead class="thead">
+			<tr class="row">
+				<th class="entry align-left" id="creating-context-data__headers__entry__1">Key</th>
+				<th class="entry align-left" id="creating-context-data__headers__entry__2">Value</th>
+				<th class="entry align-left" id="creating-context-data__headers__entry__3">Description</th>
+			</tr>
+		</thead><tbody class="tbody">
+			<tr class="row">
+				<td class="entry align-left" headers="creating-context-data__headers__entry__1">Content-Type</td>
+				<td class="entry align-left" headers="creating-context-data__headers__entry__2">application/json</td>
+				<td class="entry align-left" headers="creating-context-data__headers__entry__3"></td>
+			</tr>
+		</tbody></table>
+</section>
+
+<section class="section" id="creating-context-data__body"><h4 class="title sectiontitle">Body:</h4>
+
+
+<pre class="codeblock js"><code>{
+    "id": "urn:ngsi-ld:Store:001",
+    "type": "Store",
+    "address": {
+        "type": "PostalAddress",
+        "value": {
+            "streetAddress": "Bornholmer Straße 65",
+            "addressRegion": "Berlin",
+            "addressLocality": "Prenzlauer Berg",
+            "postalCode": "10439"
+        },
+        "metadata": {
+            "verified": {
+                "value": true,
+                "type": "Boolean"
+            }
+        }
+    },
+    "location": {
+        "type": "geo:json",
+        "value": {
+             "type": "Point",
+             "coordinates": [13.3986, 52.5547]
+        }
+    },
+    "name": {
+        "type": "Text",
+        "value": "Bösebrücke Einkauf"
+    }
+}</code></pre>
+</section>
+
+<section class="section" id="creating-context-data__example-1"><h4 class="title sectiontitle">Example:</h4>
+
+
+<pre class="codeblock bash"><code>curl -X POST  \
+  'http://{{orion}}/v2/entities/'  \
+    -H Content-Type :  application/json  \
+    -d '{
+    "id": "urn:ngsi-ld:Store:001",
+    "type": "Store",
+    "address": {
+        "type": "PostalAddress",
+        "value": {
+            "streetAddress": "Bornholmer Straße 65",
+            "addressRegion": "Berlin",
+            "addressLocality": "Prenzlauer Berg",
+            "postalCode": "10439"
+        },
+        "metadata": {
+            "verified": {
+                "value": true,
+                "type": "Boolean"
+            }
+        }
+    },
+    "location": {
+        "type": "geo:json",
+        "value": {
+             "type": "Point",
+             "coordinates": [13.3986, 52.5547]
+        }
+    },
+    "name": {
+        "type": "Text",
+        "value": "Bösebrücke Einkauf"
+    }
+}'</code></pre>
+</section>
+
+</div>
+</article>
+
+</article>
+
+<article class="topic nested1" aria-labelledby="ariaid-title11" id="creating-your-second-data-entity">
+<h2 class="title topictitle2" id="ariaid-title11">Creating your Second Data Entity</h2>
+<div class="body">
+<section class="section" id="creating-your-second-data-entity__endpoint-2"><h3 class="title sectiontitle">Endpoint:</h3>
+
+
+<ul class="ul">
+	<li class="li">Method: <strong class="b">POST</strong></li>
+	<li class="li">Type: <strong class="b">RAW</strong></li>
+	<li class="li">URL: <code class="codeph">http://{{orion}}/v2/entities</code></li>
+</ul>
+</section>
+
+<section class="section" id="creating-your-second-data-entity__headers-1"><h3 class="title sectiontitle">Headers:</h3>
+
+
+<table class="table"><caption></caption><colgroup><col><col><col></colgroup><thead class="thead">
+			<tr class="row">
+				<th class="entry align-left" id="creating-your-second-data-entity__headers-1__entry__1">Key</th>
+				<th class="entry align-left" id="creating-your-second-data-entity__headers-1__entry__2">Value</th>
+				<th class="entry align-left" id="creating-your-second-data-entity__headers-1__entry__3">Description</th>
+			</tr>
+		</thead><tbody class="tbody">
+			<tr class="row">
+				<td class="entry align-left" headers="creating-your-second-data-entity__headers-1__entry__1">Content-Type</td>
+				<td class="entry align-left" headers="creating-your-second-data-entity__headers-1__entry__2">application/json</td>
+				<td class="entry align-left" headers="creating-your-second-data-entity__headers-1__entry__3"></td>
+			</tr>
+		</tbody></table>
+</section>
+
+<section class="section" id="creating-your-second-data-entity__body-1"><h3 class="title sectiontitle">Body:</h3>
+
+
+<pre class="codeblock js"><code>{
+  "type": "Store",
+    "id": "urn:ngsi-ld:Store:002",
+    "address": {
+        "type": "PostalAddress",
+        "value": {
+            "streetAddress": "Friedrichstraße 44",
+            "addressRegion": "Berlin",
+            "addressLocality": "Kreuzberg",
+            "postalCode": "10969"
+        },
+        "metadata": {
+            "verified": {
+                "value": true,
+                "type": "Boolean"
+            }
+        }
+    },
+    "location": {
+        "type": "geo:json",
+        "value": {
+             "type": "Point",
+             "coordinates": [13.3903, 52.5075]
+        }
+    },
+    "name": {
+        "type": "Text",
+        "value": "Checkpoint Markt"
+    }
+}</code></pre>
+</section>
+
+<section class="section" id="creating-your-second-data-entity__example-2"><h3 class="title sectiontitle">Example:</h3>
+
+
+<pre class="codeblock bash"><code>curl -X POST  \
+  'http://{{orion}}/v2/entities/'  \
+    -H Content-Type :  application/json  \
+    -d '{
+  "type": "Store",
+    "id": "urn:ngsi-ld:Store:002",
+    "address": {
+        "type": "PostalAddress",
+        "value": {
+            "streetAddress": "Friedrichstraße 44",
+            "addressRegion": "Berlin",
+            "addressLocality": "Kreuzberg",
+            "postalCode": "10969"
+        },
+        "metadata": {
+            "verified": {
+                "value": true,
+                "type": "Boolean"
+            }
+        }
+    },
+    "location": {
+        "type": "geo:json",
+        "value": {
+             "type": "Point",
+             "coordinates": [13.3903, 52.5075]
+        }
+    },
+    "name": {
+        "type": "Text",
+        "value": "Checkpoint Markt"
+    }
+}'</code></pre>
+</section>
+
+</div>
+</article>
+
+<article class="topic nested1" aria-labelledby="ariaid-title12" id="retrieving-context-information">
+<h2 class="title topictitle2" id="ariaid-title12">Retrieving Context Information</h2>
+<div class="body">
+<p class="p">
+	This example returns the full data context
+</p>
+<section class="section" id="retrieving-context-information__endpoint-3"><h3 class="title sectiontitle">Endpoint:</h3>
+
+
+<ul class="ul">
+	<li class="li">Method: <strong class="b">GET</strong></li>
+	<li class="li">URL: <code class="codeph">http://{{orion}}/v2/entitie</code></li>
+</ul>
+</section>
+
+<section class="section" id="retrieving-context-information__example-3"><h3 class="title sectiontitle">Example:</h3>
+
+
+<pre class="codeblock bash"><code>curl -X  -G GET  \
+  'http://{{orion}}/v2/entitie'</code></pre>
+</section>
+
+</div>
+</article>
+
+<article class="topic nested1" aria-labelledby="ariaid-title13" id="obtain-entity-data-by-id">
+<h2 class="title topictitle2" id="ariaid-title13">Obtain Entity Data by id</h2>
+<div class="body">
+<p class="p">
+	This example returns the context data of <code class="codeph">store1</code>. The <code class="codeph">id</code> of the entity should be unique or the <code class="codeph">type</code> parameter should also be used.
+</p>
+<p class="p">
+	Because of the use of the <code class="codeph">options=keyValues</code>, the response consists of JSON only without the attribute <code class="codeph">type</code> elements.
+</p>
+<section class="section" id="obtain-entity-data-by-id__endpoint-4"><h3 class="title sectiontitle">Endpoint:</h3>
+
+
+<ul class="ul">
+	<li class="li">Method: <strong class="b">GET</strong></li>
+	<li class="li">URL: <code class="codeph">http://{{orion}}/v2/entities/urn:ngsi-ld:Store:001</code></li>
+</ul>
+</section>
+
+<section class="section" id="obtain-entity-data-by-id__query-parameters"><h3 class="title sectiontitle">Query Parameters:</h3>
+
+
+<table class="table"><caption></caption><colgroup><col style="width:13%"><col style="width:27%"><col style="width:59%"></colgroup><thead class="thead">
+			<tr class="row">
+				<th class="entry align-left" id="obtain-entity-data-by-id__query-parameters__entry__1">Key</th>
+				<th class="entry align-left" id="obtain-entity-data-by-id__query-parameters__entry__2">Value</th>
+				<th class="entry align-left" id="obtain-entity-data-by-id__query-parameters__entry__3">Description</th>
+			</tr>
+		</thead><tbody class="tbody">
+			<tr class="row">
+				<td class="entry align-left" headers="obtain-entity-data-by-id__query-parameters__entry__1"><code class="codeph">options</code></td>
+				<td class="entry align-left" headers="obtain-entity-data-by-id__query-parameters__entry__2"><code class="codeph">keyValues</code></td>
+				<td class="entry align-left" headers="obtain-entity-data-by-id__query-parameters__entry__3">* <code class="codeph">keyValues</code> option in order to get a more compact and brief representation, including just attribute values<span class="undefined_element"></span><span class="undefined_element"></span>* <code class="codeph">values</code> option combined with a list of attribute values <code class="codeph">attrs</code> for an ordered list of attributes only</td>
+			</tr>
+			<tr class="row">
+				<td class="entry align-left" headers="obtain-entity-data-by-id__query-parameters__entry__1"><code class="codeph">type</code></td>
+				<td class="entry align-left" headers="obtain-entity-data-by-id__query-parameters__entry__2"><code class="codeph">Store</code></td>
+				<td class="entry align-left" headers="obtain-entity-data-by-id__query-parameters__entry__3">Entity type, to avoid ambiguity in case there are several entities with the same entity id</td>
+			</tr>
+			<tr class="row">
+				<td class="entry align-left" headers="obtain-entity-data-by-id__query-parameters__entry__1"><code class="codeph">attrs</code></td>
+				<td class="entry align-left" headers="obtain-entity-data-by-id__query-parameters__entry__2"><code class="codeph">name</code></td>
+				<td class="entry align-left" headers="obtain-entity-data-by-id__query-parameters__entry__3">Ordered list of attribute names to display</td>
+			</tr>
+		</tbody></table>
+</section>
+
+<section class="section" id="obtain-entity-data-by-id__example-4"><h3 class="title sectiontitle">Example:</h3>
+
+
+<pre class="codeblock bash"><code>curl -X  -G GET  \
+  'http://{{orion}}/v2/entities/urn:ngsi-ld:Store:001'  \
+    -d 'options=keyValues'</code></pre>
+</section>
+
+</div>
+</article>
+
+<article class="topic nested1" aria-labelledby="ariaid-title14" id="obtain-entity-data-by-type">
+<h2 class="title topictitle2" id="ariaid-title14">Obtain Entity Data by type</h2>
+<div class="body">
+<p class="p">
+	This example returns the data of all <code class="codeph">Store</code> entities within the context data.
+</p>
+<p class="p">
+	The <code class="codeph">type</code> parameter limits the response to store entities only.
+Because of the use of the <code class="codeph">options=keyValues</code>, the response consists of JSON only without the attribute <code class="codeph">type</code> elements.
+</p>
+<section class="section" id="obtain-entity-data-by-type__endpoint-5"><h3 class="title sectiontitle">Endpoint:</h3>
+
+
+<ul class="ul">
+	<li class="li">Method: <strong class="b">GET</strong></li>
+	<li class="li">URL: <code class="codeph">http://{{orion}}/v2/entities/</code></li>
+</ul>
+</section>
+
+<section class="section" id="obtain-entity-data-by-type__query-parameters-1"><h3 class="title sectiontitle">Query Parameters:</h3>
+
+
+<table class="table"><caption></caption><colgroup><col style="width:13%"><col style="width:27%"><col style="width:59%"></colgroup><thead class="thead">
+			<tr class="row">
+				<th class="entry align-left" id="obtain-entity-data-by-type__query-parameters-1__entry__1">Key</th>
+				<th class="entry align-left" id="obtain-entity-data-by-type__query-parameters-1__entry__2">Value</th>
+				<th class="entry align-left" id="obtain-entity-data-by-type__query-parameters-1__entry__3">Description</th>
+			</tr>
+		</thead><tbody class="tbody">
+			<tr class="row">
+				<td class="entry align-left" headers="obtain-entity-data-by-type__query-parameters-1__entry__1"><code class="codeph">type</code></td>
+				<td class="entry align-left" headers="obtain-entity-data-by-type__query-parameters-1__entry__2"><code class="codeph">Store</code></td>
+				<td class="entry align-left" headers="obtain-entity-data-by-type__query-parameters-1__entry__3">Entity type, to avoid ambiguity in case there are several entities with the same entity id</td>
+			</tr>
+			<tr class="row">
+				<td class="entry align-left" headers="obtain-entity-data-by-type__query-parameters-1__entry__1"><code class="codeph">options</code></td>
+				<td class="entry align-left" headers="obtain-entity-data-by-type__query-parameters-1__entry__2"><code class="codeph">keyValues</code></td>
+				<td class="entry align-left" headers="obtain-entity-data-by-type__query-parameters-1__entry__3">* <code class="codeph">keyValues</code> option in order to get a more compact and brief representation, including just attribute values<span class="undefined_element"></span><span class="undefined_element"></span>* <code class="codeph">values</code> option combined with a list of attribute values <code class="codeph">attrs</code> for an ordered list of attributes only</td>
+			</tr>
+			<tr class="row">
+				<td class="entry align-left" headers="obtain-entity-data-by-type__query-parameters-1__entry__1"><code class="codeph">attrs</code></td>
+				<td class="entry align-left" headers="obtain-entity-data-by-type__query-parameters-1__entry__2"><code class="codeph">name</code></td>
+				<td class="entry align-left" headers="obtain-entity-data-by-type__query-parameters-1__entry__3">Ordered list of attribute names to display</td>
+			</tr>
+		</tbody></table>
+</section>
+
+<section class="section" id="obtain-entity-data-by-type__example-5"><h3 class="title sectiontitle">Example:</h3>
+
+
+<pre class="codeblock bash"><code>curl -X  -G GET  \
+  'http://{{orion}}/v2/entities/'  \
+    -d 'type=Store'  \
+    -d 'options=keyValues'</code></pre>
+</section>
+
+</div>
+</article>
+
+<article class="topic nested1" aria-labelledby="ariaid-title15" id="filter-context-data-by-attribute-value">
+<h2 class="title topictitle2" id="ariaid-title15">Filter context data by attribute value</h2>
+<div class="body">
+</div>
+<article class="topic nested2" aria-labelledby="ariaid-title16" id="filter-context-data-by-comparing-the-values-of-an-attribute">
+<h3 class="title topictitle3" id="ariaid-title16">Filter context data by comparing the values of an attribute</h3>
+<div class="body">
+<p class="p">
+	This example returns the data of all <code class="codeph">Store</code> entities found with the name <em class="i">Checkpoint Markt</em>.
+</p>
+<p class="p">
+	Filtering can be done using the <code class="codeph">q</code> parameter - if a string has spaces in it, it can be URL encoded and held within single quote characters <code class="codeph">'</code> = <code class="codeph">%27</code>
+</p>
+<p class="p">
+	Because of the use of the <code class="codeph">options=keyValues</code>, the response consists of JSON only without the attribute <code class="codeph">type</code> and <code class="codeph">metadata</code> elements.
+</p>
+<section class="section" id="filter-context-data-by-comparing-the-values-of-an-attribute__endpoint-6"><h4 class="title sectiontitle">Endpoint:</h4>
+
+
+<ul class="ul">
+	<li class="li">Method: <strong class="b">GET</strong></li>
+	<li class="li">URL: <code class="codeph">http://{{orion}}/v2/entities/</code></li>
+</ul>
+</section>
+
+<section class="section" id="filter-context-data-by-comparing-the-values-of-an-attribute__query-parameters-2"><h4 class="title sectiontitle">Query Parameters:</h4>
+
+
+<table class="table"><caption></caption><colgroup><col style="width:13%"><col style="width:27%"><col style="width:59%"></colgroup><thead class="thead">
+			<tr class="row">
+				<th class="entry align-left" id="filter-context-data-by-comparing-the-values-of-an-attribute__query-parameters-2__entry__1">Key</th>
+				<th class="entry align-left" id="filter-context-data-by-comparing-the-values-of-an-attribute__query-parameters-2__entry__2">Value</th>
+				<th class="entry align-left" id="filter-context-data-by-comparing-the-values-of-an-attribute__query-parameters-2__entry__3">Description</th>
+			</tr>
+		</thead><tbody class="tbody">
+			<tr class="row">
+				<td class="entry align-left" headers="filter-context-data-by-comparing-the-values-of-an-attribute__query-parameters-2__entry__1"><code class="codeph">q</code></td>
+				<td class="entry align-left" headers="filter-context-data-by-comparing-the-values-of-an-attribute__query-parameters-2__entry__2"><code class="codeph">name=='Checkpoint Markt'</code></td>
+				<td class="entry align-left" headers="filter-context-data-by-comparing-the-values-of-an-attribute__query-parameters-2__entry__3"></td>
+			</tr>
+			<tr class="row">
+				<td class="entry align-left" headers="filter-context-data-by-comparing-the-values-of-an-attribute__query-parameters-2__entry__1"><code class="codeph">type</code></td>
+				<td class="entry align-left" headers="filter-context-data-by-comparing-the-values-of-an-attribute__query-parameters-2__entry__2"><code class="codeph">Store</code></td>
+				<td class="entry align-left" headers="filter-context-data-by-comparing-the-values-of-an-attribute__query-parameters-2__entry__3">Entity type, to avoid ambiguity in case there are several entities with the same entity id</td>
+			</tr>
+			<tr class="row">
+				<td class="entry align-left" headers="filter-context-data-by-comparing-the-values-of-an-attribute__query-parameters-2__entry__1"><code class="codeph">options</code></td>
+				<td class="entry align-left" headers="filter-context-data-by-comparing-the-values-of-an-attribute__query-parameters-2__entry__2"><code class="codeph">keyValues</code></td>
+				<td class="entry align-left" headers="filter-context-data-by-comparing-the-values-of-an-attribute__query-parameters-2__entry__3">* <code class="codeph">keyValues</code> option in order to get a more compact and brief representation, including just attribute values<span class="undefined_element"></span><span class="undefined_element"></span>* <code class="codeph">values</code> option combined with a list of attribute values <code class="codeph">attrs</code> for an ordered list of attributes only</td>
+			</tr>
+			<tr class="row">
+				<td class="entry align-left" headers="filter-context-data-by-comparing-the-values-of-an-attribute__query-parameters-2__entry__1"><code class="codeph">attrs</code></td>
+				<td class="entry align-left" headers="filter-context-data-by-comparing-the-values-of-an-attribute__query-parameters-2__entry__2"><code class="codeph">name</code></td>
+				<td class="entry align-left" headers="filter-context-data-by-comparing-the-values-of-an-attribute__query-parameters-2__entry__3">Ordered list of attribute names to display</td>
+			</tr>
+		</tbody></table>
+</section>
+
+<section class="section" id="filter-context-data-by-comparing-the-values-of-an-attribute__example-6"><h4 class="title sectiontitle">Example:</h4>
+
+
+<pre class="codeblock bash"><code>curl -X  -G GET  \
+  'http://{{orion}}/v2/entities/'  \
+    -d 'q=name=='Checkpoint Markt''  \
+    -d 'type=Store'  \
+    -d 'options=keyValues'</code></pre>
+</section>
+
+</div>
+</article>
+
+</article>
+
+<article class="topic nested1" aria-labelledby="ariaid-title17" id="filter-context-data-by-sub-attribute-value">
+<h2 class="title topictitle2" id="ariaid-title17">Filter context data by sub-attribute value</h2>
+<div class="body">
+</div>
+<article class="topic nested2" aria-labelledby="ariaid-title18" id="filter-context-data-by-comparing-the-values-of-an-attribute-1">
+<h3 class="title topictitle3" id="ariaid-title18">Filter context data by comparing the values of an attribute</h3>
+<div class="body">
+<p class="p">
+	This example returns the data of all <code class="codeph">Store</code> entities found in the <strong class="b">Kreuzberg</strong> district of Berlin.
+</p>
+<p class="p">
+	Filtering can be done using the <code class="codeph">q</code> parameter - sub-attributes are annotated using the dot syntax e.g.&nbsp;<code class="codeph">address.addressLocality</code>
+</p>
+<p class="p">
+	Because of the use of the <code class="codeph">options=keyValues</code>, the response consists of JSON only without the attribute <code class="codeph">type</code> and <code class="codeph">metadata</code> elements.
+</p>
+<section class="section" id="filter-context-data-by-comparing-the-values-of-an-attribute-1__endpoint-7"><h4 class="title sectiontitle">Endpoint:</h4>
+
+
+<ul class="ul">
+	<li class="li">Method: <strong class="b">GET</strong></li>
+	<li class="li">URL: <code class="codeph">http://{{orion}}/v2/entities/</code></li>
+</ul>
+</section>
+
+<section class="section" id="filter-context-data-by-comparing-the-values-of-an-attribute-1__query-parameters-3"><h4 class="title sectiontitle">Query Parameters:</h4>
+
+
+<table class="table"><caption></caption><colgroup><col style="width:13%"><col style="width:27%"><col style="width:59%"></colgroup><thead class="thead">
+			<tr class="row">
+				<th class="entry align-left" id="filter-context-data-by-comparing-the-values-of-an-attribute-1__query-parameters-3__entry__1">Key</th>
+				<th class="entry align-left" id="filter-context-data-by-comparing-the-values-of-an-attribute-1__query-parameters-3__entry__2">Value</th>
+				<th class="entry align-left" id="filter-context-data-by-comparing-the-values-of-an-attribute-1__query-parameters-3__entry__3">Description</th>
+			</tr>
+		</thead><tbody class="tbody">
+			<tr class="row">
+				<td class="entry align-left" headers="filter-context-data-by-comparing-the-values-of-an-attribute-1__query-parameters-3__entry__1"><code class="codeph">q</code></td>
+				<td class="entry align-left" headers="filter-context-data-by-comparing-the-values-of-an-attribute-1__query-parameters-3__entry__2"><code class="codeph">address.addressLocality=='Kreuzberg'</code></td>
+				<td class="entry align-left" headers="filter-context-data-by-comparing-the-values-of-an-attribute-1__query-parameters-3__entry__3"></td>
+			</tr>
+			<tr class="row">
+				<td class="entry align-left" headers="filter-context-data-by-comparing-the-values-of-an-attribute-1__query-parameters-3__entry__1"><code class="codeph">type</code></td>
+				<td class="entry align-left" headers="filter-context-data-by-comparing-the-values-of-an-attribute-1__query-parameters-3__entry__2"><code class="codeph">Store</code></td>
+				<td class="entry align-left" headers="filter-context-data-by-comparing-the-values-of-an-attribute-1__query-parameters-3__entry__3">Entity type, to avoid ambiguity in case there are several entities with the same entity id</td>
+			</tr>
+			<tr class="row">
+				<td class="entry align-left" headers="filter-context-data-by-comparing-the-values-of-an-attribute-1__query-parameters-3__entry__1"><code class="codeph">options</code></td>
+				<td class="entry align-left" headers="filter-context-data-by-comparing-the-values-of-an-attribute-1__query-parameters-3__entry__2"><code class="codeph">keyValues</code></td>
+				<td class="entry align-left" headers="filter-context-data-by-comparing-the-values-of-an-attribute-1__query-parameters-3__entry__3">* <code class="codeph">keyValues</code> option in order to get a more compact and brief representation, including just attribute values<span class="undefined_element"></span><span class="undefined_element"></span>* <code class="codeph">values</code> option combined with a list of attribute values <code class="codeph">attrs</code> for an ordered list of attributes only</td>
+			</tr>
+		</tbody></table>
+</section>
+
+<section class="section" id="filter-context-data-by-comparing-the-values-of-an-attribute-1__example-7"><h4 class="title sectiontitle">Example:</h4>
+
+
+<pre class="codeblock bash"><code>curl -X  -G GET  \
+  'http://{{orion}}/v2/entities/'  \
+    -d 'q=address.addressLocality=='Kreuzberg''  \
+    -d 'type=Store'  \
+    -d 'options=keyValues'</code></pre>
+</section>
+
+</div>
+</article>
+
+</article>
+
+<article class="topic nested1" aria-labelledby="ariaid-title19" id="filter-context-data-by-querying-metadata">
+<h2 class="title topictitle2" id="ariaid-title19">Filter context data by querying metadata</h2>
+<div class="body">
+</div>
+<article class="topic nested2" aria-labelledby="ariaid-title20" id="filter-context-data-by-comparing-the-values-of-an-metadata-attribute">
+<h3 class="title topictitle3" id="ariaid-title20">Filter context data by comparing the values of an metadata attribute</h3>
+<div class="body">
+<p class="p">
+	This example returns the data of all <code class="codeph">Store</code> entities with a verified address.
+</p>
+<p class="p">
+	Metadata queries can be made using the <code class="codeph">mq</code> parameter.
+</p>
+<section class="section" id="filter-context-data-by-comparing-the-values-of-an-metadata-attribute__endpoint-8"><h4 class="title sectiontitle">Endpoint:</h4>
+
+
+<ul class="ul">
+	<li class="li">Method: <strong class="b">GET</strong></li>
+	<li class="li">URL: <code class="codeph">http://{{orion}}/v2/entities/</code></li>
+</ul>
+</section>
+
+<section class="section" id="filter-context-data-by-comparing-the-values-of-an-metadata-attribute__query-parameters-4"><h4 class="title sectiontitle">Query Parameters:</h4>
+
+
+<table class="table"><caption></caption><colgroup><col style="width:13%"><col style="width:27%"><col style="width:59%"></colgroup><thead class="thead">
+			<tr class="row">
+				<th class="entry align-left" id="filter-context-data-by-comparing-the-values-of-an-metadata-attribute__query-parameters-4__entry__1">Key</th>
+				<th class="entry align-left" id="filter-context-data-by-comparing-the-values-of-an-metadata-attribute__query-parameters-4__entry__2">Value</th>
+				<th class="entry align-left" id="filter-context-data-by-comparing-the-values-of-an-metadata-attribute__query-parameters-4__entry__3">Description</th>
+			</tr>
+		</thead><tbody class="tbody">
+			<tr class="row">
+				<td class="entry align-left" headers="filter-context-data-by-comparing-the-values-of-an-metadata-attribute__query-parameters-4__entry__1"><code class="codeph">mq</code></td>
+				<td class="entry align-left" headers="filter-context-data-by-comparing-the-values-of-an-metadata-attribute__query-parameters-4__entry__2"><code class="codeph">address.verified==true</code></td>
+				<td class="entry align-left" headers="filter-context-data-by-comparing-the-values-of-an-metadata-attribute__query-parameters-4__entry__3"></td>
+			</tr>
+			<tr class="row">
+				<td class="entry align-left" headers="filter-context-data-by-comparing-the-values-of-an-metadata-attribute__query-parameters-4__entry__1"><code class="codeph">type</code></td>
+				<td class="entry align-left" headers="filter-context-data-by-comparing-the-values-of-an-metadata-attribute__query-parameters-4__entry__2"><code class="codeph">Store</code></td>
+				<td class="entry align-left" headers="filter-context-data-by-comparing-the-values-of-an-metadata-attribute__query-parameters-4__entry__3">Entity type, to avoid ambiguity in case there are several entities with the same entity id</td>
+			</tr>
+			<tr class="row">
+				<td class="entry align-left" headers="filter-context-data-by-comparing-the-values-of-an-metadata-attribute__query-parameters-4__entry__1"><code class="codeph">options</code></td>
+				<td class="entry align-left" headers="filter-context-data-by-comparing-the-values-of-an-metadata-attribute__query-parameters-4__entry__2"><code class="codeph">keyValues</code></td>
+				<td class="entry align-left" headers="filter-context-data-by-comparing-the-values-of-an-metadata-attribute__query-parameters-4__entry__3">* <code class="codeph">keyValues</code> option in order to get a more compact and brief representation, including just attribute values<span class="undefined_element"></span><span class="undefined_element"></span>* <code class="codeph">values</code> option combined with a list of attribute values <code class="codeph">attrs</code> for an ordered list of attributes only</td>
+			</tr>
+		</tbody></table>
+</section>
+
+<section class="section" id="filter-context-data-by-comparing-the-values-of-an-metadata-attribute__example-8"><h4 class="title sectiontitle">Example:</h4>
+
+
+<pre class="codeblock bash"><code>curl -X  -G GET  \
+  'http://{{orion}}/v2/entities/'  \
+    -d 'mq=address.verified==true'  \
+    -d 'type=Store'  \
+    -d 'options=keyValues'</code></pre>
+</section>
+
+</div>
+</article>
+
+</article>
+
+<article class="topic nested1" aria-labelledby="ariaid-title21" id="filter-context-data-by-distance">
+<h2 class="title topictitle2" id="ariaid-title21">Filter context data by distance</h2>
+<div class="body">
+</div>
+<article class="topic nested2" aria-labelledby="ariaid-title22" id="filter-context-data-by-comparing-the-values-of-a-geopoint-attribute">
+<h3 class="title topictitle3" id="ariaid-title22">Filter context data by comparing the values of a geo:point attribute</h3>
+<div class="body">
+<p class="p">
+	This example returns the data of all <code class="codeph">Store</code> entities found within 1.5km the <strong class="b">Brandenburg Gate</strong> in <strong class="b">Berlin</strong> (<em class="i">52.5162N 13.3777W</em>)
+</p>
+<section class="section" id="filter-context-data-by-comparing-the-values-of-a-geopoint-attribute__endpoint-9"><h4 class="title sectiontitle">Endpoint:</h4>
+
+
+<ul class="ul">
+	<li class="li">Method: <strong class="b">GET</strong></li>
+	<li class="li">URL: <code class="codeph">http://{{orion}}/v2/entities/</code></li>
+</ul>
+</section>
+
+<section class="section" id="filter-context-data-by-comparing-the-values-of-a-geopoint-attribute__query-parameters-5"><h4 class="title sectiontitle">Query Parameters:</h4>
+
+
+<table class="table"><caption></caption><colgroup><col style="width:13%"><col style="width:27%"><col style="width:59%"></colgroup><thead class="thead">
+			<tr class="row">
+				<th class="entry align-left" id="filter-context-data-by-comparing-the-values-of-a-geopoint-attribute__query-parameters-5__entry__1">Key</th>
+				<th class="entry align-left" id="filter-context-data-by-comparing-the-values-of-a-geopoint-attribute__query-parameters-5__entry__2">Value</th>
+				<th class="entry align-left" id="filter-context-data-by-comparing-the-values-of-a-geopoint-attribute__query-parameters-5__entry__3">Description</th>
+			</tr>
+		</thead><tbody class="tbody">
+			<tr class="row">
+				<td class="entry align-left" headers="filter-context-data-by-comparing-the-values-of-a-geopoint-attribute__query-parameters-5__entry__1"><code class="codeph">georel</code></td>
+				<td class="entry align-left" headers="filter-context-data-by-comparing-the-values-of-a-geopoint-attribute__query-parameters-5__entry__2"><code class="codeph">near;maxDistance:1500</code></td>
+				<td class="entry align-left" headers="filter-context-data-by-comparing-the-values-of-a-geopoint-attribute__query-parameters-5__entry__3"></td>
+			</tr>
+			<tr class="row">
+				<td class="entry align-left" headers="filter-context-data-by-comparing-the-values-of-a-geopoint-attribute__query-parameters-5__entry__1"><code class="codeph">geometry</code></td>
+				<td class="entry align-left" headers="filter-context-data-by-comparing-the-values-of-a-geopoint-attribute__query-parameters-5__entry__2"><code class="codeph">point</code></td>
+				<td class="entry align-left" headers="filter-context-data-by-comparing-the-values-of-a-geopoint-attribute__query-parameters-5__entry__3"></td>
+			</tr>
+			<tr class="row">
+				<td class="entry align-left" headers="filter-context-data-by-comparing-the-values-of-a-geopoint-attribute__query-parameters-5__entry__1"><code class="codeph">coords</code></td>
+				<td class="entry align-left" headers="filter-context-data-by-comparing-the-values-of-a-geopoint-attribute__query-parameters-5__entry__2"><code class="codeph">52.5162,13.3777</code></td>
+				<td class="entry align-left" headers="filter-context-data-by-comparing-the-values-of-a-geopoint-attribute__query-parameters-5__entry__3"></td>
+			</tr>
+			<tr class="row">
+				<td class="entry align-left" headers="filter-context-data-by-comparing-the-values-of-a-geopoint-attribute__query-parameters-5__entry__1"><code class="codeph">type</code></td>
+				<td class="entry align-left" headers="filter-context-data-by-comparing-the-values-of-a-geopoint-attribute__query-parameters-5__entry__2"><code class="codeph">Store</code></td>
+				<td class="entry align-left" headers="filter-context-data-by-comparing-the-values-of-a-geopoint-attribute__query-parameters-5__entry__3">Entity type, to avoid ambiguity in case there are several entities with the same entity id</td>
+			</tr>
+			<tr class="row">
+				<td class="entry align-left" headers="filter-context-data-by-comparing-the-values-of-a-geopoint-attribute__query-parameters-5__entry__1"><code class="codeph">options</code></td>
+				<td class="entry align-left" headers="filter-context-data-by-comparing-the-values-of-a-geopoint-attribute__query-parameters-5__entry__2"><code class="codeph">keyValues</code></td>
+				<td class="entry align-left" headers="filter-context-data-by-comparing-the-values-of-a-geopoint-attribute__query-parameters-5__entry__3">* <code class="codeph">keyValues</code> option in order to get a more compact and brief representation, including just attribute values<span class="undefined_element"></span><span class="undefined_element"></span>* <code class="codeph">values</code> option combined with a list of attribute values <code class="codeph">attrs</code> for an ordered list of attributes only</td>
+			</tr>
+			<tr class="row">
+				<td class="entry align-left" headers="filter-context-data-by-comparing-the-values-of-a-geopoint-attribute__query-parameters-5__entry__1"><code class="codeph">attrs</code></td>
+				<td class="entry align-left" headers="filter-context-data-by-comparing-the-values-of-a-geopoint-attribute__query-parameters-5__entry__2"><code class="codeph">name</code></td>
+				<td class="entry align-left" headers="filter-context-data-by-comparing-the-values-of-a-geopoint-attribute__query-parameters-5__entry__3">Ordered list of attribute names to display</td>
+			</tr>
+		</tbody></table>
+</section>
+
+<section class="section" id="filter-context-data-by-comparing-the-values-of-a-geopoint-attribute__example-9"><h4 class="title sectiontitle">Example:</h4>
+
+
+<pre class="codeblock bash"><code>curl -X  -G GET  \
+  'http://{{orion}}/v2/entities/'  \
+    -d 'georel=near;maxDistance:1500'  \
+    -d 'geometry=point'  \
+    -d 'coords=52.5162,13.3777'  \
+    -d 'type=Store'  \
+    -d 'options=keyValues'</code></pre>
+</section>
+
+</div>
+</article>
+
+</article>
+
+</article></main></body>

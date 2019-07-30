@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?><!--ant--><!--
+	This file is part of the DITA-OT postman Plug-in project.
+	See the accompanying LICENSE file for applicable licenses.
+-->
+<project name="fox.jason.passthrough.postman">
+
+
+	<!--
+		Create postman processing macros.
+	-->
+	<target name="postman.process.pre">
+		<!--
+
+		creates markdown text from a Postman collection
+
+			@param src          - The Postman file to parse
+			@param dest         - The file to write to
+		
+		-->
+		<scriptdef language="javascript" name="postman-to-markdown" src="${dita.plugin.fox.jason.passthrough.postman.dir}/resource/postman-to-markdown.js">
+			<attribute name="src"/>
+			<attribute name="dest"/>
+		</scriptdef>
+		<!--
+			Individual file processing for postman.
+			Take an input format run postman against it and convert to DITA
+
+			@param src - The input file to convert to DITA
+			@param dest - The output file location
+			@param title - The title of the converted file
+		-->
+		<macrodef name="add-postman-file">
+			<attribute name="src" />
+			<attribute name="dest" />
+			<attribute name="title" />
+			<sequential>
+				<echo taskname="postman" level="info" message="Processing @{src}"/>
+
+				<local name="postman.temp.file"/>
+				<tempfile deleteonexit="true" destdir="${dita.temp.dir}" 
+					property="postman.temp.file" suffix="md"/>
+				
+				<postman-to-markdown src="@{src}" dest="${postman.temp.file}"/>
+				<add-pandoc-file src="${postman.temp.file}" dest="@{dest}" title="@{title}"/>
+			</sequential>
+		</macrodef>
+	</target>
+
+
+	<!--
+		Iterate across all files marked format="postman" and process them
+	-->
+	<target name="postman.process">
+		<passthrough-iterate format="postman" macro="add-postman-file"/>
+	</target>
+</project>

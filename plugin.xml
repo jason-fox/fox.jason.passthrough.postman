@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="dita-ot/plugin.rnc" type="application/relax-ng-compact-syntax"?>
+<plugin id="fox.jason.passthrough.postman" version="1.0.0">
+	<!--
+		This plugin requires Pandoc, the XMLTask lib and the passthrough reader
+	-->
+	<require plugin="org.doctales.xmltask"/>
+	<require plugin="fox.jason.passthrough"/>
+	<require plugin="fox.jason.passthrough.pandoc"/>
+
+	<feature extension="ant.import" file="process_postman.xml"/>
+	<feature extension="fox.jason.passthrough.pre" value="postman.process.pre"/>
+	<feature extension="fox.jason.passthrough.process" value="postman.process"/>
+
+	<feature extension="dita.parser">
+		<parser format="postman" class="fox.jason.passthrough.parser.FileReader"/>
+	</feature>
+</plugin>

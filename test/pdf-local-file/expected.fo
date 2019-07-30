@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<fo:flow flow-name="xsl-region-body" xmlns:fo="http://www.w3.org/1999/XSL/Format">
+  <fo:block>
+    <fo:marker marker-class-name="current-topic-number">2</fo:marker>
+    <fo:marker marker-class-name="current-header">swagger</fo:marker>
+    <fo:block>
+      <fo:block font-weight="bold">Chapter
+        <fo:block font-weight="bold">2</fo:block>
+      </fo:block>
+    </fo:block>
+    <fo:block border-after-color="black" font-family="STANDARD" font-weight="bold">swagger</fo:block>
+    <fo:table page-break-after="always" table-layout="fixed" width="100%">
+      <fo:table-column column-number="1" column-width="35%"></fo:table-column>
+      <fo:table-column column-number="2" column-width="65%"></fo:table-column>
+      <fo:table-body>
+        <fo:table-row>
+          <fo:table-cell>
+            <fo:block font-family="STANDARD"></fo:block>
+          </fo:table-cell>
+          <fo:table-cell padding-start="10pt">
+            <fo:block></fo:block>
+          </fo:table-cell>
+        </fo:table-row>
+      </fo:table-body>
+    </fo:table>
+  </fo:block>
+</fo:flow>
+
