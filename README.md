@@ -19,7 +19,7 @@ This is a DITA-OT Plug-in used to auto-create valid DITA-based REST API document
 
 # Background
 
-[<img src="https://postman.io/postman/media/assets/images/postman_logo.svg" align="right" height="55">](https://www.getpostman.com/)
+[<img src="https://assets.getpostman.com/common-share/postman-logo-horizontal-orange.svg" align="right" height="55">](https://www.getpostman.com/)
 
 [Postman](https://www.getpostman.com/) is a software development tool which a developer can use to build, publish, document, design, monitor, test and debug their REST APIs.
 
@@ -100,4 +100,3 @@ The Program includes the following additional software components which were obt
 
 -   xmltask.jar - http://www.oopsconsultancy.com/software/xmltask/ - **Apache 1.1 license** (within
     `org.doctales.xmltask` plug-in)
-
