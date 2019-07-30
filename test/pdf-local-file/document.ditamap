@@ -4,8 +4,7 @@
     <chapter navtitle="list">
 		<topicref format="dita" href="topic.dita"/>
     </chapter>
-    <chapter format="swagger" processing-role="normal" type="topic" href="swagger.json"/>
-     <appendices toc="yes" print="printonly">
+    <appendices toc="yes" print="printonly">
       <topicmeta>
         <navtitle>Appendices</navtitle>
       </topicmeta>
