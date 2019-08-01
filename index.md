@@ -1,6 +1,10 @@
-<h1>Swagger Plugin for DITA-OT</h1>
+<h1>Postman Plugin for DITA-OT</h1>
 
 This is a DITA-OT Plug-in used to auto-create valid DITA-based REST API documentation. The documentation can be generated directly from a [Postman Collection](https://www.getpostman.com/) file and processed as if it had been written in DITA.
+
+[<img src="https://assets.getpostman.com/common-share/postman-logo-horizontal-orange.svg" align="right" width="181" height="55">](https://www.getpostman.com/)
+
+[Postman](https://www.getpostman.com/) is a software development tool which a developer can use to build, publish, document, design, monitor, test and debug their REST APIs.
 
 This plugin processes a Postman collection to Pandoc markdown, and the converts the markdown to DITA using the [Pandoc DITA-OT Plugin](https://github.com/jason-fox/fox.jason.passthrough.pandoc) allowing the generation of PDF API documentation.
 
