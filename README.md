@@ -92,6 +92,42 @@ shown:
 
 The additional file will be converted to a `*.dita` file and will be added to the build job without further processing. Unless overriden, the `navtitle` of the included topic will be the same as root name of the file. Any underscores in the filename will be replaced by spaces in title.
 
+#### Sample Postman Request
+
+```json
+{
+  "name": "Obtain Entity Data by id",
+  "request": {
+    "method": "GET", "header": [],
+    "url": {
+      "raw": "http://{{orion}}/v2/entities/urn:ngsi-ld:Store:001?options=keyValues",
+      "protocol": "http",
+      "host": ["{{orion}}"],"path": ["v2","entities","urn:ngsi-ld:Store:001"],
+      "query": [
+        { 
+          "key": "options", "value": "keyValues",
+          "description": "* `keyValues` option in order to get a more compact ...",
+        },
+        {
+          "key": "type", "value": "Store", "disabled": true,
+          "description": "Entity type, to avoid ambiguity in case there are ..." 
+        },
+        {
+          "key": "attrs", "value": "name", "disabled": true,
+          "description": "Ordered list of attribute names to display"
+        }
+      ]
+    },
+    "description": "This example returns the context data of `store1`..."
+  },
+  "response": []
+}
+```
+
+#### Sample DITA Output
+
+> ![](https://jason-fox.github.io/fox.jason.passthrough.postman/request-formatted.png)
+
 # License
 
 [Apache 2.0](LICENSE) © 2019 Jason Fox
