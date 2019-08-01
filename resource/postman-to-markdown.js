@@ -85,25 +85,7 @@ function convert(request) {
     return snippet.join("  \\\n  ");
   };
 
-
-function postmanToMarkdown(data) {
-  var lines = [];
-
-  if (data.info.name){
-    lines.push( "#  " + data.info.name.trim() + "\n");
-  }
-
-  if (data.info.description){
-    lines.push(data.info.description + "\n");
-
-  }
-
-  for each (var item in data.item) {
-    lines.push( "#  " + item.name.trim() + "\n");
-
-    if (item.request.description){
-      lines.push(item.request.description + "\n");
-    }
+function add (item , lines) {
    
     lines.push("#### Endpoint: {.section}\n");
 
@@ -168,7 +150,40 @@ function postmanToMarkdown(data) {
     lines.push(convert(item.request));
     lines.push("```\n");
 
+
+}
+
+function postmanToMarkdown(data) {
+  var lines = [];
+
+  if (data.info.name){
+    lines.push( "#  " + data.info.name.trim() + "\n");
   }
+
+  if (data.info.description){
+    lines.push(data.info.description + "\n");
+
+  }
+
+  for each (var item in data.item) {
+      if (item.request){
+        lines.push( "#  " + item.name.trim() + "\n");
+        lines.push( item.request.description ? item.request.description + "\n":"");
+        add (item, lines);
+      } else {
+       
+        lines.push( "#  " + item.name.trim() + "\n");
+        lines.push( item.description ? item.description + "\n": "");
+
+        for each (var item in item.item) {
+          if (item.request){
+            lines.push( "##  " + item.name.trim() + "\n");
+            lines.push( item.request.description ? item.request.description + "\n":"");
+            add (item, lines);
+          }
+        }
+      }
+   }
 
   return lines.join('\n');
 }
