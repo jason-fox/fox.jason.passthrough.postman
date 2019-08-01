@@ -5,7 +5,7 @@ recommended that you upgrade to the latest version.
 
 ## Installing DITA-OT
 
-<a href="https://www.dita-ot.org"><img src="https://www.dita-ot.org/images/dita-ot-logo.svg" align="right" height="55"></a>
+<a href="https://www.dita-ot.org"><img src="https://www.dita-ot.org/images/dita-ot-logo.svg" align="right" height="55" width="55"></a>
 
 The DITA-OT postman plug-in is a file reader for the DITA Open Toolkit.
 
@@ -19,7 +19,7 @@ The DITA-OT postman plug-in is a file reader for the DITA Open Toolkit.
 
     This defines the necessary environment variable to run the `dita` command from the command line.
 
-```console
+```bash
 curl -LO https://github.com/dita-ot/dita-ot/releases/download/3.3/dita-ot-3.3.zip
 unzip -q dita-ot-3.3.zip
 rm dita-ot-3.3.zip
@@ -29,7 +29,7 @@ rm dita-ot-3.3.zip
 
 -   Run the plug-in installation commands:
 
-```console
+```bash
 dita --install https://github.com/doctales/org.doctales.xmltask/archive/master.zip
 dita --install https://github.com/jason-fox/fox.jason.passthrough/archive/master.zip
 dita --install https://github.com/jason-fox/fox.jason.passthrough.pandoc/archive/master.zip
