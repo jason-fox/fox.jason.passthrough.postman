@@ -6,7 +6,7 @@
 <h2 class="title topictitle2" id="ariaid-title2">Architecture</h2>
 <div class="body">
 <p class="p">
-	Our demo application will only make use of one FIWARE component - the <a class="xref" href="https://catalogue.fiware.org/enablers/publishsubscribe-context-broker-orion-context-broker" target="_blank">Orion Context Broker</a> . Usage of the Orion Context Broker is sufficient for an application to qualify as <em class="i">"Powered by FIWARE"</em>.
+	Our demo application will only make use of one FIWARE component - the <a class="xref" href="https://catalogue.fiware.org/enablers/publishsubscribe-context-broker-orion-context-broker" target="_blank">Orion Context Broker</a> . Usage of the Orion Context Broker is sufficient for an application to qualify as <em class="i">“Powered by FIWARE”</em>.
 </p>
 <p class="p">
 	Currently, the Orion Context Broker relies on open source <a class="xref" href="https://www.mongodb.com/" target="_blank">MongoDB</a> technology to keep persistence of the context data it holds. Therefore, the architecture will consist of two elements:
@@ -20,7 +20,7 @@
 </p>
 <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 1. </span></figcaption>
 	
-	<img class="image" src="https://fiware.github.io/tutorials.Getting-Started/img//architecture.png" alt=""><br>
+	<img class="image" src="https://fiware.github.io/tutorials.Getting-Started/img//architecture.png" alt="fig:"><br>
 </figure>
 </div>
 </article>
@@ -425,7 +425,7 @@ If the response is blank, this is usually because the MongoDB database holding t
 <section class="section" id="obtain-entity-data-by-id__query-parameters"><h3 class="title sectiontitle">Query Parameters:</h3>
 
 
-<table class="table"><caption></caption><colgroup><col style="width:13%"><col style="width:27%"><col style="width:59%"></colgroup><thead class="thead">
+<table class="table"><caption></caption><colgroup><col style="width:16%"><col style="width:28%"><col style="width:56%"></colgroup><thead class="thead">
 			<tr class="row">
 				<th class="entry align-left" id="obtain-entity-data-by-id__query-parameters__entry__1">Key</th>
 				<th class="entry align-left" id="obtain-entity-data-by-id__query-parameters__entry__2">Value</th>
@@ -483,7 +483,7 @@ Because of the use of the <code class="codeph">options=keyValues</code>, the res
 <section class="section" id="obtain-entity-data-by-type__query-parameters-1"><h3 class="title sectiontitle">Query Parameters:</h3>
 
 
-<table class="table"><caption></caption><colgroup><col style="width:13%"><col style="width:27%"><col style="width:59%"></colgroup><thead class="thead">
+<table class="table"><caption></caption><colgroup><col style="width:16%"><col style="width:28%"><col style="width:56%"></colgroup><thead class="thead">
 			<tr class="row">
 				<th class="entry align-left" id="obtain-entity-data-by-type__query-parameters-1__entry__1">Key</th>
 				<th class="entry align-left" id="obtain-entity-data-by-type__query-parameters-1__entry__2">Value</th>
@@ -548,7 +548,7 @@ Because of the use of the <code class="codeph">options=keyValues</code>, the res
 <section class="section" id="filter-context-data-by-comparing-the-values-of-an-attribute__query-parameters-2"><h4 class="title sectiontitle">Query Parameters:</h4>
 
 
-<table class="table"><caption></caption><colgroup><col style="width:13%"><col style="width:27%"><col style="width:59%"></colgroup><thead class="thead">
+<table class="table"><caption></caption><colgroup><col style="width:16%"><col style="width:28%"><col style="width:56%"></colgroup><thead class="thead">
 			<tr class="row">
 				<th class="entry align-left" id="filter-context-data-by-comparing-the-values-of-an-attribute__query-parameters-2__entry__1">Key</th>
 				<th class="entry align-left" id="filter-context-data-by-comparing-the-values-of-an-attribute__query-parameters-2__entry__2">Value</th>
@@ -604,7 +604,7 @@ Because of the use of the <code class="codeph">options=keyValues</code>, the res
 	This example returns the data of all <code class="codeph">Store</code> entities found in the <strong class="b">Kreuzberg</strong> district of Berlin.
 </p>
 <p class="p">
-	Filtering can be done using the <code class="codeph">q</code> parameter - sub-attributes are annotated using the dot syntax e.g.&nbsp;<code class="codeph">address.addressLocality</code>
+	Filtering can be done using the <code class="codeph">q</code> parameter - sub-attributes are annotated using the dot syntax e.g. <code class="codeph">address.addressLocality</code>
 </p>
 <p class="p">
 	Because of the use of the <code class="codeph">options=keyValues</code>, the response consists of JSON only without the attribute <code class="codeph">type</code> and <code class="codeph">metadata</code> elements.
@@ -621,7 +621,7 @@ Because of the use of the <code class="codeph">options=keyValues</code>, the res
 <section class="section" id="filter-context-data-by-comparing-the-values-of-an-attribute-1__query-parameters-3"><h4 class="title sectiontitle">Query Parameters:</h4>
 
 
-<table class="table"><caption></caption><colgroup><col style="width:13%"><col style="width:27%"><col style="width:59%"></colgroup><thead class="thead">
+<table class="table"><caption></caption><colgroup><col style="width:16%"><col style="width:28%"><col style="width:56%"></colgroup><thead class="thead">
 			<tr class="row">
 				<th class="entry align-left" id="filter-context-data-by-comparing-the-values-of-an-attribute-1__query-parameters-3__entry__1">Key</th>
 				<th class="entry align-left" id="filter-context-data-by-comparing-the-values-of-an-attribute-1__query-parameters-3__entry__2">Value</th>
@@ -686,7 +686,7 @@ Because of the use of the <code class="codeph">options=keyValues</code>, the res
 <section class="section" id="filter-context-data-by-comparing-the-values-of-an-metadata-attribute__query-parameters-4"><h4 class="title sectiontitle">Query Parameters:</h4>
 
 
-<table class="table"><caption></caption><colgroup><col style="width:13%"><col style="width:27%"><col style="width:59%"></colgroup><thead class="thead">
+<table class="table"><caption></caption><colgroup><col style="width:16%"><col style="width:28%"><col style="width:56%"></colgroup><thead class="thead">
 			<tr class="row">
 				<th class="entry align-left" id="filter-context-data-by-comparing-the-values-of-an-metadata-attribute__query-parameters-4__entry__1">Key</th>
 				<th class="entry align-left" id="filter-context-data-by-comparing-the-values-of-an-metadata-attribute__query-parameters-4__entry__2">Value</th>
@@ -748,7 +748,7 @@ Because of the use of the <code class="codeph">options=keyValues</code>, the res
 <section class="section" id="filter-context-data-by-comparing-the-values-of-a-geopoint-attribute__query-parameters-5"><h4 class="title sectiontitle">Query Parameters:</h4>
 
 
-<table class="table"><caption></caption><colgroup><col style="width:13%"><col style="width:27%"><col style="width:59%"></colgroup><thead class="thead">
+<table class="table"><caption></caption><colgroup><col style="width:16%"><col style="width:28%"><col style="width:56%"></colgroup><thead class="thead">
 			<tr class="row">
 				<th class="entry align-left" id="filter-context-data-by-comparing-the-values-of-a-geopoint-attribute__query-parameters-5__entry__1">Key</th>
 				<th class="entry align-left" id="filter-context-data-by-comparing-the-values-of-a-geopoint-attribute__query-parameters-5__entry__2">Value</th>

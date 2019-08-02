@@ -213,44 +213,6 @@ Additional databases are now involved - both the Orion Context Broker and the Io
                 <fo:block text-align="start">&#8226;</fo:block>
               </fo:list-item-label>
               <fo:list-item-body>
-                <fo:block>The FIWARE
-                  <fo:basic-link color="blue" external-destination="url('https://fiware-orion.readthedocs.io/en/latest/')">Orion Context Broker</fo:basic-link>which will receive requests using
-                  <fo:basic-link color="blue" external-destination="url('https://fiware.github.io/specifications/openapi/ngsiv2')">NGSI</fo:basic-link>
-                </fo:block>
-              </fo:list-item-body>
-            </fo:list-item>
-            <fo:list-item relative-align="baseline">
-              <fo:list-item-label keep-together.within-line="always">
-                <fo:block text-align="start">&#8226;</fo:block>
-              </fo:list-item-label>
-              <fo:list-item-body>
-                <fo:block>The FIWARE
-                  <fo:basic-link color="blue" external-destination="url('http://fiware-iotagent-ul.readthedocs.io/en/latest/')">IoT Agent for UltraLight 2.0</fo:basic-link>which will receive southbound requests
-using
-                  <fo:basic-link color="blue" external-destination="url('https://fiware.github.io/specifications/openapi/ngsiv2')">NGSI</fo:basic-link>and convert them to
-                  <fo:basic-link color="blue" external-destination="url('http://fiware-iotagent-ul.readthedocs.io/en/latest/usermanual/index.html#user-programmers-manual')">UltraLight 2.0</fo:basic-link>commands for
-the devices</fo:block>
-              </fo:list-item-body>
-            </fo:list-item>
-            <fo:list-item relative-align="baseline">
-              <fo:list-item-label keep-together.within-line="always">
-                <fo:block text-align="start">&#8226;</fo:block>
-              </fo:list-item-label>
-              <fo:list-item-body>
-                <fo:block>FIWARE
-                  <fo:basic-link color="blue" external-destination="url('http://fiware-draco.readthedocs.io/en/latest/')">Draco</fo:basic-link>which will subscribe to context changes and persist them into a database (
-                  <fo:inline font-weight="bold">MySQL</fo:inline>,
-                  <fo:inline font-weight="bold">PostgreSQL</fo:inline>or
-                  <fo:inline font-weight="bold">Mongo-DB</fo:inline>)</fo:block>
-              </fo:list-item-body>
-            </fo:list-item>
-          </fo:list-block>
-          <fo:list-block provisional-distance-between-starts="5mm" provisional-label-separation="1mm">
-            <fo:list-item relative-align="baseline">
-              <fo:list-item-label keep-together.within-line="always">
-                <fo:block text-align="start">&#8226;</fo:block>
-              </fo:list-item-label>
-              <fo:list-item-body>
                 <fo:block>Used by the
                   <fo:inline font-weight="bold">Orion Context Broker</fo:inline>to hold context data information such as data entities, subscriptions and registrations</fo:block>
               </fo:list-item-body>
@@ -290,35 +252,6 @@ the devices</fo:block>
               </fo:list-item-label>
               <fo:list-item-body>
                 <fo:block>Potentially used as a data sink to hold historical context data.</fo:block>
-              </fo:list-item-body>
-            </fo:list-item>
-          </fo:list-block>
-          <fo:list-block provisional-distance-between-starts="5mm" provisional-label-separation="1mm">
-            <fo:list-item relative-align="baseline">
-              <fo:list-item-label keep-together.within-line="always">
-                <fo:block text-align="start">&#8226;</fo:block>
-              </fo:list-item-label>
-              <fo:list-item-body>
-                <fo:block>The underlying
-                  <fo:basic-link color="blue" external-destination="url('https://www.mongodb.com/')">MongoDB</fo:basic-link>database :</fo:block>
-              </fo:list-item-body>
-            </fo:list-item>
-            <fo:list-item relative-align="baseline">
-              <fo:list-item-label keep-together.within-line="always">
-                <fo:block text-align="start">&#8226;</fo:block>
-              </fo:list-item-label>
-              <fo:list-item-body>
-                <fo:block>An additional
-                  <fo:basic-link color="blue" external-destination="url('https://www.postgresql.org/')">PostgreSQL</fo:basic-link>database :</fo:block>
-              </fo:list-item-body>
-            </fo:list-item>
-            <fo:list-item relative-align="baseline">
-              <fo:list-item-label keep-together.within-line="always">
-                <fo:block text-align="start">&#8226;</fo:block>
-              </fo:list-item-label>
-              <fo:list-item-body>
-                <fo:block>An additional
-                  <fo:basic-link color="blue" external-destination="url('https://www.mysql.com/')">MySQL</fo:basic-link>database :</fo:block>
               </fo:list-item-body>
             </fo:list-item>
           </fo:list-block>
@@ -383,6 +316,96 @@ the devices</fo:block>
                 <fo:block text-align="start">&#8226;</fo:block>
               </fo:list-item-label>
               <fo:list-item-body>
+                <fo:block>Three
+                  <fo:inline font-weight="bold">FIWARE Generic Enablers</fo:inline>:</fo:block>
+              </fo:list-item-body>
+            </fo:list-item>
+            <fo:list-item relative-align="baseline">
+              <fo:list-item-label keep-together.within-line="always">
+                <fo:block text-align="start">&#8226;</fo:block>
+              </fo:list-item-label>
+              <fo:list-item-body>
+                <fo:block>The FIWARE
+                  <fo:basic-link color="blue" external-destination="url('https://fiware-orion.readthedocs.io/en/latest/')">Orion Context Broker</fo:basic-link>which will receive requests using
+                  <fo:basic-link color="blue" external-destination="url('https://fiware.github.io/specifications/openapi/ngsiv2')">NGSI</fo:basic-link>
+                </fo:block>
+              </fo:list-item-body>
+            </fo:list-item>
+            <fo:list-item relative-align="baseline">
+              <fo:list-item-label keep-together.within-line="always">
+                <fo:block text-align="start">&#8226;</fo:block>
+              </fo:list-item-label>
+              <fo:list-item-body>
+                <fo:block>The FIWARE
+                  <fo:basic-link color="blue" external-destination="url('http://fiware-iotagent-ul.readthedocs.io/en/latest/')">IoT Agent for UltraLight 2.0</fo:basic-link>which will receive southbound requests
+using
+                  <fo:basic-link color="blue" external-destination="url('https://fiware.github.io/specifications/openapi/ngsiv2')">NGSI</fo:basic-link>and convert them to
+                  <fo:basic-link color="blue" external-destination="url('http://fiware-iotagent-ul.readthedocs.io/en/latest/usermanual/index.html#user-programmers-manual')">UltraLight 2.0</fo:basic-link>commands for
+the devices</fo:block>
+              </fo:list-item-body>
+            </fo:list-item>
+            <fo:list-item relative-align="baseline">
+              <fo:list-item-label keep-together.within-line="always">
+                <fo:block text-align="start">&#8226;</fo:block>
+              </fo:list-item-label>
+              <fo:list-item-body>
+                <fo:block>FIWARE
+                  <fo:basic-link color="blue" external-destination="url('http://fiware-draco.readthedocs.io/en/latest/')">Draco</fo:basic-link>which will subscribe to context changes and persist them into a database (
+                  <fo:inline font-weight="bold">MySQL</fo:inline>,
+                  <fo:inline font-weight="bold">PostgreSQL</fo:inline>or
+                  <fo:inline font-weight="bold">Mongo-DB</fo:inline>)</fo:block>
+              </fo:list-item-body>
+            </fo:list-item>
+            <fo:list-item relative-align="baseline">
+              <fo:list-item-label keep-together.within-line="always">
+                <fo:block text-align="start">&#8226;</fo:block>
+              </fo:list-item-label>
+              <fo:list-item-body>
+                <fo:block>One, two or three of the following
+                  <fo:inline font-weight="bold">Databases</fo:inline>:</fo:block>
+              </fo:list-item-body>
+            </fo:list-item>
+            <fo:list-item relative-align="baseline">
+              <fo:list-item-label keep-together.within-line="always">
+                <fo:block text-align="start">&#8226;</fo:block>
+              </fo:list-item-label>
+              <fo:list-item-body>
+                <fo:block>The underlying
+                  <fo:basic-link color="blue" external-destination="url('https://www.mongodb.com/')">MongoDB</fo:basic-link>database :</fo:block>
+              </fo:list-item-body>
+            </fo:list-item>
+            <fo:list-item relative-align="baseline">
+              <fo:list-item-label keep-together.within-line="always">
+                <fo:block text-align="start">&#8226;</fo:block>
+              </fo:list-item-label>
+              <fo:list-item-body>
+                <fo:block>An additional
+                  <fo:basic-link color="blue" external-destination="url('https://www.postgresql.org/')">PostgreSQL</fo:basic-link>database :</fo:block>
+              </fo:list-item-body>
+            </fo:list-item>
+            <fo:list-item relative-align="baseline">
+              <fo:list-item-label keep-together.within-line="always">
+                <fo:block text-align="start">&#8226;</fo:block>
+              </fo:list-item-label>
+              <fo:list-item-body>
+                <fo:block>An additional
+                  <fo:basic-link color="blue" external-destination="url('https://www.mysql.com/')">MySQL</fo:basic-link>database :</fo:block>
+              </fo:list-item-body>
+            </fo:list-item>
+            <fo:list-item relative-align="baseline">
+              <fo:list-item-label keep-together.within-line="always">
+                <fo:block text-align="start">&#8226;</fo:block>
+              </fo:list-item-label>
+              <fo:list-item-body>
+                <fo:block>Three
+                  <fo:inline font-weight="bold">Context Providers</fo:inline>:</fo:block>
+              </fo:list-item-body>
+            </fo:list-item>
+            <fo:list-item relative-align="baseline">
+              <fo:list-item-label keep-together.within-line="always">
+                <fo:block text-align="start">&#8226;</fo:block>
+              </fo:list-item-label>
+              <fo:list-item-body>
                 <fo:block>The
                   <fo:inline font-weight="bold">Stock Management Frontend</fo:inline>is not used in this tutorial. It does the following:</fo:block>
               </fo:list-item-body>
@@ -404,35 +427,6 @@ the devices</fo:block>
               <fo:list-item-body>
                 <fo:block>The
                   <fo:inline font-weight="bold">Context Provider NGSI</fo:inline>proxy is not used in this tutorial. It does the following:</fo:block>
-              </fo:list-item-body>
-            </fo:list-item>
-          </fo:list-block>
-          <fo:list-block provisional-distance-between-starts="5mm" provisional-label-separation="1mm">
-            <fo:list-item relative-align="baseline">
-              <fo:list-item-label keep-together.within-line="always">
-                <fo:block text-align="start">&#8226;</fo:block>
-              </fo:list-item-label>
-              <fo:list-item-body>
-                <fo:block>Three
-                  <fo:inline font-weight="bold">FIWARE Generic Enablers</fo:inline>:</fo:block>
-              </fo:list-item-body>
-            </fo:list-item>
-            <fo:list-item relative-align="baseline">
-              <fo:list-item-label keep-together.within-line="always">
-                <fo:block text-align="start">&#8226;</fo:block>
-              </fo:list-item-label>
-              <fo:list-item-body>
-                <fo:block>One, two or three of the following
-                  <fo:inline font-weight="bold">Databases</fo:inline>:</fo:block>
-              </fo:list-item-body>
-            </fo:list-item>
-            <fo:list-item relative-align="baseline">
-              <fo:list-item-label keep-together.within-line="always">
-                <fo:block text-align="start">&#8226;</fo:block>
-              </fo:list-item-label>
-              <fo:list-item-body>
-                <fo:block>Three
-                  <fo:inline font-weight="bold">Context Providers</fo:inline>:</fo:block>
               </fo:list-item-body>
             </fo:list-item>
           </fo:list-block>
@@ -483,7 +477,7 @@ on the standard
             <fo:inline font-family="MONOSPACE">27017</fo:inline>port and the overall architecture can be seen below:</fo:block>
           <fo:block>
             <fo:inline>
-              <fo:external-graphic fox:alt-text="" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/mongo-draco-tutorial.png')" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
+              <fo:external-graphic fox:alt-text="fig:" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/mongo-draco-tutorial.png')" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
             </fo:inline>
             <fo:block font-family="STANDARD" font-weight="bold" keep-with-previous.within-page="always">Figure 2:</fo:block>
           </fo:block>
@@ -573,7 +567,7 @@ and drop it inside the Draco user space. At this point, a popup should be displa
 available. Please select the template MONGO-TUTORIAL.</fo:block>
               <fo:block>
                 <fo:inline>
-                  <fo:external-graphic fox:alt-text="" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/mongo-tutorial-template.png')" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
+                  <fo:external-graphic fox:alt-text="fig:" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/mongo-tutorial-template.png')" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
                 </fo:inline>
                 <fo:block font-family="STANDARD" font-weight="bold" keep-with-previous.within-page="always">Figure 3:</fo:block>
               </fo:block>
@@ -598,7 +592,7 @@ from the drop down list and pressing the
 be seen on the same page:</fo:block>
                   <fo:block>
                     <fo:inline>
-                      <fo:external-graphic fox:alt-text="" src="url('https://fiware.github.io/tutorials.Historic-Context/img/door-open.gif')" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
+                      <fo:external-graphic fox:alt-text="fig:" src="url('https://fiware.github.io/tutorials.Historic-Context/img/door-open.gif')" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
                     </fo:inline>
                     <fo:block font-family="STANDARD" font-weight="bold" keep-with-previous.within-page="always">Figure 4:</fo:block>
                   </fo:block>
@@ -1240,7 +1234,7 @@ instance is listening on the standard
             <fo:inline font-family="MONOSPACE">5432</fo:inline>port and the overall architecture can be seen below:</fo:block>
           <fo:block>
             <fo:inline>
-              <fo:external-graphic fox:alt-text="" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/postgres-draco-tutorial.png')" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
+              <fo:external-graphic fox:alt-text="fig:" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/postgres-draco-tutorial.png')" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
             </fo:inline>
             <fo:block font-family="STANDARD" font-weight="bold" keep-with-previous.within-page="always">Figure 5:</fo:block>
           </fo:block>
@@ -1423,7 +1417,7 @@ and drop it inside the Draco user space. At this point, a popup should be displa
 available. Please select the template POSTGRESQL-TUTORIAL.</fo:block>
               <fo:block>
                 <fo:inline>
-                  <fo:external-graphic fox:alt-text="" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/postgres-tutorial-template.png')" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
+                  <fo:external-graphic fox:alt-text="fig:" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/postgres-tutorial-template.png')" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
                 </fo:inline>
                 <fo:block font-family="STANDARD" font-weight="bold" keep-with-previous.within-page="always">Figure 6:</fo:block>
               </fo:block>
@@ -1497,13 +1491,13 @@ configuration page.</fo:block>
               </fo:list-block>
               <fo:block>
                 <fo:inline>
-                  <fo:external-graphic fox:alt-text="" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/step4.png')" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
+                  <fo:external-graphic fox:alt-text="fig:" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/step4.png')" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
                 </fo:inline>
                 <fo:block font-family="STANDARD" font-weight="bold" keep-with-previous.within-page="always">Figure 7:</fo:block>
               </fo:block>
               <fo:block>
                 <fo:inline>
-                  <fo:external-graphic fox:alt-text="" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/step5.png')" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
+                  <fo:external-graphic fox:alt-text="fig:" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/step5.png')" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
                 </fo:inline>
                 <fo:block font-family="STANDARD" font-weight="bold" keep-with-previous.within-page="always">Figure 8:</fo:block>
               </fo:block>
@@ -1711,7 +1705,7 @@ from the drop down list and pressing the
 be seen on the same page:</fo:block>
                   <fo:block>
                     <fo:inline>
-                      <fo:external-graphic fox:alt-text="" src="url('https://fiware.github.io/tutorials.Historic-Context/img/door-open.gif')" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
+                      <fo:external-graphic fox:alt-text="fig:" src="url('https://fiware.github.io/tutorials.Historic-Context/img/door-open.gif')" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
                     </fo:inline>
                     <fo:block font-family="STANDARD" font-weight="bold" keep-with-previous.within-page="always">Figure 9:</fo:block>
                   </fo:block>
@@ -2377,7 +2371,7 @@ standard
             <fo:inline font-family="MONOSPACE">3306</fo:inline>port and the overall architecture can be seen below:</fo:block>
           <fo:block>
             <fo:inline>
-              <fo:external-graphic fox:alt-text="" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/mysql-draco-tutorial.png')" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
+              <fo:external-graphic fox:alt-text="fig:" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/mysql-draco-tutorial.png')" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
             </fo:inline>
             <fo:block font-family="STANDARD" font-weight="bold" keep-with-previous.within-page="always">Figure 10:</fo:block>
           </fo:block>
@@ -2434,7 +2428,7 @@ display data if you wish</fo:block>
                   <fo:table border-after-color="black" border-before-color="black" border-end-color="black" border-end-style="solid" border-end-width="1pt" table-layout="fixed" width="100%">
                     <fo:table-column column-number="1" column-width="8%"></fo:table-column>
                     <fo:table-column column-number="2" column-width="4%"></fo:table-column>
-                    <fo:table-column column-number="3" column-width="87%"></fo:table-column>
+                    <fo:table-column column-number="3" column-width="86%"></fo:table-column>
                     <fo:table-header>
                       <fo:table-row>
                         <fo:table-cell border-before-color="black" text-align="left">
@@ -2548,7 +2542,7 @@ and drop it inside the Draco user space. At this point, a popup should be displa
 available. Please select the template MYSQL-TUTORIAL.</fo:block>
               <fo:block>
                 <fo:inline>
-                  <fo:external-graphic fox:alt-text="" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/draco-template1.png')" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
+                  <fo:external-graphic fox:alt-text="fig:" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/draco-template1.png')" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
                 </fo:inline>
                 <fo:block font-family="STANDARD" font-weight="bold" keep-with-previous.within-page="always">Figure 11:</fo:block>
               </fo:block>
@@ -2626,7 +2620,7 @@ configuration page.
               </fo:list-block>
               <fo:block>
                 <fo:inline>
-                  <fo:external-graphic fox:alt-text="" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/step5.png')" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
+                  <fo:external-graphic fox:alt-text="fig:" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/step5.png')" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
                 </fo:inline>
                 <fo:block font-family="STANDARD" font-weight="bold" keep-with-previous.within-page="always">Figure 12:</fo:block>
               </fo:block>
@@ -2660,7 +2654,7 @@ from the drop down list and pressing the
 be seen on the same page:</fo:block>
                   <fo:block>
                     <fo:inline>
-                      <fo:external-graphic fox:alt-text="" src="url('https://fiware.github.io/tutorials.Historic-Context/img/door-open.gif')" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
+                      <fo:external-graphic fox:alt-text="fig:" src="url('https://fiware.github.io/tutorials.Historic-Context/img/door-open.gif')" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
                     </fo:inline>
                     <fo:block font-family="STANDARD" font-weight="bold" keep-with-previous.within-page="always">Figure 13:</fo:block>
                   </fo:block>
@@ -3325,7 +3319,7 @@ database.</fo:block>
 from the three previous examples and configure Draco to store data in multiple sinks.</fo:block>
           <fo:block>
             <fo:inline>
-              <fo:external-graphic fox:alt-text="" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/multiple-draco-tutorial.png')" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
+              <fo:external-graphic fox:alt-text="fig:" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/multiple-draco-tutorial.png')" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
             </fo:inline>
             <fo:block font-family="STANDARD" font-weight="bold" keep-with-previous.within-page="always">Figure 14:</fo:block>
           </fo:block>
@@ -3399,7 +3393,7 @@ and drop it inside the Draco user space. At this point, a popup should be displa
 available. Please select the template MULTIPLE-SINKS-TUTORIAL.</fo:block>
               <fo:block>
                 <fo:inline>
-                  <fo:external-graphic fox:alt-text="" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/multiple-tutorial-template.png')" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
+                  <fo:external-graphic fox:alt-text="fig:" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/multiple-tutorial-template.png')" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
                 </fo:inline>
                 <fo:block font-family="STANDARD" font-weight="bold" keep-with-previous.within-page="always">Figure 15:</fo:block>
               </fo:block>
@@ -3426,7 +3420,7 @@ from the drop down list and pressing the
 be seen on the same page:</fo:block>
                   <fo:block>
                     <fo:inline>
-                      <fo:external-graphic fox:alt-text="" src="url('https://fiware.github.io/tutorials.Historic-Context/img/door-open.gif')" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
+                      <fo:external-graphic fox:alt-text="fig:" src="url('https://fiware.github.io/tutorials.Historic-Context/img/door-open.gif')" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
                     </fo:inline>
                     <fo:block font-family="STANDARD" font-weight="bold" keep-with-previous.within-page="always">Figure 16:</fo:block>
                   </fo:block>
