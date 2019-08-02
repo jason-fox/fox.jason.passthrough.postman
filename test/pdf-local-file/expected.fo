@@ -190,7 +190,7 @@
           <fo:block>Since all interactions between the two elements are initiated by HTTP requests, the entities can be containerized and run from exposed ports.</fo:block>
           <fo:block>
             <fo:inline>
-              <fo:external-graphic fox:alt-text="fig:" src="url('https://fiware.github.io/tutorials.Getting-Started/img//architecture.png')" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
+              <fo:external-graphic content-height="scale-to-fit" content-width="scale-to-fit" fox:alt-text="fig:" height="100%" scaling="uniform" src="url('https://fiware.github.io/tutorials.Getting-Started/img//architecture.png')" width="100%" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
             </fo:inline>
             <fo:block font-family="STANDARD" font-weight="bold" keep-with-previous.within-page="always">Figure 1:</fo:block>
           </fo:block>

@@ -178,7 +178,7 @@ The state of each device can be seen on the UltraLight device monitor web-page f
               </fo:block>
               <fo:block>
                 <fo:inline>
-                  <fo:external-graphic fox:alt-text="fig:" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/device-monitor.png')" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
+                  <fo:external-graphic content-height="scale-to-fit" content-width="scale-to-fit" fox:alt-text="fig:" height="100%" scaling="uniform" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/device-monitor.png')" width="100%" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
                 </fo:inline>
                 <fo:block font-family="STANDARD" font-weight="bold" keep-with-previous.within-page="always">Figure 1: FIWARE Monitor</fo:block>
               </fo:block>
@@ -477,7 +477,7 @@ on the standard
             <fo:inline font-family="MONOSPACE">27017</fo:inline>port and the overall architecture can be seen below:</fo:block>
           <fo:block>
             <fo:inline>
-              <fo:external-graphic fox:alt-text="fig:" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/mongo-draco-tutorial.png')" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
+              <fo:external-graphic content-height="scale-to-fit" content-width="scale-to-fit" fox:alt-text="fig:" height="100%" scaling="uniform" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/mongo-draco-tutorial.png')" width="100%" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
             </fo:inline>
             <fo:block font-family="STANDARD" font-weight="bold" keep-with-previous.within-page="always">Figure 2:</fo:block>
           </fo:block>
@@ -567,7 +567,7 @@ and drop it inside the Draco user space. At this point, a popup should be displa
 available. Please select the template MONGO-TUTORIAL.</fo:block>
               <fo:block>
                 <fo:inline>
-                  <fo:external-graphic fox:alt-text="fig:" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/mongo-tutorial-template.png')" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
+                  <fo:external-graphic content-height="scale-to-fit" content-width="scale-to-fit" fox:alt-text="fig:" height="100%" scaling="uniform" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/mongo-tutorial-template.png')" width="100%" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
                 </fo:inline>
                 <fo:block font-family="STANDARD" font-weight="bold" keep-with-previous.within-page="always">Figure 3:</fo:block>
               </fo:block>
@@ -592,7 +592,7 @@ from the drop down list and pressing the
 be seen on the same page:</fo:block>
                   <fo:block>
                     <fo:inline>
-                      <fo:external-graphic fox:alt-text="fig:" src="url('https://fiware.github.io/tutorials.Historic-Context/img/door-open.gif')" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
+                      <fo:external-graphic content-height="scale-to-fit" content-width="scale-to-fit" fox:alt-text="fig:" height="100%" scaling="uniform" src="url('https://fiware.github.io/tutorials.Historic-Context/img/door-open.gif')" width="100%" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
                     </fo:inline>
                     <fo:block font-family="STANDARD" font-weight="bold" keep-with-previous.within-page="always">Figure 4:</fo:block>
                   </fo:block>
@@ -1234,7 +1234,7 @@ instance is listening on the standard
             <fo:inline font-family="MONOSPACE">5432</fo:inline>port and the overall architecture can be seen below:</fo:block>
           <fo:block>
             <fo:inline>
-              <fo:external-graphic fox:alt-text="fig:" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/postgres-draco-tutorial.png')" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
+              <fo:external-graphic content-height="scale-to-fit" content-width="scale-to-fit" fox:alt-text="fig:" height="100%" scaling="uniform" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/postgres-draco-tutorial.png')" width="100%" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
             </fo:inline>
             <fo:block font-family="STANDARD" font-weight="bold" keep-with-previous.within-page="always">Figure 5:</fo:block>
           </fo:block>
@@ -1417,7 +1417,7 @@ and drop it inside the Draco user space. At this point, a popup should be displa
 available. Please select the template POSTGRESQL-TUTORIAL.</fo:block>
               <fo:block>
                 <fo:inline>
-                  <fo:external-graphic fox:alt-text="fig:" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/postgres-tutorial-template.png')" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
+                  <fo:external-graphic content-height="scale-to-fit" content-width="scale-to-fit" fox:alt-text="fig:" height="100%" scaling="uniform" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/postgres-tutorial-template.png')" width="100%" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
                 </fo:inline>
                 <fo:block font-family="STANDARD" font-weight="bold" keep-with-previous.within-page="always">Figure 6:</fo:block>
               </fo:block>
@@ -1432,7 +1432,7 @@ For doing that please follow the instructions:</fo:block>
                     <fo:block>
                       <fo:block>Do right click on any part of the Draco GUI user space, and then click on configure.
                         <fo:inline>
-                          <fo:external-graphic fox:alt-text="" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/step1.png')" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
+                          <fo:external-graphic content-height="scale-to-fit" content-width="scale-to-fit" fox:alt-text="" height="100%" scaling="uniform" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/step1.png')" width="100%" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
                         </fo:inline>
                       </fo:block>
                     </fo:block>
@@ -1457,7 +1457,7 @@ DBCConnectionPool controller.</fo:block>
                     <fo:block>
                       <fo:block>Click on the configuration button of the "DBCPConnectionPool"
                         <fo:inline>
-                          <fo:external-graphic fox:alt-text="" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/step2.png')" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
+                          <fo:external-graphic content-height="scale-to-fit" content-width="scale-to-fit" fox:alt-text="" height="100%" scaling="uniform" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/step2.png')" width="100%" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
                         </fo:inline>
                       </fo:block>
                     </fo:block>
@@ -1471,7 +1471,7 @@ DBCConnectionPool controller.</fo:block>
                     <fo:block>
                       <fo:block>Go to the controller Properties tab and put "password" in the password field, then apply the changes.
                         <fo:inline>
-                          <fo:external-graphic fox:alt-text="" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/controller-postgresql.png')" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
+                          <fo:external-graphic content-height="scale-to-fit" content-width="scale-to-fit" fox:alt-text="" height="100%" scaling="uniform" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/controller-postgresql.png')" width="100%" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
                         </fo:inline>
                       </fo:block>
                     </fo:block>
@@ -1491,13 +1491,13 @@ configuration page.</fo:block>
               </fo:list-block>
               <fo:block>
                 <fo:inline>
-                  <fo:external-graphic fox:alt-text="fig:" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/step4.png')" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
+                  <fo:external-graphic content-height="scale-to-fit" content-width="scale-to-fit" fox:alt-text="fig:" height="100%" scaling="uniform" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/step4.png')" width="100%" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
                 </fo:inline>
                 <fo:block font-family="STANDARD" font-weight="bold" keep-with-previous.within-page="always">Figure 7:</fo:block>
               </fo:block>
               <fo:block>
                 <fo:inline>
-                  <fo:external-graphic fox:alt-text="fig:" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/step5.png')" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
+                  <fo:external-graphic content-height="scale-to-fit" content-width="scale-to-fit" fox:alt-text="fig:" height="100%" scaling="uniform" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/step5.png')" width="100%" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
                 </fo:inline>
                 <fo:block font-family="STANDARD" font-weight="bold" keep-with-previous.within-page="always">Figure 8:</fo:block>
               </fo:block>
@@ -1705,7 +1705,7 @@ from the drop down list and pressing the
 be seen on the same page:</fo:block>
                   <fo:block>
                     <fo:inline>
-                      <fo:external-graphic fox:alt-text="fig:" src="url('https://fiware.github.io/tutorials.Historic-Context/img/door-open.gif')" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
+                      <fo:external-graphic content-height="scale-to-fit" content-width="scale-to-fit" fox:alt-text="fig:" height="100%" scaling="uniform" src="url('https://fiware.github.io/tutorials.Historic-Context/img/door-open.gif')" width="100%" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
                     </fo:inline>
                     <fo:block font-family="STANDARD" font-weight="bold" keep-with-previous.within-page="always">Figure 9:</fo:block>
                   </fo:block>
@@ -2371,7 +2371,7 @@ standard
             <fo:inline font-family="MONOSPACE">3306</fo:inline>port and the overall architecture can be seen below:</fo:block>
           <fo:block>
             <fo:inline>
-              <fo:external-graphic fox:alt-text="fig:" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/mysql-draco-tutorial.png')" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
+              <fo:external-graphic content-height="scale-to-fit" content-width="scale-to-fit" fox:alt-text="fig:" height="100%" scaling="uniform" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/mysql-draco-tutorial.png')" width="100%" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
             </fo:inline>
             <fo:block font-family="STANDARD" font-weight="bold" keep-with-previous.within-page="always">Figure 10:</fo:block>
           </fo:block>
@@ -2542,7 +2542,7 @@ and drop it inside the Draco user space. At this point, a popup should be displa
 available. Please select the template MYSQL-TUTORIAL.</fo:block>
               <fo:block>
                 <fo:inline>
-                  <fo:external-graphic fox:alt-text="fig:" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/draco-template1.png')" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
+                  <fo:external-graphic content-height="scale-to-fit" content-width="scale-to-fit" fox:alt-text="fig:" height="100%" scaling="uniform" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/draco-template1.png')" width="100%" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
                 </fo:inline>
                 <fo:block font-family="STANDARD" font-weight="bold" keep-with-previous.within-page="always">Figure 11:</fo:block>
               </fo:block>
@@ -2557,7 +2557,7 @@ doing that please follow the instructions:</fo:block>
                     <fo:block>
                       <fo:block>Do right click on any part of the Draco GUI user space, and then click on configure.
                         <fo:inline>
-                          <fo:external-graphic fox:alt-text="" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/step1.png')" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
+                          <fo:external-graphic content-height="scale-to-fit" content-width="scale-to-fit" fox:alt-text="" height="100%" scaling="uniform" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/step1.png')" width="100%" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
                         </fo:inline>
                       </fo:block>
                     </fo:block>
@@ -2582,7 +2582,7 @@ DBCConnectionPool controller.</fo:block>
                     <fo:block>
                       <fo:block>Click on the configuration button of the "DBCPConnectionPool"
                         <fo:inline>
-                          <fo:external-graphic fox:alt-text="" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/step2.png')" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
+                          <fo:external-graphic content-height="scale-to-fit" content-width="scale-to-fit" fox:alt-text="" height="100%" scaling="uniform" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/step2.png')" width="100%" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
                         </fo:inline>
                       </fo:block>
                     </fo:block>
@@ -2596,7 +2596,7 @@ DBCConnectionPool controller.</fo:block>
                     <fo:block>
                       <fo:block>Go to the controller Properties tab and put "123" in the password field, then apply the changes.
                         <fo:inline>
-                          <fo:external-graphic fox:alt-text="" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/step3.png')" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
+                          <fo:external-graphic content-height="scale-to-fit" content-width="scale-to-fit" fox:alt-text="" height="100%" scaling="uniform" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/step3.png')" width="100%" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
                         </fo:inline>
                       </fo:block>
                     </fo:block>
@@ -2611,7 +2611,7 @@ DBCConnectionPool controller.</fo:block>
                       <fo:block>Enable the processor by clicking on the thunder icon and then click on enable, then close the controller
 configuration page.
                         <fo:inline>
-                          <fo:external-graphic fox:alt-text="" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/step4.png')" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
+                          <fo:external-graphic content-height="scale-to-fit" content-width="scale-to-fit" fox:alt-text="" height="100%" scaling="uniform" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/step4.png')" width="100%" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
                         </fo:inline>
                       </fo:block>
                     </fo:block>
@@ -2620,7 +2620,7 @@ configuration page.
               </fo:list-block>
               <fo:block>
                 <fo:inline>
-                  <fo:external-graphic fox:alt-text="fig:" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/step5.png')" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
+                  <fo:external-graphic content-height="scale-to-fit" content-width="scale-to-fit" fox:alt-text="fig:" height="100%" scaling="uniform" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/step5.png')" width="100%" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
                 </fo:inline>
                 <fo:block font-family="STANDARD" font-weight="bold" keep-with-previous.within-page="always">Figure 12:</fo:block>
               </fo:block>
@@ -2654,7 +2654,7 @@ from the drop down list and pressing the
 be seen on the same page:</fo:block>
                   <fo:block>
                     <fo:inline>
-                      <fo:external-graphic fox:alt-text="fig:" src="url('https://fiware.github.io/tutorials.Historic-Context/img/door-open.gif')" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
+                      <fo:external-graphic content-height="scale-to-fit" content-width="scale-to-fit" fox:alt-text="fig:" height="100%" scaling="uniform" src="url('https://fiware.github.io/tutorials.Historic-Context/img/door-open.gif')" width="100%" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
                     </fo:inline>
                     <fo:block font-family="STANDARD" font-weight="bold" keep-with-previous.within-page="always">Figure 13:</fo:block>
                   </fo:block>
@@ -3319,7 +3319,7 @@ database.</fo:block>
 from the three previous examples and configure Draco to store data in multiple sinks.</fo:block>
           <fo:block>
             <fo:inline>
-              <fo:external-graphic fox:alt-text="fig:" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/multiple-draco-tutorial.png')" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
+              <fo:external-graphic content-height="scale-to-fit" content-width="scale-to-fit" fox:alt-text="fig:" height="100%" scaling="uniform" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/multiple-draco-tutorial.png')" width="100%" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
             </fo:inline>
             <fo:block font-family="STANDARD" font-weight="bold" keep-with-previous.within-page="always">Figure 14:</fo:block>
           </fo:block>
@@ -3393,7 +3393,7 @@ and drop it inside the Draco user space. At this point, a popup should be displa
 available. Please select the template MULTIPLE-SINKS-TUTORIAL.</fo:block>
               <fo:block>
                 <fo:inline>
-                  <fo:external-graphic fox:alt-text="fig:" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/multiple-tutorial-template.png')" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
+                  <fo:external-graphic content-height="scale-to-fit" content-width="scale-to-fit" fox:alt-text="fig:" height="100%" scaling="uniform" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/multiple-tutorial-template.png')" width="100%" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
                 </fo:inline>
                 <fo:block font-family="STANDARD" font-weight="bold" keep-with-previous.within-page="always">Figure 15:</fo:block>
               </fo:block>
@@ -3420,7 +3420,7 @@ from the drop down list and pressing the
 be seen on the same page:</fo:block>
                   <fo:block>
                     <fo:inline>
-                      <fo:external-graphic fox:alt-text="fig:" src="url('https://fiware.github.io/tutorials.Historic-Context/img/door-open.gif')" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
+                      <fo:external-graphic content-height="scale-to-fit" content-width="scale-to-fit" fox:alt-text="fig:" height="100%" scaling="uniform" src="url('https://fiware.github.io/tutorials.Historic-Context/img/door-open.gif')" width="100%" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
                     </fo:inline>
                     <fo:block font-family="STANDARD" font-weight="bold" keep-with-previous.within-page="always">Figure 16:</fo:block>
                   </fo:block>
