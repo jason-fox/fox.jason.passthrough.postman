@@ -90,11 +90,22 @@ function add (item , lines) {
     lines.push("#### Endpoint: {.section}\n");
 
     lines.push("");
-    lines.push("- Method: **" +  item.request.method.toUpperCase() + "**");
+    lines.push('```swagger-' + item.request.method);
+    lines.push(item.request.method.toUpperCase() + " " 
+      + item.request.url.raw.slice(0, item.request.url.raw.indexOf("?")));
+    lines.push('```');
+
+    /*lines.push("- Method: **" +  item.request.method.toUpperCase() + "**");
     if(item.request.body){
       lines.push("- Type: **" +  item.request.body.mode.toUpperCase() + "**");
     }
     lines.push("- URL: `" +  item.request.url.raw.slice(0, item.request.url.raw.indexOf("?"))+ "`");
+    */
+
+
+
+
+
     lines.push("");
 
 
@@ -124,7 +135,7 @@ function add (item , lines) {
     if(item.request.body) {
       if(item.request.body.mode === 'raw'){
         lines.push("#### Body: {.section}\n");
-        lines.push("```js");        
+        lines.push("```json");        
         lines.push(item.request.body.raw );
         lines.push("```");
 

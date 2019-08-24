@@ -37,13 +37,13 @@ This plugin processes a Postman collection to Pandoc markdown, and the converts 
       "protocol": "http",
       "host": ["{{orion}}"],"path": ["v2","entities","urn:ngsi-ld:Store:001"],
       "query": [
-        { 
+        {
           "key": "options", "value": "keyValues",
           "description": "* `keyValues` option in order to get a more compact ...",
         },
         {
           "key": "type", "value": "Store", "disabled": true,
-          "description": "Entity type, to avoid ambiguity in case there are ..." 
+          "description": "Entity type, to avoid ambiguity in case there are ..."
         },
         {
           "key": "attrs", "value": "name", "disabled": true,
@@ -94,8 +94,10 @@ rm dita-ot-3.3.zip
 
 ```console
 dita --install https://github.com/doctales/org.doctales.xmltask/archive/master.zip
+dita --install https://github.com/jason-fox/fox.jason.extend.css/archive/master.zip
 dita --install https://github.com/jason-fox/fox.jason.passthrough/archive/master.zip
 dita --install https://github.com/jason-fox/fox.jason.passthrough.pandoc/archive/master.zip
+dita --install https://github.com/jason-fox/fox.jason.passthrough.swagger/archive/master.zip
 dita --install https://github.com/jason-fox/fox.jason.passthrough.postman/archive/master.zip
 ```
 

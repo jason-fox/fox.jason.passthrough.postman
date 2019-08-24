@@ -6,7 +6,7 @@
 <h2 class="title topictitle2" id="ariaid-title2">Architecture</h2>
 <div class="body">
 <p class="p">
-	Our demo application will only make use of one FIWARE component - the <a class="xref" href="https://catalogue.fiware.org/enablers/publishsubscribe-context-broker-orion-context-broker" target="_blank">Orion Context Broker</a> . Usage of the Orion Context Broker is sufficient for an application to qualify as <em class="i">“Powered by FIWARE”</em>.
+	Our demo application will only make use of one FIWARE component - the <a class="xref" href="https://catalogue.fiware.org/enablers/publishsubscribe-context-broker-orion-context-broker" target="_blank">Orion Context Broker</a> . Usage of the Orion Context Broker is sufficient for an application to qualify as <em class="i">"Powered by FIWARE"</em>.
 </p>
 <p class="p">
 	Currently, the Orion Context Broker relies on open source <a class="xref" href="https://www.mongodb.com/" target="_blank">MongoDB</a> technology to keep persistence of the context data it holds. Therefore, the architecture will consist of two elements:
@@ -20,7 +20,7 @@
 </p>
 <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 1. </span></figcaption>
 	
-	<img class="image" src="https://fiware.github.io/tutorials.Getting-Started/img//architecture.png" alt="fig:"><br>
+	<img class="image" src="https://fiware.github.io/tutorials.Getting-Started/img//architecture.png" alt=""><br>
 </figure>
 </div>
 </article>
@@ -140,10 +140,7 @@ If the response is blank, this is usually because the MongoDB database holding t
 <section class="section" id="obtaining-version-information__endpoint"><h3 class="title sectiontitle">Endpoint:</h3>
 
 
-<ul class="ul">
-	<li class="li">Method: <strong class="b">GET</strong></li>
-	<li class="li">URL: <code class="codeph">http://{{orion}}/version</code></li>
-</ul>
+<pre xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" class="codeblock swagger-get"><code><span class="swagger-verb">GET</span>http://{{orion}}/version</code></pre>
 </section>
 
 <section class="section" id="obtaining-version-information__example"><h3 class="title sectiontitle">Example:</h3>
@@ -169,11 +166,7 @@ If the response is blank, this is usually because the MongoDB database holding t
 <section class="section" id="creating-context-data__endpoint-1"><h4 class="title sectiontitle">Endpoint:</h4>
 
 
-<ul class="ul">
-	<li class="li">Method: <strong class="b">POST</strong></li>
-	<li class="li">Type: <strong class="b">RAW</strong></li>
-	<li class="li">URL: <code class="codeph">http://{{orion}}/v2/entities</code></li>
-</ul>
+<pre xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" class="codeblock swagger-post"><code><span class="swagger-verb">POST</span>http://{{orion}}/v2/entities</code></pre>
 </section>
 
 <section class="section" id="creating-context-data__headers"><h4 class="title sectiontitle">Headers:</h4>
@@ -197,36 +190,36 @@ If the response is blank, this is usually because the MongoDB database holding t
 <section class="section" id="creating-context-data__body"><h4 class="title sectiontitle">Body:</h4>
 
 
-<pre class="codeblock js"><code>{
-    "id": "urn:ngsi-ld:Store:001",
-    "type": "Store",
-    "address": {
-        "type": "PostalAddress",
-        "value": {
-            "streetAddress": "Bornholmer Straße 65",
-            "addressRegion": "Berlin",
-            "addressLocality": "Prenzlauer Berg",
-            "postalCode": "10439"
-        },
-        "metadata": {
-            "verified": {
-                "value": true,
-                "type": "Boolean"
-            }
-        }
-    },
-    "location": {
-        "type": "geo:json",
-        "value": {
-             "type": "Point",
-             "coordinates": [13.3986, 52.5547]
-        }
-    },
-    "name": {
-        "type": "Text",
-        "value": "Bösebrücke Einkauf"
-    }
-}</code></pre>
+<pre class="codeblock js"><code><span class="ph token punctuation">{</span>
+    <span class="ph token string">"id"</span><span class="ph token punctuation">:</span> <span class="ph token string">"urn:ngsi-ld:Store:001"</span><span class="ph token punctuation">,</span>
+    <span class="ph token string">"type"</span><span class="ph token punctuation">:</span> <span class="ph token string">"Store"</span><span class="ph token punctuation">,</span>
+    <span class="ph token string">"address"</span><span class="ph token punctuation">:</span> <span class="ph token punctuation">{</span>
+        <span class="ph token string">"type"</span><span class="ph token punctuation">:</span> <span class="ph token string">"PostalAddress"</span><span class="ph token punctuation">,</span>
+        <span class="ph token string">"value"</span><span class="ph token punctuation">:</span> <span class="ph token punctuation">{</span>
+            <span class="ph token string">"streetAddress"</span><span class="ph token punctuation">:</span> <span class="ph token string">"Bornholmer Straße 65"</span><span class="ph token punctuation">,</span>
+            <span class="ph token string">"addressRegion"</span><span class="ph token punctuation">:</span> <span class="ph token string">"Berlin"</span><span class="ph token punctuation">,</span>
+            <span class="ph token string">"addressLocality"</span><span class="ph token punctuation">:</span> <span class="ph token string">"Prenzlauer Berg"</span><span class="ph token punctuation">,</span>
+            <span class="ph token string">"postalCode"</span><span class="ph token punctuation">:</span> <span class="ph token string">"10439"</span>
+        <span class="ph token punctuation">}</span><span class="ph token punctuation">,</span>
+        <span class="ph token string">"metadata"</span><span class="ph token punctuation">:</span> <span class="ph token punctuation">{</span>
+            <span class="ph token string">"verified"</span><span class="ph token punctuation">:</span> <span class="ph token punctuation">{</span>
+                <span class="ph token string">"value"</span><span class="ph token punctuation">:</span> <span class="ph token boolean">true</span><span class="ph token punctuation">,</span>
+                <span class="ph token string">"type"</span><span class="ph token punctuation">:</span> <span class="ph token string">"Boolean"</span>
+            <span class="ph token punctuation">}</span>
+        <span class="ph token punctuation">}</span>
+    <span class="ph token punctuation">}</span><span class="ph token punctuation">,</span>
+    <span class="ph token string">"location"</span><span class="ph token punctuation">:</span> <span class="ph token punctuation">{</span>
+        <span class="ph token string">"type"</span><span class="ph token punctuation">:</span> <span class="ph token string">"geo:json"</span><span class="ph token punctuation">,</span>
+        <span class="ph token string">"value"</span><span class="ph token punctuation">:</span> <span class="ph token punctuation">{</span>
+             <span class="ph token string">"type"</span><span class="ph token punctuation">:</span> <span class="ph token string">"Point"</span><span class="ph token punctuation">,</span>
+             <span class="ph token string">"coordinates"</span><span class="ph token punctuation">:</span> <span class="ph token punctuation">[</span><span class="ph token number">13.3986</span><span class="ph token punctuation">,</span> <span class="ph token number">52.5547</span><span class="ph token punctuation">]</span>
+        <span class="ph token punctuation">}</span>
+    <span class="ph token punctuation">}</span><span class="ph token punctuation">,</span>
+    <span class="ph token string">"name"</span><span class="ph token punctuation">:</span> <span class="ph token punctuation">{</span>
+        <span class="ph token string">"type"</span><span class="ph token punctuation">:</span> <span class="ph token string">"Text"</span><span class="ph token punctuation">,</span>
+        <span class="ph token string">"value"</span><span class="ph token punctuation">:</span> <span class="ph token string">"Bösebrücke Einkauf"</span>
+    <span class="ph token punctuation">}</span>
+<span class="ph token punctuation">}</span></code></pre>
 </section>
 
 <section class="section" id="creating-context-data__example-1"><h4 class="title sectiontitle">Example:</h4>
@@ -278,11 +271,7 @@ If the response is blank, this is usually because the MongoDB database holding t
 <section class="section" id="creating-your-second-data-entity__endpoint-2"><h3 class="title sectiontitle">Endpoint:</h3>
 
 
-<ul class="ul">
-	<li class="li">Method: <strong class="b">POST</strong></li>
-	<li class="li">Type: <strong class="b">RAW</strong></li>
-	<li class="li">URL: <code class="codeph">http://{{orion}}/v2/entities</code></li>
-</ul>
+<pre xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" class="codeblock swagger-post"><code><span class="swagger-verb">POST</span>http://{{orion}}/v2/entities</code></pre>
 </section>
 
 <section class="section" id="creating-your-second-data-entity__headers-1"><h3 class="title sectiontitle">Headers:</h3>
@@ -306,36 +295,36 @@ If the response is blank, this is usually because the MongoDB database holding t
 <section class="section" id="creating-your-second-data-entity__body-1"><h3 class="title sectiontitle">Body:</h3>
 
 
-<pre class="codeblock js"><code>{
-  "type": "Store",
-    "id": "urn:ngsi-ld:Store:002",
-    "address": {
-        "type": "PostalAddress",
-        "value": {
-            "streetAddress": "Friedrichstraße 44",
-            "addressRegion": "Berlin",
-            "addressLocality": "Kreuzberg",
-            "postalCode": "10969"
-        },
-        "metadata": {
-            "verified": {
-                "value": true,
-                "type": "Boolean"
-            }
-        }
-    },
-    "location": {
-        "type": "geo:json",
-        "value": {
-             "type": "Point",
-             "coordinates": [13.3903, 52.5075]
-        }
-    },
-    "name": {
-        "type": "Text",
-        "value": "Checkpoint Markt"
-    }
-}</code></pre>
+<pre class="codeblock js"><code><span class="ph token punctuation">{</span>
+  <span class="ph token string">"type"</span><span class="ph token punctuation">:</span> <span class="ph token string">"Store"</span><span class="ph token punctuation">,</span>
+    <span class="ph token string">"id"</span><span class="ph token punctuation">:</span> <span class="ph token string">"urn:ngsi-ld:Store:002"</span><span class="ph token punctuation">,</span>
+    <span class="ph token string">"address"</span><span class="ph token punctuation">:</span> <span class="ph token punctuation">{</span>
+        <span class="ph token string">"type"</span><span class="ph token punctuation">:</span> <span class="ph token string">"PostalAddress"</span><span class="ph token punctuation">,</span>
+        <span class="ph token string">"value"</span><span class="ph token punctuation">:</span> <span class="ph token punctuation">{</span>
+            <span class="ph token string">"streetAddress"</span><span class="ph token punctuation">:</span> <span class="ph token string">"Friedrichstraße 44"</span><span class="ph token punctuation">,</span>
+            <span class="ph token string">"addressRegion"</span><span class="ph token punctuation">:</span> <span class="ph token string">"Berlin"</span><span class="ph token punctuation">,</span>
+            <span class="ph token string">"addressLocality"</span><span class="ph token punctuation">:</span> <span class="ph token string">"Kreuzberg"</span><span class="ph token punctuation">,</span>
+            <span class="ph token string">"postalCode"</span><span class="ph token punctuation">:</span> <span class="ph token string">"10969"</span>
+        <span class="ph token punctuation">}</span><span class="ph token punctuation">,</span>
+        <span class="ph token string">"metadata"</span><span class="ph token punctuation">:</span> <span class="ph token punctuation">{</span>
+            <span class="ph token string">"verified"</span><span class="ph token punctuation">:</span> <span class="ph token punctuation">{</span>
+                <span class="ph token string">"value"</span><span class="ph token punctuation">:</span> <span class="ph token boolean">true</span><span class="ph token punctuation">,</span>
+                <span class="ph token string">"type"</span><span class="ph token punctuation">:</span> <span class="ph token string">"Boolean"</span>
+            <span class="ph token punctuation">}</span>
+        <span class="ph token punctuation">}</span>
+    <span class="ph token punctuation">}</span><span class="ph token punctuation">,</span>
+    <span class="ph token string">"location"</span><span class="ph token punctuation">:</span> <span class="ph token punctuation">{</span>
+        <span class="ph token string">"type"</span><span class="ph token punctuation">:</span> <span class="ph token string">"geo:json"</span><span class="ph token punctuation">,</span>
+        <span class="ph token string">"value"</span><span class="ph token punctuation">:</span> <span class="ph token punctuation">{</span>
+             <span class="ph token string">"type"</span><span class="ph token punctuation">:</span> <span class="ph token string">"Point"</span><span class="ph token punctuation">,</span>
+             <span class="ph token string">"coordinates"</span><span class="ph token punctuation">:</span> <span class="ph token punctuation">[</span><span class="ph token number">13.3903</span><span class="ph token punctuation">,</span> <span class="ph token number">52.5075</span><span class="ph token punctuation">]</span>
+        <span class="ph token punctuation">}</span>
+    <span class="ph token punctuation">}</span><span class="ph token punctuation">,</span>
+    <span class="ph token string">"name"</span><span class="ph token punctuation">:</span> <span class="ph token punctuation">{</span>
+        <span class="ph token string">"type"</span><span class="ph token punctuation">:</span> <span class="ph token string">"Text"</span><span class="ph token punctuation">,</span>
+        <span class="ph token string">"value"</span><span class="ph token punctuation">:</span> <span class="ph token string">"Checkpoint Markt"</span>
+    <span class="ph token punctuation">}</span>
+<span class="ph token punctuation">}</span></code></pre>
 </section>
 
 <section class="section" id="creating-your-second-data-entity__example-2"><h3 class="title sectiontitle">Example:</h3>
@@ -388,10 +377,7 @@ If the response is blank, this is usually because the MongoDB database holding t
 <section class="section" id="retrieving-context-information__endpoint-3"><h3 class="title sectiontitle">Endpoint:</h3>
 
 
-<ul class="ul">
-	<li class="li">Method: <strong class="b">GET</strong></li>
-	<li class="li">URL: <code class="codeph">http://{{orion}}/v2/entitie</code></li>
-</ul>
+<pre xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" class="codeblock swagger-get"><code><span class="swagger-verb">GET</span>http://{{orion}}/v2/entitie</code></pre>
 </section>
 
 <section class="section" id="retrieving-context-information__example-3"><h3 class="title sectiontitle">Example:</h3>
@@ -416,16 +402,13 @@ If the response is blank, this is usually because the MongoDB database holding t
 <section class="section" id="obtain-entity-data-by-id__endpoint-4"><h3 class="title sectiontitle">Endpoint:</h3>
 
 
-<ul class="ul">
-	<li class="li">Method: <strong class="b">GET</strong></li>
-	<li class="li">URL: <code class="codeph">http://{{orion}}/v2/entities/urn:ngsi-ld:Store:001</code></li>
-</ul>
+<pre xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" class="codeblock swagger-get"><code><span class="swagger-verb">GET</span>http://{{orion}}/v2/entities/urn:ngsi-ld:Store:001</code></pre>
 </section>
 
 <section class="section" id="obtain-entity-data-by-id__query-parameters"><h3 class="title sectiontitle">Query Parameters:</h3>
 
 
-<table class="table"><caption></caption><colgroup><col style="width:16%"><col style="width:28%"><col style="width:56%"></colgroup><thead class="thead">
+<table class="table"><caption></caption><colgroup><col style="width:13%"><col style="width:27%"><col style="width:59%"></colgroup><thead class="thead">
 			<tr class="row">
 				<th class="entry align-left" id="obtain-entity-data-by-id__query-parameters__entry__1">Key</th>
 				<th class="entry align-left" id="obtain-entity-data-by-id__query-parameters__entry__2">Value</th>
@@ -474,16 +457,13 @@ Because of the use of the <code class="codeph">options=keyValues</code>, the res
 <section class="section" id="obtain-entity-data-by-type__endpoint-5"><h3 class="title sectiontitle">Endpoint:</h3>
 
 
-<ul class="ul">
-	<li class="li">Method: <strong class="b">GET</strong></li>
-	<li class="li">URL: <code class="codeph">http://{{orion}}/v2/entities/</code></li>
-</ul>
+<pre xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" class="codeblock swagger-get"><code><span class="swagger-verb">GET</span>http://{{orion}}/v2/entities/</code></pre>
 </section>
 
 <section class="section" id="obtain-entity-data-by-type__query-parameters-1"><h3 class="title sectiontitle">Query Parameters:</h3>
 
 
-<table class="table"><caption></caption><colgroup><col style="width:16%"><col style="width:28%"><col style="width:56%"></colgroup><thead class="thead">
+<table class="table"><caption></caption><colgroup><col style="width:13%"><col style="width:27%"><col style="width:59%"></colgroup><thead class="thead">
 			<tr class="row">
 				<th class="entry align-left" id="obtain-entity-data-by-type__query-parameters-1__entry__1">Key</th>
 				<th class="entry align-left" id="obtain-entity-data-by-type__query-parameters-1__entry__2">Value</th>
@@ -539,16 +519,13 @@ Because of the use of the <code class="codeph">options=keyValues</code>, the res
 <section class="section" id="filter-context-data-by-comparing-the-values-of-an-attribute__endpoint-6"><h4 class="title sectiontitle">Endpoint:</h4>
 
 
-<ul class="ul">
-	<li class="li">Method: <strong class="b">GET</strong></li>
-	<li class="li">URL: <code class="codeph">http://{{orion}}/v2/entities/</code></li>
-</ul>
+<pre xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" class="codeblock swagger-get"><code><span class="swagger-verb">GET</span>http://{{orion}}/v2/entities/</code></pre>
 </section>
 
 <section class="section" id="filter-context-data-by-comparing-the-values-of-an-attribute__query-parameters-2"><h4 class="title sectiontitle">Query Parameters:</h4>
 
 
-<table class="table"><caption></caption><colgroup><col style="width:16%"><col style="width:28%"><col style="width:56%"></colgroup><thead class="thead">
+<table class="table"><caption></caption><colgroup><col style="width:13%"><col style="width:27%"><col style="width:59%"></colgroup><thead class="thead">
 			<tr class="row">
 				<th class="entry align-left" id="filter-context-data-by-comparing-the-values-of-an-attribute__query-parameters-2__entry__1">Key</th>
 				<th class="entry align-left" id="filter-context-data-by-comparing-the-values-of-an-attribute__query-parameters-2__entry__2">Value</th>
@@ -604,7 +581,7 @@ Because of the use of the <code class="codeph">options=keyValues</code>, the res
 	This example returns the data of all <code class="codeph">Store</code> entities found in the <strong class="b">Kreuzberg</strong> district of Berlin.
 </p>
 <p class="p">
-	Filtering can be done using the <code class="codeph">q</code> parameter - sub-attributes are annotated using the dot syntax e.g. <code class="codeph">address.addressLocality</code>
+	Filtering can be done using the <code class="codeph">q</code> parameter - sub-attributes are annotated using the dot syntax e.g.&nbsp;<code class="codeph">address.addressLocality</code>
 </p>
 <p class="p">
 	Because of the use of the <code class="codeph">options=keyValues</code>, the response consists of JSON only without the attribute <code class="codeph">type</code> and <code class="codeph">metadata</code> elements.
@@ -612,16 +589,13 @@ Because of the use of the <code class="codeph">options=keyValues</code>, the res
 <section class="section" id="filter-context-data-by-comparing-the-values-of-an-attribute-1__endpoint-7"><h4 class="title sectiontitle">Endpoint:</h4>
 
 
-<ul class="ul">
-	<li class="li">Method: <strong class="b">GET</strong></li>
-	<li class="li">URL: <code class="codeph">http://{{orion}}/v2/entities/</code></li>
-</ul>
+<pre xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" class="codeblock swagger-get"><code><span class="swagger-verb">GET</span>http://{{orion}}/v2/entities/</code></pre>
 </section>
 
 <section class="section" id="filter-context-data-by-comparing-the-values-of-an-attribute-1__query-parameters-3"><h4 class="title sectiontitle">Query Parameters:</h4>
 
 
-<table class="table"><caption></caption><colgroup><col style="width:16%"><col style="width:28%"><col style="width:56%"></colgroup><thead class="thead">
+<table class="table"><caption></caption><colgroup><col style="width:13%"><col style="width:27%"><col style="width:59%"></colgroup><thead class="thead">
 			<tr class="row">
 				<th class="entry align-left" id="filter-context-data-by-comparing-the-values-of-an-attribute-1__query-parameters-3__entry__1">Key</th>
 				<th class="entry align-left" id="filter-context-data-by-comparing-the-values-of-an-attribute-1__query-parameters-3__entry__2">Value</th>
@@ -677,16 +651,13 @@ Because of the use of the <code class="codeph">options=keyValues</code>, the res
 <section class="section" id="filter-context-data-by-comparing-the-values-of-an-metadata-attribute__endpoint-8"><h4 class="title sectiontitle">Endpoint:</h4>
 
 
-<ul class="ul">
-	<li class="li">Method: <strong class="b">GET</strong></li>
-	<li class="li">URL: <code class="codeph">http://{{orion}}/v2/entities/</code></li>
-</ul>
+<pre xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" class="codeblock swagger-get"><code><span class="swagger-verb">GET</span>http://{{orion}}/v2/entities/</code></pre>
 </section>
 
 <section class="section" id="filter-context-data-by-comparing-the-values-of-an-metadata-attribute__query-parameters-4"><h4 class="title sectiontitle">Query Parameters:</h4>
 
 
-<table class="table"><caption></caption><colgroup><col style="width:16%"><col style="width:28%"><col style="width:56%"></colgroup><thead class="thead">
+<table class="table"><caption></caption><colgroup><col style="width:13%"><col style="width:27%"><col style="width:59%"></colgroup><thead class="thead">
 			<tr class="row">
 				<th class="entry align-left" id="filter-context-data-by-comparing-the-values-of-an-metadata-attribute__query-parameters-4__entry__1">Key</th>
 				<th class="entry align-left" id="filter-context-data-by-comparing-the-values-of-an-metadata-attribute__query-parameters-4__entry__2">Value</th>
@@ -739,16 +710,13 @@ Because of the use of the <code class="codeph">options=keyValues</code>, the res
 <section class="section" id="filter-context-data-by-comparing-the-values-of-a-geopoint-attribute__endpoint-9"><h4 class="title sectiontitle">Endpoint:</h4>
 
 
-<ul class="ul">
-	<li class="li">Method: <strong class="b">GET</strong></li>
-	<li class="li">URL: <code class="codeph">http://{{orion}}/v2/entities/</code></li>
-</ul>
+<pre xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" class="codeblock swagger-get"><code><span class="swagger-verb">GET</span>http://{{orion}}/v2/entities/</code></pre>
 </section>
 
 <section class="section" id="filter-context-data-by-comparing-the-values-of-a-geopoint-attribute__query-parameters-5"><h4 class="title sectiontitle">Query Parameters:</h4>
 
 
-<table class="table"><caption></caption><colgroup><col style="width:16%"><col style="width:28%"><col style="width:56%"></colgroup><thead class="thead">
+<table class="table"><caption></caption><colgroup><col style="width:13%"><col style="width:27%"><col style="width:59%"></colgroup><thead class="thead">
 			<tr class="row">
 				<th class="entry align-left" id="filter-context-data-by-comparing-the-values-of-a-geopoint-attribute__query-parameters-5__entry__1">Key</th>
 				<th class="entry align-left" id="filter-context-data-by-comparing-the-values-of-a-geopoint-attribute__query-parameters-5__entry__2">Value</th>

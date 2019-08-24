@@ -4,7 +4,7 @@
     <chapter navtitle="list">
 		<topicref format="dita" href="topic.dita"/>
     </chapter>
-    <appendices toc="yes" print="printonly">
+    <appendices toc="yes">
       <topicmeta>
         <navtitle>Appendices</navtitle>
       </topicmeta>

@@ -166,7 +166,7 @@
         <fo:block>
           <fo:block>Our demo application will only make use of one FIWARE component - the
             <fo:basic-link color="blue" external-destination="url('https://catalogue.fiware.org/enablers/publishsubscribe-context-broker-orion-context-broker')">Orion Context Broker</fo:basic-link>. Usage of the Orion Context Broker is sufficient for an application to qualify as
-            <fo:inline font-style="italic">&#8220;Powered by FIWARE&#8221;</fo:inline>.</fo:block>
+            <fo:inline font-style="italic">"Powered by FIWARE"</fo:inline>.</fo:block>
           <fo:block>Currently, the Orion Context Broker relies on open source
             <fo:basic-link color="blue" external-destination="url('https://www.mongodb.com/')">MongoDB</fo:basic-link>technology to keep persistence of the context data it holds. Therefore, the architecture will consist of two elements:</fo:block>
           <fo:list-block provisional-distance-between-starts="5mm" provisional-label-separation="1mm">
@@ -190,7 +190,7 @@
           <fo:block>Since all interactions between the two elements are initiated by HTTP requests, the entities can be containerized and run from exposed ports.</fo:block>
           <fo:block>
             <fo:inline>
-              <fo:external-graphic content-height="scale-to-fit" content-width="scale-to-fit" fox:alt-text="fig:" height="100%" scaling="uniform" src="url('https://fiware.github.io/tutorials.Getting-Started/img//architecture.png')" width="100%" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
+              <fo:external-graphic content-height="scale-to-fit" content-width="scale-to-fit" fox:alt-text="" height="100%" scaling="uniform" src="url('https://fiware.github.io/tutorials.Getting-Started/img//architecture.png')" width="100%" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
             </fo:inline>
             <fo:block font-family="STANDARD" font-weight="bold" keep-with-previous.within-page="always">Figure 1:</fo:block>
           </fo:block>
@@ -395,28 +395,10 @@ If the response is blank, this is usually because the MongoDB database holding t
           <fo:block>
             <fo:block font-family="STANDARD" font-weight="bold">Endpoint:</fo:block>
             <fo:block>
-              <fo:list-block provisional-distance-between-starts="5mm" provisional-label-separation="1mm">
-                <fo:list-item relative-align="baseline">
-                  <fo:list-item-label keep-together.within-line="always">
-                    <fo:block text-align="start">&#8226;</fo:block>
-                  </fo:list-item-label>
-                  <fo:list-item-body>
-                    <fo:block>Method:
-                      <fo:inline font-weight="bold">GET</fo:inline>
-                    </fo:block>
-                  </fo:list-item-body>
-                </fo:list-item>
-                <fo:list-item relative-align="baseline">
-                  <fo:list-item-label keep-together.within-line="always">
-                    <fo:block text-align="start">&#8226;</fo:block>
-                  </fo:list-item-label>
-                  <fo:list-item-body>
-                    <fo:block>URL:
-                      <fo:inline font-family="MONOSPACE">http://{{orion}}/version</fo:inline>
-                    </fo:block>
-                  </fo:list-item-body>
-                </fo:list-item>
-              </fo:list-block>
+              <fo:block background-color="ALICEBLUE" border-color="CORNFLOWERBLUE" border-style="solid" border-width="1pt" font-family="MONOSPACE" font-weight="bold" padding-start="10pt">
+                <fo:inline background-color="CORNFLOWERBLUE" color="white" font-family="STANDARD" padding-end="8pt" padding-start="8pt">GET</fo:inline>
+                <fo:inline padding-start="10pt">http://{{orion}}/version</fo:inline>
+              </fo:block>
             </fo:block>
           </fo:block>
           <fo:block>
@@ -454,38 +436,10 @@ If the response is blank, this is usually because the MongoDB database holding t
               <fo:block>
                 <fo:block font-family="STANDARD" font-weight="bold">Endpoint:</fo:block>
                 <fo:block>
-                  <fo:list-block provisional-distance-between-starts="5mm" provisional-label-separation="1mm">
-                    <fo:list-item relative-align="baseline">
-                      <fo:list-item-label keep-together.within-line="always">
-                        <fo:block text-align="start">&#8226;</fo:block>
-                      </fo:list-item-label>
-                      <fo:list-item-body>
-                        <fo:block>Method:
-                          <fo:inline font-weight="bold">POST</fo:inline>
-                        </fo:block>
-                      </fo:list-item-body>
-                    </fo:list-item>
-                    <fo:list-item relative-align="baseline">
-                      <fo:list-item-label keep-together.within-line="always">
-                        <fo:block text-align="start">&#8226;</fo:block>
-                      </fo:list-item-label>
-                      <fo:list-item-body>
-                        <fo:block>Type:
-                          <fo:inline font-weight="bold">RAW</fo:inline>
-                        </fo:block>
-                      </fo:list-item-body>
-                    </fo:list-item>
-                    <fo:list-item relative-align="baseline">
-                      <fo:list-item-label keep-together.within-line="always">
-                        <fo:block text-align="start">&#8226;</fo:block>
-                      </fo:list-item-label>
-                      <fo:list-item-body>
-                        <fo:block>URL:
-                          <fo:inline font-family="MONOSPACE">http://{{orion}}/v2/entities</fo:inline>
-                        </fo:block>
-                      </fo:list-item-body>
-                    </fo:list-item>
-                  </fo:list-block>
+                  <fo:block background-color="BEIGE" border-color="#49cc90" border-style="solid" border-width="1pt" font-family="MONOSPACE" font-weight="bold" padding-start="10pt">
+                    <fo:inline background-color="#49cc90" color="white" font-family="STANDARD" padding-end="8pt" padding-start="8pt">POST</fo:inline>
+                    <fo:inline padding-start="10pt">http://{{orion}}/v2/entities</fo:inline>
+                  </fo:block>
                 </fo:block>
               </fo:block>
               <fo:block>
@@ -531,36 +485,97 @@ If the response is blank, this is usually because the MongoDB database holding t
               <fo:block>
                 <fo:block font-family="STANDARD" font-weight="bold">Body:</fo:block>
                 <fo:block>
-                  <fo:block background-color="ALICEBLUE" font-family="MONOSPACE" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">{
-    "id": "urn:ngsi-ld:Store:001",
-    "type": "Store",
-    "address": {
-        "type": "PostalAddress",
-        "value": {
-            "streetAddress": "Bornholmer Stra&#223;e 65",
-            "addressRegion": "Berlin",
-            "addressLocality": "Prenzlauer Berg",
-            "postalCode": "10439"
-        },
-        "metadata": {
-            "verified": {
-                "value": true,
-                "type": "Boolean"
-            }
-        }
-    },
-    "location": {
-        "type": "geo:json",
-        "value": {
-             "type": "Point",
-             "coordinates": [13.3986, 52.5547]
-        }
-    },
-    "name": {
-        "type": "Text",
-        "value": "B&#246;sebr&#252;cke Einkauf"
-    }
-}</fo:block>
+                  <fo:block background-color="ALICEBLUE" font-family="MONOSPACE" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">
+                    <fo:inline border-end-width="0pt" color="#909090">{</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#609000">"id"</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#609000">"urn:ngsi-ld:Store:001"</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#909090">,</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#609000">"type"</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#609000">"Store"</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#909090">,</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#609000">"address"</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#909090">{</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#609000">"type"</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#609000">"PostalAddress"</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#909090">,</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#609000">"value"</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#909090">{</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#609000">"streetAddress"</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#609000">"Bornholmer Stra&#223;e 65"</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#909090">,</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#609000">"addressRegion"</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#609000">"Berlin"</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#909090">,</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#609000">"addressLocality"</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#609000">"Prenzlauer Berg"</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#909090">,</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#609000">"postalCode"</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#609000">"10439"</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#909090">}</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#909090">,</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#609000">"metadata"</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#909090">{</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#609000">"verified"</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#909090">{</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#609000">"value"</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#900050">true</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#909090">,</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#609000">"type"</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#609000">"Boolean"</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#909090">}</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#909090">}</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#909090">}</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#909090">,</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#609000">"location"</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#909090">{</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#609000">"type"</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#609000">"geo:json"</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#909090">,</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#609000">"value"</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#909090">{</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#609000">"type"</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#609000">"Point"</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#909090">,</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#609000">"coordinates"</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#909090">[</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#900050">13.3986</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#909090">,</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#900050">52.5547</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#909090">]</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#909090">}</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#909090">}</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#909090">,</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#609000">"name"</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#909090">{</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#609000">"type"</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#609000">"Text"</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#909090">,</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#609000">"value"</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#609000">"B&#246;sebr&#252;cke Einkauf"</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#909090">}</fo:inline>
+                    <fo:inline border-end-width="0pt" color="#909090">}</fo:inline>
+                  </fo:block>
                 </fo:block>
               </fo:block>
               <fo:block>
@@ -617,38 +632,10 @@ If the response is blank, this is usually because the MongoDB database holding t
           <fo:block>
             <fo:block font-family="STANDARD" font-weight="bold">Endpoint:</fo:block>
             <fo:block>
-              <fo:list-block provisional-distance-between-starts="5mm" provisional-label-separation="1mm">
-                <fo:list-item relative-align="baseline">
-                  <fo:list-item-label keep-together.within-line="always">
-                    <fo:block text-align="start">&#8226;</fo:block>
-                  </fo:list-item-label>
-                  <fo:list-item-body>
-                    <fo:block>Method:
-                      <fo:inline font-weight="bold">POST</fo:inline>
-                    </fo:block>
-                  </fo:list-item-body>
-                </fo:list-item>
-                <fo:list-item relative-align="baseline">
-                  <fo:list-item-label keep-together.within-line="always">
-                    <fo:block text-align="start">&#8226;</fo:block>
-                  </fo:list-item-label>
-                  <fo:list-item-body>
-                    <fo:block>Type:
-                      <fo:inline font-weight="bold">RAW</fo:inline>
-                    </fo:block>
-                  </fo:list-item-body>
-                </fo:list-item>
-                <fo:list-item relative-align="baseline">
-                  <fo:list-item-label keep-together.within-line="always">
-                    <fo:block text-align="start">&#8226;</fo:block>
-                  </fo:list-item-label>
-                  <fo:list-item-body>
-                    <fo:block>URL:
-                      <fo:inline font-family="MONOSPACE">http://{{orion}}/v2/entities</fo:inline>
-                    </fo:block>
-                  </fo:list-item-body>
-                </fo:list-item>
-              </fo:list-block>
+              <fo:block background-color="BEIGE" border-color="#49cc90" border-style="solid" border-width="1pt" font-family="MONOSPACE" font-weight="bold" padding-start="10pt">
+                <fo:inline background-color="#49cc90" color="white" font-family="STANDARD" padding-end="8pt" padding-start="8pt">POST</fo:inline>
+                <fo:inline padding-start="10pt">http://{{orion}}/v2/entities</fo:inline>
+              </fo:block>
             </fo:block>
           </fo:block>
           <fo:block>
@@ -694,36 +681,97 @@ If the response is blank, this is usually because the MongoDB database holding t
           <fo:block>
             <fo:block font-family="STANDARD" font-weight="bold">Body:</fo:block>
             <fo:block>
-              <fo:block background-color="ALICEBLUE" font-family="MONOSPACE" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">{
-  "type": "Store",
-    "id": "urn:ngsi-ld:Store:002",
-    "address": {
-        "type": "PostalAddress",
-        "value": {
-            "streetAddress": "Friedrichstra&#223;e 44",
-            "addressRegion": "Berlin",
-            "addressLocality": "Kreuzberg",
-            "postalCode": "10969"
-        },
-        "metadata": {
-            "verified": {
-                "value": true,
-                "type": "Boolean"
-            }
-        }
-    },
-    "location": {
-        "type": "geo:json",
-        "value": {
-             "type": "Point",
-             "coordinates": [13.3903, 52.5075]
-        }
-    },
-    "name": {
-        "type": "Text",
-        "value": "Checkpoint Markt"
-    }
-}</fo:block>
+              <fo:block background-color="ALICEBLUE" font-family="MONOSPACE" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">
+                <fo:inline border-end-width="0pt" color="#909090">{</fo:inline>
+                <fo:inline border-end-width="0pt" color="#609000">"type"</fo:inline>
+                <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
+                <fo:inline border-end-width="0pt" color="#609000">"Store"</fo:inline>
+                <fo:inline border-end-width="0pt" color="#909090">,</fo:inline>
+                <fo:inline border-end-width="0pt" color="#609000">"id"</fo:inline>
+                <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
+                <fo:inline border-end-width="0pt" color="#609000">"urn:ngsi-ld:Store:002"</fo:inline>
+                <fo:inline border-end-width="0pt" color="#909090">,</fo:inline>
+                <fo:inline border-end-width="0pt" color="#609000">"address"</fo:inline>
+                <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
+                <fo:inline border-end-width="0pt" color="#909090">{</fo:inline>
+                <fo:inline border-end-width="0pt" color="#609000">"type"</fo:inline>
+                <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
+                <fo:inline border-end-width="0pt" color="#609000">"PostalAddress"</fo:inline>
+                <fo:inline border-end-width="0pt" color="#909090">,</fo:inline>
+                <fo:inline border-end-width="0pt" color="#609000">"value"</fo:inline>
+                <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
+                <fo:inline border-end-width="0pt" color="#909090">{</fo:inline>
+                <fo:inline border-end-width="0pt" color="#609000">"streetAddress"</fo:inline>
+                <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
+                <fo:inline border-end-width="0pt" color="#609000">"Friedrichstra&#223;e 44"</fo:inline>
+                <fo:inline border-end-width="0pt" color="#909090">,</fo:inline>
+                <fo:inline border-end-width="0pt" color="#609000">"addressRegion"</fo:inline>
+                <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
+                <fo:inline border-end-width="0pt" color="#609000">"Berlin"</fo:inline>
+                <fo:inline border-end-width="0pt" color="#909090">,</fo:inline>
+                <fo:inline border-end-width="0pt" color="#609000">"addressLocality"</fo:inline>
+                <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
+                <fo:inline border-end-width="0pt" color="#609000">"Kreuzberg"</fo:inline>
+                <fo:inline border-end-width="0pt" color="#909090">,</fo:inline>
+                <fo:inline border-end-width="0pt" color="#609000">"postalCode"</fo:inline>
+                <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
+                <fo:inline border-end-width="0pt" color="#609000">"10969"</fo:inline>
+                <fo:inline border-end-width="0pt" color="#909090">}</fo:inline>
+                <fo:inline border-end-width="0pt" color="#909090">,</fo:inline>
+                <fo:inline border-end-width="0pt" color="#609000">"metadata"</fo:inline>
+                <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
+                <fo:inline border-end-width="0pt" color="#909090">{</fo:inline>
+                <fo:inline border-end-width="0pt" color="#609000">"verified"</fo:inline>
+                <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
+                <fo:inline border-end-width="0pt" color="#909090">{</fo:inline>
+                <fo:inline border-end-width="0pt" color="#609000">"value"</fo:inline>
+                <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
+                <fo:inline border-end-width="0pt" color="#900050">true</fo:inline>
+                <fo:inline border-end-width="0pt" color="#909090">,</fo:inline>
+                <fo:inline border-end-width="0pt" color="#609000">"type"</fo:inline>
+                <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
+                <fo:inline border-end-width="0pt" color="#609000">"Boolean"</fo:inline>
+                <fo:inline border-end-width="0pt" color="#909090">}</fo:inline>
+                <fo:inline border-end-width="0pt" color="#909090">}</fo:inline>
+                <fo:inline border-end-width="0pt" color="#909090">}</fo:inline>
+                <fo:inline border-end-width="0pt" color="#909090">,</fo:inline>
+                <fo:inline border-end-width="0pt" color="#609000">"location"</fo:inline>
+                <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
+                <fo:inline border-end-width="0pt" color="#909090">{</fo:inline>
+                <fo:inline border-end-width="0pt" color="#609000">"type"</fo:inline>
+                <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
+                <fo:inline border-end-width="0pt" color="#609000">"geo:json"</fo:inline>
+                <fo:inline border-end-width="0pt" color="#909090">,</fo:inline>
+                <fo:inline border-end-width="0pt" color="#609000">"value"</fo:inline>
+                <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
+                <fo:inline border-end-width="0pt" color="#909090">{</fo:inline>
+                <fo:inline border-end-width="0pt" color="#609000">"type"</fo:inline>
+                <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
+                <fo:inline border-end-width="0pt" color="#609000">"Point"</fo:inline>
+                <fo:inline border-end-width="0pt" color="#909090">,</fo:inline>
+                <fo:inline border-end-width="0pt" color="#609000">"coordinates"</fo:inline>
+                <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
+                <fo:inline border-end-width="0pt" color="#909090">[</fo:inline>
+                <fo:inline border-end-width="0pt" color="#900050">13.3903</fo:inline>
+                <fo:inline border-end-width="0pt" color="#909090">,</fo:inline>
+                <fo:inline border-end-width="0pt" color="#900050">52.5075</fo:inline>
+                <fo:inline border-end-width="0pt" color="#909090">]</fo:inline>
+                <fo:inline border-end-width="0pt" color="#909090">}</fo:inline>
+                <fo:inline border-end-width="0pt" color="#909090">}</fo:inline>
+                <fo:inline border-end-width="0pt" color="#909090">,</fo:inline>
+                <fo:inline border-end-width="0pt" color="#609000">"name"</fo:inline>
+                <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
+                <fo:inline border-end-width="0pt" color="#909090">{</fo:inline>
+                <fo:inline border-end-width="0pt" color="#609000">"type"</fo:inline>
+                <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
+                <fo:inline border-end-width="0pt" color="#609000">"Text"</fo:inline>
+                <fo:inline border-end-width="0pt" color="#909090">,</fo:inline>
+                <fo:inline border-end-width="0pt" color="#609000">"value"</fo:inline>
+                <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
+                <fo:inline border-end-width="0pt" color="#609000">"Checkpoint Markt"</fo:inline>
+                <fo:inline border-end-width="0pt" color="#909090">}</fo:inline>
+                <fo:inline border-end-width="0pt" color="#909090">}</fo:inline>
+              </fo:block>
             </fo:block>
           </fo:block>
           <fo:block>
@@ -779,28 +827,10 @@ If the response is blank, this is usually because the MongoDB database holding t
           <fo:block>
             <fo:block font-family="STANDARD" font-weight="bold">Endpoint:</fo:block>
             <fo:block>
-              <fo:list-block provisional-distance-between-starts="5mm" provisional-label-separation="1mm">
-                <fo:list-item relative-align="baseline">
-                  <fo:list-item-label keep-together.within-line="always">
-                    <fo:block text-align="start">&#8226;</fo:block>
-                  </fo:list-item-label>
-                  <fo:list-item-body>
-                    <fo:block>Method:
-                      <fo:inline font-weight="bold">GET</fo:inline>
-                    </fo:block>
-                  </fo:list-item-body>
-                </fo:list-item>
-                <fo:list-item relative-align="baseline">
-                  <fo:list-item-label keep-together.within-line="always">
-                    <fo:block text-align="start">&#8226;</fo:block>
-                  </fo:list-item-label>
-                  <fo:list-item-body>
-                    <fo:block>URL:
-                      <fo:inline font-family="MONOSPACE">http://{{orion}}/v2/entitie</fo:inline>
-                    </fo:block>
-                  </fo:list-item-body>
-                </fo:list-item>
-              </fo:list-block>
+              <fo:block background-color="ALICEBLUE" border-color="CORNFLOWERBLUE" border-style="solid" border-width="1pt" font-family="MONOSPACE" font-weight="bold" padding-start="10pt">
+                <fo:inline background-color="CORNFLOWERBLUE" color="white" font-family="STANDARD" padding-end="8pt" padding-start="8pt">GET</fo:inline>
+                <fo:inline padding-start="10pt">http://{{orion}}/v2/entitie</fo:inline>
+              </fo:block>
             </fo:block>
           </fo:block>
           <fo:block>
@@ -831,28 +861,10 @@ If the response is blank, this is usually because the MongoDB database holding t
           <fo:block>
             <fo:block font-family="STANDARD" font-weight="bold">Endpoint:</fo:block>
             <fo:block>
-              <fo:list-block provisional-distance-between-starts="5mm" provisional-label-separation="1mm">
-                <fo:list-item relative-align="baseline">
-                  <fo:list-item-label keep-together.within-line="always">
-                    <fo:block text-align="start">&#8226;</fo:block>
-                  </fo:list-item-label>
-                  <fo:list-item-body>
-                    <fo:block>Method:
-                      <fo:inline font-weight="bold">GET</fo:inline>
-                    </fo:block>
-                  </fo:list-item-body>
-                </fo:list-item>
-                <fo:list-item relative-align="baseline">
-                  <fo:list-item-label keep-together.within-line="always">
-                    <fo:block text-align="start">&#8226;</fo:block>
-                  </fo:list-item-label>
-                  <fo:list-item-body>
-                    <fo:block>URL:
-                      <fo:inline font-family="MONOSPACE">http://{{orion}}/v2/entities/urn:ngsi-ld:Store:001</fo:inline>
-                    </fo:block>
-                  </fo:list-item-body>
-                </fo:list-item>
-              </fo:list-block>
+              <fo:block background-color="ALICEBLUE" border-color="CORNFLOWERBLUE" border-style="solid" border-width="1pt" font-family="MONOSPACE" font-weight="bold" padding-start="10pt">
+                <fo:inline background-color="CORNFLOWERBLUE" color="white" font-family="STANDARD" padding-end="8pt" padding-start="8pt">GET</fo:inline>
+                <fo:inline padding-start="10pt">http://{{orion}}/v2/entities/urn:ngsi-ld:Store:001</fo:inline>
+              </fo:block>
             </fo:block>
           </fo:block>
           <fo:block>
@@ -861,9 +873,9 @@ If the response is blank, this is usually because the MongoDB database holding t
               <fo:block-container reference-orientation="0">
                 <fo:block>
                   <fo:table border-after-color="black" border-before-color="black" border-end-color="black" border-end-style="solid" border-end-width="1pt" table-layout="fixed" width="100%">
-                    <fo:table-column column-number="1" column-width="16%"></fo:table-column>
-                    <fo:table-column column-number="2" column-width="28%"></fo:table-column>
-                    <fo:table-column column-number="3" column-width="56%"></fo:table-column>
+                    <fo:table-column column-number="1" column-width="13%"></fo:table-column>
+                    <fo:table-column column-number="2" column-width="27%"></fo:table-column>
+                    <fo:table-column column-number="3" column-width="59%"></fo:table-column>
                     <fo:table-header>
                       <fo:table-row>
                         <fo:table-cell border-before-color="black" text-align="left">
@@ -961,28 +973,10 @@ Because of the use of the
           <fo:block>
             <fo:block font-family="STANDARD" font-weight="bold">Endpoint:</fo:block>
             <fo:block>
-              <fo:list-block provisional-distance-between-starts="5mm" provisional-label-separation="1mm">
-                <fo:list-item relative-align="baseline">
-                  <fo:list-item-label keep-together.within-line="always">
-                    <fo:block text-align="start">&#8226;</fo:block>
-                  </fo:list-item-label>
-                  <fo:list-item-body>
-                    <fo:block>Method:
-                      <fo:inline font-weight="bold">GET</fo:inline>
-                    </fo:block>
-                  </fo:list-item-body>
-                </fo:list-item>
-                <fo:list-item relative-align="baseline">
-                  <fo:list-item-label keep-together.within-line="always">
-                    <fo:block text-align="start">&#8226;</fo:block>
-                  </fo:list-item-label>
-                  <fo:list-item-body>
-                    <fo:block>URL:
-                      <fo:inline font-family="MONOSPACE">http://{{orion}}/v2/entities/</fo:inline>
-                    </fo:block>
-                  </fo:list-item-body>
-                </fo:list-item>
-              </fo:list-block>
+              <fo:block background-color="ALICEBLUE" border-color="CORNFLOWERBLUE" border-style="solid" border-width="1pt" font-family="MONOSPACE" font-weight="bold" padding-start="10pt">
+                <fo:inline background-color="CORNFLOWERBLUE" color="white" font-family="STANDARD" padding-end="8pt" padding-start="8pt">GET</fo:inline>
+                <fo:inline padding-start="10pt">http://{{orion}}/v2/entities/</fo:inline>
+              </fo:block>
             </fo:block>
           </fo:block>
           <fo:block>
@@ -991,9 +985,9 @@ Because of the use of the
               <fo:block-container reference-orientation="0">
                 <fo:block>
                   <fo:table border-after-color="black" border-before-color="black" border-end-color="black" border-end-style="solid" border-end-width="1pt" table-layout="fixed" width="100%">
-                    <fo:table-column column-number="1" column-width="16%"></fo:table-column>
-                    <fo:table-column column-number="2" column-width="28%"></fo:table-column>
-                    <fo:table-column column-number="3" column-width="56%"></fo:table-column>
+                    <fo:table-column column-number="1" column-width="13%"></fo:table-column>
+                    <fo:table-column column-number="2" column-width="27%"></fo:table-column>
+                    <fo:table-column column-number="3" column-width="59%"></fo:table-column>
                     <fo:table-header>
                       <fo:table-row>
                         <fo:table-cell border-before-color="black" text-align="left">
@@ -1105,28 +1099,10 @@ Because of the use of the
               <fo:block>
                 <fo:block font-family="STANDARD" font-weight="bold">Endpoint:</fo:block>
                 <fo:block>
-                  <fo:list-block provisional-distance-between-starts="5mm" provisional-label-separation="1mm">
-                    <fo:list-item relative-align="baseline">
-                      <fo:list-item-label keep-together.within-line="always">
-                        <fo:block text-align="start">&#8226;</fo:block>
-                      </fo:list-item-label>
-                      <fo:list-item-body>
-                        <fo:block>Method:
-                          <fo:inline font-weight="bold">GET</fo:inline>
-                        </fo:block>
-                      </fo:list-item-body>
-                    </fo:list-item>
-                    <fo:list-item relative-align="baseline">
-                      <fo:list-item-label keep-together.within-line="always">
-                        <fo:block text-align="start">&#8226;</fo:block>
-                      </fo:list-item-label>
-                      <fo:list-item-body>
-                        <fo:block>URL:
-                          <fo:inline font-family="MONOSPACE">http://{{orion}}/v2/entities/</fo:inline>
-                        </fo:block>
-                      </fo:list-item-body>
-                    </fo:list-item>
-                  </fo:list-block>
+                  <fo:block background-color="ALICEBLUE" border-color="CORNFLOWERBLUE" border-style="solid" border-width="1pt" font-family="MONOSPACE" font-weight="bold" padding-start="10pt">
+                    <fo:inline background-color="CORNFLOWERBLUE" color="white" font-family="STANDARD" padding-end="8pt" padding-start="8pt">GET</fo:inline>
+                    <fo:inline padding-start="10pt">http://{{orion}}/v2/entities/</fo:inline>
+                  </fo:block>
                 </fo:block>
               </fo:block>
               <fo:block>
@@ -1135,9 +1111,9 @@ Because of the use of the
                   <fo:block-container reference-orientation="0">
                     <fo:block>
                       <fo:table border-after-color="black" border-before-color="black" border-end-color="black" border-end-style="solid" border-end-width="1pt" table-layout="fixed" width="100%">
-                        <fo:table-column column-number="1" column-width="16%"></fo:table-column>
-                        <fo:table-column column-number="2" column-width="28%"></fo:table-column>
-                        <fo:table-column column-number="3" column-width="56%"></fo:table-column>
+                        <fo:table-column column-number="1" column-width="13%"></fo:table-column>
+                        <fo:table-column column-number="2" column-width="27%"></fo:table-column>
+                        <fo:table-column column-number="3" column-width="59%"></fo:table-column>
                         <fo:table-header>
                           <fo:table-row>
                             <fo:table-cell border-before-color="black" text-align="left">
@@ -1256,7 +1232,7 @@ Because of the use of the
                 <fo:inline font-family="MONOSPACE">Store</fo:inline>entities found in the
                 <fo:inline font-weight="bold">Kreuzberg</fo:inline>district of Berlin.</fo:block>
               <fo:block>Filtering can be done using the
-                <fo:inline font-family="MONOSPACE">q</fo:inline>parameter - sub-attributes are annotated using the dot syntax e.g.
+                <fo:inline font-family="MONOSPACE">q</fo:inline>parameter - sub-attributes are annotated using the dot syntax e.g.&#160;
                 <fo:inline font-family="MONOSPACE">address.addressLocality</fo:inline>
               </fo:block>
               <fo:block>Because of the use of the
@@ -1266,28 +1242,10 @@ Because of the use of the
               <fo:block>
                 <fo:block font-family="STANDARD" font-weight="bold">Endpoint:</fo:block>
                 <fo:block>
-                  <fo:list-block provisional-distance-between-starts="5mm" provisional-label-separation="1mm">
-                    <fo:list-item relative-align="baseline">
-                      <fo:list-item-label keep-together.within-line="always">
-                        <fo:block text-align="start">&#8226;</fo:block>
-                      </fo:list-item-label>
-                      <fo:list-item-body>
-                        <fo:block>Method:
-                          <fo:inline font-weight="bold">GET</fo:inline>
-                        </fo:block>
-                      </fo:list-item-body>
-                    </fo:list-item>
-                    <fo:list-item relative-align="baseline">
-                      <fo:list-item-label keep-together.within-line="always">
-                        <fo:block text-align="start">&#8226;</fo:block>
-                      </fo:list-item-label>
-                      <fo:list-item-body>
-                        <fo:block>URL:
-                          <fo:inline font-family="MONOSPACE">http://{{orion}}/v2/entities/</fo:inline>
-                        </fo:block>
-                      </fo:list-item-body>
-                    </fo:list-item>
-                  </fo:list-block>
+                  <fo:block background-color="ALICEBLUE" border-color="CORNFLOWERBLUE" border-style="solid" border-width="1pt" font-family="MONOSPACE" font-weight="bold" padding-start="10pt">
+                    <fo:inline background-color="CORNFLOWERBLUE" color="white" font-family="STANDARD" padding-end="8pt" padding-start="8pt">GET</fo:inline>
+                    <fo:inline padding-start="10pt">http://{{orion}}/v2/entities/</fo:inline>
+                  </fo:block>
                 </fo:block>
               </fo:block>
               <fo:block>
@@ -1296,9 +1254,9 @@ Because of the use of the
                   <fo:block-container reference-orientation="0">
                     <fo:block>
                       <fo:table border-after-color="black" border-before-color="black" border-end-color="black" border-end-style="solid" border-end-width="1pt" table-layout="fixed" width="100%">
-                        <fo:table-column column-number="1" column-width="16%"></fo:table-column>
-                        <fo:table-column column-number="2" column-width="28%"></fo:table-column>
-                        <fo:table-column column-number="3" column-width="56%"></fo:table-column>
+                        <fo:table-column column-number="1" column-width="13%"></fo:table-column>
+                        <fo:table-column column-number="2" column-width="27%"></fo:table-column>
+                        <fo:table-column column-number="3" column-width="59%"></fo:table-column>
                         <fo:table-header>
                           <fo:table-row>
                             <fo:table-cell border-before-color="black" text-align="left">
@@ -1405,28 +1363,10 @@ Because of the use of the
               <fo:block>
                 <fo:block font-family="STANDARD" font-weight="bold">Endpoint:</fo:block>
                 <fo:block>
-                  <fo:list-block provisional-distance-between-starts="5mm" provisional-label-separation="1mm">
-                    <fo:list-item relative-align="baseline">
-                      <fo:list-item-label keep-together.within-line="always">
-                        <fo:block text-align="start">&#8226;</fo:block>
-                      </fo:list-item-label>
-                      <fo:list-item-body>
-                        <fo:block>Method:
-                          <fo:inline font-weight="bold">GET</fo:inline>
-                        </fo:block>
-                      </fo:list-item-body>
-                    </fo:list-item>
-                    <fo:list-item relative-align="baseline">
-                      <fo:list-item-label keep-together.within-line="always">
-                        <fo:block text-align="start">&#8226;</fo:block>
-                      </fo:list-item-label>
-                      <fo:list-item-body>
-                        <fo:block>URL:
-                          <fo:inline font-family="MONOSPACE">http://{{orion}}/v2/entities/</fo:inline>
-                        </fo:block>
-                      </fo:list-item-body>
-                    </fo:list-item>
-                  </fo:list-block>
+                  <fo:block background-color="ALICEBLUE" border-color="CORNFLOWERBLUE" border-style="solid" border-width="1pt" font-family="MONOSPACE" font-weight="bold" padding-start="10pt">
+                    <fo:inline background-color="CORNFLOWERBLUE" color="white" font-family="STANDARD" padding-end="8pt" padding-start="8pt">GET</fo:inline>
+                    <fo:inline padding-start="10pt">http://{{orion}}/v2/entities/</fo:inline>
+                  </fo:block>
                 </fo:block>
               </fo:block>
               <fo:block>
@@ -1435,9 +1375,9 @@ Because of the use of the
                   <fo:block-container reference-orientation="0">
                     <fo:block>
                       <fo:table border-after-color="black" border-before-color="black" border-end-color="black" border-end-style="solid" border-end-width="1pt" table-layout="fixed" width="100%">
-                        <fo:table-column column-number="1" column-width="16%"></fo:table-column>
-                        <fo:table-column column-number="2" column-width="28%"></fo:table-column>
-                        <fo:table-column column-number="3" column-width="56%"></fo:table-column>
+                        <fo:table-column column-number="1" column-width="13%"></fo:table-column>
+                        <fo:table-column column-number="2" column-width="27%"></fo:table-column>
+                        <fo:table-column column-number="3" column-width="59%"></fo:table-column>
                         <fo:table-header>
                           <fo:table-row>
                             <fo:table-cell border-before-color="black" text-align="left">
@@ -1545,28 +1485,10 @@ Because of the use of the
               <fo:block>
                 <fo:block font-family="STANDARD" font-weight="bold">Endpoint:</fo:block>
                 <fo:block>
-                  <fo:list-block provisional-distance-between-starts="5mm" provisional-label-separation="1mm">
-                    <fo:list-item relative-align="baseline">
-                      <fo:list-item-label keep-together.within-line="always">
-                        <fo:block text-align="start">&#8226;</fo:block>
-                      </fo:list-item-label>
-                      <fo:list-item-body>
-                        <fo:block>Method:
-                          <fo:inline font-weight="bold">GET</fo:inline>
-                        </fo:block>
-                      </fo:list-item-body>
-                    </fo:list-item>
-                    <fo:list-item relative-align="baseline">
-                      <fo:list-item-label keep-together.within-line="always">
-                        <fo:block text-align="start">&#8226;</fo:block>
-                      </fo:list-item-label>
-                      <fo:list-item-body>
-                        <fo:block>URL:
-                          <fo:inline font-family="MONOSPACE">http://{{orion}}/v2/entities/</fo:inline>
-                        </fo:block>
-                      </fo:list-item-body>
-                    </fo:list-item>
-                  </fo:list-block>
+                  <fo:block background-color="ALICEBLUE" border-color="CORNFLOWERBLUE" border-style="solid" border-width="1pt" font-family="MONOSPACE" font-weight="bold" padding-start="10pt">
+                    <fo:inline background-color="CORNFLOWERBLUE" color="white" font-family="STANDARD" padding-end="8pt" padding-start="8pt">GET</fo:inline>
+                    <fo:inline padding-start="10pt">http://{{orion}}/v2/entities/</fo:inline>
+                  </fo:block>
                 </fo:block>
               </fo:block>
               <fo:block>
@@ -1575,9 +1497,9 @@ Because of the use of the
                   <fo:block-container reference-orientation="0">
                     <fo:block>
                       <fo:table border-after-color="black" border-before-color="black" border-end-color="black" border-end-style="solid" border-end-width="1pt" table-layout="fixed" width="100%">
-                        <fo:table-column column-number="1" column-width="16%"></fo:table-column>
-                        <fo:table-column column-number="2" column-width="28%"></fo:table-column>
-                        <fo:table-column column-number="3" column-width="56%"></fo:table-column>
+                        <fo:table-column column-number="1" column-width="13%"></fo:table-column>
+                        <fo:table-column column-number="2" column-width="27%"></fo:table-column>
+                        <fo:table-column column-number="3" column-width="59%"></fo:table-column>
                         <fo:table-header>
                           <fo:table-row>
                             <fo:table-cell border-before-color="black" text-align="left">
