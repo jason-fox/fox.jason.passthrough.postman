@@ -85,30 +85,33 @@ function convert(request) {
     return snippet.join("  \\\n  ");
   };
 
-function add (item , lines) {
-   
-    lines.push("#### Endpoint: {.section}\n");
+function addDescription (desc , lines) {
+  var regex = /^#+ /;
+    if (desc ){
+      var description = desc.split("\n");
+      for each (var descLine in description) {
+        if (descLine.startsWith("#")){
+          lines.push(descLine.replace( regex,"###### ") + " {.section}");
+        } else {
+          lines.push(descLine);
+        }
+      }
+    } else {
+      lines.push("");
+    }
+}
 
+function addEndpoint (item , lines) {
     lines.push("");
     lines.push('```swagger-' + item.request.method);
     lines.push(item.request.method.toUpperCase() + " " 
       + item.request.url.raw.slice(0, item.request.url.raw.indexOf("?")));
     lines.push('```');
-
-    /*lines.push("- Method: **" +  item.request.method.toUpperCase() + "**");
-    if(item.request.body){
-      lines.push("- Type: **" +  item.request.body.mode.toUpperCase() + "**");
-    }
-    lines.push("- URL: `" +  item.request.url.raw.slice(0, item.request.url.raw.indexOf("?"))+ "`");
-    */
-
-
-
-
-
     lines.push("");
+}
 
-
+function add (item , lines) {
+    lines.push("");
     if(item.request.header.length > 0){
       lines.push("#### Headers: {.section}\n");
       lines.push("| Key | Value | Description |");
@@ -178,18 +181,22 @@ function postmanToMarkdown(data) {
 
   for each (var item in data.item) {
       if (item.request){
-        lines.push( "#  " + item.name.trim() + "\n");
-        lines.push( item.request.description ? item.request.description + "\n":"");
+        lines.push( "#  " + item.name.trim() + "\n\n");
+        addEndpoint (item, lines);
+        addDescription (item.request.description , lines);
+       // lines.push( item.request.description ? item.request.description + "\n":"");
         add (item, lines);
       } else {
        
-        lines.push( "#  " + item.name.trim() + "\n");
-        lines.push( item.description ? item.description + "\n": "");
+        lines.push( "#  " + item.name.trim() + "\n\n");
+        addDescription (item.description , lines);
+        // lines.push( item.description ? item.description + "\n": "");
 
         for each (var item in item.item) {
           if (item.request){
-            lines.push( "##  " + item.name.trim() + "\n");
-            lines.push( item.request.description ? item.request.description + "\n":"");
+            lines.push( "##  " + item.name.trim() + "\n\n");
+            addEndpoint (item, lines);
+            addDescription (item.request.description , lines);
             add (item, lines);
           }
         }
