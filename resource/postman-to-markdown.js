@@ -17,6 +17,11 @@ function description (str){
   return str.replace(/\n/g, '<br><br>');
 }
 
+function getURL(raw){
+  var index = raw.indexOf("?");
+  return (index !== -1) ? raw.slice(0, raw.indexOf("?")) : raw;
+}
+
 function convert(request) {
 
     var snippet = [];
@@ -24,12 +29,10 @@ function convert(request) {
         snippet.push("curl -I ")
         snippet.push(request.url.raw);
     } else if (request.method === 'GET') {
-       
-
         snippet.push("curl -X " +   
           ( request.url.raw.indexOf("?") ? " -G " : "" ) +request.method)
         snippet.push("\'" + 
-          request.url.raw.slice(0, request.url.raw.indexOf("?")) +  "\'");
+          getURL(request.url.raw) +  "\'");
     } else {
         snippet.push("curl -X " + request.method)
         snippet.push("\'" + request.url.raw +  "\'");
@@ -85,7 +88,22 @@ function convert(request) {
     return snippet.join("  \\\n  ");
   };
 
-function addDescription (desc , lines) {
+function extractType(header){
+  var slash = header.lastIndexOf("/");
+  var plus = header.lastIndexOf("+");
+  var type;
+
+  if (plus !== -1){
+    type = header.substring(plus + 1);
+  } else if (slash !== -1) {
+    type = header.substring(slash + 1);
+  } else {
+    type = header;
+  }
+  return type;
+}
+
+function addDescription (desc ) {
   var regex = /^#+ /;
     if (desc ){
       var description = desc.split("\n");
@@ -101,22 +119,29 @@ function addDescription (desc , lines) {
     }
 }
 
-function addEndpoint (item , lines) {
+function addEndpoint (request ) {
     lines.push("");
-    lines.push('```swagger-' + item.request.method);
-    lines.push(item.request.method.toUpperCase() + " " 
-      + item.request.url.raw.slice(0, item.request.url.raw.indexOf("?")));
+    lines.push('```swagger-' + request.method);
+    lines.push(request.method.toUpperCase() + " " 
+      + getURL(request.url.raw));
     lines.push('```');
     lines.push("");
 }
 
-function add (item , lines) {
+function addRequest (request ) {
+    var contentType = "markup";
+    //var acceptType = "markup";
     lines.push("");
-    if(item.request.header.length > 0){
+    if(request.header.length > 0){
       lines.push("#### Headers: {.section}\n");
       lines.push("| Key | Value | Description |");
       lines.push("| --- | ------|-------------|");
-      for each (var header in item.request.header) {
+      for each (var header in request.header) {
+        if (header.key.toLowerCase() == "content-type"){
+          contentType = extractType(header.value);
+        } //else if (header.key.toLowerCase() == "accept"){
+          //acceptType = extractType(header.value);
+        //}
         lines.push("| " + header.key + " | " + 
             (header.value || "") + " | " + description(header.description) + " |");
       }
@@ -124,34 +149,34 @@ function add (item , lines) {
     }
 
 
-    if(item.request.url.query){
+    if(request.url.query){
       lines.push("#### Query Parameters: {.section}\n");
       lines.push("| Key | Value | Description |");
       lines.push("| --- | ------|-------------|");
-      for each (var param in item.request.url.query) {
+      for each (var param in request.url.query) {
         lines.push("| `" + param.key + "` | `" + 
             (param.value || "") + "` | " + description(param.description) + " |");
       }
       lines.push("");
     }
 
-    if(item.request.body) {
-      if(item.request.body.mode === 'raw'){
+    if(request.body) {
+      if(request.body.mode === 'raw'){
         lines.push("#### Body: {.section}\n");
-        lines.push("```json");        
-        lines.push(item.request.body.raw );
+        lines.push("```" + contentType);        
+        lines.push(request.body.raw );
         lines.push("```");
 
-      } else if(item.request.body.mode === 'formdata'){
+      } else if(request.body.mode === 'formdata'){
         lines.push("#### Body: {.section}\n");
-        for each (var param in item.request.body.formdata) {
+        for each (var param in request.body.formdata) {
           lines.push("| `" + param.key + "` | `" + 
               (param.value || "") + "` | " + description(param.description) + " |");
         }
 
-      } else if(item.request.body.mode === 'urlencoded'){
+      } else if(request.body.mode === 'urlencoded'){
         lines.push("#### Body: {.section}\n");
-        for each (var param in item.request.body.urlencoded) {
+        for each (var param in request.body.urlencoded) {
           lines.push("| `" + param.key + "` | `" + 
               (param.value || "") + "` | " + description(param.description) + " |");
         }
@@ -161,14 +186,13 @@ function add (item , lines) {
 
     lines.push("#### Example: {.section}\n");
     lines.push("```bash");        
-    lines.push(convert(item.request));
+    lines.push(convert(request));
     lines.push("```\n");
 
 
 }
 
 function postmanToMarkdown(data) {
-  var lines = [];
 
   if (data.info.name){
     lines.push( "#  " + data.info.name.trim() + "\n");
@@ -176,45 +200,43 @@ function postmanToMarkdown(data) {
 
   if (data.info.description){
     lines.push(data.info.description + "\n");
-
   }
 
   for each (var item in data.item) {
       if (item.request){
-        lines.push( "#  " + item.name.trim() + "\n\n");
-        addEndpoint (item, lines);
-        addDescription (item.request.description , lines);
-       // lines.push( item.request.description ? item.request.description + "\n":"");
-        add (item, lines);
+        lines.push( "#  " + item.name.trim() + " { .swagger-" + item.request.method +"}\n\n");
+        addEndpoint (item.request);
+        addDescription (item.request.description );
+        addRequest (item.request);
       } else {
        
         lines.push( "#  " + item.name.trim() + "\n\n");
-        addDescription (item.description , lines);
-        // lines.push( item.description ? item.description + "\n": "");
+        addDescription (item.description );
 
         for each (var item in item.item) {
           if (item.request){
-            lines.push( "##  " + item.name.trim() + "\n\n");
-            addEndpoint (item, lines);
-            addDescription (item.request.description , lines);
-            add (item, lines);
+            lines.push( "##  " + item.name.trim() + " { .swagger-" + item.request.method +"}\n\n");
+            addEndpoint (item.request);
+            addDescription (item.request.description);
+            addRequest(item.request);
           }
         }
       }
    }
-
-  return lines.join('\n');
 }
 
 
 var src = attributes.get("src");
 var dest = attributes.get("dest");
+var lines = [];
 
 
 var data = org.apache.tools.ant.util.FileUtils.readFully(
   new java.io.FileReader(src)
 );
-var markdown = postmanToMarkdown(JSON.parse(data));
+
+postmanToMarkdown(JSON.parse(data));
+var markdown = lines.join('\n');
 
 var task = project.createTask("echo");
 task.setFile(new java.io.File(dest));
