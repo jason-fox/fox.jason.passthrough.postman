@@ -73,7 +73,7 @@
                   </fo:list-item-label>
                   <fo:list-item-body>
                     <fo:block>
-                      <fo:basic-link color="blue" internal-destination="unique_12">Creating your Second Data Entity</fo:basic-link>
+                      <fo:basic-link color="blue" internal-destination="unique_11">Creating your Second Data Entity</fo:basic-link>
                     </fo:block>
                   </fo:list-item-body>
                 </fo:list-item>
@@ -83,7 +83,7 @@
                   </fo:list-item-label>
                   <fo:list-item-body>
                     <fo:block>
-                      <fo:basic-link color="blue" internal-destination="unique_13">Retrieving Context Information</fo:basic-link>
+                      <fo:basic-link color="blue" internal-destination="unique_12">Retrieving Context Information</fo:basic-link>
                     </fo:block>
                   </fo:list-item-body>
                 </fo:list-item>
@@ -93,7 +93,7 @@
                   </fo:list-item-label>
                   <fo:list-item-body>
                     <fo:block>
-                      <fo:basic-link color="blue" internal-destination="unique_14">Obtain Entity Data by id</fo:basic-link>
+                      <fo:basic-link color="blue" internal-destination="unique_13">Obtain Entity Data by id</fo:basic-link>
                     </fo:block>
                   </fo:list-item-body>
                 </fo:list-item>
@@ -103,7 +103,7 @@
                   </fo:list-item-label>
                   <fo:list-item-body>
                     <fo:block>
-                      <fo:basic-link color="blue" internal-destination="unique_15">Obtain Entity Data by type</fo:basic-link>
+                      <fo:basic-link color="blue" internal-destination="unique_14">Obtain Entity Data by type</fo:basic-link>
                     </fo:block>
                   </fo:list-item-body>
                 </fo:list-item>
@@ -113,7 +113,7 @@
                   </fo:list-item-label>
                   <fo:list-item-body>
                     <fo:block>
-                      <fo:basic-link color="blue" internal-destination="unique_16">Filter context data by attribute value</fo:basic-link>
+                      <fo:basic-link color="blue" internal-destination="unique_15">Filter context data by attribute value</fo:basic-link>
                     </fo:block>
                   </fo:list-item-body>
                 </fo:list-item>
@@ -123,7 +123,7 @@
                   </fo:list-item-label>
                   <fo:list-item-body>
                     <fo:block>
-                      <fo:basic-link color="blue" internal-destination="unique_18">Filter context data by sub-attribute value</fo:basic-link>
+                      <fo:basic-link color="blue" internal-destination="unique_16">Filter context data by sub-attribute value</fo:basic-link>
                     </fo:block>
                   </fo:list-item-body>
                 </fo:list-item>
@@ -133,7 +133,7 @@
                   </fo:list-item-label>
                   <fo:list-item-body>
                     <fo:block>
-                      <fo:basic-link color="blue" internal-destination="unique_20">Filter context data by querying metadata</fo:basic-link>
+                      <fo:basic-link color="blue" internal-destination="unique_17">Filter context data by querying metadata</fo:basic-link>
                     </fo:block>
                   </fo:list-item-body>
                 </fo:list-item>
@@ -143,7 +143,7 @@
                   </fo:list-item-label>
                   <fo:list-item-body>
                     <fo:block>
-                      <fo:basic-link color="blue" internal-destination="unique_22">Filter context data by distance</fo:basic-link>
+                      <fo:basic-link color="blue" internal-destination="unique_18">Filter context data by distance</fo:basic-link>
                     </fo:block>
                   </fo:list-item-body>
                 </fo:list-item>
@@ -270,7 +270,7 @@
             </fo:block>
             <fo:block>
               <fo:block>First pull the necessary Docker images from Docker Hub and create a network for our containers to connect to:</fo:block>
-              <fo:block background-color="ALICEBLUE" font-family="MONOSPACE" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">docker pull mongo:3.6
+              <fo:block background-color="ALICEBLUE" color="black" font-family="MONOSPACE" font-weight="bold" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">docker pull mongo:3.6
 docker pull fiware/orion
 docker network create fiware_default</fo:block>
             </fo:block>
@@ -285,16 +285,23 @@ docker network create fiware_default</fo:block>
             </fo:block>
             <fo:block>
               <fo:block>A Docker container running a MongoDB database can be started and connected to the network with the following command:</fo:block>
-              <fo:block background-color="ALICEBLUE" font-family="MONOSPACE" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">docker run -d --name=context-db --network=fiware_default \
-  --expose=27017 mongo:3.6 --bind_ip_all --smallfiles</fo:block>
+              <fo:block background-color="ALICEBLUE" color="black" font-family="MONOSPACE" font-weight="bold" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">docker run -d --name
+                <fo:inline color="SIENNA" font-family="MONOSPACE" font-weight="bold">=</fo:inline>context-db --network
+                <fo:inline color="SIENNA" font-family="MONOSPACE" font-weight="bold">=</fo:inline>fiware_default
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">\</fo:inline>--expose
+                <fo:inline color="SIENNA" font-family="MONOSPACE" font-weight="bold">=</fo:inline>
+                <fo:inline color="#900050" font-family="MONOSPACE" font-weight="bold">27017</fo:inline>mongo:3.6 --bind_ip_all --smallfiles</fo:block>
               <fo:block>The Orion Context Broker can be started and connected to the network with the following command:</fo:block>
-              <fo:block background-color="ALICEBLUE" font-family="MONOSPACE" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">docker run -d --name orion  --network=fiware_default \
-  -p 1026:1026  fiware/orion -dbhost context-db</fo:block>
+              <fo:block background-color="ALICEBLUE" color="black" font-family="MONOSPACE" font-weight="bold" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">docker run -d --name orion  --network
+                <fo:inline color="SIENNA" font-family="MONOSPACE" font-weight="bold">=</fo:inline>fiware_default
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">\</fo:inline>-p
+                <fo:inline color="#900050" font-family="MONOSPACE" font-weight="bold">1026</fo:inline>:1026  fiware/orion -dbhost context-db</fo:block>
               <fo:block>You can check if the Orion Context Broker is running by making an HTTP request to the exposed port:</fo:block>
-              <fo:block background-color="ALICEBLUE" font-family="MONOSPACE" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">curl -X GET http://localhost:1026/version</fo:block>
+              <fo:block background-color="ALICEBLUE" color="black" font-family="MONOSPACE" font-weight="bold" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">
+                <fo:inline color="INDIANRED" font-family="MONOSPACE" font-weight="bold">curl</fo:inline>-X GET http://localhost:1026/version</fo:block>
               <fo:block>Alternatively run all your curl commands from within the container network:</fo:block>
-              <fo:block background-color="ALICEBLUE" font-family="MONOSPACE" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">docker run --network fiware_default --rm appropriate/curl -s \
-  -X GET http://orion:1026/version</fo:block>
+              <fo:block background-color="ALICEBLUE" color="black" font-family="MONOSPACE" font-weight="bold" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">docker run --network fiware_default --rm appropriate/curl -s
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">\</fo:inline>-X GET http://orion:1026/version</fo:block>
               <fo:block>
                 <fo:inline font-weight="bold">What if I get an error response?</fo:inline>
               </fo:block>
@@ -314,7 +321,9 @@ that orion is available on
                   </fo:list-item-body>
                 </fo:list-item>
               </fo:list-block>
-              <fo:block background-color="ALICEBLUE" font-family="MONOSPACE" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">docker ps</fo:block>
+              <fo:block background-color="ALICEBLUE" color="black" font-family="MONOSPACE" font-weight="bold" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">docker
+                <fo:inline color="INDIANRED" font-family="MONOSPACE" font-weight="bold">ps</fo:inline>
+              </fo:block>
               <fo:block>You should see two containers running. If orion is not running, you can restart the
 containers as necessary. This command will also display open port information.</fo:block>
               <fo:list-block provisional-distance-between-starts="5mm" provisional-label-separation="1mm">
@@ -331,7 +340,13 @@ containers as necessary. This command will also display open port information.</
                   </fo:list-item-body>
                 </fo:list-item>
               </fo:list-block>
-              <fo:block background-color="ALICEBLUE" font-family="MONOSPACE" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">curl -X GET http://$(docker-machine ip default):1026/version</fo:block>
+              <fo:block background-color="ALICEBLUE" color="black" font-family="MONOSPACE" font-weight="bold" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">
+                <fo:inline color="INDIANRED" font-family="MONOSPACE" font-weight="bold">curl</fo:inline>-X GET http://
+                <fo:inline color="#e09000" font-family="MONOSPACE" font-weight="bold">
+                  <fo:inline color="#e09000" font-family="MONOSPACE" font-weight="bold">$(</fo:inline>docker-machine
+                  <fo:inline color="INDIANRED" font-family="MONOSPACE" font-weight="bold">ip</fo:inline>default
+                  <fo:inline color="#e09000" font-family="MONOSPACE" font-weight="bold">)</fo:inline>
+                </fo:inline>:1026/version</fo:block>
               <fo:block>If you need to update the location of orion:</fo:block>
               <fo:list-block provisional-distance-between-starts="5mm" provisional-label-separation="1mm">
                 <fo:list-item relative-align="baseline">
@@ -376,6 +391,10 @@ containers as necessary. This command will also display open port information.</
             <fo:wrapper></fo:wrapper>Obtaining Version Information</fo:block>
         </fo:block>
         <fo:block>
+          <fo:block background-color="ALICEBLUE" border-color="CORNFLOWERBLUE" border-style="solid" border-width="1pt" font-family="MONOSPACE" font-weight="bold" padding-start="10pt">
+            <fo:inline background-color="CORNFLOWERBLUE" color="white" font-family="STANDARD" padding-end="8pt" padding-start="8pt">GET</fo:inline>
+            <fo:inline padding-start="10pt">http://{{orion}}/version/</fo:inline>
+          </fo:block>
           <fo:block>Once the Orion Context Broker is running, You can check the status by making an HTTP request to the exposed port.
 If the response is blank, this is usually because the MongoDB database holding the context information is not running or not connected.</fo:block>
           <fo:block>
@@ -390,22 +409,18 @@ If the response is blank, this is usually because the MongoDB database holding t
               </fo:list-item-body>
             </fo:list-item>
           </fo:list-block>
-          <fo:block background-color="ALICEBLUE" font-family="MONOSPACE" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">docker ps</fo:block>
-          <fo:block>You should see two containers running. If orion is not running, you can restart the containers as necessary.</fo:block>
-          <fo:block>
-            <fo:block font-family="STANDARD" font-weight="bold">Endpoint:</fo:block>
-            <fo:block>
-              <fo:block background-color="ALICEBLUE" border-color="CORNFLOWERBLUE" border-style="solid" border-width="1pt" font-family="MONOSPACE" font-weight="bold" padding-start="10pt">
-                <fo:inline background-color="CORNFLOWERBLUE" color="white" font-family="STANDARD" padding-end="8pt" padding-start="8pt">GET</fo:inline>
-                <fo:inline padding-start="10pt">http://{{orion}}/version</fo:inline>
-              </fo:block>
-            </fo:block>
+          <fo:block background-color="ALICEBLUE" color="black" font-family="MONOSPACE" font-weight="bold" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">docker
+            <fo:inline color="INDIANRED" font-family="MONOSPACE" font-weight="bold">ps</fo:inline>
           </fo:block>
+          <fo:block>You should see two containers running. If orion is not running, you can restart the containers as necessary.</fo:block>
           <fo:block>
             <fo:block font-family="STANDARD" font-weight="bold">Example:</fo:block>
             <fo:block>
-              <fo:block background-color="ALICEBLUE" font-family="MONOSPACE" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">curl -X  -G GET  \
-  'http://{{orion}}/version'</fo:block>
+              <fo:block background-color="ALICEBLUE" color="black" font-family="MONOSPACE" font-weight="bold" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">
+                <fo:inline color="INDIANRED" font-family="MONOSPACE" font-weight="bold">curl</fo:inline>-X  -G GET
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">\</fo:inline>
+                <fo:inline color="#609000" font-family="MONOSPACE" font-weight="bold">'http://{{orion}}/version/'</fo:inline>
+              </fo:block>
             </fo:block>
           </fo:block>
         </fo:block>
@@ -418,14 +433,13 @@ If the response is blank, this is usually because the MongoDB database holding t
             <fo:wrapper></fo:wrapper>
             <fo:wrapper></fo:wrapper>Creating your first Data Entity</fo:block>
         </fo:block>
-        <fo:block></fo:block>
         <fo:block>
+          <fo:block background-color="BEIGE" border-color="#49cc90" border-style="solid" border-width="1pt" font-family="MONOSPACE" font-weight="bold" padding-start="10pt">
+            <fo:inline background-color="#49cc90" color="white" font-family="STANDARD" padding-end="8pt" padding-start="8pt">POST</fo:inline>
+            <fo:inline padding-start="10pt">http://{{orion}}/v2/entities/</fo:inline>
+          </fo:block>
           <fo:block>
-            <fo:block font-family="STANDARD" font-weight="bold">
-              <fo:block>
-                <fo:wrapper></fo:wrapper>
-                <fo:wrapper></fo:wrapper>Creating Context Data</fo:block>
-            </fo:block>
+            <fo:block font-family="STANDARD" font-weight="bold">Creating Context Data</fo:block>
             <fo:block>
               <fo:block>At its heart, FIWARE is a system for managing context information, so lets add some context data into the system by creating a new entity (a store in
                 <fo:inline font-weight="bold">Berlin</fo:inline>). Any entity must have a
@@ -433,209 +447,6 @@ If the response is blank, this is usually because the MongoDB database holding t
                 <fo:inline font-family="MONOSPACE">type</fo:inline>attributes, additional attributes are optional and will depend on the system being described. Each additional attribute should also have a defined
                 <fo:inline font-family="MONOSPACE">type</fo:inline>and a
                 <fo:inline font-family="MONOSPACE">value</fo:inline>attribute.</fo:block>
-              <fo:block>
-                <fo:block font-family="STANDARD" font-weight="bold">Endpoint:</fo:block>
-                <fo:block>
-                  <fo:block background-color="BEIGE" border-color="#49cc90" border-style="solid" border-width="1pt" font-family="MONOSPACE" font-weight="bold" padding-start="10pt">
-                    <fo:inline background-color="#49cc90" color="white" font-family="STANDARD" padding-end="8pt" padding-start="8pt">POST</fo:inline>
-                    <fo:inline padding-start="10pt">http://{{orion}}/v2/entities</fo:inline>
-                  </fo:block>
-                </fo:block>
-              </fo:block>
-              <fo:block>
-                <fo:block font-family="STANDARD" font-weight="bold">Headers:</fo:block>
-                <fo:block>
-                  <fo:block-container reference-orientation="0">
-                    <fo:block>
-                      <fo:table border-after-color="black" border-before-color="black" border-end-color="black" border-end-style="solid" border-end-width="1pt" table-layout="fixed" width="100%">
-                        <fo:table-column column-number="1"></fo:table-column>
-                        <fo:table-column column-number="2"></fo:table-column>
-                        <fo:table-column column-number="3"></fo:table-column>
-                        <fo:table-header>
-                          <fo:table-row>
-                            <fo:table-cell border-before-color="black" text-align="left">
-                              <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Key</fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell border-before-color="black" text-align="left">
-                              <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Value</fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell border-before-color="black" text-align="left">
-                              <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Description</fo:block>
-                            </fo:table-cell>
-                          </fo:table-row>
-                        </fo:table-header>
-                        <fo:table-body>
-                          <fo:table-row keep-together.within-page="always">
-                            <fo:table-cell border-before-color="black" text-align="left">
-                              <fo:block space-after.conditionality="retain" space-before.conditionality="retain">Content-Type</fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell border-before-color="black" text-align="left">
-                              <fo:block space-after.conditionality="retain" space-before.conditionality="retain">application/json</fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell border-before-color="black" text-align="left">
-                              <fo:block space-after.conditionality="retain" space-before.conditionality="retain"></fo:block>
-                            </fo:table-cell>
-                          </fo:table-row>
-                        </fo:table-body>
-                      </fo:table>
-                    </fo:block>
-                  </fo:block-container>
-                </fo:block>
-              </fo:block>
-              <fo:block>
-                <fo:block font-family="STANDARD" font-weight="bold">Body:</fo:block>
-                <fo:block>
-                  <fo:block background-color="ALICEBLUE" font-family="MONOSPACE" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">
-                    <fo:inline border-end-width="0pt" color="#909090">{</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#609000">"id"</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#609000">"urn:ngsi-ld:Store:001"</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#909090">,</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#609000">"type"</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#609000">"Store"</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#909090">,</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#609000">"address"</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#909090">{</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#609000">"type"</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#609000">"PostalAddress"</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#909090">,</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#609000">"value"</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#909090">{</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#609000">"streetAddress"</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#609000">"Bornholmer Stra&#223;e 65"</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#909090">,</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#609000">"addressRegion"</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#609000">"Berlin"</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#909090">,</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#609000">"addressLocality"</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#609000">"Prenzlauer Berg"</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#909090">,</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#609000">"postalCode"</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#609000">"10439"</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#909090">}</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#909090">,</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#609000">"metadata"</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#909090">{</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#609000">"verified"</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#909090">{</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#609000">"value"</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#900050">true</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#909090">,</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#609000">"type"</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#609000">"Boolean"</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#909090">}</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#909090">}</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#909090">}</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#909090">,</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#609000">"location"</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#909090">{</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#609000">"type"</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#609000">"geo:json"</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#909090">,</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#609000">"value"</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#909090">{</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#609000">"type"</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#609000">"Point"</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#909090">,</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#609000">"coordinates"</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#909090">[</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#900050">13.3986</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#909090">,</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#900050">52.5547</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#909090">]</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#909090">}</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#909090">}</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#909090">,</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#609000">"name"</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#909090">{</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#609000">"type"</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#609000">"Text"</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#909090">,</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#609000">"value"</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#609000">"B&#246;sebr&#252;cke Einkauf"</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#909090">}</fo:inline>
-                    <fo:inline border-end-width="0pt" color="#909090">}</fo:inline>
-                  </fo:block>
-                </fo:block>
-              </fo:block>
-              <fo:block>
-                <fo:block font-family="STANDARD" font-weight="bold">Example:</fo:block>
-                <fo:block>
-                  <fo:block background-color="ALICEBLUE" font-family="MONOSPACE" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">curl -X POST  \
-  'http://{{orion}}/v2/entities/'  \
-    -H Content-Type :  application/json  \
-    -d '{
-    "id": "urn:ngsi-ld:Store:001",
-    "type": "Store",
-    "address": {
-        "type": "PostalAddress",
-        "value": {
-            "streetAddress": "Bornholmer Stra&#223;e 65",
-            "addressRegion": "Berlin",
-            "addressLocality": "Prenzlauer Berg",
-            "postalCode": "10439"
-        },
-        "metadata": {
-            "verified": {
-                "value": true,
-                "type": "Boolean"
-            }
-        }
-    },
-    "location": {
-        "type": "geo:json",
-        "value": {
-             "type": "Point",
-             "coordinates": [13.3986, 52.5547]
-        }
-    },
-    "name": {
-        "type": "Text",
-        "value": "B&#246;sebr&#252;cke Einkauf"
-    }
-}'</fo:block>
-                </fo:block>
-              </fo:block>
-            </fo:block>
-          </fo:block>
-        </fo:block>
-      </fo:block>
-    </fo:block>
-    <fo:block>
-      <fo:block>
-        <fo:block font-family="STANDARD" font-weight="bold">
-          <fo:block>
-            <fo:wrapper></fo:wrapper>
-            <fo:wrapper></fo:wrapper>Creating your Second Data Entity</fo:block>
-        </fo:block>
-        <fo:block>
-          <fo:block>
-            <fo:block font-family="STANDARD" font-weight="bold">Endpoint:</fo:block>
-            <fo:block>
-              <fo:block background-color="BEIGE" border-color="#49cc90" border-style="solid" border-width="1pt" font-family="MONOSPACE" font-weight="bold" padding-start="10pt">
-                <fo:inline background-color="#49cc90" color="white" font-family="STANDARD" padding-end="8pt" padding-start="8pt">POST</fo:inline>
-                <fo:inline padding-start="10pt">http://{{orion}}/v2/entities</fo:inline>
-              </fo:block>
             </fo:block>
           </fo:block>
           <fo:block>
@@ -681,106 +492,304 @@ If the response is blank, this is usually because the MongoDB database holding t
           <fo:block>
             <fo:block font-family="STANDARD" font-weight="bold">Body:</fo:block>
             <fo:block>
-              <fo:block background-color="ALICEBLUE" font-family="MONOSPACE" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">
-                <fo:inline border-end-width="0pt" color="#909090">{</fo:inline>
-                <fo:inline border-end-width="0pt" color="#609000">"type"</fo:inline>
-                <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
-                <fo:inline border-end-width="0pt" color="#609000">"Store"</fo:inline>
-                <fo:inline border-end-width="0pt" color="#909090">,</fo:inline>
-                <fo:inline border-end-width="0pt" color="#609000">"id"</fo:inline>
-                <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
-                <fo:inline border-end-width="0pt" color="#609000">"urn:ngsi-ld:Store:002"</fo:inline>
-                <fo:inline border-end-width="0pt" color="#909090">,</fo:inline>
-                <fo:inline border-end-width="0pt" color="#609000">"address"</fo:inline>
-                <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
-                <fo:inline border-end-width="0pt" color="#909090">{</fo:inline>
-                <fo:inline border-end-width="0pt" color="#609000">"type"</fo:inline>
-                <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
-                <fo:inline border-end-width="0pt" color="#609000">"PostalAddress"</fo:inline>
-                <fo:inline border-end-width="0pt" color="#909090">,</fo:inline>
-                <fo:inline border-end-width="0pt" color="#609000">"value"</fo:inline>
-                <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
-                <fo:inline border-end-width="0pt" color="#909090">{</fo:inline>
-                <fo:inline border-end-width="0pt" color="#609000">"streetAddress"</fo:inline>
-                <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
-                <fo:inline border-end-width="0pt" color="#609000">"Friedrichstra&#223;e 44"</fo:inline>
-                <fo:inline border-end-width="0pt" color="#909090">,</fo:inline>
-                <fo:inline border-end-width="0pt" color="#609000">"addressRegion"</fo:inline>
-                <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
-                <fo:inline border-end-width="0pt" color="#609000">"Berlin"</fo:inline>
-                <fo:inline border-end-width="0pt" color="#909090">,</fo:inline>
-                <fo:inline border-end-width="0pt" color="#609000">"addressLocality"</fo:inline>
-                <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
-                <fo:inline border-end-width="0pt" color="#609000">"Kreuzberg"</fo:inline>
-                <fo:inline border-end-width="0pt" color="#909090">,</fo:inline>
-                <fo:inline border-end-width="0pt" color="#609000">"postalCode"</fo:inline>
-                <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
-                <fo:inline border-end-width="0pt" color="#609000">"10969"</fo:inline>
-                <fo:inline border-end-width="0pt" color="#909090">}</fo:inline>
-                <fo:inline border-end-width="0pt" color="#909090">,</fo:inline>
-                <fo:inline border-end-width="0pt" color="#609000">"metadata"</fo:inline>
-                <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
-                <fo:inline border-end-width="0pt" color="#909090">{</fo:inline>
-                <fo:inline border-end-width="0pt" color="#609000">"verified"</fo:inline>
-                <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
-                <fo:inline border-end-width="0pt" color="#909090">{</fo:inline>
-                <fo:inline border-end-width="0pt" color="#609000">"value"</fo:inline>
-                <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
-                <fo:inline border-end-width="0pt" color="#900050">true</fo:inline>
-                <fo:inline border-end-width="0pt" color="#909090">,</fo:inline>
-                <fo:inline border-end-width="0pt" color="#609000">"type"</fo:inline>
-                <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
-                <fo:inline border-end-width="0pt" color="#609000">"Boolean"</fo:inline>
-                <fo:inline border-end-width="0pt" color="#909090">}</fo:inline>
-                <fo:inline border-end-width="0pt" color="#909090">}</fo:inline>
-                <fo:inline border-end-width="0pt" color="#909090">}</fo:inline>
-                <fo:inline border-end-width="0pt" color="#909090">,</fo:inline>
-                <fo:inline border-end-width="0pt" color="#609000">"location"</fo:inline>
-                <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
-                <fo:inline border-end-width="0pt" color="#909090">{</fo:inline>
-                <fo:inline border-end-width="0pt" color="#609000">"type"</fo:inline>
-                <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
-                <fo:inline border-end-width="0pt" color="#609000">"geo:json"</fo:inline>
-                <fo:inline border-end-width="0pt" color="#909090">,</fo:inline>
-                <fo:inline border-end-width="0pt" color="#609000">"value"</fo:inline>
-                <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
-                <fo:inline border-end-width="0pt" color="#909090">{</fo:inline>
-                <fo:inline border-end-width="0pt" color="#609000">"type"</fo:inline>
-                <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
-                <fo:inline border-end-width="0pt" color="#609000">"Point"</fo:inline>
-                <fo:inline border-end-width="0pt" color="#909090">,</fo:inline>
-                <fo:inline border-end-width="0pt" color="#609000">"coordinates"</fo:inline>
-                <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
-                <fo:inline border-end-width="0pt" color="#909090">[</fo:inline>
-                <fo:inline border-end-width="0pt" color="#900050">13.3903</fo:inline>
-                <fo:inline border-end-width="0pt" color="#909090">,</fo:inline>
-                <fo:inline border-end-width="0pt" color="#900050">52.5075</fo:inline>
-                <fo:inline border-end-width="0pt" color="#909090">]</fo:inline>
-                <fo:inline border-end-width="0pt" color="#909090">}</fo:inline>
-                <fo:inline border-end-width="0pt" color="#909090">}</fo:inline>
-                <fo:inline border-end-width="0pt" color="#909090">,</fo:inline>
-                <fo:inline border-end-width="0pt" color="#609000">"name"</fo:inline>
-                <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
-                <fo:inline border-end-width="0pt" color="#909090">{</fo:inline>
-                <fo:inline border-end-width="0pt" color="#609000">"type"</fo:inline>
-                <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
-                <fo:inline border-end-width="0pt" color="#609000">"Text"</fo:inline>
-                <fo:inline border-end-width="0pt" color="#909090">,</fo:inline>
-                <fo:inline border-end-width="0pt" color="#609000">"value"</fo:inline>
-                <fo:inline border-end-width="0pt" color="#909090">:</fo:inline>
-                <fo:inline border-end-width="0pt" color="#609000">"Checkpoint Markt"</fo:inline>
-                <fo:inline border-end-width="0pt" color="#909090">}</fo:inline>
-                <fo:inline border-end-width="0pt" color="#909090">}</fo:inline>
+              <fo:block background-color="ALICEBLUE" color="black" font-family="MONOSPACE" font-weight="bold" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">{</fo:inline>
+                <fo:inline color="#900050" font-family="MONOSPACE" font-weight="bold">"id"</fo:inline>
+                <fo:inline color="SIENNA" font-family="MONOSPACE" font-weight="bold">:</fo:inline>
+                <fo:inline color="#609000" font-family="MONOSPACE" font-weight="bold">"urn:ngsi-ld:Store:001"</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">,</fo:inline>
+                <fo:inline color="#900050" font-family="MONOSPACE" font-weight="bold">"type"</fo:inline>
+                <fo:inline color="SIENNA" font-family="MONOSPACE" font-weight="bold">:</fo:inline>
+                <fo:inline color="#609000" font-family="MONOSPACE" font-weight="bold">"Store"</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">,</fo:inline>
+                <fo:inline color="#900050" font-family="MONOSPACE" font-weight="bold">"address"</fo:inline>
+                <fo:inline color="SIENNA" font-family="MONOSPACE" font-weight="bold">:</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">{</fo:inline>
+                <fo:inline color="#900050" font-family="MONOSPACE" font-weight="bold">"type"</fo:inline>
+                <fo:inline color="SIENNA" font-family="MONOSPACE" font-weight="bold">:</fo:inline>
+                <fo:inline color="#609000" font-family="MONOSPACE" font-weight="bold">"PostalAddress"</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">,</fo:inline>
+                <fo:inline color="#900050" font-family="MONOSPACE" font-weight="bold">"value"</fo:inline>
+                <fo:inline color="SIENNA" font-family="MONOSPACE" font-weight="bold">:</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">{</fo:inline>
+                <fo:inline color="#900050" font-family="MONOSPACE" font-weight="bold">"streetAddress"</fo:inline>
+                <fo:inline color="SIENNA" font-family="MONOSPACE" font-weight="bold">:</fo:inline>
+                <fo:inline color="#609000" font-family="MONOSPACE" font-weight="bold">"Bornholmer Stra&#223;e 65"</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">,</fo:inline>
+                <fo:inline color="#900050" font-family="MONOSPACE" font-weight="bold">"addressRegion"</fo:inline>
+                <fo:inline color="SIENNA" font-family="MONOSPACE" font-weight="bold">:</fo:inline>
+                <fo:inline color="#609000" font-family="MONOSPACE" font-weight="bold">"Berlin"</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">,</fo:inline>
+                <fo:inline color="#900050" font-family="MONOSPACE" font-weight="bold">"addressLocality"</fo:inline>
+                <fo:inline color="SIENNA" font-family="MONOSPACE" font-weight="bold">:</fo:inline>
+                <fo:inline color="#609000" font-family="MONOSPACE" font-weight="bold">"Prenzlauer Berg"</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">,</fo:inline>
+                <fo:inline color="#900050" font-family="MONOSPACE" font-weight="bold">"postalCode"</fo:inline>
+                <fo:inline color="SIENNA" font-family="MONOSPACE" font-weight="bold">:</fo:inline>
+                <fo:inline color="#609000" font-family="MONOSPACE" font-weight="bold">"10439"</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">}</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">,</fo:inline>
+                <fo:inline color="#900050" font-family="MONOSPACE" font-weight="bold">"metadata"</fo:inline>
+                <fo:inline color="SIENNA" font-family="MONOSPACE" font-weight="bold">:</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">{</fo:inline>
+                <fo:inline color="#900050" font-family="MONOSPACE" font-weight="bold">"verified"</fo:inline>
+                <fo:inline color="SIENNA" font-family="MONOSPACE" font-weight="bold">:</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">{</fo:inline>
+                <fo:inline color="#900050" font-family="MONOSPACE" font-weight="bold">"value"</fo:inline>
+                <fo:inline color="SIENNA" font-family="MONOSPACE" font-weight="bold">:</fo:inline>
+                <fo:inline color="#900050" font-family="MONOSPACE" font-weight="bold">true</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">,</fo:inline>
+                <fo:inline color="#900050" font-family="MONOSPACE" font-weight="bold">"type"</fo:inline>
+                <fo:inline color="SIENNA" font-family="MONOSPACE" font-weight="bold">:</fo:inline>
+                <fo:inline color="#609000" font-family="MONOSPACE" font-weight="bold">"Boolean"</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">}</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">}</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">}</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">,</fo:inline>
+                <fo:inline color="#900050" font-family="MONOSPACE" font-weight="bold">"location"</fo:inline>
+                <fo:inline color="SIENNA" font-family="MONOSPACE" font-weight="bold">:</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">{</fo:inline>
+                <fo:inline color="#900050" font-family="MONOSPACE" font-weight="bold">"type"</fo:inline>
+                <fo:inline color="SIENNA" font-family="MONOSPACE" font-weight="bold">:</fo:inline>
+                <fo:inline color="#609000" font-family="MONOSPACE" font-weight="bold">"geo:json"</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">,</fo:inline>
+                <fo:inline color="#900050" font-family="MONOSPACE" font-weight="bold">"value"</fo:inline>
+                <fo:inline color="SIENNA" font-family="MONOSPACE" font-weight="bold">:</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">{</fo:inline>
+                <fo:inline color="#900050" font-family="MONOSPACE" font-weight="bold">"type"</fo:inline>
+                <fo:inline color="SIENNA" font-family="MONOSPACE" font-weight="bold">:</fo:inline>
+                <fo:inline color="#609000" font-family="MONOSPACE" font-weight="bold">"Point"</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">,</fo:inline>
+                <fo:inline color="#900050" font-family="MONOSPACE" font-weight="bold">"coordinates"</fo:inline>
+                <fo:inline color="SIENNA" font-family="MONOSPACE" font-weight="bold">:</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">[</fo:inline>
+                <fo:inline color="#900050" font-family="MONOSPACE" font-weight="bold">13.3986</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">,</fo:inline>
+                <fo:inline color="#900050" font-family="MONOSPACE" font-weight="bold">52.5547</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">]</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">}</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">}</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">,</fo:inline>
+                <fo:inline color="#900050" font-family="MONOSPACE" font-weight="bold">"name"</fo:inline>
+                <fo:inline color="SIENNA" font-family="MONOSPACE" font-weight="bold">:</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">{</fo:inline>
+                <fo:inline color="#900050" font-family="MONOSPACE" font-weight="bold">"type"</fo:inline>
+                <fo:inline color="SIENNA" font-family="MONOSPACE" font-weight="bold">:</fo:inline>
+                <fo:inline color="#609000" font-family="MONOSPACE" font-weight="bold">"Text"</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">,</fo:inline>
+                <fo:inline color="#900050" font-family="MONOSPACE" font-weight="bold">"value"</fo:inline>
+                <fo:inline color="SIENNA" font-family="MONOSPACE" font-weight="bold">:</fo:inline>
+                <fo:inline color="#609000" font-family="MONOSPACE" font-weight="bold">"B&#246;sebr&#252;cke Einkauf"</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">}</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">}</fo:inline>
               </fo:block>
             </fo:block>
           </fo:block>
           <fo:block>
             <fo:block font-family="STANDARD" font-weight="bold">Example:</fo:block>
             <fo:block>
-              <fo:block background-color="ALICEBLUE" font-family="MONOSPACE" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">curl -X POST  \
-  'http://{{orion}}/v2/entities/'  \
-    -H Content-Type :  application/json  \
-    -d '{
+              <fo:block background-color="ALICEBLUE" color="black" font-family="MONOSPACE" font-weight="bold" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">
+                <fo:inline color="INDIANRED" font-family="MONOSPACE" font-weight="bold">curl</fo:inline>-X POST
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">\</fo:inline>
+                <fo:inline color="#609000" font-family="MONOSPACE" font-weight="bold">'http://{{orion}}/v2/entities/'</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">\</fo:inline>-H Content-Type
+                <fo:inline color="black" font-family="MONOSPACE" font-weight="bold">:</fo:inline>application/json
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">\</fo:inline>-d
+                <fo:inline color="#609000" font-family="MONOSPACE" font-weight="bold">'{
+    "id": "urn:ngsi-ld:Store:001",
+    "type": "Store",
+    "address": {
+        "type": "PostalAddress",
+        "value": {
+            "streetAddress": "Bornholmer Stra&#223;e 65",
+            "addressRegion": "Berlin",
+            "addressLocality": "Prenzlauer Berg",
+            "postalCode": "10439"
+        },
+        "metadata": {
+            "verified": {
+                "value": true,
+                "type": "Boolean"
+            }
+        }
+    },
+    "location": {
+        "type": "geo:json",
+        "value": {
+             "type": "Point",
+             "coordinates": [13.3986, 52.5547]
+        }
+    },
+    "name": {
+        "type": "Text",
+        "value": "B&#246;sebr&#252;cke Einkauf"
+    }
+}'</fo:inline>
+              </fo:block>
+            </fo:block>
+          </fo:block>
+        </fo:block>
+      </fo:block>
+    </fo:block>
+    <fo:block>
+      <fo:block>
+        <fo:block font-family="STANDARD" font-weight="bold">
+          <fo:block>
+            <fo:wrapper></fo:wrapper>
+            <fo:wrapper></fo:wrapper>Creating your Second Data Entity</fo:block>
+        </fo:block>
+        <fo:block>
+          <fo:block background-color="BEIGE" border-color="#49cc90" border-style="solid" border-width="1pt" font-family="MONOSPACE" font-weight="bold" padding-start="10pt">
+            <fo:inline background-color="#49cc90" color="white" font-family="STANDARD" padding-end="8pt" padding-start="8pt">POST</fo:inline>
+            <fo:inline padding-start="10pt">http://{{orion}}/v2/entities/</fo:inline>
+          </fo:block>
+          <fo:block>
+            <fo:block font-family="STANDARD" font-weight="bold">Headers:</fo:block>
+            <fo:block>
+              <fo:block-container reference-orientation="0">
+                <fo:block>
+                  <fo:table border-after-color="black" border-before-color="black" border-end-color="black" border-end-style="solid" border-end-width="1pt" table-layout="fixed" width="100%">
+                    <fo:table-column column-number="1"></fo:table-column>
+                    <fo:table-column column-number="2"></fo:table-column>
+                    <fo:table-column column-number="3"></fo:table-column>
+                    <fo:table-header>
+                      <fo:table-row>
+                        <fo:table-cell border-before-color="black" text-align="left">
+                          <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Key</fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell border-before-color="black" text-align="left">
+                          <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Value</fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell border-before-color="black" text-align="left">
+                          <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Description</fo:block>
+                        </fo:table-cell>
+                      </fo:table-row>
+                    </fo:table-header>
+                    <fo:table-body>
+                      <fo:table-row keep-together.within-page="always">
+                        <fo:table-cell border-before-color="black" text-align="left">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">Content-Type</fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell border-before-color="black" text-align="left">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">application/json</fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell border-before-color="black" text-align="left">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain"></fo:block>
+                        </fo:table-cell>
+                      </fo:table-row>
+                    </fo:table-body>
+                  </fo:table>
+                </fo:block>
+              </fo:block-container>
+            </fo:block>
+          </fo:block>
+          <fo:block>
+            <fo:block font-family="STANDARD" font-weight="bold">Body:</fo:block>
+            <fo:block>
+              <fo:block background-color="ALICEBLUE" color="black" font-family="MONOSPACE" font-weight="bold" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">{</fo:inline>
+                <fo:inline color="#900050" font-family="MONOSPACE" font-weight="bold">"type"</fo:inline>
+                <fo:inline color="SIENNA" font-family="MONOSPACE" font-weight="bold">:</fo:inline>
+                <fo:inline color="#609000" font-family="MONOSPACE" font-weight="bold">"Store"</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">,</fo:inline>
+                <fo:inline color="#900050" font-family="MONOSPACE" font-weight="bold">"id"</fo:inline>
+                <fo:inline color="SIENNA" font-family="MONOSPACE" font-weight="bold">:</fo:inline>
+                <fo:inline color="#609000" font-family="MONOSPACE" font-weight="bold">"urn:ngsi-ld:Store:002"</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">,</fo:inline>
+                <fo:inline color="#900050" font-family="MONOSPACE" font-weight="bold">"address"</fo:inline>
+                <fo:inline color="SIENNA" font-family="MONOSPACE" font-weight="bold">:</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">{</fo:inline>
+                <fo:inline color="#900050" font-family="MONOSPACE" font-weight="bold">"type"</fo:inline>
+                <fo:inline color="SIENNA" font-family="MONOSPACE" font-weight="bold">:</fo:inline>
+                <fo:inline color="#609000" font-family="MONOSPACE" font-weight="bold">"PostalAddress"</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">,</fo:inline>
+                <fo:inline color="#900050" font-family="MONOSPACE" font-weight="bold">"value"</fo:inline>
+                <fo:inline color="SIENNA" font-family="MONOSPACE" font-weight="bold">:</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">{</fo:inline>
+                <fo:inline color="#900050" font-family="MONOSPACE" font-weight="bold">"streetAddress"</fo:inline>
+                <fo:inline color="SIENNA" font-family="MONOSPACE" font-weight="bold">:</fo:inline>
+                <fo:inline color="#609000" font-family="MONOSPACE" font-weight="bold">"Friedrichstra&#223;e 44"</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">,</fo:inline>
+                <fo:inline color="#900050" font-family="MONOSPACE" font-weight="bold">"addressRegion"</fo:inline>
+                <fo:inline color="SIENNA" font-family="MONOSPACE" font-weight="bold">:</fo:inline>
+                <fo:inline color="#609000" font-family="MONOSPACE" font-weight="bold">"Berlin"</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">,</fo:inline>
+                <fo:inline color="#900050" font-family="MONOSPACE" font-weight="bold">"addressLocality"</fo:inline>
+                <fo:inline color="SIENNA" font-family="MONOSPACE" font-weight="bold">:</fo:inline>
+                <fo:inline color="#609000" font-family="MONOSPACE" font-weight="bold">"Kreuzberg"</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">,</fo:inline>
+                <fo:inline color="#900050" font-family="MONOSPACE" font-weight="bold">"postalCode"</fo:inline>
+                <fo:inline color="SIENNA" font-family="MONOSPACE" font-weight="bold">:</fo:inline>
+                <fo:inline color="#609000" font-family="MONOSPACE" font-weight="bold">"10969"</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">}</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">,</fo:inline>
+                <fo:inline color="#900050" font-family="MONOSPACE" font-weight="bold">"metadata"</fo:inline>
+                <fo:inline color="SIENNA" font-family="MONOSPACE" font-weight="bold">:</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">{</fo:inline>
+                <fo:inline color="#900050" font-family="MONOSPACE" font-weight="bold">"verified"</fo:inline>
+                <fo:inline color="SIENNA" font-family="MONOSPACE" font-weight="bold">:</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">{</fo:inline>
+                <fo:inline color="#900050" font-family="MONOSPACE" font-weight="bold">"value"</fo:inline>
+                <fo:inline color="SIENNA" font-family="MONOSPACE" font-weight="bold">:</fo:inline>
+                <fo:inline color="#900050" font-family="MONOSPACE" font-weight="bold">true</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">,</fo:inline>
+                <fo:inline color="#900050" font-family="MONOSPACE" font-weight="bold">"type"</fo:inline>
+                <fo:inline color="SIENNA" font-family="MONOSPACE" font-weight="bold">:</fo:inline>
+                <fo:inline color="#609000" font-family="MONOSPACE" font-weight="bold">"Boolean"</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">}</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">}</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">}</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">,</fo:inline>
+                <fo:inline color="#900050" font-family="MONOSPACE" font-weight="bold">"location"</fo:inline>
+                <fo:inline color="SIENNA" font-family="MONOSPACE" font-weight="bold">:</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">{</fo:inline>
+                <fo:inline color="#900050" font-family="MONOSPACE" font-weight="bold">"type"</fo:inline>
+                <fo:inline color="SIENNA" font-family="MONOSPACE" font-weight="bold">:</fo:inline>
+                <fo:inline color="#609000" font-family="MONOSPACE" font-weight="bold">"geo:json"</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">,</fo:inline>
+                <fo:inline color="#900050" font-family="MONOSPACE" font-weight="bold">"value"</fo:inline>
+                <fo:inline color="SIENNA" font-family="MONOSPACE" font-weight="bold">:</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">{</fo:inline>
+                <fo:inline color="#900050" font-family="MONOSPACE" font-weight="bold">"type"</fo:inline>
+                <fo:inline color="SIENNA" font-family="MONOSPACE" font-weight="bold">:</fo:inline>
+                <fo:inline color="#609000" font-family="MONOSPACE" font-weight="bold">"Point"</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">,</fo:inline>
+                <fo:inline color="#900050" font-family="MONOSPACE" font-weight="bold">"coordinates"</fo:inline>
+                <fo:inline color="SIENNA" font-family="MONOSPACE" font-weight="bold">:</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">[</fo:inline>
+                <fo:inline color="#900050" font-family="MONOSPACE" font-weight="bold">13.3903</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">,</fo:inline>
+                <fo:inline color="#900050" font-family="MONOSPACE" font-weight="bold">52.5075</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">]</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">}</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">}</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">,</fo:inline>
+                <fo:inline color="#900050" font-family="MONOSPACE" font-weight="bold">"name"</fo:inline>
+                <fo:inline color="SIENNA" font-family="MONOSPACE" font-weight="bold">:</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">{</fo:inline>
+                <fo:inline color="#900050" font-family="MONOSPACE" font-weight="bold">"type"</fo:inline>
+                <fo:inline color="SIENNA" font-family="MONOSPACE" font-weight="bold">:</fo:inline>
+                <fo:inline color="#609000" font-family="MONOSPACE" font-weight="bold">"Text"</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">,</fo:inline>
+                <fo:inline color="#900050" font-family="MONOSPACE" font-weight="bold">"value"</fo:inline>
+                <fo:inline color="SIENNA" font-family="MONOSPACE" font-weight="bold">:</fo:inline>
+                <fo:inline color="#609000" font-family="MONOSPACE" font-weight="bold">"Checkpoint Markt"</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">}</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">}</fo:inline>
+              </fo:block>
+            </fo:block>
+          </fo:block>
+          <fo:block>
+            <fo:block font-family="STANDARD" font-weight="bold">Example:</fo:block>
+            <fo:block>
+              <fo:block background-color="ALICEBLUE" color="black" font-family="MONOSPACE" font-weight="bold" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">
+                <fo:inline color="INDIANRED" font-family="MONOSPACE" font-weight="bold">curl</fo:inline>-X POST
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">\</fo:inline>
+                <fo:inline color="#609000" font-family="MONOSPACE" font-weight="bold">'http://{{orion}}/v2/entities/'</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">\</fo:inline>-H Content-Type
+                <fo:inline color="black" font-family="MONOSPACE" font-weight="bold">:</fo:inline>application/json
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">\</fo:inline>-d
+                <fo:inline color="#609000" font-family="MONOSPACE" font-weight="bold">'{
   "type": "Store",
     "id": "urn:ngsi-ld:Store:002",
     "address": {
@@ -809,7 +818,8 @@ If the response is blank, this is usually because the MongoDB database holding t
         "type": "Text",
         "value": "Checkpoint Markt"
     }
-}'</fo:block>
+}'</fo:inline>
+              </fo:block>
             </fo:block>
           </fo:block>
         </fo:block>
@@ -823,21 +833,19 @@ If the response is blank, this is usually because the MongoDB database holding t
             <fo:wrapper></fo:wrapper>Retrieving Context Information</fo:block>
         </fo:block>
         <fo:block>
-          <fo:block>This example returns the full data context</fo:block>
-          <fo:block>
-            <fo:block font-family="STANDARD" font-weight="bold">Endpoint:</fo:block>
-            <fo:block>
-              <fo:block background-color="ALICEBLUE" border-color="CORNFLOWERBLUE" border-style="solid" border-width="1pt" font-family="MONOSPACE" font-weight="bold" padding-start="10pt">
-                <fo:inline background-color="CORNFLOWERBLUE" color="white" font-family="STANDARD" padding-end="8pt" padding-start="8pt">GET</fo:inline>
-                <fo:inline padding-start="10pt">http://{{orion}}/v2/entitie</fo:inline>
-              </fo:block>
-            </fo:block>
+          <fo:block background-color="ALICEBLUE" border-color="CORNFLOWERBLUE" border-style="solid" border-width="1pt" font-family="MONOSPACE" font-weight="bold" padding-start="10pt">
+            <fo:inline background-color="CORNFLOWERBLUE" color="white" font-family="STANDARD" padding-end="8pt" padding-start="8pt">GET</fo:inline>
+            <fo:inline padding-start="10pt">http://{{orion}}/v2/entities</fo:inline>
           </fo:block>
+          <fo:block>This example returns the full data context</fo:block>
           <fo:block>
             <fo:block font-family="STANDARD" font-weight="bold">Example:</fo:block>
             <fo:block>
-              <fo:block background-color="ALICEBLUE" font-family="MONOSPACE" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">curl -X  -G GET  \
-  'http://{{orion}}/v2/entitie'</fo:block>
+              <fo:block background-color="ALICEBLUE" color="black" font-family="MONOSPACE" font-weight="bold" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">
+                <fo:inline color="INDIANRED" font-family="MONOSPACE" font-weight="bold">curl</fo:inline>-X  -G GET
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">\</fo:inline>
+                <fo:inline color="#609000" font-family="MONOSPACE" font-weight="bold">'http://{{orion}}/v2/entities'</fo:inline>
+              </fo:block>
             </fo:block>
           </fo:block>
         </fo:block>
@@ -851,6 +859,10 @@ If the response is blank, this is usually because the MongoDB database holding t
             <fo:wrapper></fo:wrapper>Obtain Entity Data by id</fo:block>
         </fo:block>
         <fo:block>
+          <fo:block background-color="ALICEBLUE" border-color="CORNFLOWERBLUE" border-style="solid" border-width="1pt" font-family="MONOSPACE" font-weight="bold" padding-start="10pt">
+            <fo:inline background-color="CORNFLOWERBLUE" color="white" font-family="STANDARD" padding-end="8pt" padding-start="8pt">GET</fo:inline>
+            <fo:inline padding-start="10pt">http://{{orion}}/v2/entities/urn:ngsi-ld:Store:001</fo:inline>
+          </fo:block>
           <fo:block>This example returns the context data of
             <fo:inline font-family="MONOSPACE">store1</fo:inline>. The
             <fo:inline font-family="MONOSPACE">id</fo:inline>of the entity should be unique or the
@@ -858,15 +870,6 @@ If the response is blank, this is usually because the MongoDB database holding t
           <fo:block>Because of the use of the
             <fo:inline font-family="MONOSPACE">options=keyValues</fo:inline>, the response consists of JSON only without the attribute
             <fo:inline font-family="MONOSPACE">type</fo:inline>elements.</fo:block>
-          <fo:block>
-            <fo:block font-family="STANDARD" font-weight="bold">Endpoint:</fo:block>
-            <fo:block>
-              <fo:block background-color="ALICEBLUE" border-color="CORNFLOWERBLUE" border-style="solid" border-width="1pt" font-family="MONOSPACE" font-weight="bold" padding-start="10pt">
-                <fo:inline background-color="CORNFLOWERBLUE" color="white" font-family="STANDARD" padding-end="8pt" padding-start="8pt">GET</fo:inline>
-                <fo:inline padding-start="10pt">http://{{orion}}/v2/entities/urn:ngsi-ld:Store:001</fo:inline>
-              </fo:block>
-            </fo:block>
-          </fo:block>
           <fo:block>
             <fo:block font-family="STANDARD" font-weight="bold">Query Parameters:</fo:block>
             <fo:block>
@@ -903,7 +906,9 @@ If the response is blank, this is usually because the MongoDB database holding t
                         </fo:table-cell>
                         <fo:table-cell border-before-color="black" text-align="left">
                           <fo:block space-after.conditionality="retain" space-before.conditionality="retain">*
-                            <fo:inline font-family="MONOSPACE">keyValues</fo:inline>option in order to get a more compact and brief representation, including just attribute values*
+                            <fo:inline font-family="MONOSPACE">keyValues</fo:inline>option in order to get a more compact and brief representation, including just attribute values
+
+*
                             <fo:inline font-family="MONOSPACE">values</fo:inline>option combined with a list of attribute values
                             <fo:inline font-family="MONOSPACE">attrs</fo:inline>for an ordered list of attributes only</fo:block>
                         </fo:table-cell>
@@ -947,9 +952,13 @@ If the response is blank, this is usually because the MongoDB database holding t
           <fo:block>
             <fo:block font-family="STANDARD" font-weight="bold">Example:</fo:block>
             <fo:block>
-              <fo:block background-color="ALICEBLUE" font-family="MONOSPACE" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">curl -X  -G GET  \
-  'http://{{orion}}/v2/entities/urn:ngsi-ld:Store:001'  \
-    -d 'options=keyValues'</fo:block>
+              <fo:block background-color="ALICEBLUE" color="black" font-family="MONOSPACE" font-weight="bold" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">
+                <fo:inline color="INDIANRED" font-family="MONOSPACE" font-weight="bold">curl</fo:inline>-X  -G GET
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">\</fo:inline>
+                <fo:inline color="#609000" font-family="MONOSPACE" font-weight="bold">'http://{{orion}}/v2/entities/urn:ngsi-ld:Store:001'</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">\</fo:inline>-d
+                <fo:inline color="#609000" font-family="MONOSPACE" font-weight="bold">'options=keyValues'</fo:inline>
+              </fo:block>
             </fo:block>
           </fo:block>
         </fo:block>
@@ -963,6 +972,10 @@ If the response is blank, this is usually because the MongoDB database holding t
             <fo:wrapper></fo:wrapper>Obtain Entity Data by type</fo:block>
         </fo:block>
         <fo:block>
+          <fo:block background-color="ALICEBLUE" border-color="CORNFLOWERBLUE" border-style="solid" border-width="1pt" font-family="MONOSPACE" font-weight="bold" padding-start="10pt">
+            <fo:inline background-color="CORNFLOWERBLUE" color="white" font-family="STANDARD" padding-end="8pt" padding-start="8pt">GET</fo:inline>
+            <fo:inline padding-start="10pt">http://{{orion}}/v2/entities/</fo:inline>
+          </fo:block>
           <fo:block>This example returns the data of all
             <fo:inline font-family="MONOSPACE">Store</fo:inline>entities within the context data.</fo:block>
           <fo:block>The
@@ -970,15 +983,6 @@ If the response is blank, this is usually because the MongoDB database holding t
 Because of the use of the
             <fo:inline font-family="MONOSPACE">options=keyValues</fo:inline>, the response consists of JSON only without the attribute
             <fo:inline font-family="MONOSPACE">type</fo:inline>elements.</fo:block>
-          <fo:block>
-            <fo:block font-family="STANDARD" font-weight="bold">Endpoint:</fo:block>
-            <fo:block>
-              <fo:block background-color="ALICEBLUE" border-color="CORNFLOWERBLUE" border-style="solid" border-width="1pt" font-family="MONOSPACE" font-weight="bold" padding-start="10pt">
-                <fo:inline background-color="CORNFLOWERBLUE" color="white" font-family="STANDARD" padding-end="8pt" padding-start="8pt">GET</fo:inline>
-                <fo:inline padding-start="10pt">http://{{orion}}/v2/entities/</fo:inline>
-              </fo:block>
-            </fo:block>
-          </fo:block>
           <fo:block>
             <fo:block font-family="STANDARD" font-weight="bold">Query Parameters:</fo:block>
             <fo:block>
@@ -1030,7 +1034,9 @@ Because of the use of the
                         </fo:table-cell>
                         <fo:table-cell text-align="left">
                           <fo:block space-after.conditionality="retain" space-before.conditionality="retain">*
-                            <fo:inline font-family="MONOSPACE">keyValues</fo:inline>option in order to get a more compact and brief representation, including just attribute values*
+                            <fo:inline font-family="MONOSPACE">keyValues</fo:inline>option in order to get a more compact and brief representation, including just attribute values
+
+*
                             <fo:inline font-family="MONOSPACE">values</fo:inline>option combined with a list of attribute values
                             <fo:inline font-family="MONOSPACE">attrs</fo:inline>for an ordered list of attributes only</fo:block>
                         </fo:table-cell>
@@ -1059,10 +1065,15 @@ Because of the use of the
           <fo:block>
             <fo:block font-family="STANDARD" font-weight="bold">Example:</fo:block>
             <fo:block>
-              <fo:block background-color="ALICEBLUE" font-family="MONOSPACE" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">curl -X  -G GET  \
-  'http://{{orion}}/v2/entities/'  \
-    -d 'type=Store'  \
-    -d 'options=keyValues'</fo:block>
+              <fo:block background-color="ALICEBLUE" color="black" font-family="MONOSPACE" font-weight="bold" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">
+                <fo:inline color="INDIANRED" font-family="MONOSPACE" font-weight="bold">curl</fo:inline>-X  -G GET
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">\</fo:inline>
+                <fo:inline color="#609000" font-family="MONOSPACE" font-weight="bold">'http://{{orion}}/v2/entities/'</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">\</fo:inline>-d
+                <fo:inline color="#609000" font-family="MONOSPACE" font-weight="bold">'type=Store'</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">\</fo:inline>-d
+                <fo:inline color="#609000" font-family="MONOSPACE" font-weight="bold">'options=keyValues'</fo:inline>
+              </fo:block>
             </fo:block>
           </fo:block>
         </fo:block>
@@ -1075,14 +1086,13 @@ Because of the use of the
             <fo:wrapper></fo:wrapper>
             <fo:wrapper></fo:wrapper>Filter context data by attribute value</fo:block>
         </fo:block>
-        <fo:block></fo:block>
         <fo:block>
+          <fo:block background-color="ALICEBLUE" border-color="CORNFLOWERBLUE" border-style="solid" border-width="1pt" font-family="MONOSPACE" font-weight="bold" padding-start="10pt">
+            <fo:inline background-color="CORNFLOWERBLUE" color="white" font-family="STANDARD" padding-end="8pt" padding-start="8pt">GET</fo:inline>
+            <fo:inline padding-start="10pt">http://{{orion}}/v2/entities/</fo:inline>
+          </fo:block>
           <fo:block>
-            <fo:block font-family="STANDARD" font-weight="bold">
-              <fo:block>
-                <fo:wrapper></fo:wrapper>
-                <fo:wrapper></fo:wrapper>Filter context data by comparing the values of an attribute</fo:block>
-            </fo:block>
+            <fo:block font-family="STANDARD" font-weight="bold">Filter context data by comparing the values of an attribute</fo:block>
             <fo:block>
               <fo:block>This example returns the data of all
                 <fo:inline font-family="MONOSPACE">Store</fo:inline>entities found with the name
@@ -1096,116 +1106,116 @@ Because of the use of the
                 <fo:inline font-family="MONOSPACE">options=keyValues</fo:inline>, the response consists of JSON only without the attribute
                 <fo:inline font-family="MONOSPACE">type</fo:inline>and
                 <fo:inline font-family="MONOSPACE">metadata</fo:inline>elements.</fo:block>
-              <fo:block>
-                <fo:block font-family="STANDARD" font-weight="bold">Endpoint:</fo:block>
+            </fo:block>
+          </fo:block>
+          <fo:block>
+            <fo:block font-family="STANDARD" font-weight="bold">Query Parameters:</fo:block>
+            <fo:block>
+              <fo:block-container reference-orientation="0">
                 <fo:block>
-                  <fo:block background-color="ALICEBLUE" border-color="CORNFLOWERBLUE" border-style="solid" border-width="1pt" font-family="MONOSPACE" font-weight="bold" padding-start="10pt">
-                    <fo:inline background-color="CORNFLOWERBLUE" color="white" font-family="STANDARD" padding-end="8pt" padding-start="8pt">GET</fo:inline>
-                    <fo:inline padding-start="10pt">http://{{orion}}/v2/entities/</fo:inline>
-                  </fo:block>
+                  <fo:table border-after-color="black" border-before-color="black" border-end-color="black" border-end-style="solid" border-end-width="1pt" table-layout="fixed" width="100%">
+                    <fo:table-column column-number="1" column-width="13%"></fo:table-column>
+                    <fo:table-column column-number="2" column-width="27%"></fo:table-column>
+                    <fo:table-column column-number="3" column-width="59%"></fo:table-column>
+                    <fo:table-header>
+                      <fo:table-row>
+                        <fo:table-cell border-before-color="black" text-align="left">
+                          <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Key</fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell border-before-color="black" text-align="left">
+                          <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Value</fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell border-before-color="black" text-align="left">
+                          <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Description</fo:block>
+                        </fo:table-cell>
+                      </fo:table-row>
+                    </fo:table-header>
+                    <fo:table-body>
+                      <fo:table-row keep-together.within-page="always">
+                        <fo:table-cell border-before-color="black" text-align="left">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
+                            <fo:inline font-family="MONOSPACE">q</fo:inline>
+                          </fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell border-before-color="black" text-align="left">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
+                            <fo:inline font-family="MONOSPACE">name=='Checkpoint Markt'</fo:inline>
+                          </fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell border-before-color="black" text-align="left">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain"></fo:block>
+                        </fo:table-cell>
+                      </fo:table-row>
+                      <fo:table-row keep-together.within-page="always">
+                        <fo:table-cell text-align="left">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
+                            <fo:inline font-family="MONOSPACE">type</fo:inline>
+                          </fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell text-align="left">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
+                            <fo:inline font-family="MONOSPACE">Store</fo:inline>
+                          </fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell text-align="left">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">Entity type, to avoid ambiguity in case there are several entities with the same entity id</fo:block>
+                        </fo:table-cell>
+                      </fo:table-row>
+                      <fo:table-row keep-together.within-page="always">
+                        <fo:table-cell text-align="left">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
+                            <fo:inline font-family="MONOSPACE">options</fo:inline>
+                          </fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell text-align="left">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
+                            <fo:inline font-family="MONOSPACE">keyValues</fo:inline>
+                          </fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell text-align="left">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">*
+                            <fo:inline font-family="MONOSPACE">keyValues</fo:inline>option in order to get a more compact and brief representation, including just attribute values
+
+*
+                            <fo:inline font-family="MONOSPACE">values</fo:inline>option combined with a list of attribute values
+                            <fo:inline font-family="MONOSPACE">attrs</fo:inline>for an ordered list of attributes only</fo:block>
+                        </fo:table-cell>
+                      </fo:table-row>
+                      <fo:table-row keep-together.within-page="always">
+                        <fo:table-cell text-align="left">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
+                            <fo:inline font-family="MONOSPACE">attrs</fo:inline>
+                          </fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell text-align="left">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
+                            <fo:inline font-family="MONOSPACE">name</fo:inline>
+                          </fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell text-align="left">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">Ordered list of attribute names to display</fo:block>
+                        </fo:table-cell>
+                      </fo:table-row>
+                    </fo:table-body>
+                  </fo:table>
                 </fo:block>
-              </fo:block>
-              <fo:block>
-                <fo:block font-family="STANDARD" font-weight="bold">Query Parameters:</fo:block>
-                <fo:block>
-                  <fo:block-container reference-orientation="0">
-                    <fo:block>
-                      <fo:table border-after-color="black" border-before-color="black" border-end-color="black" border-end-style="solid" border-end-width="1pt" table-layout="fixed" width="100%">
-                        <fo:table-column column-number="1" column-width="13%"></fo:table-column>
-                        <fo:table-column column-number="2" column-width="27%"></fo:table-column>
-                        <fo:table-column column-number="3" column-width="59%"></fo:table-column>
-                        <fo:table-header>
-                          <fo:table-row>
-                            <fo:table-cell border-before-color="black" text-align="left">
-                              <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Key</fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell border-before-color="black" text-align="left">
-                              <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Value</fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell border-before-color="black" text-align="left">
-                              <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Description</fo:block>
-                            </fo:table-cell>
-                          </fo:table-row>
-                        </fo:table-header>
-                        <fo:table-body>
-                          <fo:table-row keep-together.within-page="always">
-                            <fo:table-cell border-before-color="black" text-align="left">
-                              <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
-                                <fo:inline font-family="MONOSPACE">q</fo:inline>
-                              </fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell border-before-color="black" text-align="left">
-                              <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
-                                <fo:inline font-family="MONOSPACE">name=='Checkpoint Markt'</fo:inline>
-                              </fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell border-before-color="black" text-align="left">
-                              <fo:block space-after.conditionality="retain" space-before.conditionality="retain"></fo:block>
-                            </fo:table-cell>
-                          </fo:table-row>
-                          <fo:table-row keep-together.within-page="always">
-                            <fo:table-cell text-align="left">
-                              <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
-                                <fo:inline font-family="MONOSPACE">type</fo:inline>
-                              </fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="left">
-                              <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
-                                <fo:inline font-family="MONOSPACE">Store</fo:inline>
-                              </fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="left">
-                              <fo:block space-after.conditionality="retain" space-before.conditionality="retain">Entity type, to avoid ambiguity in case there are several entities with the same entity id</fo:block>
-                            </fo:table-cell>
-                          </fo:table-row>
-                          <fo:table-row keep-together.within-page="always">
-                            <fo:table-cell text-align="left">
-                              <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
-                                <fo:inline font-family="MONOSPACE">options</fo:inline>
-                              </fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="left">
-                              <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
-                                <fo:inline font-family="MONOSPACE">keyValues</fo:inline>
-                              </fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="left">
-                              <fo:block space-after.conditionality="retain" space-before.conditionality="retain">*
-                                <fo:inline font-family="MONOSPACE">keyValues</fo:inline>option in order to get a more compact and brief representation, including just attribute values*
-                                <fo:inline font-family="MONOSPACE">values</fo:inline>option combined with a list of attribute values
-                                <fo:inline font-family="MONOSPACE">attrs</fo:inline>for an ordered list of attributes only</fo:block>
-                            </fo:table-cell>
-                          </fo:table-row>
-                          <fo:table-row keep-together.within-page="always">
-                            <fo:table-cell text-align="left">
-                              <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
-                                <fo:inline font-family="MONOSPACE">attrs</fo:inline>
-                              </fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="left">
-                              <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
-                                <fo:inline font-family="MONOSPACE">name</fo:inline>
-                              </fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="left">
-                              <fo:block space-after.conditionality="retain" space-before.conditionality="retain">Ordered list of attribute names to display</fo:block>
-                            </fo:table-cell>
-                          </fo:table-row>
-                        </fo:table-body>
-                      </fo:table>
-                    </fo:block>
-                  </fo:block-container>
-                </fo:block>
-              </fo:block>
-              <fo:block>
-                <fo:block font-family="STANDARD" font-weight="bold">Example:</fo:block>
-                <fo:block>
-                  <fo:block background-color="ALICEBLUE" font-family="MONOSPACE" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">curl -X  -G GET  \
-  'http://{{orion}}/v2/entities/'  \
-    -d 'q=name=='Checkpoint Markt''  \
-    -d 'type=Store'  \
-    -d 'options=keyValues'</fo:block>
-                </fo:block>
+              </fo:block-container>
+            </fo:block>
+          </fo:block>
+          <fo:block>
+            <fo:block font-family="STANDARD" font-weight="bold">Example:</fo:block>
+            <fo:block>
+              <fo:block background-color="ALICEBLUE" color="black" font-family="MONOSPACE" font-weight="bold" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">
+                <fo:inline color="INDIANRED" font-family="MONOSPACE" font-weight="bold">curl</fo:inline>-X  -G GET
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">\</fo:inline>
+                <fo:inline color="#609000" font-family="MONOSPACE" font-weight="bold">'http://{{orion}}/v2/entities/'</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">\</fo:inline>-d
+                <fo:inline color="#609000" font-family="MONOSPACE" font-weight="bold">'q=name=='</fo:inline>Checkpoint Markt
+                <fo:inline color="#609000" font-family="MONOSPACE" font-weight="bold">''</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">\</fo:inline>-d
+                <fo:inline color="#609000" font-family="MONOSPACE" font-weight="bold">'type=Store'</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">\</fo:inline>-d
+                <fo:inline color="#609000" font-family="MONOSPACE" font-weight="bold">'options=keyValues'</fo:inline>
               </fo:block>
             </fo:block>
           </fo:block>
@@ -1219,14 +1229,13 @@ Because of the use of the
             <fo:wrapper></fo:wrapper>
             <fo:wrapper></fo:wrapper>Filter context data by sub-attribute value</fo:block>
         </fo:block>
-        <fo:block></fo:block>
         <fo:block>
+          <fo:block background-color="ALICEBLUE" border-color="CORNFLOWERBLUE" border-style="solid" border-width="1pt" font-family="MONOSPACE" font-weight="bold" padding-start="10pt">
+            <fo:inline background-color="CORNFLOWERBLUE" color="white" font-family="STANDARD" padding-end="8pt" padding-start="8pt">GET</fo:inline>
+            <fo:inline padding-start="10pt">http://{{orion}}/v2/entities/</fo:inline>
+          </fo:block>
           <fo:block>
-            <fo:block font-family="STANDARD" font-weight="bold">
-              <fo:block>
-                <fo:wrapper></fo:wrapper>
-                <fo:wrapper></fo:wrapper>Filter context data by comparing the values of an attribute</fo:block>
-            </fo:block>
+            <fo:block font-family="STANDARD" font-weight="bold">Filter context data by comparing the values of an attribute</fo:block>
             <fo:block>
               <fo:block>This example returns the data of all
                 <fo:inline font-family="MONOSPACE">Store</fo:inline>entities found in the
@@ -1239,101 +1248,101 @@ Because of the use of the
                 <fo:inline font-family="MONOSPACE">options=keyValues</fo:inline>, the response consists of JSON only without the attribute
                 <fo:inline font-family="MONOSPACE">type</fo:inline>and
                 <fo:inline font-family="MONOSPACE">metadata</fo:inline>elements.</fo:block>
-              <fo:block>
-                <fo:block font-family="STANDARD" font-weight="bold">Endpoint:</fo:block>
+            </fo:block>
+          </fo:block>
+          <fo:block>
+            <fo:block font-family="STANDARD" font-weight="bold">Query Parameters:</fo:block>
+            <fo:block>
+              <fo:block-container reference-orientation="0">
                 <fo:block>
-                  <fo:block background-color="ALICEBLUE" border-color="CORNFLOWERBLUE" border-style="solid" border-width="1pt" font-family="MONOSPACE" font-weight="bold" padding-start="10pt">
-                    <fo:inline background-color="CORNFLOWERBLUE" color="white" font-family="STANDARD" padding-end="8pt" padding-start="8pt">GET</fo:inline>
-                    <fo:inline padding-start="10pt">http://{{orion}}/v2/entities/</fo:inline>
-                  </fo:block>
+                  <fo:table border-after-color="black" border-before-color="black" border-end-color="black" border-end-style="solid" border-end-width="1pt" table-layout="fixed" width="100%">
+                    <fo:table-column column-number="1" column-width="13%"></fo:table-column>
+                    <fo:table-column column-number="2" column-width="27%"></fo:table-column>
+                    <fo:table-column column-number="3" column-width="59%"></fo:table-column>
+                    <fo:table-header>
+                      <fo:table-row>
+                        <fo:table-cell border-before-color="black" text-align="left">
+                          <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Key</fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell border-before-color="black" text-align="left">
+                          <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Value</fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell border-before-color="black" text-align="left">
+                          <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Description</fo:block>
+                        </fo:table-cell>
+                      </fo:table-row>
+                    </fo:table-header>
+                    <fo:table-body>
+                      <fo:table-row keep-together.within-page="always">
+                        <fo:table-cell border-before-color="black" text-align="left">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
+                            <fo:inline font-family="MONOSPACE">q</fo:inline>
+                          </fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell border-before-color="black" text-align="left">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
+                            <fo:inline font-family="MONOSPACE">address.addressLocality=='Kreuzberg'</fo:inline>
+                          </fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell border-before-color="black" text-align="left">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain"></fo:block>
+                        </fo:table-cell>
+                      </fo:table-row>
+                      <fo:table-row keep-together.within-page="always">
+                        <fo:table-cell text-align="left">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
+                            <fo:inline font-family="MONOSPACE">type</fo:inline>
+                          </fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell text-align="left">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
+                            <fo:inline font-family="MONOSPACE">Store</fo:inline>
+                          </fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell text-align="left">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">Entity type, to avoid ambiguity in case there are several entities with the same entity id</fo:block>
+                        </fo:table-cell>
+                      </fo:table-row>
+                      <fo:table-row keep-together.within-page="always">
+                        <fo:table-cell text-align="left">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
+                            <fo:inline font-family="MONOSPACE">options</fo:inline>
+                          </fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell text-align="left">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
+                            <fo:inline font-family="MONOSPACE">keyValues</fo:inline>
+                          </fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell text-align="left">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">*
+                            <fo:inline font-family="MONOSPACE">keyValues</fo:inline>option in order to get a more compact and brief representation, including just attribute values
+
+*
+                            <fo:inline font-family="MONOSPACE">values</fo:inline>option combined with a list of attribute values
+                            <fo:inline font-family="MONOSPACE">attrs</fo:inline>for an ordered list of attributes only</fo:block>
+                        </fo:table-cell>
+                      </fo:table-row>
+                    </fo:table-body>
+                  </fo:table>
                 </fo:block>
-              </fo:block>
-              <fo:block>
-                <fo:block font-family="STANDARD" font-weight="bold">Query Parameters:</fo:block>
-                <fo:block>
-                  <fo:block-container reference-orientation="0">
-                    <fo:block>
-                      <fo:table border-after-color="black" border-before-color="black" border-end-color="black" border-end-style="solid" border-end-width="1pt" table-layout="fixed" width="100%">
-                        <fo:table-column column-number="1" column-width="13%"></fo:table-column>
-                        <fo:table-column column-number="2" column-width="27%"></fo:table-column>
-                        <fo:table-column column-number="3" column-width="59%"></fo:table-column>
-                        <fo:table-header>
-                          <fo:table-row>
-                            <fo:table-cell border-before-color="black" text-align="left">
-                              <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Key</fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell border-before-color="black" text-align="left">
-                              <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Value</fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell border-before-color="black" text-align="left">
-                              <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Description</fo:block>
-                            </fo:table-cell>
-                          </fo:table-row>
-                        </fo:table-header>
-                        <fo:table-body>
-                          <fo:table-row keep-together.within-page="always">
-                            <fo:table-cell border-before-color="black" text-align="left">
-                              <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
-                                <fo:inline font-family="MONOSPACE">q</fo:inline>
-                              </fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell border-before-color="black" text-align="left">
-                              <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
-                                <fo:inline font-family="MONOSPACE">address.addressLocality=='Kreuzberg'</fo:inline>
-                              </fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell border-before-color="black" text-align="left">
-                              <fo:block space-after.conditionality="retain" space-before.conditionality="retain"></fo:block>
-                            </fo:table-cell>
-                          </fo:table-row>
-                          <fo:table-row keep-together.within-page="always">
-                            <fo:table-cell text-align="left">
-                              <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
-                                <fo:inline font-family="MONOSPACE">type</fo:inline>
-                              </fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="left">
-                              <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
-                                <fo:inline font-family="MONOSPACE">Store</fo:inline>
-                              </fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="left">
-                              <fo:block space-after.conditionality="retain" space-before.conditionality="retain">Entity type, to avoid ambiguity in case there are several entities with the same entity id</fo:block>
-                            </fo:table-cell>
-                          </fo:table-row>
-                          <fo:table-row keep-together.within-page="always">
-                            <fo:table-cell text-align="left">
-                              <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
-                                <fo:inline font-family="MONOSPACE">options</fo:inline>
-                              </fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="left">
-                              <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
-                                <fo:inline font-family="MONOSPACE">keyValues</fo:inline>
-                              </fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="left">
-                              <fo:block space-after.conditionality="retain" space-before.conditionality="retain">*
-                                <fo:inline font-family="MONOSPACE">keyValues</fo:inline>option in order to get a more compact and brief representation, including just attribute values*
-                                <fo:inline font-family="MONOSPACE">values</fo:inline>option combined with a list of attribute values
-                                <fo:inline font-family="MONOSPACE">attrs</fo:inline>for an ordered list of attributes only</fo:block>
-                            </fo:table-cell>
-                          </fo:table-row>
-                        </fo:table-body>
-                      </fo:table>
-                    </fo:block>
-                  </fo:block-container>
-                </fo:block>
-              </fo:block>
-              <fo:block>
-                <fo:block font-family="STANDARD" font-weight="bold">Example:</fo:block>
-                <fo:block>
-                  <fo:block background-color="ALICEBLUE" font-family="MONOSPACE" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">curl -X  -G GET  \
-  'http://{{orion}}/v2/entities/'  \
-    -d 'q=address.addressLocality=='Kreuzberg''  \
-    -d 'type=Store'  \
-    -d 'options=keyValues'</fo:block>
-                </fo:block>
+              </fo:block-container>
+            </fo:block>
+          </fo:block>
+          <fo:block>
+            <fo:block font-family="STANDARD" font-weight="bold">Example:</fo:block>
+            <fo:block>
+              <fo:block background-color="ALICEBLUE" color="black" font-family="MONOSPACE" font-weight="bold" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">
+                <fo:inline color="INDIANRED" font-family="MONOSPACE" font-weight="bold">curl</fo:inline>-X  -G GET
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">\</fo:inline>
+                <fo:inline color="#609000" font-family="MONOSPACE" font-weight="bold">'http://{{orion}}/v2/entities/'</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">\</fo:inline>-d
+                <fo:inline color="#609000" font-family="MONOSPACE" font-weight="bold">'q=address.addressLocality=='</fo:inline>Kreuzberg
+                <fo:inline color="#609000" font-family="MONOSPACE" font-weight="bold">''</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">\</fo:inline>-d
+                <fo:inline color="#609000" font-family="MONOSPACE" font-weight="bold">'type=Store'</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">\</fo:inline>-d
+                <fo:inline color="#609000" font-family="MONOSPACE" font-weight="bold">'options=keyValues'</fo:inline>
               </fo:block>
             </fo:block>
           </fo:block>
@@ -1347,114 +1356,112 @@ Because of the use of the
             <fo:wrapper></fo:wrapper>
             <fo:wrapper></fo:wrapper>Filter context data by querying metadata</fo:block>
         </fo:block>
-        <fo:block></fo:block>
         <fo:block>
+          <fo:block background-color="ALICEBLUE" border-color="CORNFLOWERBLUE" border-style="solid" border-width="1pt" font-family="MONOSPACE" font-weight="bold" padding-start="10pt">
+            <fo:inline background-color="CORNFLOWERBLUE" color="white" font-family="STANDARD" padding-end="8pt" padding-start="8pt">GET</fo:inline>
+            <fo:inline padding-start="10pt">http://{{orion}}/v2/entities/</fo:inline>
+          </fo:block>
           <fo:block>
-            <fo:block font-family="STANDARD" font-weight="bold">
-              <fo:block>
-                <fo:wrapper></fo:wrapper>
-                <fo:wrapper></fo:wrapper>Filter context data by comparing the values of an metadata attribute</fo:block>
-            </fo:block>
+            <fo:block font-family="STANDARD" font-weight="bold">Filter context data by comparing the values of an metadata attribute</fo:block>
             <fo:block>
               <fo:block>This example returns the data of all
                 <fo:inline font-family="MONOSPACE">Store</fo:inline>entities with a verified address.</fo:block>
               <fo:block>Metadata queries can be made using the
                 <fo:inline font-family="MONOSPACE">mq</fo:inline>parameter.</fo:block>
-              <fo:block>
-                <fo:block font-family="STANDARD" font-weight="bold">Endpoint:</fo:block>
+            </fo:block>
+          </fo:block>
+          <fo:block>
+            <fo:block font-family="STANDARD" font-weight="bold">Query Parameters:</fo:block>
+            <fo:block>
+              <fo:block-container reference-orientation="0">
                 <fo:block>
-                  <fo:block background-color="ALICEBLUE" border-color="CORNFLOWERBLUE" border-style="solid" border-width="1pt" font-family="MONOSPACE" font-weight="bold" padding-start="10pt">
-                    <fo:inline background-color="CORNFLOWERBLUE" color="white" font-family="STANDARD" padding-end="8pt" padding-start="8pt">GET</fo:inline>
-                    <fo:inline padding-start="10pt">http://{{orion}}/v2/entities/</fo:inline>
-                  </fo:block>
+                  <fo:table border-after-color="black" border-before-color="black" border-end-color="black" border-end-style="solid" border-end-width="1pt" table-layout="fixed" width="100%">
+                    <fo:table-column column-number="1" column-width="13%"></fo:table-column>
+                    <fo:table-column column-number="2" column-width="27%"></fo:table-column>
+                    <fo:table-column column-number="3" column-width="59%"></fo:table-column>
+                    <fo:table-header>
+                      <fo:table-row>
+                        <fo:table-cell border-before-color="black" text-align="left">
+                          <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Key</fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell border-before-color="black" text-align="left">
+                          <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Value</fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell border-before-color="black" text-align="left">
+                          <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Description</fo:block>
+                        </fo:table-cell>
+                      </fo:table-row>
+                    </fo:table-header>
+                    <fo:table-body>
+                      <fo:table-row keep-together.within-page="always">
+                        <fo:table-cell border-before-color="black" text-align="left">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
+                            <fo:inline font-family="MONOSPACE">mq</fo:inline>
+                          </fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell border-before-color="black" text-align="left">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
+                            <fo:inline font-family="MONOSPACE">address.verified==true</fo:inline>
+                          </fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell border-before-color="black" text-align="left">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain"></fo:block>
+                        </fo:table-cell>
+                      </fo:table-row>
+                      <fo:table-row keep-together.within-page="always">
+                        <fo:table-cell text-align="left">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
+                            <fo:inline font-family="MONOSPACE">type</fo:inline>
+                          </fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell text-align="left">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
+                            <fo:inline font-family="MONOSPACE">Store</fo:inline>
+                          </fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell text-align="left">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">Entity type, to avoid ambiguity in case there are several entities with the same entity id</fo:block>
+                        </fo:table-cell>
+                      </fo:table-row>
+                      <fo:table-row keep-together.within-page="always">
+                        <fo:table-cell text-align="left">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
+                            <fo:inline font-family="MONOSPACE">options</fo:inline>
+                          </fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell text-align="left">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
+                            <fo:inline font-family="MONOSPACE">keyValues</fo:inline>
+                          </fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell text-align="left">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">*
+                            <fo:inline font-family="MONOSPACE">keyValues</fo:inline>option in order to get a more compact and brief representation, including just attribute values
+
+*
+                            <fo:inline font-family="MONOSPACE">values</fo:inline>option combined with a list of attribute values
+                            <fo:inline font-family="MONOSPACE">attrs</fo:inline>for an ordered list of attributes only</fo:block>
+                        </fo:table-cell>
+                      </fo:table-row>
+                    </fo:table-body>
+                  </fo:table>
                 </fo:block>
-              </fo:block>
-              <fo:block>
-                <fo:block font-family="STANDARD" font-weight="bold">Query Parameters:</fo:block>
-                <fo:block>
-                  <fo:block-container reference-orientation="0">
-                    <fo:block>
-                      <fo:table border-after-color="black" border-before-color="black" border-end-color="black" border-end-style="solid" border-end-width="1pt" table-layout="fixed" width="100%">
-                        <fo:table-column column-number="1" column-width="13%"></fo:table-column>
-                        <fo:table-column column-number="2" column-width="27%"></fo:table-column>
-                        <fo:table-column column-number="3" column-width="59%"></fo:table-column>
-                        <fo:table-header>
-                          <fo:table-row>
-                            <fo:table-cell border-before-color="black" text-align="left">
-                              <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Key</fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell border-before-color="black" text-align="left">
-                              <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Value</fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell border-before-color="black" text-align="left">
-                              <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Description</fo:block>
-                            </fo:table-cell>
-                          </fo:table-row>
-                        </fo:table-header>
-                        <fo:table-body>
-                          <fo:table-row keep-together.within-page="always">
-                            <fo:table-cell border-before-color="black" text-align="left">
-                              <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
-                                <fo:inline font-family="MONOSPACE">mq</fo:inline>
-                              </fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell border-before-color="black" text-align="left">
-                              <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
-                                <fo:inline font-family="MONOSPACE">address.verified==true</fo:inline>
-                              </fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell border-before-color="black" text-align="left">
-                              <fo:block space-after.conditionality="retain" space-before.conditionality="retain"></fo:block>
-                            </fo:table-cell>
-                          </fo:table-row>
-                          <fo:table-row keep-together.within-page="always">
-                            <fo:table-cell text-align="left">
-                              <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
-                                <fo:inline font-family="MONOSPACE">type</fo:inline>
-                              </fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="left">
-                              <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
-                                <fo:inline font-family="MONOSPACE">Store</fo:inline>
-                              </fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="left">
-                              <fo:block space-after.conditionality="retain" space-before.conditionality="retain">Entity type, to avoid ambiguity in case there are several entities with the same entity id</fo:block>
-                            </fo:table-cell>
-                          </fo:table-row>
-                          <fo:table-row keep-together.within-page="always">
-                            <fo:table-cell text-align="left">
-                              <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
-                                <fo:inline font-family="MONOSPACE">options</fo:inline>
-                              </fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="left">
-                              <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
-                                <fo:inline font-family="MONOSPACE">keyValues</fo:inline>
-                              </fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="left">
-                              <fo:block space-after.conditionality="retain" space-before.conditionality="retain">*
-                                <fo:inline font-family="MONOSPACE">keyValues</fo:inline>option in order to get a more compact and brief representation, including just attribute values*
-                                <fo:inline font-family="MONOSPACE">values</fo:inline>option combined with a list of attribute values
-                                <fo:inline font-family="MONOSPACE">attrs</fo:inline>for an ordered list of attributes only</fo:block>
-                            </fo:table-cell>
-                          </fo:table-row>
-                        </fo:table-body>
-                      </fo:table>
-                    </fo:block>
-                  </fo:block-container>
-                </fo:block>
-              </fo:block>
-              <fo:block>
-                <fo:block font-family="STANDARD" font-weight="bold">Example:</fo:block>
-                <fo:block>
-                  <fo:block background-color="ALICEBLUE" font-family="MONOSPACE" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">curl -X  -G GET  \
-  'http://{{orion}}/v2/entities/'  \
-    -d 'mq=address.verified==true'  \
-    -d 'type=Store'  \
-    -d 'options=keyValues'</fo:block>
-                </fo:block>
+              </fo:block-container>
+            </fo:block>
+          </fo:block>
+          <fo:block>
+            <fo:block font-family="STANDARD" font-weight="bold">Example:</fo:block>
+            <fo:block>
+              <fo:block background-color="ALICEBLUE" color="black" font-family="MONOSPACE" font-weight="bold" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">
+                <fo:inline color="INDIANRED" font-family="MONOSPACE" font-weight="bold">curl</fo:inline>-X  -G GET
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">\</fo:inline>
+                <fo:inline color="#609000" font-family="MONOSPACE" font-weight="bold">'http://{{orion}}/v2/entities/'</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">\</fo:inline>-d
+                <fo:inline color="#609000" font-family="MONOSPACE" font-weight="bold">'mq=address.verified==true'</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">\</fo:inline>-d
+                <fo:inline color="#609000" font-family="MONOSPACE" font-weight="bold">'type=Store'</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">\</fo:inline>-d
+                <fo:inline color="#609000" font-family="MONOSPACE" font-weight="bold">'options=keyValues'</fo:inline>
               </fo:block>
             </fo:block>
           </fo:block>
@@ -1468,162 +1475,162 @@ Because of the use of the
             <fo:wrapper></fo:wrapper>
             <fo:wrapper></fo:wrapper>Filter context data by distance</fo:block>
         </fo:block>
-        <fo:block></fo:block>
         <fo:block>
+          <fo:block background-color="ALICEBLUE" border-color="CORNFLOWERBLUE" border-style="solid" border-width="1pt" font-family="MONOSPACE" font-weight="bold" padding-start="10pt">
+            <fo:inline background-color="CORNFLOWERBLUE" color="white" font-family="STANDARD" padding-end="8pt" padding-start="8pt">GET</fo:inline>
+            <fo:inline padding-start="10pt">http://{{orion}}/v2/entities/</fo:inline>
+          </fo:block>
           <fo:block>
-            <fo:block font-family="STANDARD" font-weight="bold">
-              <fo:block>
-                <fo:wrapper></fo:wrapper>
-                <fo:wrapper></fo:wrapper>Filter context data by comparing the values of a geo:point attribute</fo:block>
-            </fo:block>
+            <fo:block font-family="STANDARD" font-weight="bold">Filter context data by comparing the values of a geo:point attribute</fo:block>
             <fo:block>
               <fo:block>This example returns the data of all
                 <fo:inline font-family="MONOSPACE">Store</fo:inline>entities found within 1.5km the
                 <fo:inline font-weight="bold">Brandenburg Gate</fo:inline>in
                 <fo:inline font-weight="bold">Berlin</fo:inline>(
                 <fo:inline font-style="italic">52.5162N 13.3777W</fo:inline>)</fo:block>
-              <fo:block>
-                <fo:block font-family="STANDARD" font-weight="bold">Endpoint:</fo:block>
+            </fo:block>
+          </fo:block>
+          <fo:block>
+            <fo:block font-family="STANDARD" font-weight="bold">Query Parameters:</fo:block>
+            <fo:block>
+              <fo:block-container reference-orientation="0">
                 <fo:block>
-                  <fo:block background-color="ALICEBLUE" border-color="CORNFLOWERBLUE" border-style="solid" border-width="1pt" font-family="MONOSPACE" font-weight="bold" padding-start="10pt">
-                    <fo:inline background-color="CORNFLOWERBLUE" color="white" font-family="STANDARD" padding-end="8pt" padding-start="8pt">GET</fo:inline>
-                    <fo:inline padding-start="10pt">http://{{orion}}/v2/entities/</fo:inline>
-                  </fo:block>
+                  <fo:table border-after-color="black" border-before-color="black" border-end-color="black" border-end-style="solid" border-end-width="1pt" table-layout="fixed" width="100%">
+                    <fo:table-column column-number="1" column-width="13%"></fo:table-column>
+                    <fo:table-column column-number="2" column-width="27%"></fo:table-column>
+                    <fo:table-column column-number="3" column-width="59%"></fo:table-column>
+                    <fo:table-header>
+                      <fo:table-row>
+                        <fo:table-cell border-before-color="black" text-align="left">
+                          <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Key</fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell border-before-color="black" text-align="left">
+                          <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Value</fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell border-before-color="black" text-align="left">
+                          <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Description</fo:block>
+                        </fo:table-cell>
+                      </fo:table-row>
+                    </fo:table-header>
+                    <fo:table-body>
+                      <fo:table-row keep-together.within-page="always">
+                        <fo:table-cell border-before-color="black" text-align="left">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
+                            <fo:inline font-family="MONOSPACE">georel</fo:inline>
+                          </fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell border-before-color="black" text-align="left">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
+                            <fo:inline font-family="MONOSPACE">near;maxDistance:1500</fo:inline>
+                          </fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell border-before-color="black" text-align="left">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain"></fo:block>
+                        </fo:table-cell>
+                      </fo:table-row>
+                      <fo:table-row keep-together.within-page="always">
+                        <fo:table-cell text-align="left">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
+                            <fo:inline font-family="MONOSPACE">geometry</fo:inline>
+                          </fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell text-align="left">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
+                            <fo:inline font-family="MONOSPACE">point</fo:inline>
+                          </fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell text-align="left">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain"></fo:block>
+                        </fo:table-cell>
+                      </fo:table-row>
+                      <fo:table-row keep-together.within-page="always">
+                        <fo:table-cell text-align="left">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
+                            <fo:inline font-family="MONOSPACE">coords</fo:inline>
+                          </fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell text-align="left">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
+                            <fo:inline font-family="MONOSPACE">52.5162,13.3777</fo:inline>
+                          </fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell text-align="left">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain"></fo:block>
+                        </fo:table-cell>
+                      </fo:table-row>
+                      <fo:table-row keep-together.within-page="always">
+                        <fo:table-cell text-align="left">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
+                            <fo:inline font-family="MONOSPACE">type</fo:inline>
+                          </fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell text-align="left">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
+                            <fo:inline font-family="MONOSPACE">Store</fo:inline>
+                          </fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell text-align="left">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">Entity type, to avoid ambiguity in case there are several entities with the same entity id</fo:block>
+                        </fo:table-cell>
+                      </fo:table-row>
+                      <fo:table-row keep-together.within-page="always">
+                        <fo:table-cell text-align="left">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
+                            <fo:inline font-family="MONOSPACE">options</fo:inline>
+                          </fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell text-align="left">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
+                            <fo:inline font-family="MONOSPACE">keyValues</fo:inline>
+                          </fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell text-align="left">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">*
+                            <fo:inline font-family="MONOSPACE">keyValues</fo:inline>option in order to get a more compact and brief representation, including just attribute values
+
+*
+                            <fo:inline font-family="MONOSPACE">values</fo:inline>option combined with a list of attribute values
+                            <fo:inline font-family="MONOSPACE">attrs</fo:inline>for an ordered list of attributes only</fo:block>
+                        </fo:table-cell>
+                      </fo:table-row>
+                      <fo:table-row keep-together.within-page="always">
+                        <fo:table-cell text-align="left">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
+                            <fo:inline font-family="MONOSPACE">attrs</fo:inline>
+                          </fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell text-align="left">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
+                            <fo:inline font-family="MONOSPACE">name</fo:inline>
+                          </fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell text-align="left">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">Ordered list of attribute names to display</fo:block>
+                        </fo:table-cell>
+                      </fo:table-row>
+                    </fo:table-body>
+                  </fo:table>
                 </fo:block>
-              </fo:block>
-              <fo:block>
-                <fo:block font-family="STANDARD" font-weight="bold">Query Parameters:</fo:block>
-                <fo:block>
-                  <fo:block-container reference-orientation="0">
-                    <fo:block>
-                      <fo:table border-after-color="black" border-before-color="black" border-end-color="black" border-end-style="solid" border-end-width="1pt" table-layout="fixed" width="100%">
-                        <fo:table-column column-number="1" column-width="13%"></fo:table-column>
-                        <fo:table-column column-number="2" column-width="27%"></fo:table-column>
-                        <fo:table-column column-number="3" column-width="59%"></fo:table-column>
-                        <fo:table-header>
-                          <fo:table-row>
-                            <fo:table-cell border-before-color="black" text-align="left">
-                              <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Key</fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell border-before-color="black" text-align="left">
-                              <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Value</fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell border-before-color="black" text-align="left">
-                              <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Description</fo:block>
-                            </fo:table-cell>
-                          </fo:table-row>
-                        </fo:table-header>
-                        <fo:table-body>
-                          <fo:table-row keep-together.within-page="always">
-                            <fo:table-cell border-before-color="black" text-align="left">
-                              <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
-                                <fo:inline font-family="MONOSPACE">georel</fo:inline>
-                              </fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell border-before-color="black" text-align="left">
-                              <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
-                                <fo:inline font-family="MONOSPACE">near;maxDistance:1500</fo:inline>
-                              </fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell border-before-color="black" text-align="left">
-                              <fo:block space-after.conditionality="retain" space-before.conditionality="retain"></fo:block>
-                            </fo:table-cell>
-                          </fo:table-row>
-                          <fo:table-row keep-together.within-page="always">
-                            <fo:table-cell text-align="left">
-                              <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
-                                <fo:inline font-family="MONOSPACE">geometry</fo:inline>
-                              </fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="left">
-                              <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
-                                <fo:inline font-family="MONOSPACE">point</fo:inline>
-                              </fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="left">
-                              <fo:block space-after.conditionality="retain" space-before.conditionality="retain"></fo:block>
-                            </fo:table-cell>
-                          </fo:table-row>
-                          <fo:table-row keep-together.within-page="always">
-                            <fo:table-cell text-align="left">
-                              <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
-                                <fo:inline font-family="MONOSPACE">coords</fo:inline>
-                              </fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="left">
-                              <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
-                                <fo:inline font-family="MONOSPACE">52.5162,13.3777</fo:inline>
-                              </fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="left">
-                              <fo:block space-after.conditionality="retain" space-before.conditionality="retain"></fo:block>
-                            </fo:table-cell>
-                          </fo:table-row>
-                          <fo:table-row keep-together.within-page="always">
-                            <fo:table-cell text-align="left">
-                              <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
-                                <fo:inline font-family="MONOSPACE">type</fo:inline>
-                              </fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="left">
-                              <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
-                                <fo:inline font-family="MONOSPACE">Store</fo:inline>
-                              </fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="left">
-                              <fo:block space-after.conditionality="retain" space-before.conditionality="retain">Entity type, to avoid ambiguity in case there are several entities with the same entity id</fo:block>
-                            </fo:table-cell>
-                          </fo:table-row>
-                          <fo:table-row keep-together.within-page="always">
-                            <fo:table-cell text-align="left">
-                              <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
-                                <fo:inline font-family="MONOSPACE">options</fo:inline>
-                              </fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="left">
-                              <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
-                                <fo:inline font-family="MONOSPACE">keyValues</fo:inline>
-                              </fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="left">
-                              <fo:block space-after.conditionality="retain" space-before.conditionality="retain">*
-                                <fo:inline font-family="MONOSPACE">keyValues</fo:inline>option in order to get a more compact and brief representation, including just attribute values*
-                                <fo:inline font-family="MONOSPACE">values</fo:inline>option combined with a list of attribute values
-                                <fo:inline font-family="MONOSPACE">attrs</fo:inline>for an ordered list of attributes only</fo:block>
-                            </fo:table-cell>
-                          </fo:table-row>
-                          <fo:table-row keep-together.within-page="always">
-                            <fo:table-cell text-align="left">
-                              <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
-                                <fo:inline font-family="MONOSPACE">attrs</fo:inline>
-                              </fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="left">
-                              <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
-                                <fo:inline font-family="MONOSPACE">name</fo:inline>
-                              </fo:block>
-                            </fo:table-cell>
-                            <fo:table-cell text-align="left">
-                              <fo:block space-after.conditionality="retain" space-before.conditionality="retain">Ordered list of attribute names to display</fo:block>
-                            </fo:table-cell>
-                          </fo:table-row>
-                        </fo:table-body>
-                      </fo:table>
-                    </fo:block>
-                  </fo:block-container>
-                </fo:block>
-              </fo:block>
-              <fo:block>
-                <fo:block font-family="STANDARD" font-weight="bold">Example:</fo:block>
-                <fo:block>
-                  <fo:block background-color="ALICEBLUE" font-family="MONOSPACE" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">curl -X  -G GET  \
-  'http://{{orion}}/v2/entities/'  \
-    -d 'georel=near;maxDistance:1500'  \
-    -d 'geometry=point'  \
-    -d 'coords=52.5162,13.3777'  \
-    -d 'type=Store'  \
-    -d 'options=keyValues'</fo:block>
-                </fo:block>
+              </fo:block-container>
+            </fo:block>
+          </fo:block>
+          <fo:block>
+            <fo:block font-family="STANDARD" font-weight="bold">Example:</fo:block>
+            <fo:block>
+              <fo:block background-color="ALICEBLUE" color="black" font-family="MONOSPACE" font-weight="bold" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">
+                <fo:inline color="INDIANRED" font-family="MONOSPACE" font-weight="bold">curl</fo:inline>-X  -G GET
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">\</fo:inline>
+                <fo:inline color="#609000" font-family="MONOSPACE" font-weight="bold">'http://{{orion}}/v2/entities/'</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">\</fo:inline>-d
+                <fo:inline color="#609000" font-family="MONOSPACE" font-weight="bold">'georel=near;maxDistance:1500'</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">\</fo:inline>-d
+                <fo:inline color="#609000" font-family="MONOSPACE" font-weight="bold">'geometry=point'</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">\</fo:inline>-d
+                <fo:inline color="#609000" font-family="MONOSPACE" font-weight="bold">'coords=52.5162,13.3777'</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">\</fo:inline>-d
+                <fo:inline color="#609000" font-family="MONOSPACE" font-weight="bold">'type=Store'</fo:inline>
+                <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">\</fo:inline>-d
+                <fo:inline color="#609000" font-family="MONOSPACE" font-weight="bold">'options=keyValues'</fo:inline>
               </fo:block>
             </fo:block>
           </fo:block>
