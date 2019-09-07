@@ -1,11 +1,13 @@
-# Postman Plugin for DITA-OT  [<img src="https://jason-fox.github.io/fox.jason.passthrough.postman/postman.png" align="right" width="300">](http://postmandita-ot.rtfd.io/)
+# Postman Plugin for DITA-OT [<img src="https://jason-fox.github.io/fox.jason.passthrough.postman/postman.png" align="right" width="300">](http://postmandita-ot.rtfd.io/)
 
 [![license](https://img.shields.io/github/license/jason-fox/fox.jason.passthrough.postman.svg)](http://www.apache.org/licenses/LICENSE-2.0)
 [![DITA-OT 3.3](https://img.shields.io/badge/DITA--OT-3.3-blue.svg)](http://www.dita-ot.org/3.3/) <br/>
 [![Build Status](https://travis-ci.org/jason-fox/fox.jason.passthrough.postman.svg?branch=master)](https://travis-ci.org/jason-fox/fox.jason.passthrough.postman)
 [![Documentation Status](https://readthedocs.org/projects/postmandita-ot/badge/?version=latest)](https://postmandita-ot.readthedocs.io/en/latest/?badge=latest)
 
-This is a DITA-OT Plug-in used to auto-create valid DITA-based REST API documentation. The documentation can be generated directly from a [Postman Collection](https://www.getpostman.com/) file and processed as if it had been written in DITA.
+This is a DITA-OT Plug-in used to auto-create valid DITA-based REST API documentation. The documentation can be
+generated directly from a [Postman Collection](https://www.getpostman.com/) file and processed as if it had been written
+in DITA.
 
 # Table of Contents
 
@@ -21,39 +23,49 @@ This is a DITA-OT Plug-in used to auto-create valid DITA-based REST API document
 
 [<img src="https://assets.getpostman.com/common-share/postman-logo-horizontal-orange.svg" align="right" height="55">](https://www.getpostman.com/)
 
-[Postman](https://www.getpostman.com/) is a software development tool which a developer can use to build, publish, document, design, monitor, test and debug their REST APIs.
+[Postman](https://www.getpostman.com/) is a software development tool which a developer can use to build, publish,
+document, design, monitor, test and debug their REST APIs.
 
-This plugin processes a Postman collection to Pandoc markdown, and the converts the markdown to DITA using the [Pandoc DITA-OT Plugin](https://github.com/jason-fox/fox.jason.passthrough.pandoc) allowing the generation of PDF API documentation.
+This plugin processes a Postman collection to Pandoc markdown, and the converts the markdown to DITA using the
+[Pandoc DITA-OT Plugin](https://github.com/jason-fox/fox.jason.passthrough.pandoc) allowing the generation of PDF API
+documentation.
 
 #### Sample Postman Request
 
 ```json
 {
-  "name": "Obtain Entity Data by id",
-  "request": {
-    "method": "GET", "header": [],
-    "url": {
-      "raw": "http://{{orion}}/v2/entities/urn:ngsi-ld:Store:001?options=keyValues",
-      "protocol": "http",
-      "host": ["{{orion}}"],"path": ["v2","entities","urn:ngsi-ld:Store:001"],
-      "query": [
-        {
-          "key": "options", "value": "keyValues",
-          "description": "* `keyValues` option in order to get a more compact ...",
+    "name": "Obtain Entity Data by id",
+    "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+            "raw": "http://{{orion}}/v2/entities/urn:ngsi-ld:Store:001?options=keyValues",
+            "protocol": "http",
+            "host": ["{{orion}}"],
+            "path": ["v2", "entities", "urn:ngsi-ld:Store:001"],
+            "query": [
+                {
+                    "key": "options",
+                    "value": "keyValues",
+                    "description": "* `keyValues` option in order to get a more compact ..."
+                },
+                {
+                    "key": "type",
+                    "value": "Store",
+                    "disabled": true,
+                    "description": "Entity type, to avoid ambiguity in case there are ..."
+                },
+                {
+                    "key": "attrs",
+                    "value": "name",
+                    "disabled": true,
+                    "description": "Ordered list of attribute names to display"
+                }
+            ]
         },
-        {
-          "key": "type", "value": "Store", "disabled": true,
-          "description": "Entity type, to avoid ambiguity in case there are ..."
-        },
-        {
-          "key": "attrs", "value": "name", "disabled": true,
-          "description": "Ordered list of attribute names to display"
-        }
-      ]
+        "description": "This example returns the context data of `store1`..."
     },
-    "description": "This example returns the context data of `store1`..."
-  },
-  "response": []
+    "response": []
 }
 ```
 
@@ -63,8 +75,8 @@ This plugin processes a Postman collection to Pandoc markdown, and the converts 
 
 # Install
 
-The DITA-OT postman plug-in has been tested against [DITA-OT 3.x](http://www.dita-ot.org/download). It is
-recommended that you upgrade to the latest version.
+The DITA-OT postman plug-in has been tested against [DITA-OT 3.x](http://www.dita-ot.org/download). It is recommended
+that you upgrade to the latest version.
 
 ## Installing DITA-OT
 
@@ -111,8 +123,8 @@ To download a copy follow the instructions on the [Install page](https://github.
 
 # Usage
 
-To mark a file to be passed through for **Postman** processing, label it with `format="postman"` within the `*.ditamap` as
-shown:
+To mark a file to be passed through for **Postman** processing, label it with `format="postman"` within the `*.ditamap`
+as shown:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -128,7 +140,9 @@ shown:
 </bookmap>
 ```
 
-The additional file will be converted to a `*.dita` file and will be added to the build job without further processing. Unless overriden, the `navtitle` of the included topic will be the same as root name of the file. Any underscores in the filename will be replaced by spaces in title.
+The additional file will be converted to a `*.dita` file and will be added to the build job without further processing.
+Unless overridden, the `navtitle` of the included topic will be the same as root name of the file. Any underscores in
+the filename will be replaced by spaces in title.
 
 # License
 
