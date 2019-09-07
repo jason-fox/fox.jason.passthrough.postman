@@ -16,11 +16,18 @@ function description(str) {
   return str.replace(/\n/g, '<br><br>');
 }
 
+/**
+* Retrieves the root URL of the request without any query parameters
+*/
 function getURL(raw) {
   var index = raw.indexOf('?');
   return index !== -1 ? raw.slice(0, raw.indexOf('?')) : raw;
 }
 
+/**
+* If responses are present, adds a series of response blocks to the
+* output
+*/
 function addSampleResponses(responses) {
   if (responses.length == 1) {
     lines.push('#### Example HTTP response {.example}\n');
@@ -42,6 +49,9 @@ function addSampleResponses(responses) {
   }
 }
 
+/**
+* Generates a sample Curl request from the request data
+*/
 function addSampleCurl(request) {
   lines.push('#### Example Request {.example}\n');
   lines.push('```bash');
@@ -110,6 +120,9 @@ function addSampleCurl(request) {
   lines.push('```\n');
 }
 
+/**
+* Obtains the language from the content type
+*/
 function extractType(header) {
   var slash = header.lastIndexOf('/');
   var plus = header.lastIndexOf('+');
@@ -125,6 +138,10 @@ function extractType(header) {
   return type;
 }
 
+/**
+* Amends the description switching all embedded markdown
+* description headers to section headers
+*/
 function addDescription(desc) {
   var regex = /^#+ /;
   if (desc) {
@@ -141,6 +158,9 @@ function addDescription(desc) {
   }
 }
 
+/**
+*  Creates a swagger style codeblock header for the request
+*/
 function addEndpoint(request) {
   lines.push('');
   lines.push('```swagger-' + request.method);
@@ -149,6 +169,10 @@ function addEndpoint(request) {
   lines.push('');
 }
 
+/**
+* Takes the request data and creates tabular information out of
+* the Headers, Query Parameters and Body
+*/
 function addRequest(request) {
   var contentType = 'markup';
   lines.push('');
@@ -225,6 +249,9 @@ function addRequest(request) {
   }
 }
 
+/**
+* Generates the full output from the postman file
+*/
 function postmanToMarkdown(data) {
   if (data.info.name) {
     lines.push('#  ' + data.info.name.trim() + '\n');
