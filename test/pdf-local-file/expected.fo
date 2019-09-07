@@ -166,7 +166,7 @@
         <fo:block>
           <fo:block>Our demo application will only make use of one FIWARE component - the
             <fo:basic-link color="blue" external-destination="url('https://catalogue.fiware.org/enablers/publishsubscribe-context-broker-orion-context-broker')">Orion Context Broker</fo:basic-link>. Usage of the Orion Context Broker is sufficient for an application to qualify as
-            <fo:inline font-style="italic">"Powered by FIWARE"</fo:inline>.</fo:block>
+            <fo:inline font-style="italic">&#8220;Powered by FIWARE&#8221;</fo:inline>.</fo:block>
           <fo:block>Currently, the Orion Context Broker relies on open source
             <fo:basic-link color="blue" external-destination="url('https://www.mongodb.com/')">MongoDB</fo:basic-link>technology to keep persistence of the context data it holds. Therefore, the architecture will consist of two elements:</fo:block>
           <fo:list-block provisional-distance-between-starts="5mm" provisional-label-separation="1mm">
@@ -190,7 +190,7 @@
           <fo:block>Since all interactions between the two elements are initiated by HTTP requests, the entities can be containerized and run from exposed ports.</fo:block>
           <fo:block>
             <fo:inline>
-              <fo:external-graphic content-height="scale-to-fit" content-width="scale-to-fit" fox:alt-text="" height="100%" scaling="uniform" src="url('https://fiware.github.io/tutorials.Getting-Started/img//architecture.png')" width="100%" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
+              <fo:external-graphic content-height="scale-to-fit" content-width="scale-to-fit" fox:alt-text="fig:" height="100%" scaling="uniform" src="url('https://fiware.github.io/tutorials.Getting-Started/img//architecture.png')" width="100%" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
             </fo:inline>
             <fo:block font-family="STANDARD" font-weight="bold" keep-with-previous.within-page="always">Figure 1:</fo:block>
           </fo:block>
@@ -414,7 +414,7 @@ If the response is blank, this is usually because the MongoDB database holding t
           </fo:block>
           <fo:block>You should see two containers running. If orion is not running, you can restart the containers as necessary.</fo:block>
           <fo:block>
-            <fo:block font-family="STANDARD" font-weight="bold">Example:</fo:block>
+            <fo:block font-family="STANDARD" font-weight="bold">Example Request</fo:block>
             <fo:block>
               <fo:block background-color="ALICEBLUE" color="black" font-family="MONOSPACE" font-weight="bold" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">
                 <fo:inline color="INDIANRED" font-family="MONOSPACE" font-weight="bold">curl</fo:inline>-X  -G GET
@@ -450,7 +450,7 @@ If the response is blank, this is usually because the MongoDB database holding t
             </fo:block>
           </fo:block>
           <fo:block>
-            <fo:block font-family="STANDARD" font-weight="bold">Headers:</fo:block>
+            <fo:block font-family="STANDARD" font-weight="bold">Headers</fo:block>
             <fo:block>
               <fo:block-container reference-orientation="0">
                 <fo:block>
@@ -490,7 +490,7 @@ If the response is blank, this is usually because the MongoDB database holding t
             </fo:block>
           </fo:block>
           <fo:block>
-            <fo:block font-family="STANDARD" font-weight="bold">Body:</fo:block>
+            <fo:block font-family="STANDARD" font-weight="bold">Body</fo:block>
             <fo:block>
               <fo:block background-color="ALICEBLUE" color="black" font-family="MONOSPACE" font-weight="bold" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">
                 <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">{</fo:inline>
@@ -586,7 +586,7 @@ If the response is blank, this is usually because the MongoDB database holding t
             </fo:block>
           </fo:block>
           <fo:block>
-            <fo:block font-family="STANDARD" font-weight="bold">Example:</fo:block>
+            <fo:block font-family="STANDARD" font-weight="bold">Example Request</fo:block>
             <fo:block>
               <fo:block background-color="ALICEBLUE" color="black" font-family="MONOSPACE" font-weight="bold" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">
                 <fo:inline color="INDIANRED" font-family="MONOSPACE" font-weight="bold">curl</fo:inline>-X POST
@@ -644,7 +644,7 @@ If the response is blank, this is usually because the MongoDB database holding t
             <fo:inline padding-start="10pt">http://{{orion}}/v2/entities/</fo:inline>
           </fo:block>
           <fo:block>
-            <fo:block font-family="STANDARD" font-weight="bold">Headers:</fo:block>
+            <fo:block font-family="STANDARD" font-weight="bold">Headers</fo:block>
             <fo:block>
               <fo:block-container reference-orientation="0">
                 <fo:block>
@@ -684,7 +684,7 @@ If the response is blank, this is usually because the MongoDB database holding t
             </fo:block>
           </fo:block>
           <fo:block>
-            <fo:block font-family="STANDARD" font-weight="bold">Body:</fo:block>
+            <fo:block font-family="STANDARD" font-weight="bold">Body</fo:block>
             <fo:block>
               <fo:block background-color="ALICEBLUE" color="black" font-family="MONOSPACE" font-weight="bold" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">
                 <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">{</fo:inline>
@@ -780,7 +780,7 @@ If the response is blank, this is usually because the MongoDB database holding t
             </fo:block>
           </fo:block>
           <fo:block>
-            <fo:block font-family="STANDARD" font-weight="bold">Example:</fo:block>
+            <fo:block font-family="STANDARD" font-weight="bold">Example Request</fo:block>
             <fo:block>
               <fo:block background-color="ALICEBLUE" color="black" font-family="MONOSPACE" font-weight="bold" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">
                 <fo:inline color="INDIANRED" font-family="MONOSPACE" font-weight="bold">curl</fo:inline>-X POST
@@ -839,7 +839,7 @@ If the response is blank, this is usually because the MongoDB database holding t
           </fo:block>
           <fo:block>This example returns the full data context</fo:block>
           <fo:block>
-            <fo:block font-family="STANDARD" font-weight="bold">Example:</fo:block>
+            <fo:block font-family="STANDARD" font-weight="bold">Example Request</fo:block>
             <fo:block>
               <fo:block background-color="ALICEBLUE" color="black" font-family="MONOSPACE" font-weight="bold" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">
                 <fo:inline color="INDIANRED" font-family="MONOSPACE" font-weight="bold">curl</fo:inline>-X  -G GET
@@ -871,14 +871,14 @@ If the response is blank, this is usually because the MongoDB database holding t
             <fo:inline font-family="MONOSPACE">options=keyValues</fo:inline>, the response consists of JSON only without the attribute
             <fo:inline font-family="MONOSPACE">type</fo:inline>elements.</fo:block>
           <fo:block>
-            <fo:block font-family="STANDARD" font-weight="bold">Query Parameters:</fo:block>
+            <fo:block font-family="STANDARD" font-weight="bold">Query Parameters</fo:block>
             <fo:block>
               <fo:block-container reference-orientation="0">
                 <fo:block>
                   <fo:table border-after-color="black" border-before-color="black" border-end-color="black" border-end-style="solid" border-end-width="1pt" table-layout="fixed" width="100%">
-                    <fo:table-column column-number="1" column-width="13%"></fo:table-column>
-                    <fo:table-column column-number="2" column-width="27%"></fo:table-column>
-                    <fo:table-column column-number="3" column-width="59%"></fo:table-column>
+                    <fo:table-column column-number="1" column-width="16%"></fo:table-column>
+                    <fo:table-column column-number="2" column-width="28%"></fo:table-column>
+                    <fo:table-column column-number="3" column-width="56%"></fo:table-column>
                     <fo:table-header>
                       <fo:table-row>
                         <fo:table-cell border-before-color="black" text-align="left">
@@ -950,7 +950,7 @@ If the response is blank, this is usually because the MongoDB database holding t
             </fo:block>
           </fo:block>
           <fo:block>
-            <fo:block font-family="STANDARD" font-weight="bold">Example:</fo:block>
+            <fo:block font-family="STANDARD" font-weight="bold">Example Request</fo:block>
             <fo:block>
               <fo:block background-color="ALICEBLUE" color="black" font-family="MONOSPACE" font-weight="bold" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">
                 <fo:inline color="INDIANRED" font-family="MONOSPACE" font-weight="bold">curl</fo:inline>-X  -G GET
@@ -984,14 +984,14 @@ Because of the use of the
             <fo:inline font-family="MONOSPACE">options=keyValues</fo:inline>, the response consists of JSON only without the attribute
             <fo:inline font-family="MONOSPACE">type</fo:inline>elements.</fo:block>
           <fo:block>
-            <fo:block font-family="STANDARD" font-weight="bold">Query Parameters:</fo:block>
+            <fo:block font-family="STANDARD" font-weight="bold">Query Parameters</fo:block>
             <fo:block>
               <fo:block-container reference-orientation="0">
                 <fo:block>
                   <fo:table border-after-color="black" border-before-color="black" border-end-color="black" border-end-style="solid" border-end-width="1pt" table-layout="fixed" width="100%">
-                    <fo:table-column column-number="1" column-width="13%"></fo:table-column>
-                    <fo:table-column column-number="2" column-width="27%"></fo:table-column>
-                    <fo:table-column column-number="3" column-width="59%"></fo:table-column>
+                    <fo:table-column column-number="1" column-width="16%"></fo:table-column>
+                    <fo:table-column column-number="2" column-width="28%"></fo:table-column>
+                    <fo:table-column column-number="3" column-width="56%"></fo:table-column>
                     <fo:table-header>
                       <fo:table-row>
                         <fo:table-cell border-before-color="black" text-align="left">
@@ -1063,7 +1063,7 @@ Because of the use of the
             </fo:block>
           </fo:block>
           <fo:block>
-            <fo:block font-family="STANDARD" font-weight="bold">Example:</fo:block>
+            <fo:block font-family="STANDARD" font-weight="bold">Example Request</fo:block>
             <fo:block>
               <fo:block background-color="ALICEBLUE" color="black" font-family="MONOSPACE" font-weight="bold" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">
                 <fo:inline color="INDIANRED" font-family="MONOSPACE" font-weight="bold">curl</fo:inline>-X  -G GET
@@ -1109,14 +1109,14 @@ Because of the use of the
             </fo:block>
           </fo:block>
           <fo:block>
-            <fo:block font-family="STANDARD" font-weight="bold">Query Parameters:</fo:block>
+            <fo:block font-family="STANDARD" font-weight="bold">Query Parameters</fo:block>
             <fo:block>
               <fo:block-container reference-orientation="0">
                 <fo:block>
                   <fo:table border-after-color="black" border-before-color="black" border-end-color="black" border-end-style="solid" border-end-width="1pt" table-layout="fixed" width="100%">
-                    <fo:table-column column-number="1" column-width="13%"></fo:table-column>
-                    <fo:table-column column-number="2" column-width="27%"></fo:table-column>
-                    <fo:table-column column-number="3" column-width="59%"></fo:table-column>
+                    <fo:table-column column-number="1" column-width="16%"></fo:table-column>
+                    <fo:table-column column-number="2" column-width="28%"></fo:table-column>
+                    <fo:table-column column-number="3" column-width="56%"></fo:table-column>
                     <fo:table-header>
                       <fo:table-row>
                         <fo:table-cell border-before-color="black" text-align="left">
@@ -1203,7 +1203,7 @@ Because of the use of the
             </fo:block>
           </fo:block>
           <fo:block>
-            <fo:block font-family="STANDARD" font-weight="bold">Example:</fo:block>
+            <fo:block font-family="STANDARD" font-weight="bold">Example Request</fo:block>
             <fo:block>
               <fo:block background-color="ALICEBLUE" color="black" font-family="MONOSPACE" font-weight="bold" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">
                 <fo:inline color="INDIANRED" font-family="MONOSPACE" font-weight="bold">curl</fo:inline>-X  -G GET
@@ -1241,7 +1241,7 @@ Because of the use of the
                 <fo:inline font-family="MONOSPACE">Store</fo:inline>entities found in the
                 <fo:inline font-weight="bold">Kreuzberg</fo:inline>district of Berlin.</fo:block>
               <fo:block>Filtering can be done using the
-                <fo:inline font-family="MONOSPACE">q</fo:inline>parameter - sub-attributes are annotated using the dot syntax e.g.&#160;
+                <fo:inline font-family="MONOSPACE">q</fo:inline>parameter - sub-attributes are annotated using the dot syntax e.g.
                 <fo:inline font-family="MONOSPACE">address.addressLocality</fo:inline>
               </fo:block>
               <fo:block>Because of the use of the
@@ -1251,14 +1251,14 @@ Because of the use of the
             </fo:block>
           </fo:block>
           <fo:block>
-            <fo:block font-family="STANDARD" font-weight="bold">Query Parameters:</fo:block>
+            <fo:block font-family="STANDARD" font-weight="bold">Query Parameters</fo:block>
             <fo:block>
               <fo:block-container reference-orientation="0">
                 <fo:block>
                   <fo:table border-after-color="black" border-before-color="black" border-end-color="black" border-end-style="solid" border-end-width="1pt" table-layout="fixed" width="100%">
-                    <fo:table-column column-number="1" column-width="13%"></fo:table-column>
-                    <fo:table-column column-number="2" column-width="27%"></fo:table-column>
-                    <fo:table-column column-number="3" column-width="59%"></fo:table-column>
+                    <fo:table-column column-number="1" column-width="16%"></fo:table-column>
+                    <fo:table-column column-number="2" column-width="28%"></fo:table-column>
+                    <fo:table-column column-number="3" column-width="56%"></fo:table-column>
                     <fo:table-header>
                       <fo:table-row>
                         <fo:table-cell border-before-color="black" text-align="left">
@@ -1330,7 +1330,7 @@ Because of the use of the
             </fo:block>
           </fo:block>
           <fo:block>
-            <fo:block font-family="STANDARD" font-weight="bold">Example:</fo:block>
+            <fo:block font-family="STANDARD" font-weight="bold">Example Request</fo:block>
             <fo:block>
               <fo:block background-color="ALICEBLUE" color="black" font-family="MONOSPACE" font-weight="bold" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">
                 <fo:inline color="INDIANRED" font-family="MONOSPACE" font-weight="bold">curl</fo:inline>-X  -G GET
@@ -1371,14 +1371,14 @@ Because of the use of the
             </fo:block>
           </fo:block>
           <fo:block>
-            <fo:block font-family="STANDARD" font-weight="bold">Query Parameters:</fo:block>
+            <fo:block font-family="STANDARD" font-weight="bold">Query Parameters</fo:block>
             <fo:block>
               <fo:block-container reference-orientation="0">
                 <fo:block>
                   <fo:table border-after-color="black" border-before-color="black" border-end-color="black" border-end-style="solid" border-end-width="1pt" table-layout="fixed" width="100%">
-                    <fo:table-column column-number="1" column-width="13%"></fo:table-column>
-                    <fo:table-column column-number="2" column-width="27%"></fo:table-column>
-                    <fo:table-column column-number="3" column-width="59%"></fo:table-column>
+                    <fo:table-column column-number="1" column-width="16%"></fo:table-column>
+                    <fo:table-column column-number="2" column-width="28%"></fo:table-column>
+                    <fo:table-column column-number="3" column-width="56%"></fo:table-column>
                     <fo:table-header>
                       <fo:table-row>
                         <fo:table-cell border-before-color="black" text-align="left">
@@ -1450,7 +1450,7 @@ Because of the use of the
             </fo:block>
           </fo:block>
           <fo:block>
-            <fo:block font-family="STANDARD" font-weight="bold">Example:</fo:block>
+            <fo:block font-family="STANDARD" font-weight="bold">Example Request</fo:block>
             <fo:block>
               <fo:block background-color="ALICEBLUE" color="black" font-family="MONOSPACE" font-weight="bold" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">
                 <fo:inline color="INDIANRED" font-family="MONOSPACE" font-weight="bold">curl</fo:inline>-X  -G GET
@@ -1491,14 +1491,14 @@ Because of the use of the
             </fo:block>
           </fo:block>
           <fo:block>
-            <fo:block font-family="STANDARD" font-weight="bold">Query Parameters:</fo:block>
+            <fo:block font-family="STANDARD" font-weight="bold">Query Parameters</fo:block>
             <fo:block>
               <fo:block-container reference-orientation="0">
                 <fo:block>
                   <fo:table border-after-color="black" border-before-color="black" border-end-color="black" border-end-style="solid" border-end-width="1pt" table-layout="fixed" width="100%">
-                    <fo:table-column column-number="1" column-width="13%"></fo:table-column>
-                    <fo:table-column column-number="2" column-width="27%"></fo:table-column>
-                    <fo:table-column column-number="3" column-width="59%"></fo:table-column>
+                    <fo:table-column column-number="1" column-width="16%"></fo:table-column>
+                    <fo:table-column column-number="2" column-width="28%"></fo:table-column>
+                    <fo:table-column column-number="3" column-width="56%"></fo:table-column>
                     <fo:table-header>
                       <fo:table-row>
                         <fo:table-cell border-before-color="black" text-align="left">
@@ -1615,7 +1615,7 @@ Because of the use of the
             </fo:block>
           </fo:block>
           <fo:block>
-            <fo:block font-family="STANDARD" font-weight="bold">Example:</fo:block>
+            <fo:block font-family="STANDARD" font-weight="bold">Example Request</fo:block>
             <fo:block>
               <fo:block background-color="ALICEBLUE" color="black" font-family="MONOSPACE" font-weight="bold" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">
                 <fo:inline color="INDIANRED" font-family="MONOSPACE" font-weight="bold">curl</fo:inline>-X  -G GET

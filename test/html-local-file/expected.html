@@ -6,7 +6,7 @@
 <h2 class="title topictitle2" id="ariaid-title2">Architecture</h2>
 <div class="body">
 <p class="p">
-	Our demo application will only make use of one FIWARE component - the <a class="xref" href="https://catalogue.fiware.org/enablers/publishsubscribe-context-broker-orion-context-broker" target="_blank">Orion Context Broker</a> . Usage of the Orion Context Broker is sufficient for an application to qualify as <em class="i">"Powered by FIWARE"</em>.
+	Our demo application will only make use of one FIWARE component - the <a class="xref" href="https://catalogue.fiware.org/enablers/publishsubscribe-context-broker-orion-context-broker" target="_blank">Orion Context Broker</a> . Usage of the Orion Context Broker is sufficient for an application to qualify as <em class="i">“Powered by FIWARE”</em>.
 </p>
 <p class="p">
 	Currently, the Orion Context Broker relies on open source <a class="xref" href="https://www.mongodb.com/" target="_blank">MongoDB</a> technology to keep persistence of the context data it holds. Therefore, the architecture will consist of two elements:
@@ -20,7 +20,7 @@
 </p>
 <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 1. </span></figcaption>
 	
-	<img class="image" src="https://fiware.github.io/tutorials.Getting-Started/img//architecture.png" alt=""><br>
+	<img class="image" src="https://fiware.github.io/tutorials.Getting-Started/img//architecture.png" alt="fig:"><br>
 </figure>
 </div>
 </article>
@@ -138,12 +138,34 @@ If the response is blank, this is usually because the MongoDB database holding t
 <p class="p">
 	You should see two containers running. If orion is not running, you can restart the containers as necessary.
 </p>
-<section class="section" id="obtaining-version-information__example"><h3 class="title sectiontitle">Example:</h3>
+<div class="example" id="obtaining-version-information__example-request"><h3 class="title sectiontitle">Example Request</h3>
 
 
 <pre class="codeblock language-bash"><code><span class="ph token function">curl</span> -X  -G GET  <span class="ph token punctuation">\</span>
   <span class="ph token string">'http://{{orion}}/version/'</span></code></pre>
-</section>
+</div>
+
+<div class="example" id="obtaining-version-information__example-http-response"><h3 class="title sectiontitle">Example HTTP response</h3>
+
+
+</div>
+
+<div class="example" id="obtaining-version-information__response-200---ok"><h3 class="title sectiontitle">Response 200 - OK</h3>
+
+
+<pre class="codeblock language-json"><code><span class="ph token punctuation">{</span>
+    <span class="ph token property">"orion"</span><span class="ph token operator">:</span> <span class="ph token punctuation">{</span>
+        <span class="ph token property">"version"</span><span class="ph token operator">:</span> <span class="ph token string">"1.15.0-next"</span><span class="ph token punctuation">,</span>
+        <span class="ph token property">"uptime"</span><span class="ph token operator">:</span> <span class="ph token string">"0 d, 19 h, 49 m, 10 s"</span><span class="ph token punctuation">,</span>
+        <span class="ph token property">"git_hash"</span><span class="ph token operator">:</span> <span class="ph token string">"4aa70b21bd6c003df95f11c6c2f2c899f2c63b26"</span><span class="ph token punctuation">,</span>
+        <span class="ph token property">"compile_time"</span><span class="ph token operator">:</span> <span class="ph token string">"Fri Sep 6 12:23:56 UTC 2019"</span><span class="ph token punctuation">,</span>
+        <span class="ph token property">"compiled_by"</span><span class="ph token operator">:</span> <span class="ph token string">"root"</span><span class="ph token punctuation">,</span>
+        <span class="ph token property">"compiled_in"</span><span class="ph token operator">:</span> <span class="ph token string">"0f31e60f1d37"</span><span class="ph token punctuation">,</span>
+        <span class="ph token property">"release_date"</span><span class="ph token operator">:</span> <span class="ph token string">"Fri Sep 6 12:23:56 UTC 2019"</span><span class="ph token punctuation">,</span>
+        <span class="ph token property">"doc"</span><span class="ph token operator">:</span> <span class="ph token string">"https://fiware-orion.readthedocs.org/en/master/"</span>
+    <span class="ph token punctuation">}</span>
+<span class="ph token punctuation">}</span></code></pre>
+</div>
 
 </div>
 
@@ -161,7 +183,7 @@ If the response is blank, this is usually because the MongoDB database holding t
 </p>
 </section>
 
-<section class="section" id="creating-your-first-data-entity__headers"><h3 class="title sectiontitle">Headers:</h3>
+<section class="section" id="creating-your-first-data-entity__headers"><h3 class="title sectiontitle">Headers</h3>
 
 
 <table class="table"><caption></caption><colgroup><col><col><col></colgroup><thead class="thead">
@@ -179,7 +201,7 @@ If the response is blank, this is usually because the MongoDB database holding t
 		</tbody></table>
 </section>
 
-<section class="section" id="creating-your-first-data-entity__body"><h3 class="title sectiontitle">Body:</h3>
+<section class="section" id="creating-your-first-data-entity__body"><h3 class="title sectiontitle">Body</h3>
 
 
 <pre class="codeblock language-json"><code><span class="ph token punctuation">{</span>
@@ -214,7 +236,7 @@ If the response is blank, this is usually because the MongoDB database holding t
 <span class="ph token punctuation">}</span></code></pre>
 </section>
 
-<section class="section" id="creating-your-first-data-entity__example-1"><h3 class="title sectiontitle">Example:</h3>
+<div class="example" id="creating-your-first-data-entity__example-request-1"><h3 class="title sectiontitle">Example Request</h3>
 
 
 <pre class="codeblock language-bash"><code><span class="ph token function">curl</span> -X POST  <span class="ph token punctuation">\</span>
@@ -250,7 +272,7 @@ If the response is blank, this is usually because the MongoDB database holding t
         "value": "Bösebrücke Einkauf"
     }
 }'</span></code></pre>
-</section>
+</div>
 
 </div>
 
@@ -260,7 +282,7 @@ If the response is blank, this is usually because the MongoDB database holding t
 <h2 class="title topictitle2" id="ariaid-title10">Creating your Second Data Entity</h2>
 <div class="body">
 <pre xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" class="codeblock swagger-post"><code><span class="swagger-verb">POST</span>http://{{orion}}/v2/entities/</code></pre>
-<section class="section" id="creating-your-second-data-entity__headers-1"><h3 class="title sectiontitle">Headers:</h3>
+<section class="section" id="creating-your-second-data-entity__headers-1"><h3 class="title sectiontitle">Headers</h3>
 
 
 <table class="table"><caption></caption><colgroup><col><col><col></colgroup><thead class="thead">
@@ -278,7 +300,7 @@ If the response is blank, this is usually because the MongoDB database holding t
 		</tbody></table>
 </section>
 
-<section class="section" id="creating-your-second-data-entity__body-1"><h3 class="title sectiontitle">Body:</h3>
+<section class="section" id="creating-your-second-data-entity__body-1"><h3 class="title sectiontitle">Body</h3>
 
 
 <pre class="codeblock language-json"><code><span class="ph token punctuation">{</span>
@@ -313,7 +335,7 @@ If the response is blank, this is usually because the MongoDB database holding t
 <span class="ph token punctuation">}</span></code></pre>
 </section>
 
-<section class="section" id="creating-your-second-data-entity__example-2"><h3 class="title sectiontitle">Example:</h3>
+<div class="example" id="creating-your-second-data-entity__example-request-2"><h3 class="title sectiontitle">Example Request</h3>
 
 
 <pre class="codeblock language-bash"><code><span class="ph token function">curl</span> -X POST  <span class="ph token punctuation">\</span>
@@ -349,7 +371,7 @@ If the response is blank, this is usually because the MongoDB database holding t
         "value": "Checkpoint Markt"
     }
 }'</span></code></pre>
-</section>
+</div>
 
 </div>
 
@@ -362,12 +384,12 @@ If the response is blank, this is usually because the MongoDB database holding t
 <p class="p">
 	This example returns the full data context
 </p>
-<section class="section" id="retrieving-context-information__example-3"><h3 class="title sectiontitle">Example:</h3>
+<div class="example" id="retrieving-context-information__example-request-3"><h3 class="title sectiontitle">Example Request</h3>
 
 
 <pre class="codeblock language-bash"><code><span class="ph token function">curl</span> -X  -G GET  <span class="ph token punctuation">\</span>
   <span class="ph token string">'http://{{orion}}/v2/entities'</span></code></pre>
-</section>
+</div>
 
 </div>
 
@@ -383,10 +405,10 @@ If the response is blank, this is usually because the MongoDB database holding t
 <p class="p">
 	Because of the use of the <code class="codeph">options=keyValues</code>, the response consists of JSON only without the attribute <code class="codeph">type</code> elements.
 </p>
-<section class="section" id="obtain-entity-data-by-id__query-parameters"><h3 class="title sectiontitle">Query Parameters:</h3>
+<section class="section" id="obtain-entity-data-by-id__query-parameters"><h3 class="title sectiontitle">Query Parameters</h3>
 
 
-<table class="table"><caption></caption><colgroup><col style="width:13%"><col style="width:27%"><col style="width:59%"></colgroup><thead class="thead">
+<table class="table"><caption></caption><colgroup><col style="width:16%"><col style="width:28%"><col style="width:56%"></colgroup><thead class="thead">
 			<tr class="row">
 				<th class="entry align-left" id="obtain-entity-data-by-id__query-parameters__entry__1">Key</th>
 				<th class="entry align-left" id="obtain-entity-data-by-id__query-parameters__entry__2">Value</th>
@@ -411,13 +433,13 @@ If the response is blank, this is usually because the MongoDB database holding t
 		</tbody></table>
 </section>
 
-<section class="section" id="obtain-entity-data-by-id__example-4"><h3 class="title sectiontitle">Example:</h3>
+<div class="example" id="obtain-entity-data-by-id__example-request-4"><h3 class="title sectiontitle">Example Request</h3>
 
 
 <pre class="codeblock language-bash"><code><span class="ph token function">curl</span> -X  -G GET  <span class="ph token punctuation">\</span>
   <span class="ph token string">'http://{{orion}}/v2/entities/urn:ngsi-ld:Store:001'</span>  <span class="ph token punctuation">\</span>
     -d <span class="ph token string">'options=keyValues'</span></code></pre>
-</section>
+</div>
 
 </div>
 
@@ -434,10 +456,10 @@ If the response is blank, this is usually because the MongoDB database holding t
 	The <code class="codeph">type</code> parameter limits the response to store entities only.
 Because of the use of the <code class="codeph">options=keyValues</code>, the response consists of JSON only without the attribute <code class="codeph">type</code> elements.
 </p>
-<section class="section" id="obtain-entity-data-by-type__query-parameters-1"><h3 class="title sectiontitle">Query Parameters:</h3>
+<section class="section" id="obtain-entity-data-by-type__query-parameters-1"><h3 class="title sectiontitle">Query Parameters</h3>
 
 
-<table class="table"><caption></caption><colgroup><col style="width:13%"><col style="width:27%"><col style="width:59%"></colgroup><thead class="thead">
+<table class="table"><caption></caption><colgroup><col style="width:16%"><col style="width:28%"><col style="width:56%"></colgroup><thead class="thead">
 			<tr class="row">
 				<th class="entry align-left" id="obtain-entity-data-by-type__query-parameters-1__entry__1">Key</th>
 				<th class="entry align-left" id="obtain-entity-data-by-type__query-parameters-1__entry__2">Value</th>
@@ -462,14 +484,14 @@ Because of the use of the <code class="codeph">options=keyValues</code>, the res
 		</tbody></table>
 </section>
 
-<section class="section" id="obtain-entity-data-by-type__example-5"><h3 class="title sectiontitle">Example:</h3>
+<div class="example" id="obtain-entity-data-by-type__example-request-5"><h3 class="title sectiontitle">Example Request</h3>
 
 
 <pre class="codeblock language-bash"><code><span class="ph token function">curl</span> -X  -G GET  <span class="ph token punctuation">\</span>
   <span class="ph token string">'http://{{orion}}/v2/entities/'</span>  <span class="ph token punctuation">\</span>
     -d <span class="ph token string">'type=Store'</span>  <span class="ph token punctuation">\</span>
     -d <span class="ph token string">'options=keyValues'</span></code></pre>
-</section>
+</div>
 
 </div>
 
@@ -493,10 +515,10 @@ Because of the use of the <code class="codeph">options=keyValues</code>, the res
 </p>
 </section>
 
-<section class="section" id="filter-context-data-by-attribute-value__query-parameters-2"><h3 class="title sectiontitle">Query Parameters:</h3>
+<section class="section" id="filter-context-data-by-attribute-value__query-parameters-2"><h3 class="title sectiontitle">Query Parameters</h3>
 
 
-<table class="table"><caption></caption><colgroup><col style="width:13%"><col style="width:27%"><col style="width:59%"></colgroup><thead class="thead">
+<table class="table"><caption></caption><colgroup><col style="width:16%"><col style="width:28%"><col style="width:56%"></colgroup><thead class="thead">
 			<tr class="row">
 				<th class="entry align-left" id="filter-context-data-by-attribute-value__query-parameters-2__entry__1">Key</th>
 				<th class="entry align-left" id="filter-context-data-by-attribute-value__query-parameters-2__entry__2">Value</th>
@@ -526,7 +548,7 @@ Because of the use of the <code class="codeph">options=keyValues</code>, the res
 		</tbody></table>
 </section>
 
-<section class="section" id="filter-context-data-by-attribute-value__example-6"><h3 class="title sectiontitle">Example:</h3>
+<div class="example" id="filter-context-data-by-attribute-value__example-request-6"><h3 class="title sectiontitle">Example Request</h3>
 
 
 <pre class="codeblock language-bash"><code><span class="ph token function">curl</span> -X  -G GET  <span class="ph token punctuation">\</span>
@@ -534,7 +556,7 @@ Because of the use of the <code class="codeph">options=keyValues</code>, the res
     -d <span class="ph token string">'q=name=='</span>Checkpoint Markt<span class="ph token string">''</span>  <span class="ph token punctuation">\</span>
     -d <span class="ph token string">'type=Store'</span>  <span class="ph token punctuation">\</span>
     -d <span class="ph token string">'options=keyValues'</span></code></pre>
-</section>
+</div>
 
 </div>
 
@@ -551,17 +573,17 @@ Because of the use of the <code class="codeph">options=keyValues</code>, the res
 	This example returns the data of all <code class="codeph">Store</code> entities found in the <strong class="b">Kreuzberg</strong> district of Berlin.
 </p>
 <p class="p">
-	Filtering can be done using the <code class="codeph">q</code> parameter - sub-attributes are annotated using the dot syntax e.g.&nbsp;<code class="codeph">address.addressLocality</code>
+	Filtering can be done using the <code class="codeph">q</code> parameter - sub-attributes are annotated using the dot syntax e.g. <code class="codeph">address.addressLocality</code>
 </p>
 <p class="p">
 	Because of the use of the <code class="codeph">options=keyValues</code>, the response consists of JSON only without the attribute <code class="codeph">type</code> and <code class="codeph">metadata</code> elements.
 </p>
 </section>
 
-<section class="section" id="filter-context-data-by-sub-attribute-value__query-parameters-3"><h3 class="title sectiontitle">Query Parameters:</h3>
+<section class="section" id="filter-context-data-by-sub-attribute-value__query-parameters-3"><h3 class="title sectiontitle">Query Parameters</h3>
 
 
-<table class="table"><caption></caption><colgroup><col style="width:13%"><col style="width:27%"><col style="width:59%"></colgroup><thead class="thead">
+<table class="table"><caption></caption><colgroup><col style="width:16%"><col style="width:28%"><col style="width:56%"></colgroup><thead class="thead">
 			<tr class="row">
 				<th class="entry align-left" id="filter-context-data-by-sub-attribute-value__query-parameters-3__entry__1">Key</th>
 				<th class="entry align-left" id="filter-context-data-by-sub-attribute-value__query-parameters-3__entry__2">Value</th>
@@ -586,7 +608,7 @@ Because of the use of the <code class="codeph">options=keyValues</code>, the res
 		</tbody></table>
 </section>
 
-<section class="section" id="filter-context-data-by-sub-attribute-value__example-7"><h3 class="title sectiontitle">Example:</h3>
+<div class="example" id="filter-context-data-by-sub-attribute-value__example-request-7"><h3 class="title sectiontitle">Example Request</h3>
 
 
 <pre class="codeblock language-bash"><code><span class="ph token function">curl</span> -X  -G GET  <span class="ph token punctuation">\</span>
@@ -594,7 +616,7 @@ Because of the use of the <code class="codeph">options=keyValues</code>, the res
     -d <span class="ph token string">'q=address.addressLocality=='</span>Kreuzberg<span class="ph token string">''</span>  <span class="ph token punctuation">\</span>
     -d <span class="ph token string">'type=Store'</span>  <span class="ph token punctuation">\</span>
     -d <span class="ph token string">'options=keyValues'</span></code></pre>
-</section>
+</div>
 
 </div>
 
@@ -615,10 +637,10 @@ Because of the use of the <code class="codeph">options=keyValues</code>, the res
 </p>
 </section>
 
-<section class="section" id="filter-context-data-by-querying-metadata__query-parameters-4"><h3 class="title sectiontitle">Query Parameters:</h3>
+<section class="section" id="filter-context-data-by-querying-metadata__query-parameters-4"><h3 class="title sectiontitle">Query Parameters</h3>
 
 
-<table class="table"><caption></caption><colgroup><col style="width:13%"><col style="width:27%"><col style="width:59%"></colgroup><thead class="thead">
+<table class="table"><caption></caption><colgroup><col style="width:16%"><col style="width:28%"><col style="width:56%"></colgroup><thead class="thead">
 			<tr class="row">
 				<th class="entry align-left" id="filter-context-data-by-querying-metadata__query-parameters-4__entry__1">Key</th>
 				<th class="entry align-left" id="filter-context-data-by-querying-metadata__query-parameters-4__entry__2">Value</th>
@@ -643,7 +665,7 @@ Because of the use of the <code class="codeph">options=keyValues</code>, the res
 		</tbody></table>
 </section>
 
-<section class="section" id="filter-context-data-by-querying-metadata__example-8"><h3 class="title sectiontitle">Example:</h3>
+<div class="example" id="filter-context-data-by-querying-metadata__example-request-8"><h3 class="title sectiontitle">Example Request</h3>
 
 
 <pre class="codeblock language-bash"><code><span class="ph token function">curl</span> -X  -G GET  <span class="ph token punctuation">\</span>
@@ -651,7 +673,7 @@ Because of the use of the <code class="codeph">options=keyValues</code>, the res
     -d <span class="ph token string">'mq=address.verified==true'</span>  <span class="ph token punctuation">\</span>
     -d <span class="ph token string">'type=Store'</span>  <span class="ph token punctuation">\</span>
     -d <span class="ph token string">'options=keyValues'</span></code></pre>
-</section>
+</div>
 
 </div>
 
@@ -669,10 +691,10 @@ Because of the use of the <code class="codeph">options=keyValues</code>, the res
 </p>
 </section>
 
-<section class="section" id="filter-context-data-by-distance__query-parameters-5"><h3 class="title sectiontitle">Query Parameters:</h3>
+<section class="section" id="filter-context-data-by-distance__query-parameters-5"><h3 class="title sectiontitle">Query Parameters</h3>
 
 
-<table class="table"><caption></caption><colgroup><col style="width:13%"><col style="width:27%"><col style="width:59%"></colgroup><thead class="thead">
+<table class="table"><caption></caption><colgroup><col style="width:16%"><col style="width:28%"><col style="width:56%"></colgroup><thead class="thead">
 			<tr class="row">
 				<th class="entry align-left" id="filter-context-data-by-distance__query-parameters-5__entry__1">Key</th>
 				<th class="entry align-left" id="filter-context-data-by-distance__query-parameters-5__entry__2">Value</th>
@@ -712,7 +734,7 @@ Because of the use of the <code class="codeph">options=keyValues</code>, the res
 		</tbody></table>
 </section>
 
-<section class="section" id="filter-context-data-by-distance__example-9"><h3 class="title sectiontitle">Example:</h3>
+<div class="example" id="filter-context-data-by-distance__example-request-9"><h3 class="title sectiontitle">Example Request</h3>
 
 
 <pre class="codeblock language-bash"><code><span class="ph token function">curl</span> -X  -G GET  <span class="ph token punctuation">\</span>
@@ -722,7 +744,7 @@ Because of the use of the <code class="codeph">options=keyValues</code>, the res
     -d <span class="ph token string">'coords=52.5162,13.3777'</span>  <span class="ph token punctuation">\</span>
     -d <span class="ph token string">'type=Store'</span>  <span class="ph token punctuation">\</span>
     -d <span class="ph token string">'options=keyValues'</span></code></pre>
-</section>
+</div>
 
 </div>
 

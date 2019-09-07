@@ -213,44 +213,6 @@ Additional databases are now involved - both the Orion Context Broker and the Io
                 <fo:block text-align="start">&#8226;</fo:block>
               </fo:list-item-label>
               <fo:list-item-body>
-                <fo:block>The FIWARE
-                  <fo:basic-link color="blue" external-destination="url('https://fiware-orion.readthedocs.io/en/latest/')">Orion Context Broker</fo:basic-link>which will receive requests using
-                  <fo:basic-link color="blue" external-destination="url('https://fiware.github.io/specifications/openapi/ngsiv2')">NGSI</fo:basic-link>
-                </fo:block>
-              </fo:list-item-body>
-            </fo:list-item>
-            <fo:list-item relative-align="baseline">
-              <fo:list-item-label keep-together.within-line="always">
-                <fo:block text-align="start">&#8226;</fo:block>
-              </fo:list-item-label>
-              <fo:list-item-body>
-                <fo:block>The FIWARE
-                  <fo:basic-link color="blue" external-destination="url('http://fiware-iotagent-ul.readthedocs.io/en/latest/')">IoT Agent for UltraLight 2.0</fo:basic-link>which will receive southbound requests
-using
-                  <fo:basic-link color="blue" external-destination="url('https://fiware.github.io/specifications/openapi/ngsiv2')">NGSI</fo:basic-link>and convert them to
-                  <fo:basic-link color="blue" external-destination="url('http://fiware-iotagent-ul.readthedocs.io/en/latest/usermanual/index.html#user-programmers-manual')">UltraLight 2.0</fo:basic-link>commands for
-the devices</fo:block>
-              </fo:list-item-body>
-            </fo:list-item>
-            <fo:list-item relative-align="baseline">
-              <fo:list-item-label keep-together.within-line="always">
-                <fo:block text-align="start">&#8226;</fo:block>
-              </fo:list-item-label>
-              <fo:list-item-body>
-                <fo:block>FIWARE
-                  <fo:basic-link color="blue" external-destination="url('http://fiware-draco.readthedocs.io/en/latest/')">Draco</fo:basic-link>which will subscribe to context changes and persist them into a database (
-                  <fo:inline font-weight="bold">MySQL</fo:inline>,
-                  <fo:inline font-weight="bold">PostgreSQL</fo:inline>or
-                  <fo:inline font-weight="bold">Mongo-DB</fo:inline>)</fo:block>
-              </fo:list-item-body>
-            </fo:list-item>
-          </fo:list-block>
-          <fo:list-block provisional-distance-between-starts="5mm" provisional-label-separation="1mm">
-            <fo:list-item relative-align="baseline">
-              <fo:list-item-label keep-together.within-line="always">
-                <fo:block text-align="start">&#8226;</fo:block>
-              </fo:list-item-label>
-              <fo:list-item-body>
                 <fo:block>Used by the
                   <fo:inline font-weight="bold">Orion Context Broker</fo:inline>to hold context data information such as data entities, subscriptions and registrations</fo:block>
               </fo:list-item-body>
@@ -290,35 +252,6 @@ the devices</fo:block>
               </fo:list-item-label>
               <fo:list-item-body>
                 <fo:block>Potentially used as a data sink to hold historical context data.</fo:block>
-              </fo:list-item-body>
-            </fo:list-item>
-          </fo:list-block>
-          <fo:list-block provisional-distance-between-starts="5mm" provisional-label-separation="1mm">
-            <fo:list-item relative-align="baseline">
-              <fo:list-item-label keep-together.within-line="always">
-                <fo:block text-align="start">&#8226;</fo:block>
-              </fo:list-item-label>
-              <fo:list-item-body>
-                <fo:block>The underlying
-                  <fo:basic-link color="blue" external-destination="url('https://www.mongodb.com/')">MongoDB</fo:basic-link>database :</fo:block>
-              </fo:list-item-body>
-            </fo:list-item>
-            <fo:list-item relative-align="baseline">
-              <fo:list-item-label keep-together.within-line="always">
-                <fo:block text-align="start">&#8226;</fo:block>
-              </fo:list-item-label>
-              <fo:list-item-body>
-                <fo:block>An additional
-                  <fo:basic-link color="blue" external-destination="url('https://www.postgresql.org/')">PostgreSQL</fo:basic-link>database :</fo:block>
-              </fo:list-item-body>
-            </fo:list-item>
-            <fo:list-item relative-align="baseline">
-              <fo:list-item-label keep-together.within-line="always">
-                <fo:block text-align="start">&#8226;</fo:block>
-              </fo:list-item-label>
-              <fo:list-item-body>
-                <fo:block>An additional
-                  <fo:basic-link color="blue" external-destination="url('https://www.mysql.com/')">MySQL</fo:basic-link>database :</fo:block>
               </fo:list-item-body>
             </fo:list-item>
           </fo:list-block>
@@ -383,6 +316,96 @@ the devices</fo:block>
                 <fo:block text-align="start">&#8226;</fo:block>
               </fo:list-item-label>
               <fo:list-item-body>
+                <fo:block>Three
+                  <fo:inline font-weight="bold">FIWARE Generic Enablers</fo:inline>:</fo:block>
+              </fo:list-item-body>
+            </fo:list-item>
+            <fo:list-item relative-align="baseline">
+              <fo:list-item-label keep-together.within-line="always">
+                <fo:block text-align="start">&#8226;</fo:block>
+              </fo:list-item-label>
+              <fo:list-item-body>
+                <fo:block>The FIWARE
+                  <fo:basic-link color="blue" external-destination="url('https://fiware-orion.readthedocs.io/en/latest/')">Orion Context Broker</fo:basic-link>which will receive requests using
+                  <fo:basic-link color="blue" external-destination="url('https://fiware.github.io/specifications/openapi/ngsiv2')">NGSI</fo:basic-link>
+                </fo:block>
+              </fo:list-item-body>
+            </fo:list-item>
+            <fo:list-item relative-align="baseline">
+              <fo:list-item-label keep-together.within-line="always">
+                <fo:block text-align="start">&#8226;</fo:block>
+              </fo:list-item-label>
+              <fo:list-item-body>
+                <fo:block>The FIWARE
+                  <fo:basic-link color="blue" external-destination="url('http://fiware-iotagent-ul.readthedocs.io/en/latest/')">IoT Agent for UltraLight 2.0</fo:basic-link>which will receive southbound requests
+using
+                  <fo:basic-link color="blue" external-destination="url('https://fiware.github.io/specifications/openapi/ngsiv2')">NGSI</fo:basic-link>and convert them to
+                  <fo:basic-link color="blue" external-destination="url('http://fiware-iotagent-ul.readthedocs.io/en/latest/usermanual/index.html#user-programmers-manual')">UltraLight 2.0</fo:basic-link>commands for
+the devices</fo:block>
+              </fo:list-item-body>
+            </fo:list-item>
+            <fo:list-item relative-align="baseline">
+              <fo:list-item-label keep-together.within-line="always">
+                <fo:block text-align="start">&#8226;</fo:block>
+              </fo:list-item-label>
+              <fo:list-item-body>
+                <fo:block>FIWARE
+                  <fo:basic-link color="blue" external-destination="url('http://fiware-draco.readthedocs.io/en/latest/')">Draco</fo:basic-link>which will subscribe to context changes and persist them into a database (
+                  <fo:inline font-weight="bold">MySQL</fo:inline>,
+                  <fo:inline font-weight="bold">PostgreSQL</fo:inline>or
+                  <fo:inline font-weight="bold">Mongo-DB</fo:inline>)</fo:block>
+              </fo:list-item-body>
+            </fo:list-item>
+            <fo:list-item relative-align="baseline">
+              <fo:list-item-label keep-together.within-line="always">
+                <fo:block text-align="start">&#8226;</fo:block>
+              </fo:list-item-label>
+              <fo:list-item-body>
+                <fo:block>One, two or three of the following
+                  <fo:inline font-weight="bold">Databases</fo:inline>:</fo:block>
+              </fo:list-item-body>
+            </fo:list-item>
+            <fo:list-item relative-align="baseline">
+              <fo:list-item-label keep-together.within-line="always">
+                <fo:block text-align="start">&#8226;</fo:block>
+              </fo:list-item-label>
+              <fo:list-item-body>
+                <fo:block>The underlying
+                  <fo:basic-link color="blue" external-destination="url('https://www.mongodb.com/')">MongoDB</fo:basic-link>database :</fo:block>
+              </fo:list-item-body>
+            </fo:list-item>
+            <fo:list-item relative-align="baseline">
+              <fo:list-item-label keep-together.within-line="always">
+                <fo:block text-align="start">&#8226;</fo:block>
+              </fo:list-item-label>
+              <fo:list-item-body>
+                <fo:block>An additional
+                  <fo:basic-link color="blue" external-destination="url('https://www.postgresql.org/')">PostgreSQL</fo:basic-link>database :</fo:block>
+              </fo:list-item-body>
+            </fo:list-item>
+            <fo:list-item relative-align="baseline">
+              <fo:list-item-label keep-together.within-line="always">
+                <fo:block text-align="start">&#8226;</fo:block>
+              </fo:list-item-label>
+              <fo:list-item-body>
+                <fo:block>An additional
+                  <fo:basic-link color="blue" external-destination="url('https://www.mysql.com/')">MySQL</fo:basic-link>database :</fo:block>
+              </fo:list-item-body>
+            </fo:list-item>
+            <fo:list-item relative-align="baseline">
+              <fo:list-item-label keep-together.within-line="always">
+                <fo:block text-align="start">&#8226;</fo:block>
+              </fo:list-item-label>
+              <fo:list-item-body>
+                <fo:block>Three
+                  <fo:inline font-weight="bold">Context Providers</fo:inline>:</fo:block>
+              </fo:list-item-body>
+            </fo:list-item>
+            <fo:list-item relative-align="baseline">
+              <fo:list-item-label keep-together.within-line="always">
+                <fo:block text-align="start">&#8226;</fo:block>
+              </fo:list-item-label>
+              <fo:list-item-body>
                 <fo:block>The
                   <fo:inline font-weight="bold">Stock Management Frontend</fo:inline>is not used in this tutorial. It does the following:</fo:block>
               </fo:list-item-body>
@@ -404,35 +427,6 @@ the devices</fo:block>
               <fo:list-item-body>
                 <fo:block>The
                   <fo:inline font-weight="bold">Context Provider NGSI</fo:inline>proxy is not used in this tutorial. It does the following:</fo:block>
-              </fo:list-item-body>
-            </fo:list-item>
-          </fo:list-block>
-          <fo:list-block provisional-distance-between-starts="5mm" provisional-label-separation="1mm">
-            <fo:list-item relative-align="baseline">
-              <fo:list-item-label keep-together.within-line="always">
-                <fo:block text-align="start">&#8226;</fo:block>
-              </fo:list-item-label>
-              <fo:list-item-body>
-                <fo:block>Three
-                  <fo:inline font-weight="bold">FIWARE Generic Enablers</fo:inline>:</fo:block>
-              </fo:list-item-body>
-            </fo:list-item>
-            <fo:list-item relative-align="baseline">
-              <fo:list-item-label keep-together.within-line="always">
-                <fo:block text-align="start">&#8226;</fo:block>
-              </fo:list-item-label>
-              <fo:list-item-body>
-                <fo:block>One, two or three of the following
-                  <fo:inline font-weight="bold">Databases</fo:inline>:</fo:block>
-              </fo:list-item-body>
-            </fo:list-item>
-            <fo:list-item relative-align="baseline">
-              <fo:list-item-label keep-together.within-line="always">
-                <fo:block text-align="start">&#8226;</fo:block>
-              </fo:list-item-label>
-              <fo:list-item-body>
-                <fo:block>Three
-                  <fo:inline font-weight="bold">Context Providers</fo:inline>:</fo:block>
               </fo:list-item-body>
             </fo:list-item>
           </fo:list-block>
@@ -486,7 +480,7 @@ on the standard
             <fo:inline font-family="MONOSPACE">27017</fo:inline>port and the overall architecture can be seen below:</fo:block>
           <fo:block>
             <fo:inline>
-              <fo:external-graphic content-height="scale-to-fit" content-width="scale-to-fit" fox:alt-text="" height="100%" scaling="uniform" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/mongo-draco-tutorial.png')" width="100%" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
+              <fo:external-graphic content-height="scale-to-fit" content-width="scale-to-fit" fox:alt-text="fig:" height="100%" scaling="uniform" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/mongo-draco-tutorial.png')" width="100%" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
             </fo:inline>
             <fo:block font-family="STANDARD" font-weight="bold" keep-with-previous.within-page="always">Figure 2:</fo:block>
           </fo:block>
@@ -598,7 +592,7 @@ and drop it inside the Draco user space. At this point, a popup should be displa
 available. Please select the template MONGO-TUTORIAL.</fo:block>
               <fo:block>
                 <fo:inline>
-                  <fo:external-graphic content-height="scale-to-fit" content-width="scale-to-fit" fox:alt-text="" height="100%" scaling="uniform" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/mongo-tutorial-template.png')" width="100%" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
+                  <fo:external-graphic content-height="scale-to-fit" content-width="scale-to-fit" fox:alt-text="fig:" height="100%" scaling="uniform" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/mongo-tutorial-template.png')" width="100%" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
                 </fo:inline>
                 <fo:block font-family="STANDARD" font-weight="bold" keep-with-previous.within-page="always">Figure 3:</fo:block>
               </fo:block>
@@ -630,13 +624,13 @@ be seen on the same page:</fo:block>
             </fo:block>
           </fo:block>
           <fo:block>
-            <fo:block font-family="STANDARD" font-weight="bold">Body:</fo:block>
+            <fo:block font-family="STANDARD" font-weight="bold">Body</fo:block>
             <fo:block>
               <fo:block background-color="ALICEBLUE" color="black" font-family="MONOSPACE" font-weight="bold" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap"></fo:block>
             </fo:block>
           </fo:block>
           <fo:block>
-            <fo:block font-family="STANDARD" font-weight="bold">Example:</fo:block>
+            <fo:block font-family="STANDARD" font-weight="bold">Example Request</fo:block>
             <fo:block>
               <fo:block background-color="ALICEBLUE" color="black" font-family="MONOSPACE" font-weight="bold" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">
                 <fo:inline color="INDIANRED" font-family="MONOSPACE" font-weight="bold">curl</fo:inline>-X  -G GET
@@ -707,7 +701,7 @@ be seen on the same page:</fo:block>
               </fo:list-block>
               <fo:block>As you can see, the database used to persist context data has no impact on the details of the subscription. It is the same for each database.</fo:block>
               <fo:block>
-                <fo:block font-family="STANDARD" font-weight="bold">Headers:</fo:block>
+                <fo:block font-family="STANDARD" font-weight="bold">Headers</fo:block>
                 <fo:block>
                   <fo:block-container reference-orientation="0">
                     <fo:block>
@@ -769,7 +763,7 @@ be seen on the same page:</fo:block>
                 </fo:block>
               </fo:block>
               <fo:block>
-                <fo:block font-family="STANDARD" font-weight="bold">Body:</fo:block>
+                <fo:block font-family="STANDARD" font-weight="bold">Body</fo:block>
                 <fo:block>
                   <fo:block background-color="ALICEBLUE" color="black" font-family="MONOSPACE" font-weight="bold" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">
                     <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">{</fo:inline>
@@ -811,7 +805,7 @@ be seen on the same page:</fo:block>
                 </fo:block>
               </fo:block>
               <fo:block>
-                <fo:block font-family="STANDARD" font-weight="bold">Example:</fo:block>
+                <fo:block font-family="STANDARD" font-weight="bold">Example Request</fo:block>
                 <fo:block>
                   <fo:block background-color="ALICEBLUE" color="black" font-family="MONOSPACE" font-weight="bold" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">
                     <fo:inline color="INDIANRED" font-family="MONOSPACE" font-weight="bold">curl</fo:inline>-X POST
@@ -889,7 +883,7 @@ and port are correct.</fo:block>
                 <fo:inline font-family="MONOSPACE">active</fo:inline>- an expired subscription
 will not fire.</fo:block>
               <fo:block>
-                <fo:block font-family="STANDARD" font-weight="bold">Headers:</fo:block>
+                <fo:block font-family="STANDARD" font-weight="bold">Headers</fo:block>
                 <fo:block>
                   <fo:block-container reference-orientation="0">
                     <fo:block>
@@ -940,13 +934,13 @@ will not fire.</fo:block>
                 </fo:block>
               </fo:block>
               <fo:block>
-                <fo:block font-family="STANDARD" font-weight="bold">Body:</fo:block>
+                <fo:block font-family="STANDARD" font-weight="bold">Body</fo:block>
                 <fo:block>
                   <fo:block background-color="ALICEBLUE" color="black" font-family="MONOSPACE" font-weight="bold" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap"></fo:block>
                 </fo:block>
               </fo:block>
               <fo:block>
-                <fo:block font-family="STANDARD" font-weight="bold">Example:</fo:block>
+                <fo:block font-family="STANDARD" font-weight="bold">Example Request</fo:block>
                 <fo:block>
                   <fo:block background-color="ALICEBLUE" color="black" font-family="MONOSPACE" font-weight="bold" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">
                     <fo:inline color="INDIANRED" font-family="MONOSPACE" font-weight="bold">curl</fo:inline>-X  -G GET
@@ -1129,7 +1123,7 @@ instance is listening on the standard
             <fo:inline font-family="MONOSPACE">5432</fo:inline>port and the overall architecture can be seen below:</fo:block>
           <fo:block>
             <fo:inline>
-              <fo:external-graphic content-height="scale-to-fit" content-width="scale-to-fit" fox:alt-text="" height="100%" scaling="uniform" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/postgres-draco-tutorial.png')" width="100%" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
+              <fo:external-graphic content-height="scale-to-fit" content-width="scale-to-fit" fox:alt-text="fig:" height="100%" scaling="uniform" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/postgres-draco-tutorial.png')" width="100%" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
             </fo:inline>
             <fo:block font-family="STANDARD" font-weight="bold" keep-with-previous.within-page="always">Figure 4:</fo:block>
           </fo:block>
@@ -1335,7 +1329,7 @@ and drop it inside the Draco user space. At this point, a popup should be displa
 available. Please select the template POSTGRESQL-TUTORIAL.</fo:block>
               <fo:block>
                 <fo:inline>
-                  <fo:external-graphic content-height="scale-to-fit" content-width="scale-to-fit" fox:alt-text="" height="100%" scaling="uniform" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/postgres-tutorial-template.png')" width="100%" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
+                  <fo:external-graphic content-height="scale-to-fit" content-width="scale-to-fit" fox:alt-text="fig:" height="100%" scaling="uniform" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/postgres-tutorial-template.png')" width="100%" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
                 </fo:inline>
                 <fo:block font-family="STANDARD" font-weight="bold" keep-with-previous.within-page="always">Figure 5:</fo:block>
               </fo:block>
@@ -1409,13 +1403,13 @@ configuration page.</fo:block>
               </fo:list-block>
               <fo:block>
                 <fo:inline>
-                  <fo:external-graphic content-height="scale-to-fit" content-width="scale-to-fit" fox:alt-text="" height="100%" scaling="uniform" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/step4.png')" width="100%" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
+                  <fo:external-graphic content-height="scale-to-fit" content-width="scale-to-fit" fox:alt-text="fig:" height="100%" scaling="uniform" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/step4.png')" width="100%" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
                 </fo:inline>
                 <fo:block font-family="STANDARD" font-weight="bold" keep-with-previous.within-page="always">Figure 6:</fo:block>
               </fo:block>
               <fo:block>
                 <fo:inline>
-                  <fo:external-graphic content-height="scale-to-fit" content-width="scale-to-fit" fox:alt-text="" height="100%" scaling="uniform" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/step5.png')" width="100%" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
+                  <fo:external-graphic content-height="scale-to-fit" content-width="scale-to-fit" fox:alt-text="fig:" height="100%" scaling="uniform" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/step5.png')" width="100%" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
                 </fo:inline>
                 <fo:block font-family="STANDARD" font-weight="bold" keep-with-previous.within-page="always">Figure 7:</fo:block>
               </fo:block>
@@ -1656,13 +1650,13 @@ be seen on the same page:</fo:block>
             </fo:block>
           </fo:block>
           <fo:block>
-            <fo:block font-family="STANDARD" font-weight="bold">Body:</fo:block>
+            <fo:block font-family="STANDARD" font-weight="bold">Body</fo:block>
             <fo:block>
               <fo:block background-color="ALICEBLUE" color="black" font-family="MONOSPACE" font-weight="bold" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap"></fo:block>
             </fo:block>
           </fo:block>
           <fo:block>
-            <fo:block font-family="STANDARD" font-weight="bold">Example:</fo:block>
+            <fo:block font-family="STANDARD" font-weight="bold">Example Request</fo:block>
             <fo:block>
               <fo:block background-color="ALICEBLUE" color="black" font-family="MONOSPACE" font-weight="bold" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">
                 <fo:inline color="INDIANRED" font-family="MONOSPACE" font-weight="bold">curl</fo:inline>-X  -G GET
@@ -1733,7 +1727,7 @@ be seen on the same page:</fo:block>
               </fo:list-block>
               <fo:block>As you can see, the database used to persist context data has no impact on the details of the subscription. It is the same for each database.</fo:block>
               <fo:block>
-                <fo:block font-family="STANDARD" font-weight="bold">Headers:</fo:block>
+                <fo:block font-family="STANDARD" font-weight="bold">Headers</fo:block>
                 <fo:block>
                   <fo:block-container reference-orientation="0">
                     <fo:block>
@@ -1795,7 +1789,7 @@ be seen on the same page:</fo:block>
                 </fo:block>
               </fo:block>
               <fo:block>
-                <fo:block font-family="STANDARD" font-weight="bold">Body:</fo:block>
+                <fo:block font-family="STANDARD" font-weight="bold">Body</fo:block>
                 <fo:block>
                   <fo:block background-color="ALICEBLUE" color="black" font-family="MONOSPACE" font-weight="bold" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">
                     <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">{</fo:inline>
@@ -1837,7 +1831,7 @@ be seen on the same page:</fo:block>
                 </fo:block>
               </fo:block>
               <fo:block>
-                <fo:block font-family="STANDARD" font-weight="bold">Example:</fo:block>
+                <fo:block font-family="STANDARD" font-weight="bold">Example Request</fo:block>
                 <fo:block>
                   <fo:block background-color="ALICEBLUE" color="black" font-family="MONOSPACE" font-weight="bold" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">
                     <fo:inline color="INDIANRED" font-family="MONOSPACE" font-weight="bold">curl</fo:inline>-X POST
@@ -1915,7 +1909,7 @@ and port are correct.</fo:block>
                 <fo:inline font-family="MONOSPACE">active</fo:inline>- an expired subscription
 will not fire.</fo:block>
               <fo:block>
-                <fo:block font-family="STANDARD" font-weight="bold">Headers:</fo:block>
+                <fo:block font-family="STANDARD" font-weight="bold">Headers</fo:block>
                 <fo:block>
                   <fo:block-container reference-orientation="0">
                     <fo:block>
@@ -1966,13 +1960,13 @@ will not fire.</fo:block>
                 </fo:block>
               </fo:block>
               <fo:block>
-                <fo:block font-family="STANDARD" font-weight="bold">Body:</fo:block>
+                <fo:block font-family="STANDARD" font-weight="bold">Body</fo:block>
                 <fo:block>
                   <fo:block background-color="ALICEBLUE" color="black" font-family="MONOSPACE" font-weight="bold" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap"></fo:block>
                 </fo:block>
               </fo:block>
               <fo:block>
-                <fo:block font-family="STANDARD" font-weight="bold">Example:</fo:block>
+                <fo:block font-family="STANDARD" font-weight="bold">Example Request</fo:block>
                 <fo:block>
                   <fo:block background-color="ALICEBLUE" color="black" font-family="MONOSPACE" font-weight="bold" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">
                     <fo:inline color="INDIANRED" font-family="MONOSPACE" font-weight="bold">curl</fo:inline>-X  -G GET
@@ -2193,7 +2187,7 @@ standard
             <fo:inline font-family="MONOSPACE">3306</fo:inline>port and the overall architecture can be seen below:</fo:block>
           <fo:block>
             <fo:inline>
-              <fo:external-graphic content-height="scale-to-fit" content-width="scale-to-fit" fox:alt-text="" height="100%" scaling="uniform" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/mysql-draco-tutorial.png')" width="100%" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
+              <fo:external-graphic content-height="scale-to-fit" content-width="scale-to-fit" fox:alt-text="fig:" height="100%" scaling="uniform" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/mysql-draco-tutorial.png')" width="100%" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
             </fo:inline>
             <fo:block font-family="STANDARD" font-weight="bold" keep-with-previous.within-page="always">Figure 8:</fo:block>
           </fo:block>
@@ -2263,7 +2257,7 @@ display data if you wish</fo:block>
                   <fo:table border-after-color="black" border-before-color="black" border-end-color="black" border-end-style="solid" border-end-width="1pt" table-layout="fixed" width="100%">
                     <fo:table-column column-number="1" column-width="8%"></fo:table-column>
                     <fo:table-column column-number="2" column-width="4%"></fo:table-column>
-                    <fo:table-column column-number="3" column-width="87%"></fo:table-column>
+                    <fo:table-column column-number="3" column-width="86%"></fo:table-column>
                     <fo:table-header>
                       <fo:table-row>
                         <fo:table-cell border-before-color="black" text-align="left">
@@ -2388,7 +2382,7 @@ and drop it inside the Draco user space. At this point, a popup should be displa
 available. Please select the template MYSQL-TUTORIAL.</fo:block>
               <fo:block>
                 <fo:inline>
-                  <fo:external-graphic content-height="scale-to-fit" content-width="scale-to-fit" fox:alt-text="" height="100%" scaling="uniform" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/draco-template1.png')" width="100%" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
+                  <fo:external-graphic content-height="scale-to-fit" content-width="scale-to-fit" fox:alt-text="fig:" height="100%" scaling="uniform" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/draco-template1.png')" width="100%" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
                 </fo:inline>
                 <fo:block font-family="STANDARD" font-weight="bold" keep-with-previous.within-page="always">Figure 9:</fo:block>
               </fo:block>
@@ -2466,7 +2460,7 @@ configuration page.
               </fo:list-block>
               <fo:block>
                 <fo:inline>
-                  <fo:external-graphic content-height="scale-to-fit" content-width="scale-to-fit" fox:alt-text="" height="100%" scaling="uniform" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/step5.png')" width="100%" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
+                  <fo:external-graphic content-height="scale-to-fit" content-width="scale-to-fit" fox:alt-text="fig:" height="100%" scaling="uniform" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/step5.png')" width="100%" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
                 </fo:inline>
                 <fo:block font-family="STANDARD" font-weight="bold" keep-with-previous.within-page="always">Figure 10:</fo:block>
               </fo:block>
@@ -2507,13 +2501,13 @@ be seen on the same page:</fo:block>
             </fo:block>
           </fo:block>
           <fo:block>
-            <fo:block font-family="STANDARD" font-weight="bold">Body:</fo:block>
+            <fo:block font-family="STANDARD" font-weight="bold">Body</fo:block>
             <fo:block>
               <fo:block background-color="ALICEBLUE" color="black" font-family="MONOSPACE" font-weight="bold" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap"></fo:block>
             </fo:block>
           </fo:block>
           <fo:block>
-            <fo:block font-family="STANDARD" font-weight="bold">Example:</fo:block>
+            <fo:block font-family="STANDARD" font-weight="bold">Example Request</fo:block>
             <fo:block>
               <fo:block background-color="ALICEBLUE" color="black" font-family="MONOSPACE" font-weight="bold" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">
                 <fo:inline color="INDIANRED" font-family="MONOSPACE" font-weight="bold">curl</fo:inline>-X  -G GET
@@ -2584,7 +2578,7 @@ be seen on the same page:</fo:block>
               </fo:list-block>
               <fo:block>As you can see, the database used to persist context data has no impact on the details of the subscription. It is the same for each database.</fo:block>
               <fo:block>
-                <fo:block font-family="STANDARD" font-weight="bold">Headers:</fo:block>
+                <fo:block font-family="STANDARD" font-weight="bold">Headers</fo:block>
                 <fo:block>
                   <fo:block-container reference-orientation="0">
                     <fo:block>
@@ -2646,7 +2640,7 @@ be seen on the same page:</fo:block>
                 </fo:block>
               </fo:block>
               <fo:block>
-                <fo:block font-family="STANDARD" font-weight="bold">Body:</fo:block>
+                <fo:block font-family="STANDARD" font-weight="bold">Body</fo:block>
                 <fo:block>
                   <fo:block background-color="ALICEBLUE" color="black" font-family="MONOSPACE" font-weight="bold" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">
                     <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">{</fo:inline>
@@ -2688,7 +2682,7 @@ be seen on the same page:</fo:block>
                 </fo:block>
               </fo:block>
               <fo:block>
-                <fo:block font-family="STANDARD" font-weight="bold">Example:</fo:block>
+                <fo:block font-family="STANDARD" font-weight="bold">Example Request</fo:block>
                 <fo:block>
                   <fo:block background-color="ALICEBLUE" color="black" font-family="MONOSPACE" font-weight="bold" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">
                     <fo:inline color="INDIANRED" font-family="MONOSPACE" font-weight="bold">curl</fo:inline>-X POST
@@ -2766,7 +2760,7 @@ and port are correct.</fo:block>
                 <fo:inline font-family="MONOSPACE">active</fo:inline>- an expired subscription
 will not fire.</fo:block>
               <fo:block>
-                <fo:block font-family="STANDARD" font-weight="bold">Headers:</fo:block>
+                <fo:block font-family="STANDARD" font-weight="bold">Headers</fo:block>
                 <fo:block>
                   <fo:block-container reference-orientation="0">
                     <fo:block>
@@ -2817,13 +2811,13 @@ will not fire.</fo:block>
                 </fo:block>
               </fo:block>
               <fo:block>
-                <fo:block font-family="STANDARD" font-weight="bold">Body:</fo:block>
+                <fo:block font-family="STANDARD" font-weight="bold">Body</fo:block>
                 <fo:block>
                   <fo:block background-color="ALICEBLUE" color="black" font-family="MONOSPACE" font-weight="bold" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap"></fo:block>
                 </fo:block>
               </fo:block>
               <fo:block>
-                <fo:block font-family="STANDARD" font-weight="bold">Example:</fo:block>
+                <fo:block font-family="STANDARD" font-weight="bold">Example Request</fo:block>
                 <fo:block>
                   <fo:block background-color="ALICEBLUE" color="black" font-family="MONOSPACE" font-weight="bold" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">
                     <fo:inline color="INDIANRED" font-family="MONOSPACE" font-weight="bold">curl</fo:inline>-X  -G GET
@@ -3047,7 +3041,7 @@ database.</fo:block>
 from the three previous examples and configure Draco to store data in multiple sinks.</fo:block>
           <fo:block>
             <fo:inline>
-              <fo:external-graphic content-height="scale-to-fit" content-width="scale-to-fit" fox:alt-text="" height="100%" scaling="uniform" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/multiple-draco-tutorial.png')" width="100%" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
+              <fo:external-graphic content-height="scale-to-fit" content-width="scale-to-fit" fox:alt-text="fig:" height="100%" scaling="uniform" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/multiple-draco-tutorial.png')" width="100%" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
             </fo:inline>
             <fo:block font-family="STANDARD" font-weight="bold" keep-with-previous.within-page="always">Figure 11:</fo:block>
           </fo:block>
@@ -3134,7 +3128,7 @@ and drop it inside the Draco user space. At this point, a popup should be displa
 available. Please select the template MULTIPLE-SINKS-TUTORIAL.</fo:block>
               <fo:block>
                 <fo:inline>
-                  <fo:external-graphic content-height="scale-to-fit" content-width="scale-to-fit" fox:alt-text="" height="100%" scaling="uniform" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/multiple-tutorial-template.png')" width="100%" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
+                  <fo:external-graphic content-height="scale-to-fit" content-width="scale-to-fit" fox:alt-text="fig:" height="100%" scaling="uniform" src="url('https://fiware.github.io/tutorials.Historic-Context-NIFI/img/multiple-tutorial-template.png')" width="100%" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions"></fo:external-graphic>
                 </fo:inline>
                 <fo:block font-family="STANDARD" font-weight="bold" keep-with-previous.within-page="always">Figure 12:</fo:block>
               </fo:block>
@@ -3186,13 +3180,13 @@ If the response is blank, this is usually because Draco is not running or is lis
             </fo:block>
           </fo:block>
           <fo:block>
-            <fo:block font-family="STANDARD" font-weight="bold">Body:</fo:block>
+            <fo:block font-family="STANDARD" font-weight="bold">Body</fo:block>
             <fo:block>
               <fo:block background-color="ALICEBLUE" color="black" font-family="MONOSPACE" font-weight="bold" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap"></fo:block>
             </fo:block>
           </fo:block>
           <fo:block>
-            <fo:block font-family="STANDARD" font-weight="bold">Example:</fo:block>
+            <fo:block font-family="STANDARD" font-weight="bold">Example Request</fo:block>
             <fo:block>
               <fo:block background-color="ALICEBLUE" color="black" font-family="MONOSPACE" font-weight="bold" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">
                 <fo:inline color="INDIANRED" font-family="MONOSPACE" font-weight="bold">curl</fo:inline>-X  -G GET
@@ -3335,7 +3329,7 @@ If the response is blank, this is usually because Draco is not running or is lis
                 <fo:inline font-family="MONOSPACE">5050</fo:inline>the context data will eventually be persisted to the
                 <fo:inline font-style="italic">MySQL</fo:inline>database.</fo:block>
               <fo:block>
-                <fo:block font-family="STANDARD" font-weight="bold">Headers:</fo:block>
+                <fo:block font-family="STANDARD" font-weight="bold">Headers</fo:block>
                 <fo:block>
                   <fo:block-container reference-orientation="0">
                     <fo:block>
@@ -3397,7 +3391,7 @@ If the response is blank, this is usually because Draco is not running or is lis
                 </fo:block>
               </fo:block>
               <fo:block>
-                <fo:block font-family="STANDARD" font-weight="bold">Body:</fo:block>
+                <fo:block font-family="STANDARD" font-weight="bold">Body</fo:block>
                 <fo:block>
                   <fo:block background-color="ALICEBLUE" color="black" font-family="MONOSPACE" font-weight="bold" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">
                     <fo:inline color="#909090" font-family="MONOSPACE" font-weight="bold">{</fo:inline>
@@ -3443,7 +3437,7 @@ If the response is blank, this is usually because Draco is not running or is lis
                 </fo:block>
               </fo:block>
               <fo:block>
-                <fo:block font-family="STANDARD" font-weight="bold">Example:</fo:block>
+                <fo:block font-family="STANDARD" font-weight="bold">Example Request</fo:block>
                 <fo:block>
                   <fo:block background-color="ALICEBLUE" color="black" font-family="MONOSPACE" font-weight="bold" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">
                     <fo:inline color="INDIANRED" font-family="MONOSPACE" font-weight="bold">curl</fo:inline>-X POST
@@ -3522,7 +3516,7 @@ and port are correct.</fo:block>
                 <fo:inline font-family="MONOSPACE">active</fo:inline>- an expired subscription
 will not fire.</fo:block>
               <fo:block>
-                <fo:block font-family="STANDARD" font-weight="bold">Headers:</fo:block>
+                <fo:block font-family="STANDARD" font-weight="bold">Headers</fo:block>
                 <fo:block>
                   <fo:block-container reference-orientation="0">
                     <fo:block>
@@ -3573,13 +3567,13 @@ will not fire.</fo:block>
                 </fo:block>
               </fo:block>
               <fo:block>
-                <fo:block font-family="STANDARD" font-weight="bold">Body:</fo:block>
+                <fo:block font-family="STANDARD" font-weight="bold">Body</fo:block>
                 <fo:block>
                   <fo:block background-color="ALICEBLUE" color="black" font-family="MONOSPACE" font-weight="bold" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap"></fo:block>
                 </fo:block>
               </fo:block>
               <fo:block>
-                <fo:block font-family="STANDARD" font-weight="bold">Example:</fo:block>
+                <fo:block font-family="STANDARD" font-weight="bold">Example Request</fo:block>
                 <fo:block>
                   <fo:block background-color="ALICEBLUE" color="black" font-family="MONOSPACE" font-weight="bold" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">
                     <fo:inline color="INDIANRED" font-family="MONOSPACE" font-weight="bold">curl</fo:inline>-X  -G GET
