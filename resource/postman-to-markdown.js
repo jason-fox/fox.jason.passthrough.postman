@@ -23,9 +23,15 @@ function getURL(raw){
 }
 
 function addSampleResponses(responses) {
+  if (responses.length == 1){
+    lines.push("#### Example HTTP response {.example}\n");
+  } else if (responses.length > 1){
+    lines.push("#### Example HTTP responses {.example}\n");
+  }
+
   for each (var response in responses) {
-    lines.push("#### Sample Response (" + response.code + 
-      " - " + response.status + ") {.example}\n");
+    lines.push("#### Response " + response.code + 
+      " - " + response.status + " {.example}\n");
     lines.push("```" + response._postman_previewlanguage);        
     lines.push(response.body);
     lines.push("```");
