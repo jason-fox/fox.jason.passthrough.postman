@@ -1,11 +1,11 @@
 # Postman Plugin for DITA-OT [<img src="https://jason-fox.github.io/fox.jason.passthrough.postman/postman.png" align="right" width="300">](http://postmandita-ot.rtfd.io/)
 
 [![license](https://img.shields.io/github/license/jason-fox/fox.jason.passthrough.postman.svg)](http://www.apache.org/licenses/LICENSE-2.0)
-[![DITA-OT 3.3](https://img.shields.io/badge/DITA--OT-3.3-blue.svg)](http://www.dita-ot.org/3.3/) <br/>
+[![DITA-OT 3.3](https://img.shields.io/badge/DITA--OT-3.3-blue.svg)](http://www.dita-ot.org/3.3/)
 [![Build Status](https://travis-ci.org/jason-fox/fox.jason.passthrough.postman.svg?branch=master)](https://travis-ci.org/jason-fox/fox.jason.passthrough.postman)
 [![Documentation Status](https://readthedocs.org/projects/postmandita-ot/badge/?version=latest)](https://postmandita-ot.readthedocs.io/en/latest/?badge=latest)
 
-This is a DITA-OT Plug-in used to auto-create valid DITA-based REST API documentation. The documentation can be
+This is a [DITA-OT Plug-in](https://www.dita-ot.org/plugins) used to auto-create valid DITA-based REST API documentation. The documentation can be
 generated directly from a [Postman Collection](https://www.getpostman.com/) file and processed as if it had been written
 in DITA.
 
