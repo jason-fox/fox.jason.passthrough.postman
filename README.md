@@ -9,8 +9,9 @@ This is a [DITA-OT Plug-in](https://www.dita-ot.org/plugins) used to auto-create
 generated directly from a [Postman Collection](https://www.getpostman.com/) file and processed as if it had been written
 in DITA.
 
-# Table of Contents
-
+<details>
+<summary><strong>Table of Contents</strong></summary>
+    
 -   [Background](#background)
 -   [Install](#install)
     -   [Installing DITA-OT](#installing-dita-ot)
@@ -19,7 +20,9 @@ in DITA.
 -   [Usage](#usage)
 -   [License](#license)
 
-# Background
+</details>
+
+## Background
 
 [<img src="https://assets.getpostman.com/common-share/postman-logo-horizontal-orange.svg" align="right" height="55">](https://www.getpostman.com/)
 
@@ -73,12 +76,12 @@ documentation.
 
 > ![](https://jason-fox.github.io/fox.jason.passthrough.postman/request-formatted.png)
 
-# Install
+## Install
 
 The DITA-OT postman plug-in has been tested against [DITA-OT 3.x](http://www.dita-ot.org/download). It is recommended
 that you upgrade to the latest version.
 
-## Installing DITA-OT
+### Installing DITA-OT
 
 <a href="https://www.dita-ot.org"><img src="https://www.dita-ot.org/images/dita-ot-logo.svg" align="right" height="55"></a>
 
@@ -100,7 +103,7 @@ unzip -q dita-ot-3.3.4.zip
 rm dita-ot-3.3.4.zip
 ```
 
-## Installing the Plug-in
+### Installing the Plug-in
 
 -   Run the plug-in installation commands:
 
@@ -117,11 +120,11 @@ The `dita` command line tool requires no additional configuration.
 
 ---
 
-## Installing Pandoc
+### Installing Pandoc
 
 To download a copy follow the instructions on the [Install page](https://github.com/jgm/pandoc/blob/master/INSTALL.md)
 
-# Usage
+## Usage
 
 To mark a file to be passed through for **Postman** processing, label it with `format="postman"` within the `*.ditamap`
 as shown:
@@ -144,7 +147,7 @@ The additional file will be converted to a `*.dita` file and will be added to th
 Unless overridden, the `navtitle` of the included topic will be the same as root name of the file. Any underscores in
 the filename will be replaced by spaces in title.
 
-# License
+## License
 
 [Apache 2.0](LICENSE) © 2019 Jason Fox
 
