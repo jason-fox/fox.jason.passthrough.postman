@@ -4,7 +4,7 @@
 	This file is part of the DITA-OT postman Plug-in project.
 	See the accompanying LICENSE file for applicable licenses.
 -->
-<plugin id="fox.jason.passthrough.postman" version="1.1.0">
+<plugin id="fox.jason.passthrough.postman" version="1.1.1">
 	<feature extension="ant.import" file="process_postman.xml"/>
 	<!--
 		This plugin requires Pandoc and the passthrough reader
