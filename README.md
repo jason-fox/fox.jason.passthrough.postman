@@ -10,6 +10,10 @@ This is a [DITA-OT Plug-in](https://www.dita-ot.org/plugins) used to auto-create
 generated directly from a [Postman Collection](https://www.getpostman.com/) file and processed as if it had been written
 in DITA.
 
+:arrow_forward: [Video from DITA-OT Day 2019](https://youtu.be/cd7XThpkivw)
+
+[![](https://jason-fox.github.io/fox.jason.passthrough.postman/nothing-video.png)](https://youtu.be/cd7XThpkivw)
+
 <details>
 <summary><strong>Table of Contents</strong></summary>
 
