@@ -254,7 +254,7 @@ be seen on the same page:</p>
       </section>
       <example id="example-request" outputclass="example">
         <title>Example Request</title>
-        <codeblock outputclass="bash">curl -X  -G GET  \
+        <codeblock outputclass="bash">curl -X GET  \
   'http://{{draco}}/nifi-api/system-diagnostics'  \
     -d ''</codeblock>
       </example>
@@ -429,7 +429,7 @@ will not fire.</p>
         </section>
         <example id="example-request-2" outputclass="example">
           <title>Example Request</title>
-          <codeblock outputclass="bash">curl -X  -G GET  \
+          <codeblock outputclass="bash">curl -X GET  \
   'http://{{orion}}/v2/subscriptions/'  \
     -H fiware-service :  openiot  \
     -H fiware-servicepath :  /  \
@@ -861,7 +861,7 @@ be seen on the same page:</p>
       </section>
       <example id="example-request-3" outputclass="example">
         <title>Example Request</title>
-        <codeblock outputclass="bash">curl -X  -G GET  \
+        <codeblock outputclass="bash">curl -X GET  \
   'http://{{draco}}/nifi-api/system-diagnostics'  \
     -d ''</codeblock>
       </example>
@@ -1036,7 +1036,7 @@ will not fire.</p>
         </section>
         <example id="example-request-5" outputclass="example">
           <title>Example Request</title>
-          <codeblock outputclass="bash">curl -X  -G GET  \
+          <codeblock outputclass="bash">curl -X GET  \
   'http://{{orion}}/v2/subscriptions/'  \
     -H fiware-service :  openiot  \
     -H fiware-servicepath :  /  \
@@ -1364,7 +1364,7 @@ be seen on the same page:</p>
       </section>
       <example id="example-request-6" outputclass="example">
         <title>Example Request</title>
-        <codeblock outputclass="bash">curl -X  -G GET  \
+        <codeblock outputclass="bash">curl -X GET  \
   'http://{{draco}}/nifi-api/system-diagnostics'  \
     -d ''</codeblock>
       </example>
@@ -1539,7 +1539,7 @@ will not fire.</p>
         </section>
         <example id="example-request-8" outputclass="example">
           <title>Example Request</title>
-          <codeblock outputclass="bash">curl -X  -G GET  \
+          <codeblock outputclass="bash">curl -X GET  \
   'http://{{orion}}/v2/subscriptions/'  \
     -H fiware-service :  openiot  \
     -H fiware-servicepath :  /  \
@@ -1770,7 +1770,7 @@ If the response is blank, this is usually because Draco is not running or is lis
       </section>
       <example id="example-request-9" outputclass="example">
         <title>Example Request</title>
-        <codeblock outputclass="bash">curl -X  -G GET  \
+        <codeblock outputclass="bash">curl -X GET  \
   'http://{{draco}}/v1/version'  \
     -d ''</codeblock>
       </example>
@@ -1989,7 +1989,7 @@ will not fire.</p>
         </section>
         <example id="example-request-11" outputclass="example">
           <title>Example Request</title>
-          <codeblock outputclass="bash">curl -X  -G GET  \
+          <codeblock outputclass="bash">curl -X GET  \
   'http://{{orion}}/v2/subscriptions/'  \
     -H fiware-service :  openiot  \
     -H fiware-servicepath :  /  \

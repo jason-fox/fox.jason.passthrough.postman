@@ -8,43 +8,7 @@
 		Create postman processing macros.
 	-->
 	<target name="postman.process.pre">
-		<!--
-
-		creates markdown text from a Postman collection
-
-			@param src          - The Postman file to parse
-			@param dest         - The file to write to
-		
-		-->
-		<scriptdef language="javascript" name="postman-to-markdown" src="${dita.plugin.fox.jason.passthrough.postman.dir}/resource/postman-to-markdown.js">
-			<attribute name="src"/>
-			<attribute name="dest"/>
-		</scriptdef>
-		<!--
-			Individual file processing for postman.
-			Take an input format run postman against it and convert to DITA
-
-			@param src - The input file to convert to DITA
-			@param dest - The output file location
-			@param title - The title of the converted file
-			@param metadata - The metadata of the converted file
-		-->
-		<macrodef name="add-postman-file">
-			<attribute name="src" />
-			<attribute name="dest" />
-			<attribute name="title" />
-			<attribute name="metadata"/>
-			<sequential>
-				<echo taskname="postman" level="info" message="Processing @{src}"/>
-
-				<local name="postman.temp.file"/>
-				<tempfile deleteonexit="true" destdir="${dita.temp.dir}" 
-					property="postman.temp.file" suffix="md"/>
-				
-				<postman-to-markdown src="@{src}" dest="${postman.temp.file}"/>
-				<add-pandoc-file src="${postman.temp.file}" dest="@{dest}" title="@{title}" metadata="@{metadata}"/>
-			</sequential>
-		</macrodef>
+		<taskdef resource="fox/jason/postman/antlib.xml"/>
 	</target>
 
 
