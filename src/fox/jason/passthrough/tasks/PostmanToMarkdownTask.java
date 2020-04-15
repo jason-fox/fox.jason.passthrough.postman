@@ -26,6 +26,8 @@ public class PostmanToMarkdownTask extends Task {
   private String src;
   private String dest;
   private JSONParser parser;
+  private static final String URL_ENCODED = "urlencoded";
+  private static final String FORM_DATA = "formdata";
 
   /**
    * Creates a new <code>PostmanToMarkdownTask</code> instance.
@@ -56,7 +58,8 @@ public class PostmanToMarkdownTask extends Task {
     this.dest = dest;
   }
 
-  private String description(String str) {
+  private String description(JSONObject data) {
+    String str = getDescription(data);
     if (str == null) {
       return "";
     }
@@ -98,30 +101,34 @@ public class PostmanToMarkdownTask extends Task {
   }
 
   private String getRaw(JSONObject request) {
-    return (String) ((JSONObject) request.get("url")).get("raw");
+    return castAsString(castAsObject(request, "url"), "raw");
+  }
+
+  private String getDescription(JSONObject data) {
+    return castAsString(data, "description");
   }
 
   private String getMethod(JSONObject request) {
-    return getAsString(request, "method");
+    return castAsString(request, "method");
   }
 
   private String getKey(JSONObject data) {
-    return getAsString(data, "key");
+    return castAsString(data, "key");
   }
 
   private String getValue(JSONObject data) {
-    return getAsString(data, "value");
+    return castAsString(data, "value");
   }
 
-  private JSONArray getAsArray(JSONObject data, String key) {
+  private JSONArray castAsArray(JSONObject data, String key) {
     return (JSONArray) data.get(key);
   }
 
-  private JSONObject getAsObject(JSONObject data, String key) {
+  private JSONObject castAsObject(JSONObject data, String key) {
     return (JSONObject) data.get(key);
   }
 
-  private String getAsString(JSONObject data, String key) {
+  private String castAsString(JSONObject data, String key) {
     return (String) data.get(key);
   }
 
@@ -148,7 +155,7 @@ public class PostmanToMarkdownTask extends Task {
       snippet.add("'" + getRaw(request) + "'");
     }
 
-    for (Object o : getAsArray(request, "header")) {
+    for (Object o : castAsArray(request, "header")) {
       JSONObject header = (JSONObject) o;
       snippet.add("  -H " + getKey(header) + " :  " + getValue(header));
     }
@@ -163,11 +170,11 @@ public class PostmanToMarkdownTask extends Task {
       }
     }
     if (request.get("body") != null) {
-      JSONObject body = getAsObject(request, "body");
-      switch (getAsString(body, "mode")) {
-        case "urlencoded":
+      JSONObject body = castAsObject(request, "body");
+      switch (castAsString(body, "mode")) {
+        case URL_ENCODED:
           List<String> text = new ArrayList<>();
-          for (Object o : getAsArray(body, "urlencoded")) {
+          for (Object o : castAsArray(body, URL_ENCODED)) {
             JSONObject data = (JSONObject) o;
             if (!(Boolean) data.get("disabled")) {
               text.add(getKey(data) + "=" + getValue(data));
@@ -176,15 +183,15 @@ public class PostmanToMarkdownTask extends Task {
           snippet.add(" -d " + String.join("&", text));
           break;
         case "raw":
-          snippet.add("  -d '" + getAsString(body, "raw") + "'");
+          snippet.add("  -d '" + castAsString(body, "raw") + "'");
           break;
-        case "formdata":
-          for (Object o : getAsArray(body, "formdata")) {
+        case FORM_DATA:
+          for (Object o : castAsArray(body, FORM_DATA)) {
             JSONObject data = (JSONObject) o;
             if (!(Boolean) data.get("disabled")) {
-              if ("file".equals(getAsString(data, "type"))) {
+              if ("file".equals(castAsString(data, "type"))) {
                 snippet.add(
-                  " -F" + getKey(data) + "=" + getAsString(data, "src")
+                  " -F" + getKey(data) + "=" + castAsString(data, "src")
                 );
               } else {
                 snippet.add("  -F" + getKey(data) + "=" + getValue(data));
@@ -196,7 +203,7 @@ public class PostmanToMarkdownTask extends Task {
           snippet.add("  --data-binary" + getKey(body) + "=" + getValue(body));
           break;
         default:
-          snippet.add(" -d '" + getAsString(body, "raw") + "'");
+          snippet.add(" -d '" + castAsString(body, "raw") + "'");
       }
     }
     lines.add(String.join("  \\\n  ", snippet));
@@ -239,6 +246,24 @@ public class PostmanToMarkdownTask extends Task {
     }
   }
 
+  private void addTableRow(JSONObject param, boolean addTick) {
+    String value = getValue(param) != null ? getValue(param) : "";
+    String tick = addTick ? "`" : "";
+    lines.add(
+      "| " +
+      tick +
+      getKey(param) +
+      tick +
+      " | " +
+      tick +
+      value +
+      tick +
+      " | " +
+      description(param) +
+      " |"
+    );
+  }
+
   /**
    *  Creates a swagger style codeblock header for the request
    */
@@ -257,87 +282,48 @@ public class PostmanToMarkdownTask extends Task {
   private void addRequest(JSONObject request) {
     String contentType = "markup";
     lines.add("");
-    JSONArray headers = getAsArray(request, "header");
+    JSONArray headers = castAsArray(request, "header");
     if (headers != null && headers.size() > 0) {
       lines.add("#### Headers {.section}\n");
       lines.add("| Key | Value | Description |");
       lines.add("| --- | ------|-------------|");
       for (Object o : headers) {
         JSONObject header = (JSONObject) o;
-        if ("content-type".equals(getKey(header).toLowerCase())){
+        if ("content-type".equalsIgnoreCase(getKey(header))) {
           contentType = extractType(getValue(header));
         }
-        String value = getValue(header) != null ? getValue(header) : "";
-        lines.add(
-          "| " +
-          getKey(header) +
-          " | " +
-          value +
-          " | " +
-          description(getAsString(header, "description")) +
-          " |"
-        );
+        addTableRow(header, false);
       }
       lines.add("");
     }
 
-    JSONArray query = getAsArray(getAsObject(request, "url"), "query");
+    JSONArray query = castAsArray(castAsObject(request, "url"), "query");
 
     if (query != null && query.size() > 0) {
       lines.add("#### Query Parameters {.section}\n");
       lines.add("| Key | Value | Description |");
       lines.add("| --- | ------|-------------|");
       for (Object o : (JSONArray) query) {
-        JSONObject param = (JSONObject) o;
-        String value = getValue(param) != null ? getValue(param) : "";
-        lines.add(
-          "| `" +
-          param.get("key") +
-          "` | `" +
-          value +
-          "` | " +
-          description(getAsString(param, "description")) +
-          " |"
-        );
+        addTableRow((JSONObject) o, true);
       }
       lines.add("");
     }
 
-    JSONObject body = getAsObject(request, "body");
+    JSONObject body = castAsObject(request, "body");
     if (body != null) {
       lines.add("#### Body {.section}\n");
-      String mode = getAsString(body, "mode");
+      String mode = castAsString(body, "mode");
       if ("raw".equals(mode)) {
         lines.add("```" + contentType);
-        lines.add(getAsString(body, "raw"));
+        lines.add(castAsString(body, "raw"));
         lines.add("```");
-      } else if ("formdata".equals(mode)) {
-        for (Object o : getAsArray(body, "formdata")) {
-          JSONObject param = (JSONObject) o;
-          String value = getValue(param) != null ? getValue(param) : "";
-          lines.add(
-            "| `" +
-            getKey(param) +
-            "` | `" +
-            value +
-            "` | " +
-            description(getAsString(param, "description")) +
-            " |"
-          );
+      } else if (FORM_DATA.equals(mode)) {
+        for (Object o : castAsArray(body, FORM_DATA)) {
+          addTableRow((JSONObject) o, true);
         }
-      } else if ("urlencoded".equals(mode)) {
-        for (Object o : getAsArray(body, "urlencoded")) {
-          JSONObject param = (JSONObject) o;
-          String value = getValue(param) != null ? getValue(param) : "";
-          lines.add(
-            "| `" +
-            getKey(param) +
-            "` | `" +
-            value +
-            "` | " +
-            description(getAsString(param, "description")) +
-            " |"
-          );
+      } else if (URL_ENCODED.equals(mode)) {
+        for (Object o : castAsArray(body, URL_ENCODED)) {
+          addTableRow((JSONObject) o, true);
         }
       }
     }
@@ -347,7 +333,7 @@ public class PostmanToMarkdownTask extends Task {
    * Generates the full output from the postman file
    */
   private String postmanToMarkdown(JSONObject data) {
-    JSONObject info = getAsObject(data, "info");
+    JSONObject info = castAsObject(data, "info");
     JSONObject item;
     JSONObject request;
     JSONArray response;
@@ -356,49 +342,49 @@ public class PostmanToMarkdownTask extends Task {
     JSONArray innerResponse;
 
     if (info.get("name") != null) {
-      lines.add("#  " + (getAsString(info, "name")).trim() + "\n");
+      lines.add("#  " + (castAsString(info, "name")).trim() + "\n");
     }
 
-    if (info.get("description") != null) {
-      lines.add(getAsString(info, "description") + "\n");
+    if (getDescription(info) != null) {
+      lines.add(getDescription(info) + "\n");
     }
 
-    for (Object o : getAsArray(data, "item")) {
+    for (Object o : castAsArray(data, "item")) {
       item = (JSONObject) o;
-      request = getAsObject(item, "request");
-      response = getAsArray(item, "response");
+      request = castAsObject(item, "request");
+      response = castAsArray(item, "response");
       if (request != null) {
         lines.add(
           "#  " +
-          getAsString(item, "name").trim() +
+          castAsString(item, "name").trim() +
           " { .swagger-" +
           getMethod(request) +
           "}\n\n"
         );
 
         addEndpoint(request);
-        addDescription(getAsString(request, "description"));
+        addDescription(getDescription(request));
         addRequest(request);
         addSampleCurl(request);
         addSampleResponses(response);
       } else {
-        lines.add("\n\n#  " + getAsString(item, "name").trim() + "\n\n");
-        addDescription(getAsString(item, "description"));
+        lines.add("\n\n#  " + castAsString(item, "name").trim() + "\n\n");
+        addDescription(getDescription(item));
 
-        for (Object oo : getAsArray(item, "item")) {
+        for (Object oo : castAsArray(item, "item")) {
           innerItem = (JSONObject) oo;
-          innerRequest = getAsObject(innerItem, "request");
-          innerResponse = getAsArray(innerItem, "response");
+          innerRequest = castAsObject(innerItem, "request");
+          innerResponse = castAsArray(innerItem, "response");
           if (innerRequest != null) {
             lines.add(
               "##  " +
-              getAsString(innerItem, "name").trim() +
+              castAsString(innerItem, "name").trim() +
               " { .swagger-" +
               getMethod(innerRequest) +
               "}\n\n"
             );
             addEndpoint(innerRequest);
-            addDescription((String) innerRequest.get("description"));
+            addDescription(getDescription(innerRequest));
             addRequest(innerRequest);
             addSampleCurl(innerRequest);
             addSampleResponses(innerResponse);
@@ -442,9 +428,6 @@ public class PostmanToMarkdownTask extends Task {
       throw new BuildException("Unable to read file", e);
     } catch (ParseException e) {
       throw new BuildException("Unable to translate JSON", e);
-    } catch (Exception e) {
-      e.printStackTrace();
-      throw new BuildException(e);
     }
   }
 }
