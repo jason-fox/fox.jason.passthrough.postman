@@ -176,7 +176,7 @@ public class PostmanToMarkdownTask extends Task {
           List<String> text = new ArrayList<>();
           for (Object o : castAsArray(body, URL_ENCODED)) {
             JSONObject data = (JSONObject) o;
-            if (!(Boolean) data.get("disabled")) {
+            if (!Boolean.TRUE.equals((Boolean) data.get("disabled"))) {
               text.add(getKey(data) + "=" + getValue(data));
             }
           }
@@ -188,7 +188,7 @@ public class PostmanToMarkdownTask extends Task {
         case FORM_DATA:
           for (Object o : castAsArray(body, FORM_DATA)) {
             JSONObject data = (JSONObject) o;
-            if (!(Boolean) data.get("disabled")) {
+            if (!Boolean.TRUE.equals((Boolean) data.get("disabled"))){
               if ("file".equals(castAsString(data, "type"))) {
                 snippet.add(
                   " -F" + getKey(data) + "=" + castAsString(data, "src")
