@@ -15,7 +15,7 @@ addons:
       secure: "LfEGKeKFSCDJ9TFeHI3aX1iJWK1CPUx6P3dkE8MwjKO9BbVJQ3bQINrI9jOfiCOrXXGWg01irYOCGFZgy6itNhRjvprXs24RTZ3f/ieQM806lyT8cGyT6REQSKdNB0Pv156uqug58gsfL6GVxyM92sGGgS7v+pMxw+Dj9whxz1PwnFMZEb8Jvo/d2cKpQLK7reYOy4hjD/Qk2o5piopYscQVo0DAWVzsPY/QGN9OOvmIoMfvSD+X2m9E//y6g8Bqc8OknJXKRrpI726CtAusar51kUBgVAJkKHGbw0B8XXttXZMPhLd6BuGTGGmdkLkBQhNVfJ9/zGWeP4Bd/VNmI7C810w1j+ARNV7aEAKZ+lw3C+4+C5ba+B+79iUrUfQ/Nkkk4wWMcMd7rvT3i+4rpA4Z1v9BmxHn1RER/GFV7gZ4NW2MbUc2ubXKSsspmGAQXFNoxDXStgUKQHbOlrJfXH9zwwbg8ZEj51+4ePioK5DiayUvGBAhPdVbddKBKgfpohY6iK0vNZGzkCX0Kn7InTEpOSACO2Z3SZOmsPUczTI3Ax+LOSSlg36k7V2Pz3MIrWyICLaKDJp4ma1Ut84U10rcpwej1i3mCFVZgCCYRlrmOe05n6g8rfaS6V0+vmszvU70TZHfZRWwxN7jO1DVvyWrBxK4N/CQCTMc+glDD8M="
 
 env:
-  - DITA_OT=3.4.1
+  - DITA_OT=3.5
 
 before_install:
   - sudo wget https://github.com/jgm/pandoc/releases/download/2.7.3/pandoc-2.7.3-1-amd64.deb
@@ -27,14 +27,14 @@ before_install:
   - chmod +x dita-ot-$DITA_OT/bin/dita
 
 install:
-  - dita-ot-$DITA_OT/bin/dita --install https://github.com/jason-fox/fox.jason.unit-test/archive/master.zip
-  - dita-ot-$DITA_OT/bin/dita --install https://github.com/doctales/org.doctales.xmltask/archive/master.zip
-  - dita-ot-$DITA_OT/bin/dita --install https://github.com/jason-fox/fox.jason.extend.css/archive/master.zip
-  - dita-ot-$DITA_OT/bin/dita --install https://github.com/jason-fox/fox.jason.prismjs/archive/master.zip
-  - dita-ot-$DITA_OT/bin/dita --install https://github.com/jason-fox/fox.jason.passthrough/archive/master.zip
-  - dita-ot-$DITA_OT/bin/dita --install https://github.com/jason-fox/fox.jason.passthrough.pandoc/archive/master.zip
-  - dita-ot-$DITA_OT/bin/dita --install https://github.com/jason-fox/fox.jason.passthrough.swagger/archive/master.zip
-  - dita-ot-$DITA_OT/bin/dita --install fox.jason.passthrough.postman.zip
+  - dita-ot-$DITA_OT/bin/dita install https://github.com/jason-fox/fox.jason.unit-test/archive/master.zip
+  - dita-ot-$DITA_OT/bin/dita install https://github.com/doctales/org.doctales.xmltask/archive/master.zip
+  - dita-ot-$DITA_OT/bin/dita install https://github.com/jason-fox/fox.jason.extend.css/archive/master.zip
+  - dita-ot-$DITA_OT/bin/dita install https://github.com/jason-fox/fox.jason.prismjs/archive/master.zip
+  - dita-ot-$DITA_OT/bin/dita install https://github.com/jason-fox/fox.jason.passthrough/archive/master.zip
+  - dita-ot-$DITA_OT/bin/dita install https://github.com/jason-fox/fox.jason.passthrough.pandoc/archive/master.zip
+  - dita-ot-$DITA_OT/bin/dita install https://github.com/jason-fox/fox.jason.passthrough.swagger/archive/master.zip
+  - dita-ot-$DITA_OT/bin/dita install fox.jason.passthrough.postman.zip
 
 # before_script:
 #  - dita-ot-$DITA_OT/bin/dita --input dita-ot-$DITA_OT/plugins/fox.jason.passthrough.postman -f xsl-instrument
