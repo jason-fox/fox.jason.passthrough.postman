@@ -6,10 +6,10 @@
 <h2 class="title topictitle2" id="ariaid-title2">Architecture</h2>
 <div class="body">
 <p class="p">
-	Our demo application will only make use of one FIWARE component - the <a class="xref" href="https://catalogue.fiware.org/enablers/publishsubscribe-context-broker-orion-context-broker" target="_blank">Orion Context Broker</a> . Usage of the Orion Context Broker is sufficient for an application to qualify as <em class="i">"Powered by FIWARE"</em>.
+	Our demo application will only make use of one FIWARE component - the <a class="xref" href="https://catalogue.fiware.org/enablers/publishsubscribe-context-broker-orion-context-broker" target="_blank" rel="external noopener">Orion Context Broker</a> . Usage of the Orion Context Broker is sufficient for an application to qualify as <em class="i">"Powered by FIWARE"</em>.
 </p>
 <p class="p">
-	Currently, the Orion Context Broker relies on open source <a class="xref" href="https://www.mongodb.com/" target="_blank">MongoDB</a> technology to keep persistence of the context data it holds. Therefore, the architecture will consist of two elements:
+	Currently, the Orion Context Broker relies on open source <a class="xref" href="https://www.mongodb.com/" target="_blank" rel="external noopener">MongoDB</a> technology to keep persistence of the context data it holds. Therefore, the architecture will consist of two elements:
 </p>
 <ul class="ul">
 	<li class="li">The Orion Context Broker server which will receive requests using NGSI</li>
@@ -33,12 +33,12 @@
 <h3 class="title topictitle3" id="ariaid-title4">Docker</h3>
 <div class="body">
 <p class="p">
-	To keep things simple both components will be run using <a class="xref" href="https://www.docker.com" target="_blank">Docker</a>. <strong class="b">Docker</strong> is a container technology which allows to different components isolated into their respective environments.
+	To keep things simple both components will be run using <a class="xref" href="https://www.docker.com" target="_blank" rel="external noopener">Docker</a>. <strong class="b">Docker</strong> is a container technology which allows to different components isolated into their respective environments.
 </p>
 <ul class="ul">
-	<li class="li">To install Docker on Windows follow the instructions <a class="xref" href="https://docs.docker.com/docker-for-windows/" target="_blank">here</a></li>
-	<li class="li">To install Docker on Mac follow the instructions <a class="xref" href="https://docs.docker.com/docker-for-mac/" target="_blank">here</a></li>
-	<li class="li">To install Docker on Linux follow the instructions <a class="xref" href="https://docs.docker.com/install/" target="_blank">here</a></li>
+	<li class="li">To install Docker on Windows follow the instructions <a class="xref" href="https://docs.docker.com/docker-for-windows/" target="_blank" rel="external noopener">here</a></li>
+	<li class="li">To install Docker on Mac follow the instructions <a class="xref" href="https://docs.docker.com/docker-for-mac/" target="_blank" rel="external noopener">here</a></li>
+	<li class="li">To install Docker on Linux follow the instructions <a class="xref" href="https://docs.docker.com/install/" target="_blank" rel="external noopener">here</a></li>
 </ul>
 </div>
 </article>
@@ -104,7 +104,7 @@ that orion is available on <code class="codeph">localhost:1026</code>.
 containers as necessary. This command will also display open port information.
 </p>
 <ul class="ul">
-	<li class="li">If you have installed <a class="xref" href="https://docs.docker.com/machine/" target="_blank"><code class="codeph">docker-machine</code></a> and <a class="xref" href="https://www.virtualbox.org/" target="_blank">Virtual Box</a>, you will need to retrieve the virtual host ip as shown:</li>
+	<li class="li">If you have installed <a class="xref" href="https://docs.docker.com/machine/" target="_blank" rel="external noopener"><code class="codeph">docker-machine</code></a> and <a class="xref" href="https://www.virtualbox.org/" target="_blank" rel="external noopener">Virtual Box</a>, you will need to retrieve the virtual host ip as shown:</li>
 </ul>
 <pre class="codeblock language-console"><code><span class="ph token function">curl</span> -X GET http://<span class="ph token variable"><span class="ph token variable">$(</span>docker-machine <span class="ph token function">ip</span> default<span class="ph token variable">)</span></span>:1026/version</code></pre>
 <p class="p">
