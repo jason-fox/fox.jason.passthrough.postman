@@ -6,9 +6,9 @@
 [![Documentation Status](https://readthedocs.org/projects/postmandita-ot/badge/?version=latest)](https://postmandita-ot.readthedocs.io/en/latest/?badge=latest)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=fox.jason.passthrough.postman&metric=alert_status)](https://sonarcloud.io/dashboard?id=fox.jason.passthrough.postman)
 
-This is a [DITA-OT Plug-in](https://www.dita-ot.org/plugins) used to auto-create valid DITA-based REST API documentation. The documentation can be
-generated directly from a [Postman Collection](https://www.getpostman.com/) file and processed as if it had been written
-in DITA.
+This is a [DITA-OT Plug-in](https://www.dita-ot.org/plugins) used to auto-create valid DITA-based REST API
+documentation. The documentation can be generated directly from a [Postman Collection](https://www.getpostman.com/) file
+and processed as if it had been written in DITA.
 
 :arrow_forward: [Video from DITA-OT Day 2019](https://youtu.be/cd7XThpkivw)
 
