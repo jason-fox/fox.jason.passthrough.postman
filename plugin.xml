@@ -4,22 +4,19 @@
 	This file is part of the DITA-OT postman Plug-in project.
 	See the accompanying LICENSE file for applicable licenses.
 -->
-<plugin id="fox.jason.passthrough.postman" version="1.2.0">
+<plugin id="fox.jason.passthrough.postman" version="2.0.0">
 	<feature extension="dita.conductor.lib.import" file="lib/json-simple-1.1.1.jar"/>
-	<feature extension="dita.conductor.lib.import" file="lib/passthrough.postman-1.0.jar"/>
+	<feature extension="dita.conductor.lib.import" file="lib/passthrough.postman-2.0.jar"/>
 	<feature extension="ant.import" file="process_postman.xml"/>
 	<!--
-		This plugin requires Pandoc and the passthrough reader
+		This plugin requires the Pandoc passthrough reader
 		The swagger CSS/FOP processing is used to display the colored bars
 	-->
-	<require plugin="fox.jason.passthrough"/>
 	<require plugin="fox.jason.passthrough.pandoc"/>
 	<require plugin="fox.jason.passthrough.swagger"/>
 	
 	<!-- Uses the passthrough extension point and file reader -->
 	<feature extension="dita.parser">
-		<parser format="postman" class="fox.jason.passthrough.parser.FileReader"/>
+		<parser format="postman" class="fox.jason.passthrough.PostmanFileReader"/>
 	</feature>
-	<feature extension="passthrough.pre" value="postman.process.pre"/>
-	<feature extension="passthrough.process" value="postman.process"/>
 </plugin>

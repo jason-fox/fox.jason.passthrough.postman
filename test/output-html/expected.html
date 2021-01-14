@@ -6,7 +6,7 @@
 <h2 class="title topictitle2" id="ariaid-title2">Architecture</h2>
 <div class="body">
 <p class="p">
-	Our demo application will only make use of one FIWARE component - the <a class="xref" href="https://catalogue.fiware.org/enablers/publishsubscribe-context-broker-orion-context-broker" target="_blank" rel="external noopener">Orion Context Broker</a> . Usage of the Orion Context Broker is sufficient for an application to qualify as <em class="i">"Powered by FIWARE"</em>.
+	Our demo application will only make use of one FIWARE component - the <a class="xref" href="https://catalogue.fiware.org/enablers/publishsubscribe-context-broker-orion-context-broker" target="_blank" rel="external noopener">Orion Context Broker</a> . Usage of the Orion Context Broker is sufficient for an application to qualify as <em class="ph i">"Powered by FIWARE"</em>.
 </p>
 <p class="p">
 	Currently, the Orion Context Broker relies on open source <a class="xref" href="https://www.mongodb.com/" target="_blank" rel="external noopener">MongoDB</a> technology to keep persistence of the context data it holds. Therefore, the architecture will consist of two elements:
@@ -33,7 +33,7 @@
 <h3 class="title topictitle3" id="ariaid-title4">Docker</h3>
 <div class="body">
 <p class="p">
-	To keep things simple both components will be run using <a class="xref" href="https://www.docker.com" target="_blank" rel="external noopener">Docker</a>. <strong class="b">Docker</strong> is a container technology which allows to different components isolated into their respective environments.
+	To keep things simple both components will be run using <a class="xref" href="https://www.docker.com" target="_blank" rel="external noopener">Docker</a>. <strong class="ph b">Docker</strong> is a container technology which allows to different components isolated into their respective environments.
 </p>
 <ul class="ul">
 	<li class="li">To install Docker on Windows follow the instructions <a class="xref" href="https://docs.docker.com/docker-for-windows/" target="_blank" rel="external noopener">here</a></li>
@@ -55,7 +55,7 @@
 <p class="p">
 	First pull the necessary Docker images from Docker Hub and create a network for our containers to connect to:
 </p>
-<pre class="codeblock language-console"><code>docker pull mongo:3.6
+<pre class="pre codeblock language-console"><code>docker pull mongo:3.6
 docker pull fiware/orion
 docker network create fiware_default</code></pre>
 </div>
@@ -67,30 +67,30 @@ docker network create fiware_default</code></pre>
 <p class="p">
 	A Docker container running a MongoDB database can be started and connected to the network with the following command:
 </p>
-<pre class="codeblock language-console"><code>docker run -d --name<span class="ph token operator">=</span>context-db --network<span class="ph token operator">=</span>fiware_default <span class="ph token punctuation">\</span>
+<pre class="pre codeblock language-console"><code>docker run -d --name<span class="ph token operator">=</span>context-db --network<span class="ph token operator">=</span>fiware_default <span class="ph token punctuation">\</span>
   --expose<span class="ph token operator">=</span><span class="ph token number">27017</span> mongo:3.6 --bind_ip_all --smallfiles</code></pre>
 <p class="p">
 	The Orion Context Broker can be started and connected to the network with the following command:
 </p>
-<pre class="codeblock language-console"><code>docker run -d --name orion  --network<span class="ph token operator">=</span>fiware_default <span class="ph token punctuation">\</span>
+<pre class="pre codeblock language-console"><code>docker run -d --name orion  --network<span class="ph token operator">=</span>fiware_default <span class="ph token punctuation">\</span>
   -p <span class="ph token number">1026</span>:1026  fiware/orion -dbhost context-db</code></pre>
 <p class="p">
 	You can check if the Orion Context Broker is running by making an HTTP request to the exposed port:
 </p>
-<pre class="codeblock language-console"><code><span class="ph token function">curl</span> -X GET http://localhost:1026/version</code></pre>
+<pre class="pre codeblock language-console"><code><span class="ph token function">curl</span> -X GET http://localhost:1026/version</code></pre>
 <p class="p">
 	Alternatively run all your curl commands from within the container network:
 </p>
-<pre class="codeblock language-console"><code>docker run --network fiware_default --rm appropriate/curl -s <span class="ph token punctuation">\</span>
+<pre class="pre codeblock language-console"><code>docker run --network fiware_default --rm appropriate/curl -s <span class="ph token punctuation">\</span>
   -X GET http://orion:1026/version</code></pre>
 <p class="p">
-	<strong class="b">What if I get an error response?</strong>
+	<strong class="ph b">What if I get an error response?</strong>
 </p>
 <p class="p">
 	If you get an error response, the Orion Content Broker cannot be found where expected
 for this tutorial - you will need to substitute the URL and port in each Postman request
 with the corrected ip address. All the Postman requests in this tutorial assume
-that orion is available on <code class="codeph">localhost:1026</code>.
+that orion is available on <code class="ph codeph">localhost:1026</code>.
 </p>
 <p class="p">
 	Try the following remedies:
@@ -98,22 +98,22 @@ that orion is available on <code class="codeph">localhost:1026</code>.
 <ul class="ul">
 	<li class="li">To check that the dockers container are running try the following:</li>
 </ul>
-<pre class="codeblock language-console"><code>docker <span class="ph token function">ps</span></code></pre>
+<pre class="pre codeblock language-console"><code>docker <span class="ph token function">ps</span></code></pre>
 <p class="p">
 	You should see two containers running. If orion is not running, you can restart the
 containers as necessary. This command will also display open port information.
 </p>
 <ul class="ul">
-	<li class="li">If you have installed <a class="xref" href="https://docs.docker.com/machine/" target="_blank" rel="external noopener"><code class="codeph">docker-machine</code></a> and <a class="xref" href="https://www.virtualbox.org/" target="_blank" rel="external noopener">Virtual Box</a>, you will need to retrieve the virtual host ip as shown:</li>
+	<li class="li">If you have installed <a class="xref" href="https://docs.docker.com/machine/" target="_blank" rel="external noopener"><code class="ph codeph">docker-machine</code></a> and <a class="xref" href="https://www.virtualbox.org/" target="_blank" rel="external noopener">Virtual Box</a>, you will need to retrieve the virtual host ip as shown:</li>
 </ul>
-<pre class="codeblock language-console"><code><span class="ph token function">curl</span> -X GET http://<span class="ph token variable"><span class="ph token variable">$(</span>docker-machine <span class="ph token function">ip</span> default<span class="ph token variable">)</span></span>:1026/version</code></pre>
+<pre class="pre codeblock language-console"><code><span class="ph token function">curl</span> -X GET http://<span class="ph token variable"><span class="ph token variable">$(</span>docker-machine <span class="ph token function">ip</span> default<span class="ph token variable">)</span></span>:1026/version</code></pre>
 <p class="p">
 	If you need to update the location of orion:
 </p>
 <ol class="ol">
-	<li class="li">Click on the elipsis <code class="codeph">...</code> at the head of the imported postman collection</li>
-	<li class="li">Select <code class="codeph">edit</code> from the dropdown</li>
-	<li class="li">Click on the <code class="codeph">variables</code> tab and alter the value from <code class="codeph">localhost:1026</code> as necessary.</li>
+	<li class="li">Click on the elipsis <code class="ph codeph">...</code> at the head of the imported postman collection</li>
+	<li class="li">Select <code class="ph codeph">edit</code> from the dropdown</li>
+	<li class="li">Click on the <code class="ph codeph">variables</code> tab and alter the value from <code class="ph codeph">localhost:1026</code> as necessary.</li>
 </ol>
 </div>
 </article>
@@ -123,25 +123,25 @@ containers as necessary. This command will also display open port information.
 <article class="topic nested1 swagger-get" aria-labelledby="ariaid-title8" id="obtaining-version-information">
 <h2 class="title topictitle2" id="ariaid-title8">Obtaining Version Information</h2>
 <div class="body">
-<pre xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" class="codeblock swagger-get"><code><span class="swagger-verb">GET</span>http://{{orion}}/version/</code></pre>
+<pre xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" class="pre codeblock swagger-get"><code><span class="swagger-verb">GET</span>http://{{orion}}/version/</code></pre>
 <p class="p">
 	Once the Orion Context Broker is running, You can check the status by making an HTTP request to the exposed port.
 If the response is blank, this is usually because the MongoDB database holding the context information is not running or not connected.
 </p>
 <p class="p">
-	<strong class="b">Troubleshooting:</strong> What if the response is blank ?
+	<strong class="ph b">Troubleshooting:</strong> What if the response is blank ?
 </p>
 <ul class="ul">
 	<li class="li">To check that a docker container is running try</li>
 </ul>
-<pre class="codeblock language-bash"><code>docker <span class="ph token function">ps</span></code></pre>
+<pre class="pre codeblock language-bash"><code>docker <span class="ph token function">ps</span></code></pre>
 <p class="p">
 	You should see two containers running. If orion is not running, you can restart the containers as necessary.
 </p>
 <div class="example" id="obtaining-version-information__example-request"><h3 class="title sectiontitle">Example Request</h3>
 
 
-<pre class="codeblock language-bash"><code><span class="ph token function">curl</span> -X GET  <span class="ph token punctuation">\</span>
+<pre class="pre codeblock language-bash"><code><span class="ph token function">curl</span> -X GET  <span class="ph token punctuation">\</span>
   <span class="ph token string">'http://{{orion}}/version/'</span></code></pre>
 </div>
 
@@ -153,7 +153,7 @@ If the response is blank, this is usually because the MongoDB database holding t
 <div class="example" id="obtaining-version-information__response-200---ok"><h3 class="title sectiontitle">Response 200 - OK</h3>
 
 
-<pre class="codeblock language-json"><code><span class="ph token punctuation">{</span>
+<pre class="pre codeblock language-json"><code><span class="ph token punctuation">{</span>
     <span class="ph token property">"orion"</span><span class="ph token operator">:</span> <span class="ph token punctuation">{</span>
         <span class="ph token property">"version"</span><span class="ph token operator">:</span> <span class="ph token string">"1.15.0-next"</span><span class="ph token punctuation">,</span>
         <span class="ph token property">"uptime"</span><span class="ph token operator">:</span> <span class="ph token string">"0 d, 19 h, 49 m, 10 s"</span><span class="ph token punctuation">,</span>
@@ -174,12 +174,12 @@ If the response is blank, this is usually because the MongoDB database holding t
 <article class="topic nested1 swagger-post" aria-labelledby="ariaid-title9" id="creating-your-first-data-entity">
 <h2 class="title topictitle2" id="ariaid-title9">Creating your first Data Entity</h2>
 <div class="body">
-<pre xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" class="codeblock swagger-post"><code><span class="swagger-verb">POST</span>http://{{orion}}/v2/entities/</code></pre>
+<pre xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" class="pre codeblock swagger-post"><code><span class="swagger-verb">POST</span>http://{{orion}}/v2/entities/</code></pre>
 <section class="section" id="creating-your-first-data-entity__creating-context-data"><h3 class="title sectiontitle">Creating Context Data</h3>
 
 
 <p class="p">
-	At its heart, FIWARE is a system for managing context information, so lets add some context data into the system by creating a new entity (a store in <strong class="b">Berlin</strong>). Any entity must have a <code class="codeph">id</code> and <code class="codeph">type</code> attributes, additional attributes are optional and will depend on the system being described. Each additional attribute should also have a defined <code class="codeph">type</code> and a <code class="codeph">value</code> attribute.
+	At its heart, FIWARE is a system for managing context information, so lets add some context data into the system by creating a new entity (a store in <strong class="ph b">Berlin</strong>). Any entity must have a <code class="ph codeph">id</code> and <code class="ph codeph">type</code> attributes, additional attributes are optional and will depend on the system being described. Each additional attribute should also have a defined <code class="ph codeph">type</code> and a <code class="ph codeph">value</code> attribute.
 </p>
 </section>
 
@@ -204,7 +204,7 @@ If the response is blank, this is usually because the MongoDB database holding t
 <section class="section" id="creating-your-first-data-entity__body"><h3 class="title sectiontitle">Body</h3>
 
 
-<pre class="codeblock language-json"><code><span class="ph token punctuation">{</span>
+<pre class="pre codeblock language-json"><code><span class="ph token punctuation">{</span>
     <span class="ph token property">"id"</span><span class="ph token operator">:</span> <span class="ph token string">"urn:ngsi-ld:Store:001"</span><span class="ph token punctuation">,</span>
     <span class="ph token property">"type"</span><span class="ph token operator">:</span> <span class="ph token string">"Store"</span><span class="ph token punctuation">,</span>
     <span class="ph token property">"address"</span><span class="ph token operator">:</span> <span class="ph token punctuation">{</span>
@@ -239,7 +239,7 @@ If the response is blank, this is usually because the MongoDB database holding t
 <div class="example" id="creating-your-first-data-entity__example-request-1"><h3 class="title sectiontitle">Example Request</h3>
 
 
-<pre class="codeblock language-bash"><code><span class="ph token function">curl</span> -X POST  <span class="ph token punctuation">\</span>
+<pre class="pre codeblock language-bash"><code><span class="ph token function">curl</span> -X POST  <span class="ph token punctuation">\</span>
   <span class="ph token string">'http://{{orion}}/v2/entities/'</span>  <span class="ph token punctuation">\</span>
     -H Content-Type <span class="ph token builtin class-name">:</span>  application/json  <span class="ph token punctuation">\</span>
     -d <span class="ph token string">'{
@@ -281,7 +281,7 @@ If the response is blank, this is usually because the MongoDB database holding t
 <article class="topic nested1 swagger-post" aria-labelledby="ariaid-title10" id="creating-your-second-data-entity">
 <h2 class="title topictitle2" id="ariaid-title10">Creating your Second Data Entity</h2>
 <div class="body">
-<pre xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" class="codeblock swagger-post"><code><span class="swagger-verb">POST</span>http://{{orion}}/v2/entities/</code></pre>
+<pre xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" class="pre codeblock swagger-post"><code><span class="swagger-verb">POST</span>http://{{orion}}/v2/entities/</code></pre>
 <section class="section" id="creating-your-second-data-entity__headers-1"><h3 class="title sectiontitle">Headers</h3>
 
 
@@ -303,7 +303,7 @@ If the response is blank, this is usually because the MongoDB database holding t
 <section class="section" id="creating-your-second-data-entity__body-1"><h3 class="title sectiontitle">Body</h3>
 
 
-<pre class="codeblock language-json"><code><span class="ph token punctuation">{</span>
+<pre class="pre codeblock language-json"><code><span class="ph token punctuation">{</span>
   <span class="ph token property">"type"</span><span class="ph token operator">:</span> <span class="ph token string">"Store"</span><span class="ph token punctuation">,</span>
     <span class="ph token property">"id"</span><span class="ph token operator">:</span> <span class="ph token string">"urn:ngsi-ld:Store:002"</span><span class="ph token punctuation">,</span>
     <span class="ph token property">"address"</span><span class="ph token operator">:</span> <span class="ph token punctuation">{</span>
@@ -338,7 +338,7 @@ If the response is blank, this is usually because the MongoDB database holding t
 <div class="example" id="creating-your-second-data-entity__example-request-2"><h3 class="title sectiontitle">Example Request</h3>
 
 
-<pre class="codeblock language-bash"><code><span class="ph token function">curl</span> -X POST  <span class="ph token punctuation">\</span>
+<pre class="pre codeblock language-bash"><code><span class="ph token function">curl</span> -X POST  <span class="ph token punctuation">\</span>
   <span class="ph token string">'http://{{orion}}/v2/entities/'</span>  <span class="ph token punctuation">\</span>
     -H Content-Type <span class="ph token builtin class-name">:</span>  application/json  <span class="ph token punctuation">\</span>
     -d <span class="ph token string">'{
@@ -380,14 +380,14 @@ If the response is blank, this is usually because the MongoDB database holding t
 <article class="topic nested1 swagger-get" aria-labelledby="ariaid-title11" id="retrieving-context-information">
 <h2 class="title topictitle2" id="ariaid-title11">Retrieving Context Information</h2>
 <div class="body">
-<pre xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" class="codeblock swagger-get"><code><span class="swagger-verb">GET</span>http://{{orion}}/v2/entities</code></pre>
+<pre xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" class="pre codeblock swagger-get"><code><span class="swagger-verb">GET</span>http://{{orion}}/v2/entities</code></pre>
 <p class="p">
 	This example returns the full data context
 </p>
 <div class="example" id="retrieving-context-information__example-request-3"><h3 class="title sectiontitle">Example Request</h3>
 
 
-<pre class="codeblock language-bash"><code><span class="ph token function">curl</span> -X GET  <span class="ph token punctuation">\</span>
+<pre class="pre codeblock language-bash"><code><span class="ph token function">curl</span> -X GET  <span class="ph token punctuation">\</span>
   <span class="ph token string">'http://{{orion}}/v2/entities'</span></code></pre>
 </div>
 
@@ -398,12 +398,12 @@ If the response is blank, this is usually because the MongoDB database holding t
 <article class="topic nested1 swagger-get" aria-labelledby="ariaid-title12" id="obtain-entity-data-by-id">
 <h2 class="title topictitle2" id="ariaid-title12">Obtain Entity Data by id</h2>
 <div class="body">
-<pre xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" class="codeblock swagger-get"><code><span class="swagger-verb">GET</span>http://{{orion}}/v2/entities/urn:ngsi-ld:Store:001</code></pre>
+<pre xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" class="pre codeblock swagger-get"><code><span class="swagger-verb">GET</span>http://{{orion}}/v2/entities/urn:ngsi-ld:Store:001</code></pre>
 <p class="p">
-	This example returns the context data of <code class="codeph">store1</code>. The <code class="codeph">id</code> of the entity should be unique or the <code class="codeph">type</code> parameter should also be used.
+	This example returns the context data of <code class="ph codeph">store1</code>. The <code class="ph codeph">id</code> of the entity should be unique or the <code class="ph codeph">type</code> parameter should also be used.
 </p>
 <p class="p">
-	Because of the use of the <code class="codeph">options=keyValues</code>, the response consists of JSON only without the attribute <code class="codeph">type</code> elements.
+	Because of the use of the <code class="ph codeph">options=keyValues</code>, the response consists of JSON only without the attribute <code class="ph codeph">type</code> elements.
 </p>
 <section class="section" id="obtain-entity-data-by-id__query-parameters"><h3 class="title sectiontitle">Query Parameters</h3>
 
@@ -416,18 +416,18 @@ If the response is blank, this is usually because the MongoDB database holding t
 			</tr>
 		</thead><tbody class="tbody">
 			<tr class="row">
-				<td class="entry align-left" headers="obtain-entity-data-by-id__query-parameters__entry__1"><p class="lines"><code class="codeph">options</code></p></td>
-				<td class="entry align-left" headers="obtain-entity-data-by-id__query-parameters__entry__2"><p class="lines"><code class="codeph">keyValues</code></p></td>
-				<td class="entry align-left" headers="obtain-entity-data-by-id__query-parameters__entry__3"><p class="lines">* <code class="codeph">keyValues</code> option in order to get a more compact and brief representation, including just attribute values<br><br>* <code class="codeph">values</code> option combined with a list of attribute values <code class="codeph">attrs</code> for an ordered list of attributes only</p></td>
+				<td class="entry align-left" headers="obtain-entity-data-by-id__query-parameters__entry__1"><p class="lines"><code class="ph codeph">options</code></p></td>
+				<td class="entry align-left" headers="obtain-entity-data-by-id__query-parameters__entry__2"><p class="lines"><code class="ph codeph">keyValues</code></p></td>
+				<td class="entry align-left" headers="obtain-entity-data-by-id__query-parameters__entry__3"><p class="lines">* <code class="ph codeph">keyValues</code> option in order to get a more compact and brief representation, including just attribute values<br><br>* <code class="ph codeph">values</code> option combined with a list of attribute values <code class="ph codeph">attrs</code> for an ordered list of attributes only</p></td>
 			</tr>
 			<tr class="row">
-				<td class="entry align-left" headers="obtain-entity-data-by-id__query-parameters__entry__1"><code class="codeph">type</code></td>
-				<td class="entry align-left" headers="obtain-entity-data-by-id__query-parameters__entry__2"><code class="codeph">Store</code></td>
+				<td class="entry align-left" headers="obtain-entity-data-by-id__query-parameters__entry__1"><code class="ph codeph">type</code></td>
+				<td class="entry align-left" headers="obtain-entity-data-by-id__query-parameters__entry__2"><code class="ph codeph">Store</code></td>
 				<td class="entry align-left" headers="obtain-entity-data-by-id__query-parameters__entry__3">Entity type, to avoid ambiguity in case there are several entities with the same entity id</td>
 			</tr>
 			<tr class="row">
-				<td class="entry align-left" headers="obtain-entity-data-by-id__query-parameters__entry__1"><code class="codeph">attrs</code></td>
-				<td class="entry align-left" headers="obtain-entity-data-by-id__query-parameters__entry__2"><code class="codeph">name</code></td>
+				<td class="entry align-left" headers="obtain-entity-data-by-id__query-parameters__entry__1"><code class="ph codeph">attrs</code></td>
+				<td class="entry align-left" headers="obtain-entity-data-by-id__query-parameters__entry__2"><code class="ph codeph">name</code></td>
 				<td class="entry align-left" headers="obtain-entity-data-by-id__query-parameters__entry__3">Ordered list of attribute names to display</td>
 			</tr>
 		</tbody></table>
@@ -436,7 +436,7 @@ If the response is blank, this is usually because the MongoDB database holding t
 <div class="example" id="obtain-entity-data-by-id__example-request-4"><h3 class="title sectiontitle">Example Request</h3>
 
 
-<pre class="codeblock language-bash"><code><span class="ph token function">curl</span> -X  -G GET  <span class="ph token punctuation">\</span>
+<pre class="pre codeblock language-bash"><code><span class="ph token function">curl</span> -X  -G GET  <span class="ph token punctuation">\</span>
   <span class="ph token string">'http://{{orion}}/v2/entities/urn:ngsi-ld:Store:001'</span>  <span class="ph token punctuation">\</span>
     -d <span class="ph token string">'options=keyValues'</span></code></pre>
 </div>
@@ -448,13 +448,13 @@ If the response is blank, this is usually because the MongoDB database holding t
 <article class="topic nested1 swagger-get" aria-labelledby="ariaid-title13" id="obtain-entity-data-by-type">
 <h2 class="title topictitle2" id="ariaid-title13">Obtain Entity Data by type</h2>
 <div class="body">
-<pre xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" class="codeblock swagger-get"><code><span class="swagger-verb">GET</span>http://{{orion}}/v2/entities/</code></pre>
+<pre xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" class="pre codeblock swagger-get"><code><span class="swagger-verb">GET</span>http://{{orion}}/v2/entities/</code></pre>
 <p class="p">
-	This example returns the data of all <code class="codeph">Store</code> entities within the context data.
+	This example returns the data of all <code class="ph codeph">Store</code> entities within the context data.
 </p>
 <p class="p">
-	The <code class="codeph">type</code> parameter limits the response to store entities only.
-Because of the use of the <code class="codeph">options=keyValues</code>, the response consists of JSON only without the attribute <code class="codeph">type</code> elements.
+	The <code class="ph codeph">type</code> parameter limits the response to store entities only.
+Because of the use of the <code class="ph codeph">options=keyValues</code>, the response consists of JSON only without the attribute <code class="ph codeph">type</code> elements.
 </p>
 <section class="section" id="obtain-entity-data-by-type__query-parameters-1"><h3 class="title sectiontitle">Query Parameters</h3>
 
@@ -467,18 +467,18 @@ Because of the use of the <code class="codeph">options=keyValues</code>, the res
 			</tr>
 		</thead><tbody class="tbody">
 			<tr class="row">
-				<td class="entry align-left" headers="obtain-entity-data-by-type__query-parameters-1__entry__1"><code class="codeph">type</code></td>
-				<td class="entry align-left" headers="obtain-entity-data-by-type__query-parameters-1__entry__2"><code class="codeph">Store</code></td>
+				<td class="entry align-left" headers="obtain-entity-data-by-type__query-parameters-1__entry__1"><code class="ph codeph">type</code></td>
+				<td class="entry align-left" headers="obtain-entity-data-by-type__query-parameters-1__entry__2"><code class="ph codeph">Store</code></td>
 				<td class="entry align-left" headers="obtain-entity-data-by-type__query-parameters-1__entry__3">Entity type, to avoid ambiguity in case there are several entities with the same entity id</td>
 			</tr>
 			<tr class="row">
-				<td class="entry align-left" headers="obtain-entity-data-by-type__query-parameters-1__entry__1"><p class="lines"><code class="codeph">options</code></p></td>
-				<td class="entry align-left" headers="obtain-entity-data-by-type__query-parameters-1__entry__2"><p class="lines"><code class="codeph">keyValues</code></p></td>
-				<td class="entry align-left" headers="obtain-entity-data-by-type__query-parameters-1__entry__3"><p class="lines">* <code class="codeph">keyValues</code> option in order to get a more compact and brief representation, including just attribute values<br><br>* <code class="codeph">values</code> option combined with a list of attribute values <code class="codeph">attrs</code> for an ordered list of attributes only</p></td>
+				<td class="entry align-left" headers="obtain-entity-data-by-type__query-parameters-1__entry__1"><p class="lines"><code class="ph codeph">options</code></p></td>
+				<td class="entry align-left" headers="obtain-entity-data-by-type__query-parameters-1__entry__2"><p class="lines"><code class="ph codeph">keyValues</code></p></td>
+				<td class="entry align-left" headers="obtain-entity-data-by-type__query-parameters-1__entry__3"><p class="lines">* <code class="ph codeph">keyValues</code> option in order to get a more compact and brief representation, including just attribute values<br><br>* <code class="ph codeph">values</code> option combined with a list of attribute values <code class="ph codeph">attrs</code> for an ordered list of attributes only</p></td>
 			</tr>
 			<tr class="row">
-				<td class="entry align-left" headers="obtain-entity-data-by-type__query-parameters-1__entry__1"><code class="codeph">attrs</code></td>
-				<td class="entry align-left" headers="obtain-entity-data-by-type__query-parameters-1__entry__2"><code class="codeph">name</code></td>
+				<td class="entry align-left" headers="obtain-entity-data-by-type__query-parameters-1__entry__1"><code class="ph codeph">attrs</code></td>
+				<td class="entry align-left" headers="obtain-entity-data-by-type__query-parameters-1__entry__2"><code class="ph codeph">name</code></td>
 				<td class="entry align-left" headers="obtain-entity-data-by-type__query-parameters-1__entry__3">Ordered list of attribute names to display</td>
 			</tr>
 		</tbody></table>
@@ -487,7 +487,7 @@ Because of the use of the <code class="codeph">options=keyValues</code>, the res
 <div class="example" id="obtain-entity-data-by-type__example-request-5"><h3 class="title sectiontitle">Example Request</h3>
 
 
-<pre class="codeblock language-bash"><code><span class="ph token function">curl</span> -X  -G GET  <span class="ph token punctuation">\</span>
+<pre class="pre codeblock language-bash"><code><span class="ph token function">curl</span> -X  -G GET  <span class="ph token punctuation">\</span>
   <span class="ph token string">'http://{{orion}}/v2/entities/'</span>  <span class="ph token punctuation">\</span>
     -d <span class="ph token string">'type=Store'</span>  <span class="ph token punctuation">\</span>
     -d <span class="ph token string">'options=keyValues'</span></code></pre>
@@ -500,18 +500,18 @@ Because of the use of the <code class="codeph">options=keyValues</code>, the res
 <article class="topic nested1 swagger-get" aria-labelledby="ariaid-title14" id="filter-context-data-by-attribute-value">
 <h2 class="title topictitle2" id="ariaid-title14">Filter context data by attribute value</h2>
 <div class="body">
-<pre xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" class="codeblock swagger-get"><code><span class="swagger-verb">GET</span>http://{{orion}}/v2/entities/</code></pre>
+<pre xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" class="pre codeblock swagger-get"><code><span class="swagger-verb">GET</span>http://{{orion}}/v2/entities/</code></pre>
 <section class="section" id="filter-context-data-by-attribute-value__filter-context-data-by-comparing-the-values-of-an-attribute"><h3 class="title sectiontitle">Filter context data by comparing the values of an attribute</h3>
 
 
 <p class="p">
-	This example returns the data of all <code class="codeph">Store</code> entities found with the name <em class="i">Checkpoint Markt</em>.
+	This example returns the data of all <code class="ph codeph">Store</code> entities found with the name <em class="ph i">Checkpoint Markt</em>.
 </p>
 <p class="p">
-	Filtering can be done using the <code class="codeph">q</code> parameter - if a string has spaces in it, it can be URL encoded and held within single quote characters <code class="codeph">'</code> = <code class="codeph">%27</code>
+	Filtering can be done using the <code class="ph codeph">q</code> parameter - if a string has spaces in it, it can be URL encoded and held within single quote characters <code class="ph codeph">'</code> = <code class="ph codeph">%27</code>
 </p>
 <p class="p">
-	Because of the use of the <code class="codeph">options=keyValues</code>, the response consists of JSON only without the attribute <code class="codeph">type</code> and <code class="codeph">metadata</code> elements.
+	Because of the use of the <code class="ph codeph">options=keyValues</code>, the response consists of JSON only without the attribute <code class="ph codeph">type</code> and <code class="ph codeph">metadata</code> elements.
 </p>
 </section>
 
@@ -526,23 +526,23 @@ Because of the use of the <code class="codeph">options=keyValues</code>, the res
 			</tr>
 		</thead><tbody class="tbody">
 			<tr class="row">
-				<td class="entry align-left" headers="filter-context-data-by-attribute-value__query-parameters-2__entry__1"><code class="codeph">q</code></td>
-				<td class="entry align-left" headers="filter-context-data-by-attribute-value__query-parameters-2__entry__2"><code class="codeph">name=='Checkpoint Markt'</code></td>
+				<td class="entry align-left" headers="filter-context-data-by-attribute-value__query-parameters-2__entry__1"><code class="ph codeph">q</code></td>
+				<td class="entry align-left" headers="filter-context-data-by-attribute-value__query-parameters-2__entry__2"><code class="ph codeph">name=='Checkpoint Markt'</code></td>
 				<td class="entry align-left" headers="filter-context-data-by-attribute-value__query-parameters-2__entry__3"></td>
 			</tr>
 			<tr class="row">
-				<td class="entry align-left" headers="filter-context-data-by-attribute-value__query-parameters-2__entry__1"><code class="codeph">type</code></td>
-				<td class="entry align-left" headers="filter-context-data-by-attribute-value__query-parameters-2__entry__2"><code class="codeph">Store</code></td>
+				<td class="entry align-left" headers="filter-context-data-by-attribute-value__query-parameters-2__entry__1"><code class="ph codeph">type</code></td>
+				<td class="entry align-left" headers="filter-context-data-by-attribute-value__query-parameters-2__entry__2"><code class="ph codeph">Store</code></td>
 				<td class="entry align-left" headers="filter-context-data-by-attribute-value__query-parameters-2__entry__3">Entity type, to avoid ambiguity in case there are several entities with the same entity id</td>
 			</tr>
 			<tr class="row">
-				<td class="entry align-left" headers="filter-context-data-by-attribute-value__query-parameters-2__entry__1"><p class="lines"><code class="codeph">options</code></p></td>
-				<td class="entry align-left" headers="filter-context-data-by-attribute-value__query-parameters-2__entry__2"><p class="lines"><code class="codeph">keyValues</code></p></td>
-				<td class="entry align-left" headers="filter-context-data-by-attribute-value__query-parameters-2__entry__3"><p class="lines">* <code class="codeph">keyValues</code> option in order to get a more compact and brief representation, including just attribute values<br><br>* <code class="codeph">values</code> option combined with a list of attribute values <code class="codeph">attrs</code> for an ordered list of attributes only</p></td>
+				<td class="entry align-left" headers="filter-context-data-by-attribute-value__query-parameters-2__entry__1"><p class="lines"><code class="ph codeph">options</code></p></td>
+				<td class="entry align-left" headers="filter-context-data-by-attribute-value__query-parameters-2__entry__2"><p class="lines"><code class="ph codeph">keyValues</code></p></td>
+				<td class="entry align-left" headers="filter-context-data-by-attribute-value__query-parameters-2__entry__3"><p class="lines">* <code class="ph codeph">keyValues</code> option in order to get a more compact and brief representation, including just attribute values<br><br>* <code class="ph codeph">values</code> option combined with a list of attribute values <code class="ph codeph">attrs</code> for an ordered list of attributes only</p></td>
 			</tr>
 			<tr class="row">
-				<td class="entry align-left" headers="filter-context-data-by-attribute-value__query-parameters-2__entry__1"><code class="codeph">attrs</code></td>
-				<td class="entry align-left" headers="filter-context-data-by-attribute-value__query-parameters-2__entry__2"><code class="codeph">name</code></td>
+				<td class="entry align-left" headers="filter-context-data-by-attribute-value__query-parameters-2__entry__1"><code class="ph codeph">attrs</code></td>
+				<td class="entry align-left" headers="filter-context-data-by-attribute-value__query-parameters-2__entry__2"><code class="ph codeph">name</code></td>
 				<td class="entry align-left" headers="filter-context-data-by-attribute-value__query-parameters-2__entry__3">Ordered list of attribute names to display</td>
 			</tr>
 		</tbody></table>
@@ -551,7 +551,7 @@ Because of the use of the <code class="codeph">options=keyValues</code>, the res
 <div class="example" id="filter-context-data-by-attribute-value__example-request-6"><h3 class="title sectiontitle">Example Request</h3>
 
 
-<pre class="codeblock language-bash"><code><span class="ph token function">curl</span> -X  -G GET  <span class="ph token punctuation">\</span>
+<pre class="pre codeblock language-bash"><code><span class="ph token function">curl</span> -X  -G GET  <span class="ph token punctuation">\</span>
   <span class="ph token string">'http://{{orion}}/v2/entities/'</span>  <span class="ph token punctuation">\</span>
     -d <span class="ph token string">'q=name=='</span>Checkpoint Markt<span class="ph token string">''</span>  <span class="ph token punctuation">\</span>
     -d <span class="ph token string">'type=Store'</span>  <span class="ph token punctuation">\</span>
@@ -565,18 +565,18 @@ Because of the use of the <code class="codeph">options=keyValues</code>, the res
 <article class="topic nested1 swagger-get" aria-labelledby="ariaid-title15" id="filter-context-data-by-sub-attribute-value">
 <h2 class="title topictitle2" id="ariaid-title15">Filter context data by sub-attribute value</h2>
 <div class="body">
-<pre xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" class="codeblock swagger-get"><code><span class="swagger-verb">GET</span>http://{{orion}}/v2/entities/</code></pre>
+<pre xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" class="pre codeblock swagger-get"><code><span class="swagger-verb">GET</span>http://{{orion}}/v2/entities/</code></pre>
 <section class="section" id="filter-context-data-by-sub-attribute-value__filter-context-data-by-comparing-the-values-of-an-attribute-1"><h3 class="title sectiontitle">Filter context data by comparing the values of an attribute</h3>
 
 
 <p class="p">
-	This example returns the data of all <code class="codeph">Store</code> entities found in the <strong class="b">Kreuzberg</strong> district of Berlin.
+	This example returns the data of all <code class="ph codeph">Store</code> entities found in the <strong class="ph b">Kreuzberg</strong> district of Berlin.
 </p>
 <p class="p">
-	Filtering can be done using the <code class="codeph">q</code> parameter - sub-attributes are annotated using the dot syntax e.g.&nbsp;<code class="codeph">address.addressLocality</code>
+	Filtering can be done using the <code class="ph codeph">q</code> parameter - sub-attributes are annotated using the dot syntax e.g.&nbsp;<code class="ph codeph">address.addressLocality</code>
 </p>
 <p class="p">
-	Because of the use of the <code class="codeph">options=keyValues</code>, the response consists of JSON only without the attribute <code class="codeph">type</code> and <code class="codeph">metadata</code> elements.
+	Because of the use of the <code class="ph codeph">options=keyValues</code>, the response consists of JSON only without the attribute <code class="ph codeph">type</code> and <code class="ph codeph">metadata</code> elements.
 </p>
 </section>
 
@@ -591,19 +591,19 @@ Because of the use of the <code class="codeph">options=keyValues</code>, the res
 			</tr>
 		</thead><tbody class="tbody">
 			<tr class="row">
-				<td class="entry align-left" headers="filter-context-data-by-sub-attribute-value__query-parameters-3__entry__1"><code class="codeph">q</code></td>
-				<td class="entry align-left" headers="filter-context-data-by-sub-attribute-value__query-parameters-3__entry__2"><code class="codeph">address.addressLocality=='Kreuzberg'</code></td>
+				<td class="entry align-left" headers="filter-context-data-by-sub-attribute-value__query-parameters-3__entry__1"><code class="ph codeph">q</code></td>
+				<td class="entry align-left" headers="filter-context-data-by-sub-attribute-value__query-parameters-3__entry__2"><code class="ph codeph">address.addressLocality=='Kreuzberg'</code></td>
 				<td class="entry align-left" headers="filter-context-data-by-sub-attribute-value__query-parameters-3__entry__3"></td>
 			</tr>
 			<tr class="row">
-				<td class="entry align-left" headers="filter-context-data-by-sub-attribute-value__query-parameters-3__entry__1"><code class="codeph">type</code></td>
-				<td class="entry align-left" headers="filter-context-data-by-sub-attribute-value__query-parameters-3__entry__2"><code class="codeph">Store</code></td>
+				<td class="entry align-left" headers="filter-context-data-by-sub-attribute-value__query-parameters-3__entry__1"><code class="ph codeph">type</code></td>
+				<td class="entry align-left" headers="filter-context-data-by-sub-attribute-value__query-parameters-3__entry__2"><code class="ph codeph">Store</code></td>
 				<td class="entry align-left" headers="filter-context-data-by-sub-attribute-value__query-parameters-3__entry__3">Entity type, to avoid ambiguity in case there are several entities with the same entity id</td>
 			</tr>
 			<tr class="row">
-				<td class="entry align-left" headers="filter-context-data-by-sub-attribute-value__query-parameters-3__entry__1"><p class="lines"><code class="codeph">options</code></p></td>
-				<td class="entry align-left" headers="filter-context-data-by-sub-attribute-value__query-parameters-3__entry__2"><p class="lines"><code class="codeph">keyValues</code></p></td>
-				<td class="entry align-left" headers="filter-context-data-by-sub-attribute-value__query-parameters-3__entry__3"><p class="lines">* <code class="codeph">keyValues</code> option in order to get a more compact and brief representation, including just attribute values<br><br>* <code class="codeph">values</code> option combined with a list of attribute values <code class="codeph">attrs</code> for an ordered list of attributes only</p></td>
+				<td class="entry align-left" headers="filter-context-data-by-sub-attribute-value__query-parameters-3__entry__1"><p class="lines"><code class="ph codeph">options</code></p></td>
+				<td class="entry align-left" headers="filter-context-data-by-sub-attribute-value__query-parameters-3__entry__2"><p class="lines"><code class="ph codeph">keyValues</code></p></td>
+				<td class="entry align-left" headers="filter-context-data-by-sub-attribute-value__query-parameters-3__entry__3"><p class="lines">* <code class="ph codeph">keyValues</code> option in order to get a more compact and brief representation, including just attribute values<br><br>* <code class="ph codeph">values</code> option combined with a list of attribute values <code class="ph codeph">attrs</code> for an ordered list of attributes only</p></td>
 			</tr>
 		</tbody></table>
 </section>
@@ -611,7 +611,7 @@ Because of the use of the <code class="codeph">options=keyValues</code>, the res
 <div class="example" id="filter-context-data-by-sub-attribute-value__example-request-7"><h3 class="title sectiontitle">Example Request</h3>
 
 
-<pre class="codeblock language-bash"><code><span class="ph token function">curl</span> -X  -G GET  <span class="ph token punctuation">\</span>
+<pre class="pre codeblock language-bash"><code><span class="ph token function">curl</span> -X  -G GET  <span class="ph token punctuation">\</span>
   <span class="ph token string">'http://{{orion}}/v2/entities/'</span>  <span class="ph token punctuation">\</span>
     -d <span class="ph token string">'q=address.addressLocality=='</span>Kreuzberg<span class="ph token string">''</span>  <span class="ph token punctuation">\</span>
     -d <span class="ph token string">'type=Store'</span>  <span class="ph token punctuation">\</span>
@@ -625,15 +625,15 @@ Because of the use of the <code class="codeph">options=keyValues</code>, the res
 <article class="topic nested1 swagger-get" aria-labelledby="ariaid-title16" id="filter-context-data-by-querying-metadata">
 <h2 class="title topictitle2" id="ariaid-title16">Filter context data by querying metadata</h2>
 <div class="body">
-<pre xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" class="codeblock swagger-get"><code><span class="swagger-verb">GET</span>http://{{orion}}/v2/entities/</code></pre>
+<pre xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" class="pre codeblock swagger-get"><code><span class="swagger-verb">GET</span>http://{{orion}}/v2/entities/</code></pre>
 <section class="section" id="filter-context-data-by-querying-metadata__filter-context-data-by-comparing-the-values-of-an-metadata-attribute"><h3 class="title sectiontitle">Filter context data by comparing the values of an metadata attribute</h3>
 
 
 <p class="p">
-	This example returns the data of all <code class="codeph">Store</code> entities with a verified address.
+	This example returns the data of all <code class="ph codeph">Store</code> entities with a verified address.
 </p>
 <p class="p">
-	Metadata queries can be made using the <code class="codeph">mq</code> parameter.
+	Metadata queries can be made using the <code class="ph codeph">mq</code> parameter.
 </p>
 </section>
 
@@ -648,19 +648,19 @@ Because of the use of the <code class="codeph">options=keyValues</code>, the res
 			</tr>
 		</thead><tbody class="tbody">
 			<tr class="row">
-				<td class="entry align-left" headers="filter-context-data-by-querying-metadata__query-parameters-4__entry__1"><code class="codeph">mq</code></td>
-				<td class="entry align-left" headers="filter-context-data-by-querying-metadata__query-parameters-4__entry__2"><code class="codeph">address.verified==true</code></td>
+				<td class="entry align-left" headers="filter-context-data-by-querying-metadata__query-parameters-4__entry__1"><code class="ph codeph">mq</code></td>
+				<td class="entry align-left" headers="filter-context-data-by-querying-metadata__query-parameters-4__entry__2"><code class="ph codeph">address.verified==true</code></td>
 				<td class="entry align-left" headers="filter-context-data-by-querying-metadata__query-parameters-4__entry__3"></td>
 			</tr>
 			<tr class="row">
-				<td class="entry align-left" headers="filter-context-data-by-querying-metadata__query-parameters-4__entry__1"><code class="codeph">type</code></td>
-				<td class="entry align-left" headers="filter-context-data-by-querying-metadata__query-parameters-4__entry__2"><code class="codeph">Store</code></td>
+				<td class="entry align-left" headers="filter-context-data-by-querying-metadata__query-parameters-4__entry__1"><code class="ph codeph">type</code></td>
+				<td class="entry align-left" headers="filter-context-data-by-querying-metadata__query-parameters-4__entry__2"><code class="ph codeph">Store</code></td>
 				<td class="entry align-left" headers="filter-context-data-by-querying-metadata__query-parameters-4__entry__3">Entity type, to avoid ambiguity in case there are several entities with the same entity id</td>
 			</tr>
 			<tr class="row">
-				<td class="entry align-left" headers="filter-context-data-by-querying-metadata__query-parameters-4__entry__1"><p class="lines"><code class="codeph">options</code></p></td>
-				<td class="entry align-left" headers="filter-context-data-by-querying-metadata__query-parameters-4__entry__2"><p class="lines"><code class="codeph">keyValues</code></p></td>
-				<td class="entry align-left" headers="filter-context-data-by-querying-metadata__query-parameters-4__entry__3"><p class="lines">* <code class="codeph">keyValues</code> option in order to get a more compact and brief representation, including just attribute values<br><br>* <code class="codeph">values</code> option combined with a list of attribute values <code class="codeph">attrs</code> for an ordered list of attributes only</p></td>
+				<td class="entry align-left" headers="filter-context-data-by-querying-metadata__query-parameters-4__entry__1"><p class="lines"><code class="ph codeph">options</code></p></td>
+				<td class="entry align-left" headers="filter-context-data-by-querying-metadata__query-parameters-4__entry__2"><p class="lines"><code class="ph codeph">keyValues</code></p></td>
+				<td class="entry align-left" headers="filter-context-data-by-querying-metadata__query-parameters-4__entry__3"><p class="lines">* <code class="ph codeph">keyValues</code> option in order to get a more compact and brief representation, including just attribute values<br><br>* <code class="ph codeph">values</code> option combined with a list of attribute values <code class="ph codeph">attrs</code> for an ordered list of attributes only</p></td>
 			</tr>
 		</tbody></table>
 </section>
@@ -668,7 +668,7 @@ Because of the use of the <code class="codeph">options=keyValues</code>, the res
 <div class="example" id="filter-context-data-by-querying-metadata__example-request-8"><h3 class="title sectiontitle">Example Request</h3>
 
 
-<pre class="codeblock language-bash"><code><span class="ph token function">curl</span> -X  -G GET  <span class="ph token punctuation">\</span>
+<pre class="pre codeblock language-bash"><code><span class="ph token function">curl</span> -X  -G GET  <span class="ph token punctuation">\</span>
   <span class="ph token string">'http://{{orion}}/v2/entities/'</span>  <span class="ph token punctuation">\</span>
     -d <span class="ph token string">'mq=address.verified==true'</span>  <span class="ph token punctuation">\</span>
     -d <span class="ph token string">'type=Store'</span>  <span class="ph token punctuation">\</span>
@@ -682,12 +682,12 @@ Because of the use of the <code class="codeph">options=keyValues</code>, the res
 <article class="topic nested1 swagger-get" aria-labelledby="ariaid-title17" id="filter-context-data-by-distance">
 <h2 class="title topictitle2" id="ariaid-title17">Filter context data by distance</h2>
 <div class="body">
-<pre xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" class="codeblock swagger-get"><code><span class="swagger-verb">GET</span>http://{{orion}}/v2/entities/</code></pre>
+<pre xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" class="pre codeblock swagger-get"><code><span class="swagger-verb">GET</span>http://{{orion}}/v2/entities/</code></pre>
 <section class="section" id="filter-context-data-by-distance__filter-context-data-by-comparing-the-values-of-a-geopoint-attribute"><h3 class="title sectiontitle">Filter context data by comparing the values of a geo:point attribute</h3>
 
 
 <p class="p">
-	This example returns the data of all <code class="codeph">Store</code> entities found within 1.5km the <strong class="b">Brandenburg Gate</strong> in <strong class="b">Berlin</strong> (<em class="i">52.5162N 13.3777W</em>)
+	This example returns the data of all <code class="ph codeph">Store</code> entities found within 1.5km the <strong class="ph b">Brandenburg Gate</strong> in <strong class="ph b">Berlin</strong> (<em class="ph i">52.5162N 13.3777W</em>)
 </p>
 </section>
 
@@ -702,33 +702,33 @@ Because of the use of the <code class="codeph">options=keyValues</code>, the res
 			</tr>
 		</thead><tbody class="tbody">
 			<tr class="row">
-				<td class="entry align-left" headers="filter-context-data-by-distance__query-parameters-5__entry__1"><code class="codeph">georel</code></td>
-				<td class="entry align-left" headers="filter-context-data-by-distance__query-parameters-5__entry__2"><code class="codeph">near;maxDistance:1500</code></td>
+				<td class="entry align-left" headers="filter-context-data-by-distance__query-parameters-5__entry__1"><code class="ph codeph">georel</code></td>
+				<td class="entry align-left" headers="filter-context-data-by-distance__query-parameters-5__entry__2"><code class="ph codeph">near;maxDistance:1500</code></td>
 				<td class="entry align-left" headers="filter-context-data-by-distance__query-parameters-5__entry__3"></td>
 			</tr>
 			<tr class="row">
-				<td class="entry align-left" headers="filter-context-data-by-distance__query-parameters-5__entry__1"><code class="codeph">geometry</code></td>
-				<td class="entry align-left" headers="filter-context-data-by-distance__query-parameters-5__entry__2"><code class="codeph">point</code></td>
+				<td class="entry align-left" headers="filter-context-data-by-distance__query-parameters-5__entry__1"><code class="ph codeph">geometry</code></td>
+				<td class="entry align-left" headers="filter-context-data-by-distance__query-parameters-5__entry__2"><code class="ph codeph">point</code></td>
 				<td class="entry align-left" headers="filter-context-data-by-distance__query-parameters-5__entry__3"></td>
 			</tr>
 			<tr class="row">
-				<td class="entry align-left" headers="filter-context-data-by-distance__query-parameters-5__entry__1"><code class="codeph">coords</code></td>
-				<td class="entry align-left" headers="filter-context-data-by-distance__query-parameters-5__entry__2"><code class="codeph">52.5162,13.3777</code></td>
+				<td class="entry align-left" headers="filter-context-data-by-distance__query-parameters-5__entry__1"><code class="ph codeph">coords</code></td>
+				<td class="entry align-left" headers="filter-context-data-by-distance__query-parameters-5__entry__2"><code class="ph codeph">52.5162,13.3777</code></td>
 				<td class="entry align-left" headers="filter-context-data-by-distance__query-parameters-5__entry__3"></td>
 			</tr>
 			<tr class="row">
-				<td class="entry align-left" headers="filter-context-data-by-distance__query-parameters-5__entry__1"><code class="codeph">type</code></td>
-				<td class="entry align-left" headers="filter-context-data-by-distance__query-parameters-5__entry__2"><code class="codeph">Store</code></td>
+				<td class="entry align-left" headers="filter-context-data-by-distance__query-parameters-5__entry__1"><code class="ph codeph">type</code></td>
+				<td class="entry align-left" headers="filter-context-data-by-distance__query-parameters-5__entry__2"><code class="ph codeph">Store</code></td>
 				<td class="entry align-left" headers="filter-context-data-by-distance__query-parameters-5__entry__3">Entity type, to avoid ambiguity in case there are several entities with the same entity id</td>
 			</tr>
 			<tr class="row">
-				<td class="entry align-left" headers="filter-context-data-by-distance__query-parameters-5__entry__1"><p class="lines"><code class="codeph">options</code></p></td>
-				<td class="entry align-left" headers="filter-context-data-by-distance__query-parameters-5__entry__2"><p class="lines"><code class="codeph">keyValues</code></p></td>
-				<td class="entry align-left" headers="filter-context-data-by-distance__query-parameters-5__entry__3"><p class="lines">* <code class="codeph">keyValues</code> option in order to get a more compact and brief representation, including just attribute values<br><br>* <code class="codeph">values</code> option combined with a list of attribute values <code class="codeph">attrs</code> for an ordered list of attributes only</p></td>
+				<td class="entry align-left" headers="filter-context-data-by-distance__query-parameters-5__entry__1"><p class="lines"><code class="ph codeph">options</code></p></td>
+				<td class="entry align-left" headers="filter-context-data-by-distance__query-parameters-5__entry__2"><p class="lines"><code class="ph codeph">keyValues</code></p></td>
+				<td class="entry align-left" headers="filter-context-data-by-distance__query-parameters-5__entry__3"><p class="lines">* <code class="ph codeph">keyValues</code> option in order to get a more compact and brief representation, including just attribute values<br><br>* <code class="ph codeph">values</code> option combined with a list of attribute values <code class="ph codeph">attrs</code> for an ordered list of attributes only</p></td>
 			</tr>
 			<tr class="row">
-				<td class="entry align-left" headers="filter-context-data-by-distance__query-parameters-5__entry__1"><code class="codeph">attrs</code></td>
-				<td class="entry align-left" headers="filter-context-data-by-distance__query-parameters-5__entry__2"><code class="codeph">name</code></td>
+				<td class="entry align-left" headers="filter-context-data-by-distance__query-parameters-5__entry__1"><code class="ph codeph">attrs</code></td>
+				<td class="entry align-left" headers="filter-context-data-by-distance__query-parameters-5__entry__2"><code class="ph codeph">name</code></td>
 				<td class="entry align-left" headers="filter-context-data-by-distance__query-parameters-5__entry__3">Ordered list of attribute names to display</td>
 			</tr>
 		</tbody></table>
@@ -737,7 +737,7 @@ Because of the use of the <code class="codeph">options=keyValues</code>, the res
 <div class="example" id="filter-context-data-by-distance__example-request-9"><h3 class="title sectiontitle">Example Request</h3>
 
 
-<pre class="codeblock language-bash"><code><span class="ph token function">curl</span> -X  -G GET  <span class="ph token punctuation">\</span>
+<pre class="pre codeblock language-bash"><code><span class="ph token function">curl</span> -X  -G GET  <span class="ph token punctuation">\</span>
   <span class="ph token string">'http://{{orion}}/v2/entities/'</span>  <span class="ph token punctuation">\</span>
     -d <span class="ph token string">'georel=near;maxDistance:1500'</span>  <span class="ph token punctuation">\</span>
     -d <span class="ph token string">'geometry=point'</span>  <span class="ph token punctuation">\</span>

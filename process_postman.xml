@@ -2,20 +2,20 @@
 	This file is part of the DITA-OT postman Plug-in project.
 	See the accompanying LICENSE file for applicable licenses.
 -->
-<project name="fox.jason.passthrough.postman">
-
-	<!--
-		Create postman processing macros.
-	-->
-	<target name="postman.process.pre">
-		<taskdef resource="fox/jason/postman/antlib.xml"/>
-	</target>
-
-
+<project name="fox.jason.passthrough.postman" default="postman.process">
 	<!--
 		Iterate across all files marked format="postman" and process them
 	-->
 	<target name="postman.process">
-		<passthrough-iterate format="postman" macro="add-postman-file"/>
+		<property name="passthrough.input" value=""/>
+		<property name="passthrough.output" value=""/>
+		<taskdef classname="fox.jason.passthrough.tasks.PostmanToMarkdownTask" name="postman-to-markdown" onerror="ignore">
+			<classpath>
+				<fileset dir="lib">
+					<include name="**/*.jar"/>
+				</fileset>
+			</classpath>
+		</taskdef>
+		<postman-to-markdown src="${passthrough.input}" dest="${passthrough.output}"/>
 	</target>
 </project>

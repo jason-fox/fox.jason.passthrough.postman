@@ -113,9 +113,7 @@ rm dita-ot-3.6.zip
 -   Run the plug-in installation commands:
 
 ```console
-dita install https://github.com/doctales/org.doctales.xmltask/archive/master.zip
 dita install https://github.com/jason-fox/fox.jason.extend.css/archive/master.zip
-dita install https://github.com/jason-fox/fox.jason.passthrough/archive/master.zip
 dita install https://github.com/jason-fox/fox.jason.passthrough.pandoc/archive/master.zip
 dita install https://github.com/jason-fox/fox.jason.passthrough.swagger/archive/master.zip
 dita install https://github.com/jason-fox/fox.jason.passthrough.postman/archive/master.zip
@@ -154,7 +152,7 @@ the filename will be replaced by spaces in title.
 
 ## License
 
-[Apache 2.0](LICENSE) © 2019-2020 Jason Fox
+[Apache 2.0](LICENSE) © 2019-2021 Jason Fox
 
 The Program includes the following additional software components which were obtained under license:
 
