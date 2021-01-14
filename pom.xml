@@ -59,8 +59,15 @@
 				<configuration>
 					<filesets>
 						<fileset>
-							<directory>lib</directory>
-						</fileset>
+							<directory>target</directory>
+                            <directory>lib</directory>
+                            <excludes>
+                                <exclude>passthrough.parser-${passthrough-version}.jar</exclude>
+                                <exclude>passthrough.pandoc-${pandoc-version}.jar</exclude>
+                                <exclude>json-simple-1.1.1.jar</exclude>
+                            </excludes>
+                            <followSymlinks>false</followSymlinks>
+                        </fileset>
 					</filesets>
 				</configuration>
 			</plugin>
