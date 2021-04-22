@@ -1,1 +1,3 @@
-test/* linguist-vendored
+test/** linguist-vendored
+
+process_postman.xml linguist-language=Ant-Build-System
