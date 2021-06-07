@@ -6,7 +6,7 @@
 -->
 <plugin id="fox.jason.passthrough.postman" version="2.0.0">
 	<feature extension="dita.conductor.lib.import" file="lib/json-simple-1.1.1.jar"/>
-	<feature extension="dita.conductor.lib.import" file="lib/passthrough.postman-2.0.jar"/>
+	<feature extension="dita.conductor.lib.import" file="lib/passthrough.postman-2.1.jar"/>
 	<feature extension="ant.import" file="process_postman.xml"/>
 	<!--
 		This plugin requires the Pandoc passthrough reader
