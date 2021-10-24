@@ -1,8 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?><!--ant--><!--
+<?xml version="1.0" encoding="UTF-8"?>
+<!--ant-->
+<!--
 	This file is part of the DITA-OT postman Plug-in project.
 	See the accompanying LICENSE file for applicable licenses.
 -->
-<project name="fox.jason.passthrough.postman" default="postman.process" xmlns:postman="antlib:fox.jason.passthrough.postman">
+<project
+  name="fox.jason.passthrough.postman"
+  default="postman.process"
+  xmlns:postman="antlib:fox.jason.passthrough.postman"
+>
 	<!--
 		Iterate across all files marked format="postman" and process them
 	-->

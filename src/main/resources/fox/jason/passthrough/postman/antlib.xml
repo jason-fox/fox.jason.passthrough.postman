@@ -1,9 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><!--ant-->
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--ant-->
 <!--
 	This file is part of the DITA-OT Postman Plug-in project.
 	See the accompanying LICENSE file for applicable licenses.
 -->
-<antlib >
+<antlib>
 
 	<!--
 
@@ -12,6 +13,9 @@
 			@param file	- The Postman file to clean up
 		
 	-->
-	<taskdef  classname="fox.jason.passthrough.tasks.PostmanToMarkdownTask" name="add-file"/>
+	<taskdef
+    classname="fox.jason.passthrough.tasks.PostmanToMarkdownTask"
+    name="add-file"
+  />
 
 </antlib>
