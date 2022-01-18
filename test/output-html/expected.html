@@ -123,7 +123,7 @@ containers as necessary. This command will also display open port information.
 <article class="topic nested1 swagger-get" aria-labelledby="ariaid-title8" id="obtaining-version-information">
 <h2 class="title topictitle2" id="ariaid-title8">Obtaining Version Information</h2>
 <div class="body">
-<pre xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" class="pre codeblock swagger-get"><code><span class="swagger-verb">GET</span>http://{{orion}}/version/</code></pre>
+<pre xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xs="http://www.w3.org/2001/XMLSchema" class="pre codeblock swagger-get"><code><span class="swagger-verb">GET</span>http://{{orion}}/version/</code></pre>
 <p class="p">
 	Once the Orion Context Broker is running, You can check the status by making an HTTP request to the exposed port.
 If the response is blank, this is usually because the MongoDB database holding the context information is not running or not connected.
@@ -174,7 +174,7 @@ If the response is blank, this is usually because the MongoDB database holding t
 <article class="topic nested1 swagger-post" aria-labelledby="ariaid-title9" id="creating-your-first-data-entity">
 <h2 class="title topictitle2" id="ariaid-title9">Creating your first Data Entity</h2>
 <div class="body">
-<pre xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" class="pre codeblock swagger-post"><code><span class="swagger-verb">POST</span>http://{{orion}}/v2/entities/</code></pre>
+<pre xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xs="http://www.w3.org/2001/XMLSchema" class="pre codeblock swagger-post"><code><span class="swagger-verb">POST</span>http://{{orion}}/v2/entities/</code></pre>
 <section class="section" id="creating-your-first-data-entity__creating-context-data"><h3 class="title sectiontitle">Creating Context Data</h3>
 
 
@@ -281,7 +281,7 @@ If the response is blank, this is usually because the MongoDB database holding t
 <article class="topic nested1 swagger-post" aria-labelledby="ariaid-title10" id="creating-your-second-data-entity">
 <h2 class="title topictitle2" id="ariaid-title10">Creating your Second Data Entity</h2>
 <div class="body">
-<pre xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" class="pre codeblock swagger-post"><code><span class="swagger-verb">POST</span>http://{{orion}}/v2/entities/</code></pre>
+<pre xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xs="http://www.w3.org/2001/XMLSchema" class="pre codeblock swagger-post"><code><span class="swagger-verb">POST</span>http://{{orion}}/v2/entities/</code></pre>
 <section class="section" id="creating-your-second-data-entity__headers-1"><h3 class="title sectiontitle">Headers</h3>
 
 
@@ -380,7 +380,7 @@ If the response is blank, this is usually because the MongoDB database holding t
 <article class="topic nested1 swagger-get" aria-labelledby="ariaid-title11" id="retrieving-context-information">
 <h2 class="title topictitle2" id="ariaid-title11">Retrieving Context Information</h2>
 <div class="body">
-<pre xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" class="pre codeblock swagger-get"><code><span class="swagger-verb">GET</span>http://{{orion}}/v2/entities</code></pre>
+<pre xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xs="http://www.w3.org/2001/XMLSchema" class="pre codeblock swagger-get"><code><span class="swagger-verb">GET</span>http://{{orion}}/v2/entities</code></pre>
 <p class="p">
 	This example returns the full data context
 </p>
@@ -398,7 +398,7 @@ If the response is blank, this is usually because the MongoDB database holding t
 <article class="topic nested1 swagger-get" aria-labelledby="ariaid-title12" id="obtain-entity-data-by-id">
 <h2 class="title topictitle2" id="ariaid-title12">Obtain Entity Data by id</h2>
 <div class="body">
-<pre xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" class="pre codeblock swagger-get"><code><span class="swagger-verb">GET</span>http://{{orion}}/v2/entities/urn:ngsi-ld:Store:001</code></pre>
+<pre xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xs="http://www.w3.org/2001/XMLSchema" class="pre codeblock swagger-get"><code><span class="swagger-verb">GET</span>http://{{orion}}/v2/entities/urn:ngsi-ld:Store:001</code></pre>
 <p class="p">
 	This example returns the context data of <code class="ph codeph">store1</code>. The <code class="ph codeph">id</code> of the entity should be unique or the <code class="ph codeph">type</code> parameter should also be used.
 </p>
@@ -448,7 +448,7 @@ If the response is blank, this is usually because the MongoDB database holding t
 <article class="topic nested1 swagger-get" aria-labelledby="ariaid-title13" id="obtain-entity-data-by-type">
 <h2 class="title topictitle2" id="ariaid-title13">Obtain Entity Data by type</h2>
 <div class="body">
-<pre xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" class="pre codeblock swagger-get"><code><span class="swagger-verb">GET</span>http://{{orion}}/v2/entities/</code></pre>
+<pre xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xs="http://www.w3.org/2001/XMLSchema" class="pre codeblock swagger-get"><code><span class="swagger-verb">GET</span>http://{{orion}}/v2/entities/</code></pre>
 <p class="p">
 	This example returns the data of all <code class="ph codeph">Store</code> entities within the context data.
 </p>
@@ -500,7 +500,7 @@ Because of the use of the <code class="ph codeph">options=keyValues</code>, the 
 <article class="topic nested1 swagger-get" aria-labelledby="ariaid-title14" id="filter-context-data-by-attribute-value">
 <h2 class="title topictitle2" id="ariaid-title14">Filter context data by attribute value</h2>
 <div class="body">
-<pre xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" class="pre codeblock swagger-get"><code><span class="swagger-verb">GET</span>http://{{orion}}/v2/entities/</code></pre>
+<pre xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xs="http://www.w3.org/2001/XMLSchema" class="pre codeblock swagger-get"><code><span class="swagger-verb">GET</span>http://{{orion}}/v2/entities/</code></pre>
 <section class="section" id="filter-context-data-by-attribute-value__filter-context-data-by-comparing-the-values-of-an-attribute"><h3 class="title sectiontitle">Filter context data by comparing the values of an attribute</h3>
 
 
@@ -565,7 +565,7 @@ Because of the use of the <code class="ph codeph">options=keyValues</code>, the 
 <article class="topic nested1 swagger-get" aria-labelledby="ariaid-title15" id="filter-context-data-by-sub-attribute-value">
 <h2 class="title topictitle2" id="ariaid-title15">Filter context data by sub-attribute value</h2>
 <div class="body">
-<pre xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" class="pre codeblock swagger-get"><code><span class="swagger-verb">GET</span>http://{{orion}}/v2/entities/</code></pre>
+<pre xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xs="http://www.w3.org/2001/XMLSchema" class="pre codeblock swagger-get"><code><span class="swagger-verb">GET</span>http://{{orion}}/v2/entities/</code></pre>
 <section class="section" id="filter-context-data-by-sub-attribute-value__filter-context-data-by-comparing-the-values-of-an-attribute-1"><h3 class="title sectiontitle">Filter context data by comparing the values of an attribute</h3>
 
 
@@ -625,7 +625,7 @@ Because of the use of the <code class="ph codeph">options=keyValues</code>, the 
 <article class="topic nested1 swagger-get" aria-labelledby="ariaid-title16" id="filter-context-data-by-querying-metadata">
 <h2 class="title topictitle2" id="ariaid-title16">Filter context data by querying metadata</h2>
 <div class="body">
-<pre xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" class="pre codeblock swagger-get"><code><span class="swagger-verb">GET</span>http://{{orion}}/v2/entities/</code></pre>
+<pre xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xs="http://www.w3.org/2001/XMLSchema" class="pre codeblock swagger-get"><code><span class="swagger-verb">GET</span>http://{{orion}}/v2/entities/</code></pre>
 <section class="section" id="filter-context-data-by-querying-metadata__filter-context-data-by-comparing-the-values-of-an-metadata-attribute"><h3 class="title sectiontitle">Filter context data by comparing the values of an metadata attribute</h3>
 
 
@@ -682,7 +682,7 @@ Because of the use of the <code class="ph codeph">options=keyValues</code>, the 
 <article class="topic nested1 swagger-get" aria-labelledby="ariaid-title17" id="filter-context-data-by-distance">
 <h2 class="title topictitle2" id="ariaid-title17">Filter context data by distance</h2>
 <div class="body">
-<pre xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" class="pre codeblock swagger-get"><code><span class="swagger-verb">GET</span>http://{{orion}}/v2/entities/</code></pre>
+<pre xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xs="http://www.w3.org/2001/XMLSchema" class="pre codeblock swagger-get"><code><span class="swagger-verb">GET</span>http://{{orion}}/v2/entities/</code></pre>
 <section class="section" id="filter-context-data-by-distance__filter-context-data-by-comparing-the-values-of-a-geopoint-attribute"><h3 class="title sectiontitle">Filter context data by comparing the values of a geo:point attribute</h3>
 
 
