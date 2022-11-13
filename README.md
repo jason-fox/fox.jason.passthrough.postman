@@ -3,7 +3,6 @@
 [![license](https://img.shields.io/github/license/jason-fox/fox.jason.passthrough.postman.svg)](http://www.apache.org/licenses/LICENSE-2.0)
 [![DITA-OT 3.7](https://img.shields.io/badge/DITA--OT-3.7-blue.svg)](http://www.dita-ot.org/3.7)
 [![CI](https://github.com/jason-fox/fox.jason.passthrough.postman/workflows/CI/badge.svg)](https://github.com/jason-fox/fox.jason.passthrough.postman/actions?query=workflow%3ACI)
-[![Documentation Status](https://readthedocs.org/projects/postmandita-ot/badge/?version=latest)](https://postmandita-ot.readthedocs.io/en/latest/?badge=latest)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=fox.jason.passthrough.postman&metric=alert_status)](https://sonarcloud.io/dashboard?id=fox.jason.passthrough.postman)
 
 This is a [DITA-OT Plug-in](https://www.dita-ot.org/plugins) used to auto-create valid DITA-based REST API
