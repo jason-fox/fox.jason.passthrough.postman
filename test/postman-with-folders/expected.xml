@@ -602,9 +602,9 @@ to display database data if you wish</li>
           <codeph>postgres-db</codeph>container is driven by environment variables as shown:</p>
         <table>
           <tgroup cols="3">
-            <colspec colname="col1" colnum="1"></colspec>
-            <colspec colname="col2" colnum="2"></colspec>
-            <colspec colname="col3" colnum="3"></colspec>
+            <colspec colname="col1" colnum="1" colwidth="25%"></colspec>
+            <colspec colname="col2" colnum="2" colwidth="14%"></colspec>
+            <colspec colname="col3" colnum="3" colwidth="60%"></colspec>
             <thead>
               <row>
                 <entry align="left" colname="col1">Key</entry>
@@ -768,9 +768,9 @@ Now, you can see that the status icon of each processor turned from red to green
           <codeph>postgres-db</codeph>container is driven by environment variables as shown:</p>
         <table>
           <tgroup cols="3">
-            <colspec colname="col1" colnum="1"></colspec>
-            <colspec colname="col2" colnum="2"></colspec>
-            <colspec colname="col3" colnum="3"></colspec>
+            <colspec colname="col1" colnum="1" colwidth="29%"></colspec>
+            <colspec colname="col2" colnum="2" colwidth="17%"></colspec>
+            <colspec colname="col3" colnum="3" colwidth="53%"></colspec>
             <thead>
               <row>
                 <entry align="left" colname="col1">Key</entry>
