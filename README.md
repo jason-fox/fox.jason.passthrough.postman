@@ -20,7 +20,6 @@ and processed as if it had been written in DITA.
 -   [Install](#install)
     -   [Installing DITA-OT](#installing-dita-ot)
     -   [Installing the Plug-in](#installing-the-plug-in)
-    -   [Installing Pandoc](#installing-pandoc)
 -   [Usage](#usage)
 -   [License](#license)
 
@@ -33,9 +32,10 @@ and processed as if it had been written in DITA.
 [Postman](https://www.getpostman.com/) is a software development tool which a developer can use to build, publish,
 document, design, monitor, test and debug their REST APIs.
 
-This plugin processes a Postman collection to Pandoc markdown, and the converts the markdown to DITA using the
-[Pandoc DITA-OT Plugin](https://github.com/jason-fox/fox.jason.passthrough.pandoc) allowing the generation of PDF API
-documentation.
+This plugin parses a Postman collection and generates DITA directly - the structured parts (endpoints, headers, query
+parameters, body, curl examples, sample responses) are built straight from the JSON, and any Markdown in collection,
+folder, or request `description` fields is parsed with [flexmark](https://github.com/vsch/flexmark-java) and rendered
+to DITA directly. There is no intermediate Markdown file and no dependency on Pandoc.
 
 #### Sample Postman Request
 
@@ -113,18 +113,15 @@ rm dita-ot-4.2.zip
 
 ```console
 dita install https://github.com/jason-fox/fox.jason.extend.css/archive/master.zip
-dita install https://github.com/jason-fox/fox.jason.passthrough.pandoc/archive/master.zip
-dita install https://github.com/jason-fox/fox.jason.passthrough.swagger/archive/master.zip
 dita install https://github.com/jason-fox/fox.jason.passthrough.postman/archive/master.zip
 ```
 
 The `dita` command line tool requires no additional configuration.
 
----
-
-### Installing Pandoc
-
-To download a copy follow the instructions on the [Install page](https://github.com/jgm/pandoc/blob/master/INSTALL.md)
+This plugin ships its own copy of the `swagger-get`/`swagger-post` request styling, so it no longer requires the
+[Swagger plugin](https://github.com/jason-fox/fox.jason.passthrough.swagger) to be installed. If that plugin
+_is_ also installed, its copy of the CSS is used instead (avoiding duplicate rules), and its additional XSL adds a
+coloured verb badge to the endpoint code block that this plugin's CSS alone does not provide.
 
 ## Usage
 
@@ -153,6 +150,10 @@ the filename will be replaced by spaces in title.
 
 [Apache 2.0](LICENSE) © 2019 - 2024 Jason Fox
 
-The Program includes the following additional software components which were obtained under license:
+The Program includes the following additional software components which were obtained under license. See
+[NOTICES.txt](NOTICES.txt) for the full text of each license.
 
 -   json-simple-1.1.1.jar - https://github.com/fangyidong/json-simple - **Apache 2.0 license**
+-   JetBrains Annotations - https://github.com/JetBrains/java-annotations - **Apache 2.0 license**
+-   flexmark and its flexmark-util-\* submodules and flexmark-ext-tables - https://github.com/vsch/flexmark-java -
+    **BSD 2-Clause license**

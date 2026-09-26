@@ -6,15 +6,29 @@
 -->
 <project
   name="fox.jason.passthrough.postman"
-  default="postman.process"
-  xmlns:postman="antlib:fox.jason.passthrough.postman"
+  default="postman.css.copy"
+  xmlns:if="ant:if"
+  xmlns:unless="ant:unless"
 >
 	<!--
-		Iterate across all files marked format="postman" and process them
+		The swagger-get/swagger-post styling is identical to the one shipped by
+		fox.jason.passthrough.swagger. If that plugin is also installed, its own
+		copy of the CSS is already added to the extended CSS file, so skip ours
+		to avoid appending the same rules twice.
 	-->
-	<target name="postman.process">
-		<property name="passthrough.input" value=""/>
-		<property name="passthrough.output" value=""/>
-		<postman:add-file src="${passthrough.input}" dest="${passthrough.output}"/>
+	<condition property="swagger.plugin.present">
+		<isset property="dita.plugin.fox.jason.passthrough.swagger.dir"/>
+	</condition>
+
+	<target name="postman.css.copy" unless="swagger.plugin.present">
+		<loadfile
+      property="postman.css"
+      srcFile="${dita.plugin.fox.jason.passthrough.postman.dir}/css/postman.css"
+    />
+		<echo
+      append="true"
+      message="${line.separator}${postman.css}"
+      file="${extend.css.file}"
+    />
 	</target>
 </project>

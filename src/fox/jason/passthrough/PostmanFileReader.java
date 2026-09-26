@@ -1,26 +1,15 @@
 package fox.jason.passthrough;
 
+import fox.jason.passthrough.postman.PostmanConverter;
 import java.io.File;
 import java.io.IOException;
 
-public class PostmanFileReader extends PandocFileReader {
+public class PostmanFileReader extends AbstractFileReader {
 
   public PostmanFileReader() {}
 
-  private static final String ANT_FILE = "/../process_postman.xml";
-
   @Override
   protected String runTarget(File inputFile, String title) throws IOException {
-    File markdownFile = File.createTempFile("postman", "md");
-    markdownFile.deleteOnExit();
-    writeToFile(
-      executeAntTask(
-        calculateJarPath(PostmanFileReader.class) + ANT_FILE,
-        inputFile,
-        title
-      ),
-      markdownFile
-    );
-    return executePandoc(markdownFile, title);
+    return PostmanConverter.convertToDita(inputFile, title);
   }
 }

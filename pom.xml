@@ -6,7 +6,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>fox.jason</groupId>
 	<artifactId>passthrough.postman</artifactId>
-	<version>2.1</version>
+	<version>3.0</version>
 
 	<dependencies>
 		<dependency>
@@ -24,30 +24,31 @@
 		</dependency>
 		<dependency>
 			<groupId>fox.jason</groupId>
-			<artifactId>passthrough.pandoc</artifactId>
-			<version>${pandoc-version}</version>
-			<scope>system</scope>
-			<systemPath
-      >${project.basedir}/lib/passthrough.pandoc-${pandoc-version}.jar</systemPath>
-		</dependency>
-		<dependency>
-			<groupId>fox.jason</groupId>
 			<artifactId>passthrough.json-simple</artifactId>
 			<version>1.1.1</version>
 			<scope>system</scope>
 			<systemPath>${project.basedir}/lib/json-simple-1.1.1.jar</systemPath>
 		</dependency>
+		<dependency>
+			<groupId>com.vladsch.flexmark</groupId>
+			<artifactId>flexmark</artifactId>
+			<version>0.64.8</version>
+		</dependency>
+		<dependency>
+			<groupId>com.vladsch.flexmark</groupId>
+			<artifactId>flexmark-ext-tables</artifactId>
+			<version>0.64.8</version>
+		</dependency>
 	</dependencies>
 
 	<properties>
 		<passthrough-version>4.0</passthrough-version>
-		<pandoc-version>1.0</pandoc-version>
 		<sonar.projectKey>fox.jason.passthrough.postman</sonar.projectKey>
 		<sonar.organization>dita-ot-plugins</sonar.organization>
 		<sonar.sources>src</sonar.sources>
 		<sonar.coverage.exclusions>src</sonar.coverage.exclusions>
 		<sonar.java.binaries
-    >target/classes/fox/jason/passthrough/tasks</sonar.java.binaries>
+    >target/classes/fox/jason/passthrough/postman</sonar.java.binaries>
 		<sonar.java.libraries>lib/ant-*.jar</sonar.java.libraries>
 		<sonar.test.exclusions>test</sonar.test.exclusions>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
@@ -72,8 +73,6 @@
                             <excludes>
                                 <exclude
                 >passthrough.parser-${passthrough-version}.jar</exclude>
-                                <exclude
-                >passthrough.pandoc-${pandoc-version}.jar</exclude>
                                 <exclude>json-simple-1.1.1.jar</exclude>
                             </excludes>
                             <followSymlinks>false</followSymlinks>
