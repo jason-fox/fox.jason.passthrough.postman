@@ -15,7 +15,7 @@ public class PostmanFileReader extends AbstractFileReader {
 
   @Override
   protected String runTarget(File inputFile, String title) throws IOException {
-    return PostmanConverter.convertToDita(inputFile, title, null);
+    return PostmanConverter.convertToDita(inputFile, title, null, getDefaultLanguage());
   }
 
   @Override
@@ -29,7 +29,7 @@ public class PostmanFileReader extends AbstractFileReader {
     Files.copy(
         inputFile.toPath(), source.resolveSibling(specFileName), StandardCopyOption.REPLACE_EXISTING);
 
-    return PostmanConverter.convertToDita(inputFile, title, specFileName);
+    return PostmanConverter.convertToDita(inputFile, title, specFileName, getDefaultLanguage());
   }
 
   private static String astSpecFileName(String originalFileName) {

@@ -20,12 +20,16 @@ public final class PostmanConverter {
 
   private final Slugs slugs = new Slugs();
   private final TopicNester nester = new TopicNester(slugs);
+  private final PostmanLabels labels;
 
-  private PostmanConverter() {}
+  private PostmanConverter(String lang) {
+    labels = PostmanLabels.forLanguage(lang);
+  }
 
-  public static String convertToDita(File inputFile, String fallbackTitle, String sourceFileName)
+  public static String convertToDita(
+      File inputFile, String fallbackTitle, String sourceFileName, String lang)
       throws IOException {
-    return new PostmanConverter().convert(inputFile, fallbackTitle, sourceFileName);
+    return new PostmanConverter(lang).convert(inputFile, fallbackTitle, sourceFileName);
   }
 
   private String convert(File inputFile, String fallbackTitle, String sourceFileName) throws IOException {
@@ -144,29 +148,29 @@ public final class PostmanConverter {
           contentType = extractType(str(header, "value"));
         }
       }
-      out.append(section("Headers", keyValueTable(headers, false)));
+      out.append(section(labels.get("headers"), keyValueTable(headers, false)));
     }
 
     JSONArray query = url != null ? (JSONArray) url.get("query") : null;
     if (query != null && !query.isEmpty()) {
-      out.append(section("Query Parameters", keyValueTable(query, true)));
+      out.append(section(labels.get("query-parameters"), keyValueTable(query, true)));
     }
 
     JSONObject body = (JSONObject) request.get("body");
     if (body != null) {
-      out.append(section("Body", renderBody(body, contentType)));
+      out.append(section(labels.get("body"), renderBody(body, contentType)));
     }
 
-    out.append(example("Example Request", "bash", curlSnippet(request)));
+    out.append(example(labels.get("example-request"), "bash", curlSnippet(request)));
 
     if (responses != null) {
       for (Object o : responses) {
         JSONObject response = (JSONObject) o;
-        String lang = str(response, "_postman_previewlanguage");
+        String previewLang = str(response, "_postman_previewlanguage");
         out.append(
             example(
-                "Response " + response.get("code") + " - " + response.get("status"),
-                lang == null ? "text" : lang,
+                labels.get("response") + " " + response.get("code") + " - " + response.get("status"),
+                previewLang == null ? "text" : previewLang,
                 str(response, "body")));
       }
     }

@@ -25,6 +25,7 @@
 	<feature extension="dita.conductor.lib.import" file="lib/annotations-24.0.1.jar"/>
 	<feature extension="ant.import" file="process_postman.xml"/>
 	<require plugin="fox.jason.extend.css"/>
+	<require plugin="fox.jason.passthrough"/>
 
 	<feature extension="extend.css.process" value="postman.css.copy"/>
 
