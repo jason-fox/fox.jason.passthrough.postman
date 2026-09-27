@@ -22,11 +22,12 @@ public final class PostmanConverter {
 
   private PostmanConverter() {}
 
-  public static String convertToDita(File inputFile, String fallbackTitle) throws IOException {
-    return new PostmanConverter().convert(inputFile, fallbackTitle);
+  public static String convertToDita(File inputFile, String fallbackTitle, String sourceFileName)
+      throws IOException {
+    return new PostmanConverter().convert(inputFile, fallbackTitle, sourceFileName);
   }
 
-  private String convert(File inputFile, String fallbackTitle) throws IOException {
+  private String convert(File inputFile, String fallbackTitle, String sourceFileName) throws IOException {
     String content = new String(Files.readAllBytes(inputFile.toPath()), StandardCharsets.UTF_8);
     JSONObject root;
     try {
@@ -52,10 +53,29 @@ public final class PostmanConverter {
     StringBuilder out = new StringBuilder();
     out.append("<topic class=\"- topic/topic \" id=\"").append(slugs.slugify(title)).append("\">\n");
     out.append("<title class=\"- topic/title \">").append(MarkdownDita.esc(title)).append("</title>\n");
-    out.append("<body class=\"- topic/body \"></body>\n");
+    if (sourceFileName == null) {
+      out.append("<body class=\"- topic/body \"></body>\n");
+    } else {
+      out.append("<body class=\"- topic/body \">\n");
+      out.append(specObject(sourceFileName));
+      out.append("</body>\n");
+    }
     out.append(nester.render());
     out.append("</topic>\n");
     return out.toString();
+  }
+
+  // Same outputclass fox.jason.passthrough.swagger uses so dita-bootstrap.ast's existing
+  // ScalarApiReference template picks this up with no changes there - but @data currently
+  // references the raw Postman collection, not an OpenAPI document, so Scalar can't actually
+  // render it yet. This is plumbing ahead of a Postman-collection-to-OpenAPI mapper, not a
+  // finished feature.
+  private String specObject(String sourceFileName) {
+    return "<object class=\"- topic/object \" data=\""
+        + MarkdownDita.esc(sourceFileName)
+        + "\" type=\"application/json\" outputclass=\"swagger-spec\">\n"
+        + "<fallback class=\"- topic/fallback \"/>\n"
+        + "</object>\n";
   }
 
   private void addMarkdownAsTopics(String markdown) {

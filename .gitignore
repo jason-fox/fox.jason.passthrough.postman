@@ -2,6 +2,10 @@
 **/temp/**
 **/tmp/**
 
+# sibling spec files PostmanFileReader writes next to the source so object/@data has a distinct,
+# real file to reference (see PostmanFileReader#astSpecFileName)
+**/*.ast.json
+
 target/
 classes/
 lib/ant-*.jar
