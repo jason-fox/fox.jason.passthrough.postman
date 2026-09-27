@@ -148,7 +148,7 @@ the filename will be replaced by spaces in title.
 
 ## License
 
-[Apache 2.0](LICENSE) © 2019 - 2024 Jason Fox
+[Apache 2.0](LICENSE) © 2019 - 2026 Jason Fox
 
 The Program includes the following additional software components which were obtained under license. See
 [NOTICES.txt](NOTICES.txt) for the full text of each license.
