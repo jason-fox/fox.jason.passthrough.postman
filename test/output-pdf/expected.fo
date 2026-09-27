@@ -398,15 +398,13 @@ containers as necessary. This command will also display open port information.</
     </fo:block>
     <fo:block>
       <fo:block>
-        <fo:block font-family="STANDARD" font-weight="bold">
-          <fo:block>
-            <fo:wrapper></fo:wrapper>
-            <fo:wrapper></fo:wrapper>Obtaining Version Information</fo:block>
-        </fo:block>
+        <fo:wrapper></fo:wrapper>
+        <fo:wrapper></fo:wrapper>
         <fo:block>
           <fo:block background-color="ALICEBLUE" border-color="CORNFLOWERBLUE" border-style="solid" border-width="1pt" font-family="MONOSPACE" font-weight="bold">
             <fo:inline background-color="CORNFLOWERBLUE" color="white" font-family="STANDARD">GET</fo:inline>
             <fo:inline>http://{{orion}}/version/</fo:inline>
+            <fo:inline font-family="STANDARD" font-weight="normal">Obtaining Version Information</fo:inline>
           </fo:block>
           <fo:block>Once the Orion Context Broker is running, You can check the status by making an HTTP request to the exposed port.
 If the response is blank, this is usually because the MongoDB database holding the context information is not running or not connected.</fo:block>
@@ -445,15 +443,13 @@ If the response is blank, this is usually because the MongoDB database holding t
     </fo:block>
     <fo:block>
       <fo:block>
-        <fo:block font-family="STANDARD" font-weight="bold">
-          <fo:block>
-            <fo:wrapper></fo:wrapper>
-            <fo:wrapper></fo:wrapper>Creating your first Data Entity</fo:block>
-        </fo:block>
+        <fo:wrapper></fo:wrapper>
+        <fo:wrapper></fo:wrapper>
         <fo:block>
           <fo:block background-color="BEIGE" border-color="#49cc90" border-style="solid" border-width="1pt" font-family="MONOSPACE" font-weight="bold">
             <fo:inline background-color="#49cc90" color="white" font-family="STANDARD">POST</fo:inline>
             <fo:inline>http://{{orion}}/v2/entities/</fo:inline>
+            <fo:inline font-family="STANDARD" font-weight="normal">Creating your first Data Entity</fo:inline>
           </fo:block>
           <fo:block>
             <fo:block font-family="STANDARD" font-weight="bold">Creating Context Data</fo:block>
@@ -644,15 +640,13 @@ If the response is blank, this is usually because the MongoDB database holding t
     </fo:block>
     <fo:block>
       <fo:block>
-        <fo:block font-family="STANDARD" font-weight="bold">
-          <fo:block>
-            <fo:wrapper></fo:wrapper>
-            <fo:wrapper></fo:wrapper>Creating your Second Data Entity</fo:block>
-        </fo:block>
+        <fo:wrapper></fo:wrapper>
+        <fo:wrapper></fo:wrapper>
         <fo:block>
           <fo:block background-color="BEIGE" border-color="#49cc90" border-style="solid" border-width="1pt" font-family="MONOSPACE" font-weight="bold">
             <fo:inline background-color="#49cc90" color="white" font-family="STANDARD">POST</fo:inline>
             <fo:inline>http://{{orion}}/v2/entities/</fo:inline>
+            <fo:inline font-family="STANDARD" font-weight="normal">Creating your Second Data Entity</fo:inline>
           </fo:block>
           <fo:block>
             <fo:block font-family="STANDARD" font-weight="bold">Headers</fo:block>
@@ -834,15 +828,13 @@ If the response is blank, this is usually because the MongoDB database holding t
     </fo:block>
     <fo:block>
       <fo:block>
-        <fo:block font-family="STANDARD" font-weight="bold">
-          <fo:block>
-            <fo:wrapper></fo:wrapper>
-            <fo:wrapper></fo:wrapper>Retrieving Context Information</fo:block>
-        </fo:block>
+        <fo:wrapper></fo:wrapper>
+        <fo:wrapper></fo:wrapper>
         <fo:block>
           <fo:block background-color="ALICEBLUE" border-color="CORNFLOWERBLUE" border-style="solid" border-width="1pt" font-family="MONOSPACE" font-weight="bold">
             <fo:inline background-color="CORNFLOWERBLUE" color="white" font-family="STANDARD">GET</fo:inline>
             <fo:inline>http://{{orion}}/v2/entities</fo:inline>
+            <fo:inline font-family="STANDARD" font-weight="normal">Retrieving Context Information</fo:inline>
           </fo:block>
           <fo:block>This example returns the full data context</fo:block>
           <fo:block>
@@ -862,15 +854,13 @@ If the response is blank, this is usually because the MongoDB database holding t
     </fo:block>
     <fo:block>
       <fo:block>
-        <fo:block font-family="STANDARD" font-weight="bold">
-          <fo:block>
-            <fo:wrapper></fo:wrapper>
-            <fo:wrapper></fo:wrapper>Obtain Entity Data by id</fo:block>
-        </fo:block>
+        <fo:wrapper></fo:wrapper>
+        <fo:wrapper></fo:wrapper>
         <fo:block>
           <fo:block background-color="ALICEBLUE" border-color="CORNFLOWERBLUE" border-style="solid" border-width="1pt" font-family="MONOSPACE" font-weight="bold">
             <fo:inline background-color="CORNFLOWERBLUE" color="white" font-family="STANDARD">GET</fo:inline>
             <fo:inline>http://{{orion}}/v2/entities/urn:ngsi-ld:Store:001</fo:inline>
+            <fo:inline font-family="STANDARD" font-weight="normal">Obtain Entity Data by id</fo:inline>
           </fo:block>
           <fo:block>This example returns the context data of
             <fo:inline>store1</fo:inline>. The
@@ -937,15 +927,13 @@ If the response is blank, this is usually because the MongoDB database holding t
     </fo:block>
     <fo:block>
       <fo:block>
-        <fo:block font-family="STANDARD" font-weight="bold">
-          <fo:block>
-            <fo:wrapper></fo:wrapper>
-            <fo:wrapper></fo:wrapper>Obtain Entity Data by type</fo:block>
-        </fo:block>
+        <fo:wrapper></fo:wrapper>
+        <fo:wrapper></fo:wrapper>
         <fo:block>
           <fo:block background-color="ALICEBLUE" border-color="CORNFLOWERBLUE" border-style="solid" border-width="1pt" font-family="MONOSPACE" font-weight="bold">
             <fo:inline background-color="CORNFLOWERBLUE" color="white" font-family="STANDARD">GET</fo:inline>
             <fo:inline>http://{{orion}}/v2/entities/</fo:inline>
+            <fo:inline font-family="STANDARD" font-weight="normal">Obtain Entity Data by type</fo:inline>
           </fo:block>
           <fo:block>This example returns the data of all
             <fo:inline>Store</fo:inline>entities within the context data.</fo:block>
@@ -1029,15 +1017,13 @@ Because of the use of the
     </fo:block>
     <fo:block>
       <fo:block>
-        <fo:block font-family="STANDARD" font-weight="bold">
-          <fo:block>
-            <fo:wrapper></fo:wrapper>
-            <fo:wrapper></fo:wrapper>Filter context data by attribute value</fo:block>
-        </fo:block>
+        <fo:wrapper></fo:wrapper>
+        <fo:wrapper></fo:wrapper>
         <fo:block>
           <fo:block background-color="ALICEBLUE" border-color="CORNFLOWERBLUE" border-style="solid" border-width="1pt" font-family="MONOSPACE" font-weight="bold">
             <fo:inline background-color="CORNFLOWERBLUE" color="white" font-family="STANDARD">GET</fo:inline>
             <fo:inline>http://{{orion}}/v2/entities/</fo:inline>
+            <fo:inline font-family="STANDARD" font-weight="normal">Filter context data by attribute value</fo:inline>
           </fo:block>
           <fo:block>
             <fo:block font-family="STANDARD" font-weight="bold">Filter context data by comparing the values of an attribute</fo:block>
@@ -1147,15 +1133,13 @@ Because of the use of the
     </fo:block>
     <fo:block>
       <fo:block>
-        <fo:block font-family="STANDARD" font-weight="bold">
-          <fo:block>
-            <fo:wrapper></fo:wrapper>
-            <fo:wrapper></fo:wrapper>Filter context data by sub-attribute value</fo:block>
-        </fo:block>
+        <fo:wrapper></fo:wrapper>
+        <fo:wrapper></fo:wrapper>
         <fo:block>
           <fo:block background-color="ALICEBLUE" border-color="CORNFLOWERBLUE" border-style="solid" border-width="1pt" font-family="MONOSPACE" font-weight="bold">
             <fo:inline background-color="CORNFLOWERBLUE" color="white" font-family="STANDARD">GET</fo:inline>
             <fo:inline>http://{{orion}}/v2/entities/</fo:inline>
+            <fo:inline font-family="STANDARD" font-weight="normal">Filter context data by sub-attribute value</fo:inline>
           </fo:block>
           <fo:block>
             <fo:block font-family="STANDARD" font-weight="bold">Filter context data by comparing the values of an attribute</fo:block>
@@ -1264,15 +1248,13 @@ Because of the use of the
     </fo:block>
     <fo:block>
       <fo:block>
-        <fo:block font-family="STANDARD" font-weight="bold">
-          <fo:block>
-            <fo:wrapper></fo:wrapper>
-            <fo:wrapper></fo:wrapper>Filter context data by querying metadata</fo:block>
-        </fo:block>
+        <fo:wrapper></fo:wrapper>
+        <fo:wrapper></fo:wrapper>
         <fo:block>
           <fo:block background-color="ALICEBLUE" border-color="CORNFLOWERBLUE" border-style="solid" border-width="1pt" font-family="MONOSPACE" font-weight="bold">
             <fo:inline background-color="CORNFLOWERBLUE" color="white" font-family="STANDARD">GET</fo:inline>
             <fo:inline>http://{{orion}}/v2/entities/</fo:inline>
+            <fo:inline font-family="STANDARD" font-weight="normal">Filter context data by querying metadata</fo:inline>
           </fo:block>
           <fo:block>
             <fo:block font-family="STANDARD" font-weight="bold">Filter context data by comparing the values of an metadata attribute</fo:block>
@@ -1373,15 +1355,13 @@ Because of the use of the
     </fo:block>
     <fo:block>
       <fo:block>
-        <fo:block font-family="STANDARD" font-weight="bold">
-          <fo:block>
-            <fo:wrapper></fo:wrapper>
-            <fo:wrapper></fo:wrapper>Filter context data by distance</fo:block>
-        </fo:block>
+        <fo:wrapper></fo:wrapper>
+        <fo:wrapper></fo:wrapper>
         <fo:block>
           <fo:block background-color="ALICEBLUE" border-color="CORNFLOWERBLUE" border-style="solid" border-width="1pt" font-family="MONOSPACE" font-weight="bold">
             <fo:inline background-color="CORNFLOWERBLUE" color="white" font-family="STANDARD">GET</fo:inline>
             <fo:inline>http://{{orion}}/v2/entities/</fo:inline>
+            <fo:inline font-family="STANDARD" font-weight="normal">Filter context data by distance</fo:inline>
           </fo:block>
           <fo:block>
             <fo:block font-family="STANDARD" font-weight="bold">Filter context data by comparing the values of a geo:point attribute</fo:block>
