@@ -370,10 +370,10 @@ containers as necessary. This command will also display open port information.</
     <fo:block>
       <fo:block>
         <fo:block font-family="STANDARD" font-weight="bold">
-        <fo:block>
+          <fo:block>
             <fo:wrapper></fo:wrapper>
             <fo:wrapper></fo:wrapper>Obtaining Version Information</fo:block>
-          </fo:block>
+        </fo:block>
         <fo:block>
           <fo:block background-color="ALICEBLUE" font-family="MONOSPACE" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">GET http://{{orion}}/version/</fo:block>
           <fo:block>Once the Orion Context Broker is running, You can check the status by making an HTTP request to the exposed port.
@@ -405,16 +405,16 @@ If the response is blank, this is usually because the MongoDB database holding t
     <fo:block>
       <fo:block>
         <fo:block font-family="STANDARD" font-weight="bold">
-        <fo:block>
+          <fo:block>
             <fo:wrapper></fo:wrapper>
             <fo:wrapper></fo:wrapper>Creating your first Data Entity</fo:block>
-          </fo:block>
-          <fo:block>
+        </fo:block>
+        <fo:block>
           <fo:block background-color="ALICEBLUE" font-family="MONOSPACE" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">POST http://{{orion}}/v2/entities/</fo:block>
           <fo:block>
             <fo:block font-family="STANDARD" font-weight="bold">Creating Context Data</fo:block>
             <fo:block>
-            <fo:block>At its heart, FIWARE is a system for managing context information, so lets add some context data into the system by creating a  new entity (a store in
+              <fo:block>At its heart, FIWARE is a system for managing context information, so lets add some context data into the system by creating a  new entity (a store in
                 <fo:inline font-weight="bold">Berlin</fo:inline>). Any entity must have a
                 <fo:inline font-family="MONOSPACE">id</fo:inline>and
                 <fo:inline font-family="MONOSPACE">type</fo:inline>attributes, additional attributes are optional and will depend on the system being described. Each additional attribute should also have a defined
@@ -428,37 +428,37 @@ If the response is blank, this is usually because the MongoDB database holding t
               <fo:block-container reference-orientation="0">
                 <fo:block>
                   <fo:table border-after-color="black" border-before-color="black" border-end-color="black" border-end-style="solid" border-end-width="1pt" table-layout="fixed" width="100%">
-              <fo:table-column column-number="1"></fo:table-column>
-              <fo:table-column column-number="2"></fo:table-column>
-              <fo:table-column column-number="3"></fo:table-column>
-              <fo:table-header>
-                <fo:table-row>
-                  <fo:table-cell border-before-color="black" text-align="from-table-column()">
-                    <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Key</fo:block>
-                  </fo:table-cell>
-                  <fo:table-cell border-before-color="black" text-align="from-table-column()">
-                    <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Value</fo:block>
-                  </fo:table-cell>
-                  <fo:table-cell border-before-color="black" text-align="from-table-column()">
-                    <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Description</fo:block>
-                  </fo:table-cell>
-                </fo:table-row>
-              </fo:table-header>
-              <fo:table-body>
-                <fo:table-row keep-together.within-page="always">
-                  <fo:table-cell border-before-color="black" text-align="from-table-column()">
-                    <fo:block space-after.conditionality="retain" space-before.conditionality="retain">Content-Type</fo:block>
-                  </fo:table-cell>
-                  <fo:table-cell border-before-color="black" text-align="from-table-column()">
-                    <fo:block space-after.conditionality="retain" space-before.conditionality="retain">application/json</fo:block>
-                  </fo:table-cell>
-                  <fo:table-cell border-before-color="black" text-align="from-table-column()">
-                    <fo:block space-after.conditionality="retain" space-before.conditionality="retain"></fo:block>
-                  </fo:table-cell>
-                </fo:table-row>
-              </fo:table-body>
-            </fo:table>
-          </fo:block>
+                    <fo:table-column column-number="1"></fo:table-column>
+                    <fo:table-column column-number="2"></fo:table-column>
+                    <fo:table-column column-number="3"></fo:table-column>
+                    <fo:table-header>
+                      <fo:table-row>
+                        <fo:table-cell border-before-color="black" text-align="from-table-column()">
+                          <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Key</fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell border-before-color="black" text-align="from-table-column()">
+                          <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Value</fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell border-before-color="black" text-align="from-table-column()">
+                          <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Description</fo:block>
+                        </fo:table-cell>
+                      </fo:table-row>
+                    </fo:table-header>
+                    <fo:table-body>
+                      <fo:table-row keep-together.within-page="always">
+                        <fo:table-cell border-before-color="black" text-align="from-table-column()">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">Content-Type</fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell border-before-color="black" text-align="from-table-column()">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">application/json</fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell border-before-color="black" text-align="from-table-column()">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain"></fo:block>
+                        </fo:table-cell>
+                      </fo:table-row>
+                    </fo:table-body>
+                  </fo:table>
+                </fo:block>
               </fo:block-container>
             </fo:block>
           </fo:block>
@@ -541,11 +541,11 @@ If the response is blank, this is usually because the MongoDB database holding t
     <fo:block>
       <fo:block>
         <fo:block font-family="STANDARD" font-weight="bold">
-        <fo:block>
+          <fo:block>
             <fo:wrapper></fo:wrapper>
             <fo:wrapper></fo:wrapper>Creating your Second Data Entity</fo:block>
-          </fo:block>
-          <fo:block>
+        </fo:block>
+        <fo:block>
           <fo:block background-color="ALICEBLUE" font-family="MONOSPACE" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">POST http://{{orion}}/v2/entities/</fo:block>
           <fo:block>
             <fo:block font-family="STANDARD" font-weight="bold">Headers</fo:block>
@@ -553,37 +553,37 @@ If the response is blank, this is usually because the MongoDB database holding t
               <fo:block-container reference-orientation="0">
                 <fo:block>
                   <fo:table border-after-color="black" border-before-color="black" border-end-color="black" border-end-style="solid" border-end-width="1pt" table-layout="fixed" width="100%">
-              <fo:table-column column-number="1"></fo:table-column>
-              <fo:table-column column-number="2"></fo:table-column>
-              <fo:table-column column-number="3"></fo:table-column>
-              <fo:table-header>
-                <fo:table-row>
-                  <fo:table-cell border-before-color="black" text-align="from-table-column()">
-                    <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Key</fo:block>
-                  </fo:table-cell>
-                  <fo:table-cell border-before-color="black" text-align="from-table-column()">
-                    <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Value</fo:block>
-                  </fo:table-cell>
-                  <fo:table-cell border-before-color="black" text-align="from-table-column()">
-                    <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Description</fo:block>
-                  </fo:table-cell>
-                </fo:table-row>
-              </fo:table-header>
-              <fo:table-body>
-                <fo:table-row keep-together.within-page="always">
-                  <fo:table-cell border-before-color="black" text-align="from-table-column()">
-                    <fo:block space-after.conditionality="retain" space-before.conditionality="retain">Content-Type</fo:block>
-                  </fo:table-cell>
-                  <fo:table-cell border-before-color="black" text-align="from-table-column()">
-                    <fo:block space-after.conditionality="retain" space-before.conditionality="retain">application/json</fo:block>
-                  </fo:table-cell>
-                  <fo:table-cell border-before-color="black" text-align="from-table-column()">
-                    <fo:block space-after.conditionality="retain" space-before.conditionality="retain"></fo:block>
-                  </fo:table-cell>
-                </fo:table-row>
-              </fo:table-body>
-            </fo:table>
-          </fo:block>
+                    <fo:table-column column-number="1"></fo:table-column>
+                    <fo:table-column column-number="2"></fo:table-column>
+                    <fo:table-column column-number="3"></fo:table-column>
+                    <fo:table-header>
+                      <fo:table-row>
+                        <fo:table-cell border-before-color="black" text-align="from-table-column()">
+                          <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Key</fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell border-before-color="black" text-align="from-table-column()">
+                          <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Value</fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell border-before-color="black" text-align="from-table-column()">
+                          <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Description</fo:block>
+                        </fo:table-cell>
+                      </fo:table-row>
+                    </fo:table-header>
+                    <fo:table-body>
+                      <fo:table-row keep-together.within-page="always">
+                        <fo:table-cell border-before-color="black" text-align="from-table-column()">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">Content-Type</fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell border-before-color="black" text-align="from-table-column()">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">application/json</fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell border-before-color="black" text-align="from-table-column()">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain"></fo:block>
+                        </fo:table-cell>
+                      </fo:table-row>
+                    </fo:table-body>
+                  </fo:table>
+                </fo:block>
               </fo:block-container>
             </fo:block>
           </fo:block>
@@ -666,10 +666,10 @@ If the response is blank, this is usually because the MongoDB database holding t
     <fo:block>
       <fo:block>
         <fo:block font-family="STANDARD" font-weight="bold">
-        <fo:block>
+          <fo:block>
             <fo:wrapper></fo:wrapper>
             <fo:wrapper></fo:wrapper>Retrieving Context Information</fo:block>
-          </fo:block>
+        </fo:block>
         <fo:block>
           <fo:block background-color="ALICEBLUE" font-family="MONOSPACE" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">GET http://{{orion}}/v2/entities</fo:block>
           <fo:block>This example returns the full data context</fo:block>
@@ -686,10 +686,10 @@ If the response is blank, this is usually because the MongoDB database holding t
     <fo:block>
       <fo:block>
         <fo:block font-family="STANDARD" font-weight="bold">
-        <fo:block>
+          <fo:block>
             <fo:wrapper></fo:wrapper>
             <fo:wrapper></fo:wrapper>Obtain Entity Data by id</fo:block>
-          </fo:block>
+        </fo:block>
         <fo:block>
           <fo:block background-color="ALICEBLUE" font-family="MONOSPACE" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">GET http://{{orion}}/v2/entities/urn:ngsi-ld:Store:001</fo:block>
           <fo:block>This example returns the context data of
@@ -705,42 +705,42 @@ If the response is blank, this is usually because the MongoDB database holding t
               <fo:block-container reference-orientation="0">
                 <fo:block>
                   <fo:table border-after-color="black" border-before-color="black" border-end-color="black" border-end-style="solid" border-end-width="1pt" table-layout="fixed" width="100%">
-              <fo:table-column column-number="1"></fo:table-column>
-              <fo:table-column column-number="2"></fo:table-column>
-              <fo:table-column column-number="3"></fo:table-column>
-              <fo:table-header>
-                <fo:table-row>
-                  <fo:table-cell border-before-color="black" text-align="from-table-column()">
-                    <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Key</fo:block>
-                  </fo:table-cell>
-                  <fo:table-cell border-before-color="black" text-align="from-table-column()">
-                    <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Value</fo:block>
-                  </fo:table-cell>
-                  <fo:table-cell border-before-color="black" text-align="from-table-column()">
-                    <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Description</fo:block>
-                  </fo:table-cell>
-                </fo:table-row>
-              </fo:table-header>
-              <fo:table-body>
-                <fo:table-row keep-together.within-page="always">
-                  <fo:table-cell border-before-color="black" text-align="from-table-column()">
-                    <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
+                    <fo:table-column column-number="1"></fo:table-column>
+                    <fo:table-column column-number="2"></fo:table-column>
+                    <fo:table-column column-number="3"></fo:table-column>
+                    <fo:table-header>
+                      <fo:table-row>
+                        <fo:table-cell border-before-color="black" text-align="from-table-column()">
+                          <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Key</fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell border-before-color="black" text-align="from-table-column()">
+                          <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Value</fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell border-before-color="black" text-align="from-table-column()">
+                          <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Description</fo:block>
+                        </fo:table-cell>
+                      </fo:table-row>
+                    </fo:table-header>
+                    <fo:table-body>
+                      <fo:table-row keep-together.within-page="always">
+                        <fo:table-cell border-before-color="black" text-align="from-table-column()">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
                             <fo:inline font-family="MONOSPACE">options</fo:inline>
-                    </fo:block>
-                  </fo:table-cell>
-                  <fo:table-cell border-before-color="black" text-align="from-table-column()">
-                    <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
+                          </fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell border-before-color="black" text-align="from-table-column()">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
                             <fo:inline font-family="MONOSPACE">keyValues</fo:inline>
-                    </fo:block>
-                  </fo:table-cell>
-                  <fo:table-cell border-before-color="black" text-align="from-table-column()">
-                    <fo:block space-after.conditionality="retain" space-before.conditionality="retain">* `keyValues` option in order to get a more compact and brief representation, including just attribute values
+                          </fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell border-before-color="black" text-align="from-table-column()">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">* `keyValues` option in order to get a more compact and brief representation, including just attribute values
 * `values` option combined with a list of attribute values  `attrs`  for an ordered list of attributes only</fo:block>
-                  </fo:table-cell>
-                </fo:table-row>
-              </fo:table-body>
-            </fo:table>
-          </fo:block>
+                        </fo:table-cell>
+                      </fo:table-row>
+                    </fo:table-body>
+                  </fo:table>
+                </fo:block>
               </fo:block-container>
             </fo:block>
           </fo:block>
@@ -758,10 +758,10 @@ If the response is blank, this is usually because the MongoDB database holding t
     <fo:block>
       <fo:block>
         <fo:block font-family="STANDARD" font-weight="bold">
-        <fo:block>
+          <fo:block>
             <fo:wrapper></fo:wrapper>
             <fo:wrapper></fo:wrapper>Obtain Entity Data by type</fo:block>
-          </fo:block>
+        </fo:block>
         <fo:block>
           <fo:block background-color="ALICEBLUE" font-family="MONOSPACE" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">GET http://{{orion}}/v2/entities/</fo:block>
           <fo:block>This example returns the data of all
@@ -777,57 +777,57 @@ Because of the use of the
               <fo:block-container reference-orientation="0">
                 <fo:block>
                   <fo:table border-after-color="black" border-before-color="black" border-end-color="black" border-end-style="solid" border-end-width="1pt" table-layout="fixed" width="100%">
-              <fo:table-column column-number="1"></fo:table-column>
-              <fo:table-column column-number="2"></fo:table-column>
-              <fo:table-column column-number="3"></fo:table-column>
-              <fo:table-header>
-                <fo:table-row>
-                  <fo:table-cell border-before-color="black" text-align="from-table-column()">
-                    <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Key</fo:block>
-                  </fo:table-cell>
-                  <fo:table-cell border-before-color="black" text-align="from-table-column()">
-                    <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Value</fo:block>
-                  </fo:table-cell>
-                  <fo:table-cell border-before-color="black" text-align="from-table-column()">
-                    <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Description</fo:block>
-                  </fo:table-cell>
-                </fo:table-row>
-              </fo:table-header>
-              <fo:table-body>
-                <fo:table-row keep-together.within-page="always">
-                  <fo:table-cell border-before-color="black" text-align="from-table-column()">
-                    <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
+                    <fo:table-column column-number="1"></fo:table-column>
+                    <fo:table-column column-number="2"></fo:table-column>
+                    <fo:table-column column-number="3"></fo:table-column>
+                    <fo:table-header>
+                      <fo:table-row>
+                        <fo:table-cell border-before-color="black" text-align="from-table-column()">
+                          <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Key</fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell border-before-color="black" text-align="from-table-column()">
+                          <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Value</fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell border-before-color="black" text-align="from-table-column()">
+                          <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Description</fo:block>
+                        </fo:table-cell>
+                      </fo:table-row>
+                    </fo:table-header>
+                    <fo:table-body>
+                      <fo:table-row keep-together.within-page="always">
+                        <fo:table-cell border-before-color="black" text-align="from-table-column()">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
                             <fo:inline font-family="MONOSPACE">type</fo:inline>
-                    </fo:block>
-                  </fo:table-cell>
-                  <fo:table-cell border-before-color="black" text-align="from-table-column()">
-                    <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
+                          </fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell border-before-color="black" text-align="from-table-column()">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
                             <fo:inline font-family="MONOSPACE">Store</fo:inline>
-                    </fo:block>
-                  </fo:table-cell>
-                  <fo:table-cell border-before-color="black" text-align="from-table-column()">
-                    <fo:block space-after.conditionality="retain" space-before.conditionality="retain">Entity type, to avoid ambiguity in case there are several entities with the same entity id</fo:block>
-                  </fo:table-cell>
-                </fo:table-row>
-                <fo:table-row keep-together.within-page="always">
-                  <fo:table-cell text-align="from-table-column()">
-                    <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
+                          </fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell border-before-color="black" text-align="from-table-column()">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">Entity type, to avoid ambiguity in case there are several entities with the same entity id</fo:block>
+                        </fo:table-cell>
+                      </fo:table-row>
+                      <fo:table-row keep-together.within-page="always">
+                        <fo:table-cell text-align="from-table-column()">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
                             <fo:inline font-family="MONOSPACE">options</fo:inline>
-                    </fo:block>
-                  </fo:table-cell>
-                  <fo:table-cell text-align="from-table-column()">
-                    <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
+                          </fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell text-align="from-table-column()">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
                             <fo:inline font-family="MONOSPACE">keyValues</fo:inline>
-                    </fo:block>
-                  </fo:table-cell>
-                  <fo:table-cell text-align="from-table-column()">
-                    <fo:block space-after.conditionality="retain" space-before.conditionality="retain">* `keyValues` option in order to get a more compact and brief representation, including just attribute values
+                          </fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell text-align="from-table-column()">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">* `keyValues` option in order to get a more compact and brief representation, including just attribute values
 * `values` option combined with a list of attribute values  `attrs`  for an ordered list of attributes only</fo:block>
-                  </fo:table-cell>
-                </fo:table-row>
-              </fo:table-body>
-            </fo:table>
-          </fo:block>
+                        </fo:table-cell>
+                      </fo:table-row>
+                    </fo:table-body>
+                  </fo:table>
+                </fo:block>
               </fo:block-container>
             </fo:block>
           </fo:block>
@@ -846,24 +846,24 @@ Because of the use of the
     <fo:block>
       <fo:block>
         <fo:block font-family="STANDARD" font-weight="bold">
-        <fo:block>
+          <fo:block>
             <fo:wrapper></fo:wrapper>
             <fo:wrapper></fo:wrapper>Filter context data by attribute value</fo:block>
-          </fo:block>
-          <fo:block>
+        </fo:block>
+        <fo:block>
           <fo:block background-color="ALICEBLUE" font-family="MONOSPACE" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">GET http://{{orion}}/v2/entities/</fo:block>
           <fo:block>
             <fo:block font-family="STANDARD" font-weight="bold">Filter context data by comparing the values of an attribute</fo:block>
             <fo:block>
-            <fo:block>This example returns the data of all
+              <fo:block>This example returns the data of all
                 <fo:inline font-family="MONOSPACE">Store</fo:inline>entities found with the name
                 <fo:inline font-style="italic">Checkpoint Markt</fo:inline>.</fo:block>
-            <fo:block>Filtering can be done using the
+              <fo:block>Filtering can be done using the
                 <fo:inline font-family="MONOSPACE">q</fo:inline>parameter - if a string has spaces in it, it can be URL encoded and held within single quote characters
                 <fo:inline font-family="MONOSPACE">'</fo:inline>=
                 <fo:inline font-family="MONOSPACE">%27</fo:inline>
-            </fo:block>
-            <fo:block>Because of the use of the
+              </fo:block>
+              <fo:block>Because of the use of the
                 <fo:inline font-family="MONOSPACE">options=keyValues</fo:inline>, the response consists of JSON only without the attribute
                 <fo:inline font-family="MONOSPACE">type</fo:inline>and
                 <fo:inline font-family="MONOSPACE">metadata</fo:inline>elements.</fo:block>
@@ -875,72 +875,72 @@ Because of the use of the
               <fo:block-container reference-orientation="0">
                 <fo:block>
                   <fo:table border-after-color="black" border-before-color="black" border-end-color="black" border-end-style="solid" border-end-width="1pt" table-layout="fixed" width="100%">
-              <fo:table-column column-number="1"></fo:table-column>
-              <fo:table-column column-number="2"></fo:table-column>
-              <fo:table-column column-number="3"></fo:table-column>
-              <fo:table-header>
-                <fo:table-row>
-                  <fo:table-cell border-before-color="black" text-align="from-table-column()">
-                    <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Key</fo:block>
-                  </fo:table-cell>
-                  <fo:table-cell border-before-color="black" text-align="from-table-column()">
-                    <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Value</fo:block>
-                  </fo:table-cell>
-                  <fo:table-cell border-before-color="black" text-align="from-table-column()">
-                    <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Description</fo:block>
-                  </fo:table-cell>
-                </fo:table-row>
-              </fo:table-header>
-              <fo:table-body>
-                <fo:table-row keep-together.within-page="always">
-                  <fo:table-cell border-before-color="black" text-align="from-table-column()">
-                    <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
+                    <fo:table-column column-number="1"></fo:table-column>
+                    <fo:table-column column-number="2"></fo:table-column>
+                    <fo:table-column column-number="3"></fo:table-column>
+                    <fo:table-header>
+                      <fo:table-row>
+                        <fo:table-cell border-before-color="black" text-align="from-table-column()">
+                          <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Key</fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell border-before-color="black" text-align="from-table-column()">
+                          <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Value</fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell border-before-color="black" text-align="from-table-column()">
+                          <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Description</fo:block>
+                        </fo:table-cell>
+                      </fo:table-row>
+                    </fo:table-header>
+                    <fo:table-body>
+                      <fo:table-row keep-together.within-page="always">
+                        <fo:table-cell border-before-color="black" text-align="from-table-column()">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
                             <fo:inline font-family="MONOSPACE">q</fo:inline>
-                    </fo:block>
-                  </fo:table-cell>
-                  <fo:table-cell border-before-color="black" text-align="from-table-column()">
-                    <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
+                          </fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell border-before-color="black" text-align="from-table-column()">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
                             <fo:inline font-family="MONOSPACE">name=='Checkpoint Markt'</fo:inline>
-                    </fo:block>
-                  </fo:table-cell>
-                  <fo:table-cell border-before-color="black" text-align="from-table-column()">
-                    <fo:block space-after.conditionality="retain" space-before.conditionality="retain"></fo:block>
-                  </fo:table-cell>
-                </fo:table-row>
-                <fo:table-row keep-together.within-page="always">
-                  <fo:table-cell text-align="from-table-column()">
-                    <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
+                          </fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell border-before-color="black" text-align="from-table-column()">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain"></fo:block>
+                        </fo:table-cell>
+                      </fo:table-row>
+                      <fo:table-row keep-together.within-page="always">
+                        <fo:table-cell text-align="from-table-column()">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
                             <fo:inline font-family="MONOSPACE">type</fo:inline>
-                    </fo:block>
-                  </fo:table-cell>
-                  <fo:table-cell text-align="from-table-column()">
-                    <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
+                          </fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell text-align="from-table-column()">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
                             <fo:inline font-family="MONOSPACE">Store</fo:inline>
-                    </fo:block>
-                  </fo:table-cell>
-                  <fo:table-cell text-align="from-table-column()">
-                    <fo:block space-after.conditionality="retain" space-before.conditionality="retain">Entity type, to avoid ambiguity in case there are several entities with the same entity id</fo:block>
-                  </fo:table-cell>
-                </fo:table-row>
-                <fo:table-row keep-together.within-page="always">
-                  <fo:table-cell text-align="from-table-column()">
-                    <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
+                          </fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell text-align="from-table-column()">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">Entity type, to avoid ambiguity in case there are several entities with the same entity id</fo:block>
+                        </fo:table-cell>
+                      </fo:table-row>
+                      <fo:table-row keep-together.within-page="always">
+                        <fo:table-cell text-align="from-table-column()">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
                             <fo:inline font-family="MONOSPACE">options</fo:inline>
-                    </fo:block>
-                  </fo:table-cell>
-                  <fo:table-cell text-align="from-table-column()">
-                    <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
+                          </fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell text-align="from-table-column()">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
                             <fo:inline font-family="MONOSPACE">keyValues</fo:inline>
-                    </fo:block>
-                  </fo:table-cell>
-                  <fo:table-cell text-align="from-table-column()">
-                    <fo:block space-after.conditionality="retain" space-before.conditionality="retain">* `keyValues` option in order to get a more compact and brief representation, including just attribute values
+                          </fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell text-align="from-table-column()">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">* `keyValues` option in order to get a more compact and brief representation, including just attribute values
 * `values` option combined with a list of attribute values  `attrs`  for an ordered list of attributes only</fo:block>
-                  </fo:table-cell>
-                </fo:table-row>
-              </fo:table-body>
-            </fo:table>
-          </fo:block>
+                        </fo:table-cell>
+                      </fo:table-row>
+                    </fo:table-body>
+                  </fo:table>
+                </fo:block>
               </fo:block-container>
             </fo:block>
           </fo:block>
@@ -960,23 +960,23 @@ Because of the use of the
     <fo:block>
       <fo:block>
         <fo:block font-family="STANDARD" font-weight="bold">
-        <fo:block>
+          <fo:block>
             <fo:wrapper></fo:wrapper>
             <fo:wrapper></fo:wrapper>Filter context data by sub-attribute value</fo:block>
-          </fo:block>
-          <fo:block>
+        </fo:block>
+        <fo:block>
           <fo:block background-color="ALICEBLUE" font-family="MONOSPACE" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">GET http://{{orion}}/v2/entities/</fo:block>
           <fo:block>
             <fo:block font-family="STANDARD" font-weight="bold">Filter context data by comparing the values of an attribute</fo:block>
             <fo:block>
-            <fo:block>This example returns the data of all
+              <fo:block>This example returns the data of all
                 <fo:inline font-family="MONOSPACE">Store</fo:inline>entities found in the
                 <fo:inline font-weight="bold">Kreuzberg</fo:inline>district of Berlin.</fo:block>
-            <fo:block>Filtering can be done using the
+              <fo:block>Filtering can be done using the
                 <fo:inline font-family="MONOSPACE">q</fo:inline>parameter - sub-attributes are annotated using the dot syntax e.g.
                 <fo:inline font-family="MONOSPACE">address.addressLocality</fo:inline>
-            </fo:block>
-            <fo:block>Because of the use of the
+              </fo:block>
+              <fo:block>Because of the use of the
                 <fo:inline font-family="MONOSPACE">options=keyValues</fo:inline>, the response consists of JSON only without the attribute
                 <fo:inline font-family="MONOSPACE">type</fo:inline>and
                 <fo:inline font-family="MONOSPACE">metadata</fo:inline>elements.</fo:block>
@@ -988,72 +988,72 @@ Because of the use of the
               <fo:block-container reference-orientation="0">
                 <fo:block>
                   <fo:table border-after-color="black" border-before-color="black" border-end-color="black" border-end-style="solid" border-end-width="1pt" table-layout="fixed" width="100%">
-              <fo:table-column column-number="1"></fo:table-column>
-              <fo:table-column column-number="2"></fo:table-column>
-              <fo:table-column column-number="3"></fo:table-column>
-              <fo:table-header>
-                <fo:table-row>
-                  <fo:table-cell border-before-color="black" text-align="from-table-column()">
-                    <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Key</fo:block>
-                  </fo:table-cell>
-                  <fo:table-cell border-before-color="black" text-align="from-table-column()">
-                    <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Value</fo:block>
-                  </fo:table-cell>
-                  <fo:table-cell border-before-color="black" text-align="from-table-column()">
-                    <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Description</fo:block>
-                  </fo:table-cell>
-                </fo:table-row>
-              </fo:table-header>
-              <fo:table-body>
-                <fo:table-row keep-together.within-page="always">
-                  <fo:table-cell border-before-color="black" text-align="from-table-column()">
-                    <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
+                    <fo:table-column column-number="1"></fo:table-column>
+                    <fo:table-column column-number="2"></fo:table-column>
+                    <fo:table-column column-number="3"></fo:table-column>
+                    <fo:table-header>
+                      <fo:table-row>
+                        <fo:table-cell border-before-color="black" text-align="from-table-column()">
+                          <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Key</fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell border-before-color="black" text-align="from-table-column()">
+                          <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Value</fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell border-before-color="black" text-align="from-table-column()">
+                          <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Description</fo:block>
+                        </fo:table-cell>
+                      </fo:table-row>
+                    </fo:table-header>
+                    <fo:table-body>
+                      <fo:table-row keep-together.within-page="always">
+                        <fo:table-cell border-before-color="black" text-align="from-table-column()">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
                             <fo:inline font-family="MONOSPACE">q</fo:inline>
-                    </fo:block>
-                  </fo:table-cell>
-                  <fo:table-cell border-before-color="black" text-align="from-table-column()">
-                    <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
+                          </fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell border-before-color="black" text-align="from-table-column()">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
                             <fo:inline font-family="MONOSPACE">address.addressLocality=='Kreuzberg'</fo:inline>
-                    </fo:block>
-                  </fo:table-cell>
-                  <fo:table-cell border-before-color="black" text-align="from-table-column()">
-                    <fo:block space-after.conditionality="retain" space-before.conditionality="retain"></fo:block>
-                  </fo:table-cell>
-                </fo:table-row>
-                <fo:table-row keep-together.within-page="always">
-                  <fo:table-cell text-align="from-table-column()">
-                    <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
+                          </fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell border-before-color="black" text-align="from-table-column()">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain"></fo:block>
+                        </fo:table-cell>
+                      </fo:table-row>
+                      <fo:table-row keep-together.within-page="always">
+                        <fo:table-cell text-align="from-table-column()">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
                             <fo:inline font-family="MONOSPACE">type</fo:inline>
-                    </fo:block>
-                  </fo:table-cell>
-                  <fo:table-cell text-align="from-table-column()">
-                    <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
+                          </fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell text-align="from-table-column()">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
                             <fo:inline font-family="MONOSPACE">Store</fo:inline>
-                    </fo:block>
-                  </fo:table-cell>
-                  <fo:table-cell text-align="from-table-column()">
-                    <fo:block space-after.conditionality="retain" space-before.conditionality="retain">Entity type, to avoid ambiguity in case there are several entities with the same entity id</fo:block>
-                  </fo:table-cell>
-                </fo:table-row>
-                <fo:table-row keep-together.within-page="always">
-                  <fo:table-cell text-align="from-table-column()">
-                    <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
+                          </fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell text-align="from-table-column()">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">Entity type, to avoid ambiguity in case there are several entities with the same entity id</fo:block>
+                        </fo:table-cell>
+                      </fo:table-row>
+                      <fo:table-row keep-together.within-page="always">
+                        <fo:table-cell text-align="from-table-column()">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
                             <fo:inline font-family="MONOSPACE">options</fo:inline>
-                    </fo:block>
-                  </fo:table-cell>
-                  <fo:table-cell text-align="from-table-column()">
-                    <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
+                          </fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell text-align="from-table-column()">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
                             <fo:inline font-family="MONOSPACE">keyValues</fo:inline>
-                    </fo:block>
-                  </fo:table-cell>
-                  <fo:table-cell text-align="from-table-column()">
-                    <fo:block space-after.conditionality="retain" space-before.conditionality="retain">* `keyValues` option in order to get a more compact and brief representation, including just attribute values
+                          </fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell text-align="from-table-column()">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">* `keyValues` option in order to get a more compact and brief representation, including just attribute values
 * `values` option combined with a list of attribute values  `attrs`  for an ordered list of attributes only</fo:block>
-                  </fo:table-cell>
-                </fo:table-row>
-              </fo:table-body>
-            </fo:table>
-          </fo:block>
+                        </fo:table-cell>
+                      </fo:table-row>
+                    </fo:table-body>
+                  </fo:table>
+                </fo:block>
               </fo:block-container>
             </fo:block>
           </fo:block>
@@ -1073,18 +1073,18 @@ Because of the use of the
     <fo:block>
       <fo:block>
         <fo:block font-family="STANDARD" font-weight="bold">
-        <fo:block>
+          <fo:block>
             <fo:wrapper></fo:wrapper>
             <fo:wrapper></fo:wrapper>Filter context data by querying metadata</fo:block>
-          </fo:block>
-          <fo:block>
+        </fo:block>
+        <fo:block>
           <fo:block background-color="ALICEBLUE" font-family="MONOSPACE" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">GET http://{{orion}}/v2/entities/</fo:block>
           <fo:block>
             <fo:block font-family="STANDARD" font-weight="bold">Filter context data by comparing the values of an metadata attribute</fo:block>
             <fo:block>
-            <fo:block>This example returns the data of all
+              <fo:block>This example returns the data of all
                 <fo:inline font-family="MONOSPACE">Store</fo:inline>entities with a verified address.</fo:block>
-            <fo:block>Metadata queries can be made using the
+              <fo:block>Metadata queries can be made using the
                 <fo:inline font-family="MONOSPACE">mq</fo:inline>parameter.</fo:block>
             </fo:block>
           </fo:block>
@@ -1094,72 +1094,72 @@ Because of the use of the
               <fo:block-container reference-orientation="0">
                 <fo:block>
                   <fo:table border-after-color="black" border-before-color="black" border-end-color="black" border-end-style="solid" border-end-width="1pt" table-layout="fixed" width="100%">
-              <fo:table-column column-number="1"></fo:table-column>
-              <fo:table-column column-number="2"></fo:table-column>
-              <fo:table-column column-number="3"></fo:table-column>
-              <fo:table-header>
-                <fo:table-row>
-                  <fo:table-cell border-before-color="black" text-align="from-table-column()">
-                    <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Key</fo:block>
-                  </fo:table-cell>
-                  <fo:table-cell border-before-color="black" text-align="from-table-column()">
-                    <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Value</fo:block>
-                  </fo:table-cell>
-                  <fo:table-cell border-before-color="black" text-align="from-table-column()">
-                    <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Description</fo:block>
-                  </fo:table-cell>
-                </fo:table-row>
-              </fo:table-header>
-              <fo:table-body>
-                <fo:table-row keep-together.within-page="always">
-                  <fo:table-cell border-before-color="black" text-align="from-table-column()">
-                    <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
+                    <fo:table-column column-number="1"></fo:table-column>
+                    <fo:table-column column-number="2"></fo:table-column>
+                    <fo:table-column column-number="3"></fo:table-column>
+                    <fo:table-header>
+                      <fo:table-row>
+                        <fo:table-cell border-before-color="black" text-align="from-table-column()">
+                          <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Key</fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell border-before-color="black" text-align="from-table-column()">
+                          <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Value</fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell border-before-color="black" text-align="from-table-column()">
+                          <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Description</fo:block>
+                        </fo:table-cell>
+                      </fo:table-row>
+                    </fo:table-header>
+                    <fo:table-body>
+                      <fo:table-row keep-together.within-page="always">
+                        <fo:table-cell border-before-color="black" text-align="from-table-column()">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
                             <fo:inline font-family="MONOSPACE">mq</fo:inline>
-                    </fo:block>
-                  </fo:table-cell>
-                  <fo:table-cell border-before-color="black" text-align="from-table-column()">
-                    <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
+                          </fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell border-before-color="black" text-align="from-table-column()">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
                             <fo:inline font-family="MONOSPACE">address.verified==true</fo:inline>
-                    </fo:block>
-                  </fo:table-cell>
-                  <fo:table-cell border-before-color="black" text-align="from-table-column()">
-                    <fo:block space-after.conditionality="retain" space-before.conditionality="retain"></fo:block>
-                  </fo:table-cell>
-                </fo:table-row>
-                <fo:table-row keep-together.within-page="always">
-                  <fo:table-cell text-align="from-table-column()">
-                    <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
+                          </fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell border-before-color="black" text-align="from-table-column()">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain"></fo:block>
+                        </fo:table-cell>
+                      </fo:table-row>
+                      <fo:table-row keep-together.within-page="always">
+                        <fo:table-cell text-align="from-table-column()">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
                             <fo:inline font-family="MONOSPACE">type</fo:inline>
-                    </fo:block>
-                  </fo:table-cell>
-                  <fo:table-cell text-align="from-table-column()">
-                    <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
+                          </fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell text-align="from-table-column()">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
                             <fo:inline font-family="MONOSPACE">Store</fo:inline>
-                    </fo:block>
-                  </fo:table-cell>
-                  <fo:table-cell text-align="from-table-column()">
-                    <fo:block space-after.conditionality="retain" space-before.conditionality="retain">Entity type, to avoid ambiguity in case there are several entities with the same entity id</fo:block>
-                  </fo:table-cell>
-                </fo:table-row>
-                <fo:table-row keep-together.within-page="always">
-                  <fo:table-cell text-align="from-table-column()">
-                    <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
+                          </fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell text-align="from-table-column()">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">Entity type, to avoid ambiguity in case there are several entities with the same entity id</fo:block>
+                        </fo:table-cell>
+                      </fo:table-row>
+                      <fo:table-row keep-together.within-page="always">
+                        <fo:table-cell text-align="from-table-column()">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
                             <fo:inline font-family="MONOSPACE">options</fo:inline>
-                    </fo:block>
-                  </fo:table-cell>
-                  <fo:table-cell text-align="from-table-column()">
-                    <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
+                          </fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell text-align="from-table-column()">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
                             <fo:inline font-family="MONOSPACE">keyValues</fo:inline>
-                    </fo:block>
-                  </fo:table-cell>
-                  <fo:table-cell text-align="from-table-column()">
-                    <fo:block space-after.conditionality="retain" space-before.conditionality="retain">* `keyValues` option in order to get a more compact and brief representation, including just attribute values
+                          </fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell text-align="from-table-column()">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">* `keyValues` option in order to get a more compact and brief representation, including just attribute values
 * `values` option combined with a list of attribute values  `attrs`  for an ordered list of attributes only</fo:block>
-                  </fo:table-cell>
-                </fo:table-row>
-              </fo:table-body>
-            </fo:table>
-          </fo:block>
+                        </fo:table-cell>
+                      </fo:table-row>
+                    </fo:table-body>
+                  </fo:table>
+                </fo:block>
               </fo:block-container>
             </fo:block>
           </fo:block>
@@ -1179,16 +1179,16 @@ Because of the use of the
     <fo:block>
       <fo:block>
         <fo:block font-family="STANDARD" font-weight="bold">
-        <fo:block>
+          <fo:block>
             <fo:wrapper></fo:wrapper>
             <fo:wrapper></fo:wrapper>Filter context data by distance</fo:block>
-          </fo:block>
-          <fo:block>
+        </fo:block>
+        <fo:block>
           <fo:block background-color="ALICEBLUE" font-family="MONOSPACE" hyphenation-character="&#9658;" keep-with-previous.within-page="always" linefeed-treatment="preserve" padding="6pt" white-space-collapse="false" white-space-treatment="preserve" wrap-option="wrap">GET http://{{orion}}/v2/entities/</fo:block>
           <fo:block>
             <fo:block font-family="STANDARD" font-weight="bold">Filter context data by comparing the values of a geo:point attribute</fo:block>
             <fo:block>
-            <fo:block>This example returns the data of all
+              <fo:block>This example returns the data of all
                 <fo:inline font-family="MONOSPACE">Store</fo:inline>entities found within 1.5km the
                 <fo:inline font-weight="bold">Brandenburg Gate</fo:inline>in
                 <fo:inline font-weight="bold">Berlin</fo:inline>(
@@ -1201,102 +1201,102 @@ Because of the use of the
               <fo:block-container reference-orientation="0">
                 <fo:block>
                   <fo:table border-after-color="black" border-before-color="black" border-end-color="black" border-end-style="solid" border-end-width="1pt" table-layout="fixed" width="100%">
-              <fo:table-column column-number="1"></fo:table-column>
-              <fo:table-column column-number="2"></fo:table-column>
-              <fo:table-column column-number="3"></fo:table-column>
-              <fo:table-header>
-                <fo:table-row>
-                  <fo:table-cell border-before-color="black" text-align="from-table-column()">
-                    <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Key</fo:block>
-                  </fo:table-cell>
-                  <fo:table-cell border-before-color="black" text-align="from-table-column()">
-                    <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Value</fo:block>
-                  </fo:table-cell>
-                  <fo:table-cell border-before-color="black" text-align="from-table-column()">
-                    <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Description</fo:block>
-                  </fo:table-cell>
-                </fo:table-row>
-              </fo:table-header>
-              <fo:table-body>
-                <fo:table-row keep-together.within-page="always">
-                  <fo:table-cell border-before-color="black" text-align="from-table-column()">
-                    <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
+                    <fo:table-column column-number="1"></fo:table-column>
+                    <fo:table-column column-number="2"></fo:table-column>
+                    <fo:table-column column-number="3"></fo:table-column>
+                    <fo:table-header>
+                      <fo:table-row>
+                        <fo:table-cell border-before-color="black" text-align="from-table-column()">
+                          <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Key</fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell border-before-color="black" text-align="from-table-column()">
+                          <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Value</fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell border-before-color="black" text-align="from-table-column()">
+                          <fo:block font-weight="bold" space-after.conditionality="retain" space-before.conditionality="retain">Description</fo:block>
+                        </fo:table-cell>
+                      </fo:table-row>
+                    </fo:table-header>
+                    <fo:table-body>
+                      <fo:table-row keep-together.within-page="always">
+                        <fo:table-cell border-before-color="black" text-align="from-table-column()">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
                             <fo:inline font-family="MONOSPACE">georel</fo:inline>
-                    </fo:block>
-                  </fo:table-cell>
-                  <fo:table-cell border-before-color="black" text-align="from-table-column()">
-                    <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
+                          </fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell border-before-color="black" text-align="from-table-column()">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
                             <fo:inline font-family="MONOSPACE">near;maxDistance:1500</fo:inline>
-                    </fo:block>
-                  </fo:table-cell>
-                  <fo:table-cell border-before-color="black" text-align="from-table-column()">
-                    <fo:block space-after.conditionality="retain" space-before.conditionality="retain"></fo:block>
-                  </fo:table-cell>
-                </fo:table-row>
-                <fo:table-row keep-together.within-page="always">
-                  <fo:table-cell text-align="from-table-column()">
-                    <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
+                          </fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell border-before-color="black" text-align="from-table-column()">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain"></fo:block>
+                        </fo:table-cell>
+                      </fo:table-row>
+                      <fo:table-row keep-together.within-page="always">
+                        <fo:table-cell text-align="from-table-column()">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
                             <fo:inline font-family="MONOSPACE">geometry</fo:inline>
-                    </fo:block>
-                  </fo:table-cell>
-                  <fo:table-cell text-align="from-table-column()">
-                    <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
+                          </fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell text-align="from-table-column()">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
                             <fo:inline font-family="MONOSPACE">point</fo:inline>
-                    </fo:block>
-                  </fo:table-cell>
-                  <fo:table-cell text-align="from-table-column()">
-                    <fo:block space-after.conditionality="retain" space-before.conditionality="retain"></fo:block>
-                  </fo:table-cell>
-                </fo:table-row>
-                <fo:table-row keep-together.within-page="always">
-                  <fo:table-cell text-align="from-table-column()">
-                    <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
+                          </fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell text-align="from-table-column()">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain"></fo:block>
+                        </fo:table-cell>
+                      </fo:table-row>
+                      <fo:table-row keep-together.within-page="always">
+                        <fo:table-cell text-align="from-table-column()">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
                             <fo:inline font-family="MONOSPACE">coords</fo:inline>
-                    </fo:block>
-                  </fo:table-cell>
-                  <fo:table-cell text-align="from-table-column()">
-                    <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
+                          </fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell text-align="from-table-column()">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
                             <fo:inline font-family="MONOSPACE">52.5162,13.3777</fo:inline>
-                    </fo:block>
-                  </fo:table-cell>
-                  <fo:table-cell text-align="from-table-column()">
-                    <fo:block space-after.conditionality="retain" space-before.conditionality="retain"></fo:block>
-                  </fo:table-cell>
-                </fo:table-row>
-                <fo:table-row keep-together.within-page="always">
-                  <fo:table-cell text-align="from-table-column()">
-                    <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
+                          </fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell text-align="from-table-column()">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain"></fo:block>
+                        </fo:table-cell>
+                      </fo:table-row>
+                      <fo:table-row keep-together.within-page="always">
+                        <fo:table-cell text-align="from-table-column()">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
                             <fo:inline font-family="MONOSPACE">type</fo:inline>
-                    </fo:block>
-                  </fo:table-cell>
-                  <fo:table-cell text-align="from-table-column()">
-                    <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
+                          </fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell text-align="from-table-column()">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
                             <fo:inline font-family="MONOSPACE">Store</fo:inline>
-                    </fo:block>
-                  </fo:table-cell>
-                  <fo:table-cell text-align="from-table-column()">
-                    <fo:block space-after.conditionality="retain" space-before.conditionality="retain">Entity type, to avoid ambiguity in case there are several entities with the same entity id</fo:block>
-                  </fo:table-cell>
-                </fo:table-row>
-                <fo:table-row keep-together.within-page="always">
-                  <fo:table-cell text-align="from-table-column()">
-                    <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
+                          </fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell text-align="from-table-column()">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">Entity type, to avoid ambiguity in case there are several entities with the same entity id</fo:block>
+                        </fo:table-cell>
+                      </fo:table-row>
+                      <fo:table-row keep-together.within-page="always">
+                        <fo:table-cell text-align="from-table-column()">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
                             <fo:inline font-family="MONOSPACE">options</fo:inline>
-                    </fo:block>
-                  </fo:table-cell>
-                  <fo:table-cell text-align="from-table-column()">
-                    <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
+                          </fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell text-align="from-table-column()">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
                             <fo:inline font-family="MONOSPACE">keyValues</fo:inline>
-                    </fo:block>
-                  </fo:table-cell>
-                  <fo:table-cell text-align="from-table-column()">
-                    <fo:block space-after.conditionality="retain" space-before.conditionality="retain">* `keyValues` option in order to get a more compact and brief representation, including just attribute values
+                          </fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell text-align="from-table-column()">
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">* `keyValues` option in order to get a more compact and brief representation, including just attribute values
 * `values` option combined with a list of attribute values  `attrs`  for an ordered list of attributes only</fo:block>
-                  </fo:table-cell>
-                </fo:table-row>
-              </fo:table-body>
-            </fo:table>
-          </fo:block>
+                        </fo:table-cell>
+                      </fo:table-row>
+                    </fo:table-body>
+                  </fo:table>
+                </fo:block>
               </fo:block-container>
             </fo:block>
           </fo:block>
