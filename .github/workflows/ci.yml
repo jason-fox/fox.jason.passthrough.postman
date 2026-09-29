@@ -20,7 +20,7 @@ jobs:
           plugin: 'fox.jason.passthrough.postman'
           prerequisites: |
             fox.jason.extend.css
-            https://github.com/jason-fox/fox.jason.passthrough
+            https://github.com/jason-fox/fox.jason.passthrough/archive/master.zip
 #        env:
 #          COVERALLS_TOKEN: ${{ secrets.COVERALLS_TOKEN }}
       - uses: actions/upload-artifact@v7
