@@ -21,6 +21,13 @@
 	</condition>
 
 	<target name="postman.css.copy" unless="swagger.plugin.present">
+		<property name="postman.css.theme" value="${dita.plugin.fox.jason.passthrough.postman.dir}/css/default-theme.css"/>
+		<loadfile property="postman.theme.css" srcFile="${postman.css.theme}"/>
+		<echo
+      append="true"
+      message="${line.separator}${postman.theme.css}"
+      file="${extend.css.file}"
+    />
 		<loadfile
       property="postman.css"
       srcFile="${dita.plugin.fox.jason.passthrough.postman.dir}/css/postman.css"

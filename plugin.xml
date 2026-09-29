@@ -27,10 +27,21 @@
 	<require plugin="fox.jason.extend.css"/>
 	<require plugin="fox.jason.passthrough"/>
 
+	<!-- HTML5 extension points -->
+	<feature extension="dita.xsl.html5" value="xsl/xhtml.xsl" type="file"/>
+	<feature extension="dita.xsl.xhtml" value="xsl/xhtml.xsl" type="file"/>
+
 	<feature extension="extend.css.process" value="postman.css.copy"/>
 
 	<!-- Uses the passthrough extension point and file reader -->
 	<feature extension="dita.parser">
 		<parser format="postman" class="fox.jason.passthrough.PostmanFileReader"/>
 	</feature>
+	<transtype name="base-html" abstract="true" desc="HTML-based output">
+		<param
+			name="postman.css.theme"
+			desc="Specifies the location of a custom .css color theme file for the HTTP verb colors."
+			type="string"
+		/>
+	</transtype>
 </plugin>
