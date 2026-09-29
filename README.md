@@ -3,7 +3,6 @@
 [![license](https://img.shields.io/github/license/jason-fox/fox.jason.passthrough.postman.svg)](http://www.apache.org/licenses/LICENSE-2.0)
 [![DITA-OT 4.2](https://img.shields.io/badge/DITA--OT-4.2-green.svg)](http://www.dita-ot.org/4.2)
 [![CI](https://github.com/jason-fox/fox.jason.passthrough.postman/workflows/CI/badge.svg)](https://github.com/jason-fox/fox.jason.passthrough.postman/actions?query=workflow%3ACI)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=fox.jason.passthrough.postman&metric=alert_status)](https://sonarcloud.io/dashboard?id=fox.jason.passthrough.postman)
 
 This is a [DITA-OT Plug-in](https://www.dita-ot.org/plugins) used to auto-create valid DITA-based REST API
 documentation. The documentation can be generated directly from a [Postman Collection](https://www.getpostman.com/) file
