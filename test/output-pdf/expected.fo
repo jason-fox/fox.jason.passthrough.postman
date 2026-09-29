@@ -734,8 +734,29 @@ If the response is blank, this is usually because the MongoDB database holding t
                           </fo:block>
                         </fo:table-cell>
                         <fo:table-cell border-before-color="black" text-align="from-table-column()">
-                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">* `keyValues` option in order to get a more compact and brief representation, including just attribute values
-* `values` option combined with a list of attribute values  `attrs`  for an ordered list of attributes only</fo:block>
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
+                            <fo:list-block provisional-distance-between-starts="5mm" provisional-label-separation="1mm">
+                              <fo:list-item relative-align="baseline">
+                                <fo:list-item-label keep-together.within-line="always">
+                                  <fo:block text-align="start">&#8226;</fo:block>
+                                </fo:list-item-label>
+                                <fo:list-item-body>
+                                  <fo:block>
+                                    <fo:inline font-family="MONOSPACE">keyValues</fo:inline>option in order to get a more compact and brief representation, including just attribute values</fo:block>
+                                </fo:list-item-body>
+                              </fo:list-item>
+                              <fo:list-item relative-align="baseline">
+                                <fo:list-item-label keep-together.within-line="always">
+                                  <fo:block text-align="start">&#8226;</fo:block>
+                                </fo:list-item-label>
+                                <fo:list-item-body>
+                                  <fo:block>
+                                    <fo:inline font-family="MONOSPACE">values</fo:inline>option combined with a list of attribute values
+                                    <fo:inline font-family="MONOSPACE">attrs</fo:inline>for an ordered list of attributes only</fo:block>
+                                </fo:list-item-body>
+                              </fo:list-item>
+                            </fo:list-block>
+                          </fo:block>
                         </fo:table-cell>
                       </fo:table-row>
                     </fo:table-body>
@@ -821,8 +842,29 @@ Because of the use of the
                           </fo:block>
                         </fo:table-cell>
                         <fo:table-cell text-align="from-table-column()">
-                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">* `keyValues` option in order to get a more compact and brief representation, including just attribute values
-* `values` option combined with a list of attribute values  `attrs`  for an ordered list of attributes only</fo:block>
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
+                            <fo:list-block provisional-distance-between-starts="5mm" provisional-label-separation="1mm">
+                              <fo:list-item relative-align="baseline">
+                                <fo:list-item-label keep-together.within-line="always">
+                                  <fo:block text-align="start">&#8226;</fo:block>
+                                </fo:list-item-label>
+                                <fo:list-item-body>
+                                  <fo:block>
+                                    <fo:inline font-family="MONOSPACE">keyValues</fo:inline>option in order to get a more compact and brief representation, including just attribute values</fo:block>
+                                </fo:list-item-body>
+                              </fo:list-item>
+                              <fo:list-item relative-align="baseline">
+                                <fo:list-item-label keep-together.within-line="always">
+                                  <fo:block text-align="start">&#8226;</fo:block>
+                                </fo:list-item-label>
+                                <fo:list-item-body>
+                                  <fo:block>
+                                    <fo:inline font-family="MONOSPACE">values</fo:inline>option combined with a list of attribute values
+                                    <fo:inline font-family="MONOSPACE">attrs</fo:inline>for an ordered list of attributes only</fo:block>
+                                </fo:list-item-body>
+                              </fo:list-item>
+                            </fo:list-block>
+                          </fo:block>
                         </fo:table-cell>
                       </fo:table-row>
                     </fo:table-body>
@@ -934,8 +976,29 @@ Because of the use of the
                           </fo:block>
                         </fo:table-cell>
                         <fo:table-cell text-align="from-table-column()">
-                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">* `keyValues` option in order to get a more compact and brief representation, including just attribute values
-* `values` option combined with a list of attribute values  `attrs`  for an ordered list of attributes only</fo:block>
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
+                            <fo:list-block provisional-distance-between-starts="5mm" provisional-label-separation="1mm">
+                              <fo:list-item relative-align="baseline">
+                                <fo:list-item-label keep-together.within-line="always">
+                                  <fo:block text-align="start">&#8226;</fo:block>
+                                </fo:list-item-label>
+                                <fo:list-item-body>
+                                  <fo:block>
+                                    <fo:inline font-family="MONOSPACE">keyValues</fo:inline>option in order to get a more compact and brief representation, including just attribute values</fo:block>
+                                </fo:list-item-body>
+                              </fo:list-item>
+                              <fo:list-item relative-align="baseline">
+                                <fo:list-item-label keep-together.within-line="always">
+                                  <fo:block text-align="start">&#8226;</fo:block>
+                                </fo:list-item-label>
+                                <fo:list-item-body>
+                                  <fo:block>
+                                    <fo:inline font-family="MONOSPACE">values</fo:inline>option combined with a list of attribute values
+                                    <fo:inline font-family="MONOSPACE">attrs</fo:inline>for an ordered list of attributes only</fo:block>
+                                </fo:list-item-body>
+                              </fo:list-item>
+                            </fo:list-block>
+                          </fo:block>
                         </fo:table-cell>
                       </fo:table-row>
                     </fo:table-body>
@@ -1047,8 +1110,29 @@ Because of the use of the
                           </fo:block>
                         </fo:table-cell>
                         <fo:table-cell text-align="from-table-column()">
-                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">* `keyValues` option in order to get a more compact and brief representation, including just attribute values
-* `values` option combined with a list of attribute values  `attrs`  for an ordered list of attributes only</fo:block>
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
+                            <fo:list-block provisional-distance-between-starts="5mm" provisional-label-separation="1mm">
+                              <fo:list-item relative-align="baseline">
+                                <fo:list-item-label keep-together.within-line="always">
+                                  <fo:block text-align="start">&#8226;</fo:block>
+                                </fo:list-item-label>
+                                <fo:list-item-body>
+                                  <fo:block>
+                                    <fo:inline font-family="MONOSPACE">keyValues</fo:inline>option in order to get a more compact and brief representation, including just attribute values</fo:block>
+                                </fo:list-item-body>
+                              </fo:list-item>
+                              <fo:list-item relative-align="baseline">
+                                <fo:list-item-label keep-together.within-line="always">
+                                  <fo:block text-align="start">&#8226;</fo:block>
+                                </fo:list-item-label>
+                                <fo:list-item-body>
+                                  <fo:block>
+                                    <fo:inline font-family="MONOSPACE">values</fo:inline>option combined with a list of attribute values
+                                    <fo:inline font-family="MONOSPACE">attrs</fo:inline>for an ordered list of attributes only</fo:block>
+                                </fo:list-item-body>
+                              </fo:list-item>
+                            </fo:list-block>
+                          </fo:block>
                         </fo:table-cell>
                       </fo:table-row>
                     </fo:table-body>
@@ -1153,8 +1237,29 @@ Because of the use of the
                           </fo:block>
                         </fo:table-cell>
                         <fo:table-cell text-align="from-table-column()">
-                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">* `keyValues` option in order to get a more compact and brief representation, including just attribute values
-* `values` option combined with a list of attribute values  `attrs`  for an ordered list of attributes only</fo:block>
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
+                            <fo:list-block provisional-distance-between-starts="5mm" provisional-label-separation="1mm">
+                              <fo:list-item relative-align="baseline">
+                                <fo:list-item-label keep-together.within-line="always">
+                                  <fo:block text-align="start">&#8226;</fo:block>
+                                </fo:list-item-label>
+                                <fo:list-item-body>
+                                  <fo:block>
+                                    <fo:inline font-family="MONOSPACE">keyValues</fo:inline>option in order to get a more compact and brief representation, including just attribute values</fo:block>
+                                </fo:list-item-body>
+                              </fo:list-item>
+                              <fo:list-item relative-align="baseline">
+                                <fo:list-item-label keep-together.within-line="always">
+                                  <fo:block text-align="start">&#8226;</fo:block>
+                                </fo:list-item-label>
+                                <fo:list-item-body>
+                                  <fo:block>
+                                    <fo:inline font-family="MONOSPACE">values</fo:inline>option combined with a list of attribute values
+                                    <fo:inline font-family="MONOSPACE">attrs</fo:inline>for an ordered list of attributes only</fo:block>
+                                </fo:list-item-body>
+                              </fo:list-item>
+                            </fo:list-block>
+                          </fo:block>
                         </fo:table-cell>
                       </fo:table-row>
                     </fo:table-body>
@@ -1290,8 +1395,29 @@ Because of the use of the
                           </fo:block>
                         </fo:table-cell>
                         <fo:table-cell text-align="from-table-column()">
-                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">* `keyValues` option in order to get a more compact and brief representation, including just attribute values
-* `values` option combined with a list of attribute values  `attrs`  for an ordered list of attributes only</fo:block>
+                          <fo:block space-after.conditionality="retain" space-before.conditionality="retain">
+                            <fo:list-block provisional-distance-between-starts="5mm" provisional-label-separation="1mm">
+                              <fo:list-item relative-align="baseline">
+                                <fo:list-item-label keep-together.within-line="always">
+                                  <fo:block text-align="start">&#8226;</fo:block>
+                                </fo:list-item-label>
+                                <fo:list-item-body>
+                                  <fo:block>
+                                    <fo:inline font-family="MONOSPACE">keyValues</fo:inline>option in order to get a more compact and brief representation, including just attribute values</fo:block>
+                                </fo:list-item-body>
+                              </fo:list-item>
+                              <fo:list-item relative-align="baseline">
+                                <fo:list-item-label keep-together.within-line="always">
+                                  <fo:block text-align="start">&#8226;</fo:block>
+                                </fo:list-item-label>
+                                <fo:list-item-body>
+                                  <fo:block>
+                                    <fo:inline font-family="MONOSPACE">values</fo:inline>option combined with a list of attribute values
+                                    <fo:inline font-family="MONOSPACE">attrs</fo:inline>for an ordered list of attributes only</fo:block>
+                                </fo:list-item-body>
+                              </fo:list-item>
+                            </fo:list-block>
+                          </fo:block>
                         </fo:table-cell>
                       </fo:table-row>
                     </fo:table-body>

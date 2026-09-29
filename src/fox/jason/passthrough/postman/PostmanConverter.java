@@ -278,7 +278,7 @@ public final class PostmanConverter {
           .append(cell(value, codeValues))
           .append("</entry>");
       out.append("<entry class=\"- topic/entry \" colname=\"c3\">")
-          .append(description == null ? "" : MarkdownDita.esc(description))
+          .append(description == null ? "" : MarkdownDita.renderInlineOnly(description))
           .append("</entry>");
       out.append("</row>\n");
     }

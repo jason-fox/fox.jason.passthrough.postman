@@ -299,8 +299,11 @@ If the response is blank, this is usually because the MongoDB database holding t
 <section class="section" id="obtain-entity-data-by-id__query-parameters"><h3 class="title sectiontitle">Query Parameters</h3>
 
 <table class="table"><caption></caption><colgroup><col><col><col></colgroup><thead class="thead"><tr class="row"><th class="entry" id="obtain-entity-data-by-id__query-parameters__entry__1">Key</th><th class="entry" id="obtain-entity-data-by-id__query-parameters__entry__2">Value</th><th class="entry" id="obtain-entity-data-by-id__query-parameters__entry__3">Description</th></tr></thead><tbody class="tbody">
-<tr class="row"><td class="entry" headers="obtain-entity-data-by-id__query-parameters__entry__1"><code class="ph codeph">options</code></td><td class="entry" headers="obtain-entity-data-by-id__query-parameters__entry__2"><code class="ph codeph">keyValues</code></td><td class="entry" headers="obtain-entity-data-by-id__query-parameters__entry__3">* `keyValues` option in order to get a more compact and brief representation, including just attribute values
-* `values` option combined with a list of attribute values  `attrs`  for an ordered list of attributes only</td></tr>
+<tr class="row"><td class="entry" headers="obtain-entity-data-by-id__query-parameters__entry__1"><code class="ph codeph">options</code></td><td class="entry" headers="obtain-entity-data-by-id__query-parameters__entry__2"><code class="ph codeph">keyValues</code></td><td class="entry" headers="obtain-entity-data-by-id__query-parameters__entry__3"><ul class="ul">
+<li class="li"><code class="ph codeph">keyValues</code> option in order to get a more compact and brief representation, including just attribute values</li>
+<li class="li"><code class="ph codeph">values</code> option combined with a list of attribute values  <code class="ph codeph">attrs</code>  for an ordered list of attributes only</li>
+</ul>
+</td></tr>
 </tbody></table>
 </section>
 <div class="example" id="obtain-entity-data-by-id__example-request-4"><h3 class="title sectiontitle">Example Request</h3>
@@ -321,8 +324,11 @@ Because of the use of the <code class="ph codeph">options=keyValues</code>, the 
 
 <table class="table"><caption></caption><colgroup><col><col><col></colgroup><thead class="thead"><tr class="row"><th class="entry" id="obtain-entity-data-by-type__query-parameters-1__entry__1">Key</th><th class="entry" id="obtain-entity-data-by-type__query-parameters-1__entry__2">Value</th><th class="entry" id="obtain-entity-data-by-type__query-parameters-1__entry__3">Description</th></tr></thead><tbody class="tbody">
 <tr class="row"><td class="entry" headers="obtain-entity-data-by-type__query-parameters-1__entry__1"><code class="ph codeph">type</code></td><td class="entry" headers="obtain-entity-data-by-type__query-parameters-1__entry__2"><code class="ph codeph">Store</code></td><td class="entry" headers="obtain-entity-data-by-type__query-parameters-1__entry__3">Entity type, to avoid ambiguity in case there are several entities with the same entity id</td></tr>
-<tr class="row"><td class="entry" headers="obtain-entity-data-by-type__query-parameters-1__entry__1"><code class="ph codeph">options</code></td><td class="entry" headers="obtain-entity-data-by-type__query-parameters-1__entry__2"><code class="ph codeph">keyValues</code></td><td class="entry" headers="obtain-entity-data-by-type__query-parameters-1__entry__3">* `keyValues` option in order to get a more compact and brief representation, including just attribute values
-* `values` option combined with a list of attribute values  `attrs`  for an ordered list of attributes only</td></tr>
+<tr class="row"><td class="entry" headers="obtain-entity-data-by-type__query-parameters-1__entry__1"><code class="ph codeph">options</code></td><td class="entry" headers="obtain-entity-data-by-type__query-parameters-1__entry__2"><code class="ph codeph">keyValues</code></td><td class="entry" headers="obtain-entity-data-by-type__query-parameters-1__entry__3"><ul class="ul">
+<li class="li"><code class="ph codeph">keyValues</code> option in order to get a more compact and brief representation, including just attribute values</li>
+<li class="li"><code class="ph codeph">values</code> option combined with a list of attribute values  <code class="ph codeph">attrs</code>  for an ordered list of attributes only</li>
+</ul>
+</td></tr>
 </tbody></table>
 </section>
 <div class="example" id="obtain-entity-data-by-type__example-request-5"><h3 class="title sectiontitle">Example Request</h3>
@@ -348,8 +354,11 @@ Because of the use of the <code class="ph codeph">options=keyValues</code>, the 
 <table class="table"><caption></caption><colgroup><col><col><col></colgroup><thead class="thead"><tr class="row"><th class="entry" id="filter-context-data-by-attribute-value__query-parameters-2__entry__1">Key</th><th class="entry" id="filter-context-data-by-attribute-value__query-parameters-2__entry__2">Value</th><th class="entry" id="filter-context-data-by-attribute-value__query-parameters-2__entry__3">Description</th></tr></thead><tbody class="tbody">
 <tr class="row"><td class="entry" headers="filter-context-data-by-attribute-value__query-parameters-2__entry__1"><code class="ph codeph">q</code></td><td class="entry" headers="filter-context-data-by-attribute-value__query-parameters-2__entry__2"><code class="ph codeph">name=='Checkpoint Markt'</code></td><td class="entry" headers="filter-context-data-by-attribute-value__query-parameters-2__entry__3"></td></tr>
 <tr class="row"><td class="entry" headers="filter-context-data-by-attribute-value__query-parameters-2__entry__1"><code class="ph codeph">type</code></td><td class="entry" headers="filter-context-data-by-attribute-value__query-parameters-2__entry__2"><code class="ph codeph">Store</code></td><td class="entry" headers="filter-context-data-by-attribute-value__query-parameters-2__entry__3">Entity type, to avoid ambiguity in case there are several entities with the same entity id</td></tr>
-<tr class="row"><td class="entry" headers="filter-context-data-by-attribute-value__query-parameters-2__entry__1"><code class="ph codeph">options</code></td><td class="entry" headers="filter-context-data-by-attribute-value__query-parameters-2__entry__2"><code class="ph codeph">keyValues</code></td><td class="entry" headers="filter-context-data-by-attribute-value__query-parameters-2__entry__3">* `keyValues` option in order to get a more compact and brief representation, including just attribute values
-* `values` option combined with a list of attribute values  `attrs`  for an ordered list of attributes only</td></tr>
+<tr class="row"><td class="entry" headers="filter-context-data-by-attribute-value__query-parameters-2__entry__1"><code class="ph codeph">options</code></td><td class="entry" headers="filter-context-data-by-attribute-value__query-parameters-2__entry__2"><code class="ph codeph">keyValues</code></td><td class="entry" headers="filter-context-data-by-attribute-value__query-parameters-2__entry__3"><ul class="ul">
+<li class="li"><code class="ph codeph">keyValues</code> option in order to get a more compact and brief representation, including just attribute values</li>
+<li class="li"><code class="ph codeph">values</code> option combined with a list of attribute values  <code class="ph codeph">attrs</code>  for an ordered list of attributes only</li>
+</ul>
+</td></tr>
 </tbody></table>
 </section>
 <div class="example" id="filter-context-data-by-attribute-value__example-request-6"><h3 class="title sectiontitle">Example Request</h3>
@@ -376,8 +385,11 @@ Because of the use of the <code class="ph codeph">options=keyValues</code>, the 
 <table class="table"><caption></caption><colgroup><col><col><col></colgroup><thead class="thead"><tr class="row"><th class="entry" id="filter-context-data-by-sub-attribute-value__query-parameters-3__entry__1">Key</th><th class="entry" id="filter-context-data-by-sub-attribute-value__query-parameters-3__entry__2">Value</th><th class="entry" id="filter-context-data-by-sub-attribute-value__query-parameters-3__entry__3">Description</th></tr></thead><tbody class="tbody">
 <tr class="row"><td class="entry" headers="filter-context-data-by-sub-attribute-value__query-parameters-3__entry__1"><code class="ph codeph">q</code></td><td class="entry" headers="filter-context-data-by-sub-attribute-value__query-parameters-3__entry__2"><code class="ph codeph">address.addressLocality=='Kreuzberg'</code></td><td class="entry" headers="filter-context-data-by-sub-attribute-value__query-parameters-3__entry__3"></td></tr>
 <tr class="row"><td class="entry" headers="filter-context-data-by-sub-attribute-value__query-parameters-3__entry__1"><code class="ph codeph">type</code></td><td class="entry" headers="filter-context-data-by-sub-attribute-value__query-parameters-3__entry__2"><code class="ph codeph">Store</code></td><td class="entry" headers="filter-context-data-by-sub-attribute-value__query-parameters-3__entry__3">Entity type, to avoid ambiguity in case there are several entities with the same entity id</td></tr>
-<tr class="row"><td class="entry" headers="filter-context-data-by-sub-attribute-value__query-parameters-3__entry__1"><code class="ph codeph">options</code></td><td class="entry" headers="filter-context-data-by-sub-attribute-value__query-parameters-3__entry__2"><code class="ph codeph">keyValues</code></td><td class="entry" headers="filter-context-data-by-sub-attribute-value__query-parameters-3__entry__3">* `keyValues` option in order to get a more compact and brief representation, including just attribute values
-* `values` option combined with a list of attribute values  `attrs`  for an ordered list of attributes only</td></tr>
+<tr class="row"><td class="entry" headers="filter-context-data-by-sub-attribute-value__query-parameters-3__entry__1"><code class="ph codeph">options</code></td><td class="entry" headers="filter-context-data-by-sub-attribute-value__query-parameters-3__entry__2"><code class="ph codeph">keyValues</code></td><td class="entry" headers="filter-context-data-by-sub-attribute-value__query-parameters-3__entry__3"><ul class="ul">
+<li class="li"><code class="ph codeph">keyValues</code> option in order to get a more compact and brief representation, including just attribute values</li>
+<li class="li"><code class="ph codeph">values</code> option combined with a list of attribute values  <code class="ph codeph">attrs</code>  for an ordered list of attributes only</li>
+</ul>
+</td></tr>
 </tbody></table>
 </section>
 <div class="example" id="filter-context-data-by-sub-attribute-value__example-request-7"><h3 class="title sectiontitle">Example Request</h3>
@@ -403,8 +415,11 @@ Because of the use of the <code class="ph codeph">options=keyValues</code>, the 
 <table class="table"><caption></caption><colgroup><col><col><col></colgroup><thead class="thead"><tr class="row"><th class="entry" id="filter-context-data-by-querying-metadata__query-parameters-4__entry__1">Key</th><th class="entry" id="filter-context-data-by-querying-metadata__query-parameters-4__entry__2">Value</th><th class="entry" id="filter-context-data-by-querying-metadata__query-parameters-4__entry__3">Description</th></tr></thead><tbody class="tbody">
 <tr class="row"><td class="entry" headers="filter-context-data-by-querying-metadata__query-parameters-4__entry__1"><code class="ph codeph">mq</code></td><td class="entry" headers="filter-context-data-by-querying-metadata__query-parameters-4__entry__2"><code class="ph codeph">address.verified==true</code></td><td class="entry" headers="filter-context-data-by-querying-metadata__query-parameters-4__entry__3"></td></tr>
 <tr class="row"><td class="entry" headers="filter-context-data-by-querying-metadata__query-parameters-4__entry__1"><code class="ph codeph">type</code></td><td class="entry" headers="filter-context-data-by-querying-metadata__query-parameters-4__entry__2"><code class="ph codeph">Store</code></td><td class="entry" headers="filter-context-data-by-querying-metadata__query-parameters-4__entry__3">Entity type, to avoid ambiguity in case there are several entities with the same entity id</td></tr>
-<tr class="row"><td class="entry" headers="filter-context-data-by-querying-metadata__query-parameters-4__entry__1"><code class="ph codeph">options</code></td><td class="entry" headers="filter-context-data-by-querying-metadata__query-parameters-4__entry__2"><code class="ph codeph">keyValues</code></td><td class="entry" headers="filter-context-data-by-querying-metadata__query-parameters-4__entry__3">* `keyValues` option in order to get a more compact and brief representation, including just attribute values
-* `values` option combined with a list of attribute values  `attrs`  for an ordered list of attributes only</td></tr>
+<tr class="row"><td class="entry" headers="filter-context-data-by-querying-metadata__query-parameters-4__entry__1"><code class="ph codeph">options</code></td><td class="entry" headers="filter-context-data-by-querying-metadata__query-parameters-4__entry__2"><code class="ph codeph">keyValues</code></td><td class="entry" headers="filter-context-data-by-querying-metadata__query-parameters-4__entry__3"><ul class="ul">
+<li class="li"><code class="ph codeph">keyValues</code> option in order to get a more compact and brief representation, including just attribute values</li>
+<li class="li"><code class="ph codeph">values</code> option combined with a list of attribute values  <code class="ph codeph">attrs</code>  for an ordered list of attributes only</li>
+</ul>
+</td></tr>
 </tbody></table>
 </section>
 <div class="example" id="filter-context-data-by-querying-metadata__example-request-8"><h3 class="title sectiontitle">Example Request</h3>
@@ -431,8 +446,11 @@ Because of the use of the <code class="ph codeph">options=keyValues</code>, the 
 <tr class="row"><td class="entry" headers="filter-context-data-by-distance__query-parameters-5__entry__1"><code class="ph codeph">geometry</code></td><td class="entry" headers="filter-context-data-by-distance__query-parameters-5__entry__2"><code class="ph codeph">point</code></td><td class="entry" headers="filter-context-data-by-distance__query-parameters-5__entry__3"></td></tr>
 <tr class="row"><td class="entry" headers="filter-context-data-by-distance__query-parameters-5__entry__1"><code class="ph codeph">coords</code></td><td class="entry" headers="filter-context-data-by-distance__query-parameters-5__entry__2"><code class="ph codeph">52.5162,13.3777</code></td><td class="entry" headers="filter-context-data-by-distance__query-parameters-5__entry__3"></td></tr>
 <tr class="row"><td class="entry" headers="filter-context-data-by-distance__query-parameters-5__entry__1"><code class="ph codeph">type</code></td><td class="entry" headers="filter-context-data-by-distance__query-parameters-5__entry__2"><code class="ph codeph">Store</code></td><td class="entry" headers="filter-context-data-by-distance__query-parameters-5__entry__3">Entity type, to avoid ambiguity in case there are several entities with the same entity id</td></tr>
-<tr class="row"><td class="entry" headers="filter-context-data-by-distance__query-parameters-5__entry__1"><code class="ph codeph">options</code></td><td class="entry" headers="filter-context-data-by-distance__query-parameters-5__entry__2"><code class="ph codeph">keyValues</code></td><td class="entry" headers="filter-context-data-by-distance__query-parameters-5__entry__3">* `keyValues` option in order to get a more compact and brief representation, including just attribute values
-* `values` option combined with a list of attribute values  `attrs`  for an ordered list of attributes only</td></tr>
+<tr class="row"><td class="entry" headers="filter-context-data-by-distance__query-parameters-5__entry__1"><code class="ph codeph">options</code></td><td class="entry" headers="filter-context-data-by-distance__query-parameters-5__entry__2"><code class="ph codeph">keyValues</code></td><td class="entry" headers="filter-context-data-by-distance__query-parameters-5__entry__3"><ul class="ul">
+<li class="li"><code class="ph codeph">keyValues</code> option in order to get a more compact and brief representation, including just attribute values</li>
+<li class="li"><code class="ph codeph">values</code> option combined with a list of attribute values  <code class="ph codeph">attrs</code>  for an ordered list of attributes only</li>
+</ul>
+</td></tr>
 </tbody></table>
 </section>
 <div class="example" id="filter-context-data-by-distance__example-request-9"><h3 class="title sectiontitle">Example Request</h3>
