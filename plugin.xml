@@ -4,7 +4,7 @@
 	This file is part of the DITA-OT postman Plug-in project.
 	See the accompanying LICENSE file for applicable licenses.
 -->
-<plugin id="fox.jason.passthrough.postman" version="2.0.0">
+<plugin id="fox.jason.passthrough.postman" version="2.1.0">
 	<feature extension="dita.conductor.lib.import" file="lib/passthrough.parser-5.0.jar"/>
 	<feature extension="dita.conductor.lib.import" file="lib/json-simple-1.1.1.jar"/>
 	<feature extension="dita.conductor.lib.import" file="lib/passthrough.postman-3.0.jar"/>
