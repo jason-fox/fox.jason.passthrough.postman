@@ -2,9 +2,7 @@
 
 <topic id="fiware-persisting-context-data-using-nifi">
   <title>FIWARE Persisting Context Data using NIFI</title>
-  <body>
-    <object data="postman/postman.json" outputclass="swagger-spec" type="application/json"></object>
-  </body>
+  <body></body>
   <p>This tutorial is an introduction to
     <xref format="html" href="http://fiware-draco.readthedocs.io/en/latest/" scope="external">FIWARE Draco</xref>- a generic enabler which is used to persist context data into third-party databases creating a historical view of the context. The tutorial activates the IoT sensors connected in the
     <xref format="html" href="https://github.com/Fiware/tutorials.IoT-Agent" scope="external">previous tutorial</xref>and persists measurements

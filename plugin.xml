@@ -33,7 +33,6 @@
 
 	<feature extension="extend.css.process" value="postman.css.copy"/>
 
-	<feature extension="depend.preprocess.post" value="postman.spec.copy"/>
 	<!-- Uses the passthrough extension point and file reader -->
 	<feature extension="dita.parser">
 		<parser format="postman" class="fox.jason.passthrough.PostmanFileReader"/>
