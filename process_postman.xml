@@ -38,4 +38,14 @@
       file="${extend.css.file}"
     />
 	</target>
+
+	<target name="postman.spec.copy" if="passthrough.spec.keep">
+		<copy todir="${dita.output.dir}" failonerror="false" overwrite="true">
+			<fileset dir="${user.input.dir}" includes="**/*.json">
+				<present targetdir="${dita.temp.dir}"/>
+				<contains text="schema.getpostman.com"/>
+			</fileset>
+			<regexpmapper from="^((?:.*/)?)([^/]+)$$" to="\1postman/\2"/>
+		</copy>
+	</target>
 </project>

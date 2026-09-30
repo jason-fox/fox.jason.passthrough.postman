@@ -7,7 +7,7 @@
 <plugin id="fox.jason.passthrough.postman" version="2.1.0">
 	<feature extension="dita.conductor.lib.import" file="lib/passthrough.parser-5.0.jar"/>
 	<feature extension="dita.conductor.lib.import" file="lib/json-simple-1.1.1.jar"/>
-	<feature extension="dita.conductor.lib.import" file="lib/passthrough.postman-3.1.jar"/>
+	<feature extension="dita.conductor.lib.import" file="lib/passthrough.postman-3.2.jar"/>
 	<feature extension="dita.conductor.lib.import" file="lib/flexmark-0.64.8.jar"/>
 	<feature extension="dita.conductor.lib.import" file="lib/flexmark-ext-tables-0.64.8.jar"/>
 	<feature extension="dita.conductor.lib.import" file="lib/flexmark-util-0.64.8.jar"/>
@@ -33,6 +33,7 @@
 
 	<feature extension="extend.css.process" value="postman.css.copy"/>
 
+	<feature extension="depend.preprocess.post" value="postman.spec.copy"/>
 	<!-- Uses the passthrough extension point and file reader -->
 	<feature extension="dita.parser">
 		<parser format="postman" class="fox.jason.passthrough.PostmanFileReader"/>
